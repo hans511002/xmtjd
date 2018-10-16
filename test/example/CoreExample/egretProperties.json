@@ -3,6 +3,9 @@
 		"path_ignore": []
 	},
 	"template": {},
+	"target": {
+    "current": "web"
+  },
 	"modules": [
 		{
 			"name": "egret",
