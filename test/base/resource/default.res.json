@@ -1,23 +1,40 @@
 {
-	"groups":[
-	{
-		"keys":"bg_jpg,egret_icon_png,description_json",
-		"name":"preload"
-	}],
-	"resources":[
-	{
-		"name":"bg_jpg",
-		"type":"image",
-		"url":"assets/bg.jpg"
-	},
-	{
-		"name":"egret_icon_png",
-		"type":"image",
-		"url":"assets/egret_icon.png"
-	},
-	{
-		"name":"description_json",
-		"type":"json",
-		"url":"config/description.json"
-	}]
+	"groups": [
+		{
+			"keys": "egret_icon_png,description_json,BulletTower5_1_mc_ske_json,BulletTower5_1_mc_tex_json,BulletTower5_1_mc_tex_png",
+			"name": "preload"
+		}
+	],
+	"resources": [
+		{
+			"name": "default.res.json",
+			"type": "json",
+			"url":"default.res.json"
+		},
+		{
+			"name": "egret_icon_png",
+			"type": "image",
+			"url": "assets/egret_icon.png"
+		},
+		{
+			"name": "description_json",
+			"type": "json",
+			"url": "config/description.json"
+		},
+		{
+			"name": "BulletTower5_1_mc_ske_json",
+			"type": "json",
+			"url": "BulletTower5_1_mc/BulletTower5_1_mc_ske.json"
+		},
+		{
+			"name": "BulletTower5_1_mc_tex_json",
+			"type": "json",
+			"url": "BulletTower5_1_mc/BulletTower5_1_mc_tex.json"
+		},
+		{
+			"name": "BulletTower5_1_mc_tex_png",
+			"type": "image",
+			"url": "BulletTower5_1_mc/BulletTower5_1_mc_tex.png"
+		}
+	]
 }

@@ -85,7 +85,8 @@ class Main extends egret.DisplayObjectContainer {
             const loadingView = new LoadingUI();
             this.stage.addChild(loadingView);
             await RES.loadConfig("resource/default.res.json", "resource/");
-            await RES.loadGroup("preload", 0, loadingView);
+            await std.initResMap();
+            await RES.loadGroup("preload", 0, loadingView); 
             this.stage.removeChild(loadingView);
         }
         catch (e) {
@@ -101,12 +102,12 @@ class Main extends egret.DisplayObjectContainer {
      * Create a game scene
      */
     private createGameScene() {
-        let sky = this.createBitmapByName("bg_jpg");
-        this.addChild(sky);
         let stageW = this.stage.stageWidth;
         let stageH = this.stage.stageHeight;
-        sky.width = stageW;
-        sky.height = stageH;
+        // let sky = this.createBitmapByName("bg_jpg");
+        // this.addChild(sky);
+        // sky.width = stageW;
+        // sky.height = stageH;
 
         let topMask = new egret.Shape();
         topMask.graphics.beginFill(0x000000, 0.5);
@@ -152,7 +153,19 @@ class Main extends egret.DisplayObjectContainer {
         textfield.y = 135;
         this.textfield = textfield;
 
-
+        var dis=std.loadArmature("", "BulletTower5_1_mc", "BulletTower5_1_mc");
+        if(dis){
+            this.addChild(dis);
+            dis.animation.play("BulletTower5_1_mc",0);
+            dis.x = this.stage.stageWidth * 0.5;
+            dis.y = this.stage.stageHeight * 0.5;
+            dis.$setScaleX(5);
+            dis.$setScaleY(5);
+        }
+        //dragonBones.WorldClock.clock.advanceTime(0.033);
+        egret.Ticker.getInstance().register(function (advancedTime) {
+                dragonBones.WorldClock.clock.advanceTime(advancedTime / 1000);
+            }, this);
     }
 
     /**
