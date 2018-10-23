@@ -29,10 +29,6 @@
     },
     {
       "name": "eui"
-    },
-    {
-			"name": "dragonBones",
-			"path": "${EGRET_DEFAULT}"
-		}
+    }
   ]
 }
