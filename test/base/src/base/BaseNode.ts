@@ -344,16 +344,7 @@ module std{
 	}
   	export  class MC extends BaseNode implements MovieClipSubBase
 	{
-		isReady:boolean=false;
-		reinitType:number=0;
-        mc:MC=null;
-        slot:dragonBones.Slot=null;
-		bone:dragonBones.Bone=null;
-		root:dragonBones.Bone=null;
-        display:egret.DisplayObjectContainer=null;
-		disPos:egret.Point;
-        slotName:string ;
-		visible:boolean=true;
+		
 
 		currentFrame:number;
 		defAniName:string;
@@ -431,68 +422,86 @@ module std{
 
 		tryPlay():boolean
 		{
-			//var mcs:MovieClipSub=ISTYPE(MovieClipSub, this);
-			// if (mcs) {
-			// 	if (!mcs.isReady){
-			// 		if(!mcs.reinit())
-			// 			return false;
-			// 	}
-			// }
-			// if (!this.inPlay)
-			// {
-			// 	this.play(1);
-			// 	return this.inPlay;
-			// }
-			// else {
-			// 	this.currentFrame++;
-			// 	this.currentFrame = (currentFrame-1) % totalFrames + 1;
-			// }
+			var mcs:MovieClipSub=null;
+			if(this instanceof MovieClipSub)
+				mcs=<MovieClipSub>this;
+			if (mcs) {
+				if (!mcs.isReady){
+					if(!mcs.reinit())
+						return false;
+				}
+			}
+			if (!this.inPlay)
+			{
+				this.play(1);
+				return this.inPlay;
+			}
+			else {
+				this.currentFrame++;
+				this.currentFrame = (this.currentFrame-1) % this.totalFrames + 1;
+			}
 			return false;
 		}
 		isPlayEnd():boolean{
 			return this.currentFrame == this.totalFrames;
 		}
-
+		completeHandler(event:egret.Event):void{//cocos2d::EventCustom *
+			var target:egret.DisplayObjectContainer = event.currentTarget;
+			var eventObject:dragonBones.EventObject = <dragonBones.EventObject>(event.data);
+ 			if(event.type == dragonBones.EventObject.COMPLETE)
+			{
+				if (this.playTimes == 1) {
+					if (this.getAnimation() && this.inPlay) {
+						if (eventObject.animationState == this.getAnimation().lastAnimationState)
+							this.inPlay = false;
+					}
+					else {
+						this.inPlay = false;
+					}
+				}
+			}
+		}
 		bindMovieListen(type:number):void 
 		{
 			if(type == 1)
 			{
-			//     if(ISTYPE(MovieClip, this))
-			//     {
-			//         MovieClip *mc = ISTYPE(MovieClip, this);
-			//         if(mc.container)
-			//         {
-			//             if((this.bindListenType & type)!=type)
-			//             {
-			// 				if (!mc.isOnce) {
-			// 					mc.container.getEventDispatcher().setEnabled(true);
-			// 					mc.container.getEventDispatcher().addCustomEventListener(dragonBones::EventObject::COMPLETE, std::bind(&MC::completeHandler, this, std::placeholders::_1));
-			// 				}
-			//                 this.bindListenType = this.bindListenType | type;
-			//             }
-			//         }
-			//     }
-			//     else if(ISTYPE(MovieClipSub, this))
-			//     {
-			//         MovieClipSub *mc = ISTYPE(MovieClipSub, this);
-			//         if(mc.container)
-			//         {
-			//             if((this.bindListenType & type) != type)
-			//             {
-			//                 mc.container.getEventDispatcher().setEnabled(true);
-			// 				mc.container.getEventDispatcher().addCustomEventListener(dragonBones::EventObject::COMPLETE, std::bind(&MC::completeHandler, this, std::placeholders::_1));
-			//                 this.bindListenType = this.bindListenType | type;
-			//             }
-			//         }
-			//     }
+			    if((this instanceof MovieClip))
+			    {
+			        var mc:MovieClip = <MovieClip>(this);
+			        if(mc.container)
+			        {
+			            if((this.bindListenType & type)!=type)
+			            {
+							if (!mc.isOnce) {
+								// mc.container.$EventDispatcher.getEventDispatcher().setEnabled(true);
+								//addDBEventListener(type: EventStringType, listener: (event: EgretEvent) => void, target: any)
+								//addEventListener(type: string, listener: Function, thisObject: any, useCapture?: boolean, priority?: number): any;
+								//mc.container.addEventListener(dragonBones.EventObject.COMPLETE, std.bind(&MC.completeHandler, this, std::placeholders::_1));
+								mc.container.addDBEventListener(dragonBones.EventObject.COMPLETE, this.completeHandler, this);
+							}
+			                this.bindListenType = this.bindListenType | type;
+			            }
+			        }
+			    }
+			    else if(this instanceof MovieClipSub)
+			    {
+			        var mcc:MovieClipSub = <MovieClipSub> this;
+			        if(mcc.container)
+			        {
+			            if((this.bindListenType & type) != type)
+			            {
+			                //mcc.container.getEventDispatcher().setEnabled(true);
+							mcc.container.addDBEventListener(dragonBones.EventObject.COMPLETE,this.completeHandler, this);
+			                this.bindListenType = this.bindListenType | type;
+			            }
+			        }
+			    }
 			}
     	}
-
 		getSprite(slotName:string):egret.Sprite{
 			return <egret.Sprite>(this.getArmature().getSlot(slotName).getDisplay());
 		}
 /*
-		virtual void completeHandler(cocos2d::EventCustom *event);
 		virtual void addMcs(MovieClipSub * mcs, bool reinit = false);
 		virtual bool remove(MovieClipSub * ms);
 		static MovieClip * getRootMc(MC * mc);
@@ -527,9 +536,30 @@ module std{
 
 		 
  
-
+/////////////////////////////
+		 createText(slot:string, reinit:boolean = false):MCText{
+			return null;
+		 }
+        // MovieClipSub * createMovieClipSub(const string &  slot,bool reinit=false);
+        // MovieClip * createMovieClip(const string &  slot, const string &  rootPath, const string &  armName, const string &  dbName, bool reinit = false,bool delay=false);
+        // MovieClip * createMovieClip(const string &  slot, const string &  rootPath, const string &  dbName);
+        // MovieClip * createMovieClip(const string &  slot, MovieClip * mc, bool reinit = false);
+        // MCCase * createCase(const string &  slot, bool reinit = false, bool draw = false);
+        // MCSprite * createSprite(const string &  slot, const string &  file, bool reinit = false);
+        // MCSprite * createSprite(const string &  slot, Sprite* file, bool reinit = false);
+        // MCMask * createMask(const string &  slot, bool reinit = false);
 
 ////////MovieClipSubBase////////////////////////////////////////////
+		isReady:boolean=false;
+		reinitType:number=0;
+        mc:MC=null;
+        slot:dragonBones.Slot=null;
+		bone:dragonBones.Bone=null;
+		root:dragonBones.Bone=null;
+        display:egret.DisplayObjectContainer=null;
+		disPos:egret.Point;
+        slotName:string ;
+		visible:boolean=true;
 		getParentMC():MC{
 		  	return this.mc;
 		}
@@ -758,11 +788,10 @@ module std{
     // class MCText;
     // class MCCase;
 	// class MCSprite;
-	export class MCCase extends egret.DisplayObject{
-
+	export class MCCase extends egret.DisplayObjectContainer{
 
 	}
-	export class MCMask extends egret.DisplayObject{
+	export class MCMask extends egret.DisplayObjectContainer{
 	}
 	export class MCText extends eui.TextInput{
 	}
