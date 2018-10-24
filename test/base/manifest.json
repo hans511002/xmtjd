@@ -8,8 +8,7 @@
 		"libs/modules/dragonBones/dragonBones.js",
 		"libs/modules/socket/socket.js",
 		"libs/modules/promise/promise.js",
-		"libs/modules/eui/eui.js",
-		"libs/modules/dragonBones/dragonBones.js"
+		"libs/modules/eui/eui.js"
 	],
 	"game": [
 		"bin-debug/LoadingUI.js",

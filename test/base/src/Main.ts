@@ -160,24 +160,18 @@ class Main extends egret.DisplayObjectContainer {
 
         var mc=new std.MovieClip();
         var mcs=new std.MovieClipSub();
-        var mci=<std.MC_INT>mc;
-        var mcii:std.MC_INT=mc;
-        var mcbs:std.MCBS=mc;
+ 
     
         egret.log(typeof mc);
-        egret.log(typeof mcs);
-        egret.log(typeof mci);
-        egret.log(typeof mcii);
-        egret.log(typeof mcbs);
-        
+        egret.log(typeof mcs); 
 
 
 
-        if(mc instanceof std.MC_INT){
-            egret.log("mc instanceof std.MC_INT");
-            egret.log("mci instanceof std.MC_INT");
+        if(mc instanceof std.MovieClipSubBase){
+            egret.log("mc instanceof std.MovieClipSubBase");
+            egret.log("mci instanceof std.MovieClipSubBase");
         }else{
-            egret.log("mc not instanceof std.MC_INT");
+            egret.log("mc not instanceof std.MovieClipSubBase");
         }
         if(mc instanceof std.MC){
             egret.log("mc instanceof std.MC");
@@ -185,10 +179,10 @@ class Main extends egret.DisplayObjectContainer {
             egret.log("mc not instanceof std.MC");
         }
 
-        if(mcs instanceof std.MC_INT){
-            egret.log("mcs instanceof std.MC_INT");
+        if(mcs instanceof std.MovieClipSubBase){
+            egret.log("mcs instanceof std.MovieClipSubBase");
         }else{
-            egret.log("mcs not instanceof std.MC_INT");
+            egret.log("mcs not instanceof std.MovieClipSubBase");
         }
         if(mcs instanceof std.MC){
             egret.log("mcs instanceof std.MC");
