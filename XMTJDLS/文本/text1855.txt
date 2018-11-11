@@ -1,0 +1,1 @@
+﻿<p align="center"><font face="DFGirl" size="21" color="#ffee96" letterSpacing="2.00" kerning="1">Kitty increases to all members of the team damage by 50%</font></p>
