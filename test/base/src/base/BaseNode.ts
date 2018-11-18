@@ -2,8 +2,10 @@
 
 module std{
 
-	var urlMap={};
-	var urlLen=0;
+	export var urlMap={};
+	export var urlLen=0;
+	export var useNodeEvent:boolean =true;// false;
+
 	export function setPosition(node:egret.DisplayObject,pos:egret.Point):void{
 		node.$setX(pos.x);
 		node.$setY(pos.y);
@@ -127,11 +129,11 @@ module std{
 		var h:number =node.height>0?node.height:30;
 		var x:number = node.x;
 		var y:number = node.y;
-	 	drawRect(shape,x,y,w,h);
+	 	drawRect(shape,x,y,w,h,color);
 	}
-  	export function drawRect(shape:egret.Shape,x:number, y:number,w:number,h:number):void {
+  	export function drawRect(shape:egret.Shape,x:number, y:number,w:number,h:number,color?: number):void {
 		//shape.graphics.beginFill(0xff0000, 1);
-        shape.graphics.lineStyle(2, 0xff0000);
+        shape.graphics.lineStyle(2, color?color:0);
         // shape.graphics.drawRect(x - w / 2, y - h / 2, w, h);
 		shape.graphics.moveTo(x,y);
 		shape.graphics.lineTo(x,y+h);
@@ -147,20 +149,104 @@ module std{
 		node.$setAnchorOffsetY(y);
 		node.$setX(node.x+ax-x);
 		node.$setY(node.y+ay-y); 
+	} 
+	export function getNodeVisible(node:egret.DisplayObjectContainer):boolean
+	{
+		if (!node)return false;
+		if (!node.visible)return false;
+		var par:egret.DisplayObjectContainer = node.parent;
+		while (par) {
+			if (!par.visible)return false;
+			par = par.parent;
+		}
+		return true;
 	}
 }
   
 module std{
 	export class BaseNode extends egret.DisplayObjectContainer {
+		mouseEnabled:boolean=false;
+		touchMoved: (node: BaseNode, e: egret.TouchEvent) => void=null;
+		touchBegan: Function=null;
+		touchEnded: Function=null;
+		touchCancelled: Function=null;
+
 		public constructor() {
 			super();
 		}
-		setPosition(pos:egret.Point):void{
-			this.$setX(pos.x);
-			this.$setY(pos.y);
+		setPosition(x:number,y:number):void{
+			this.$setX(x);
+			this.$setY(y);
 		}
 		////////////////////////
-		
+		$onAddToStage(stage: egret.Stage, nestLevel: number): void{
+			this.beforeOnEnter();
+			super.$onAddToStage(stage,nestLevel);
+			this.afterOnEnter();
+		};
+		beforeOnEnter():void{this.onEnter();};
+        afterOnEnter():void{};
+		$onRemoveFromStage(): void{
+			this.onExit();
+			super.$onRemoveFromStage();
+		};
+		onEnter():void{};
+		onExit():void{};
+
+		getPosition():egret.Point{
+			return new egret.Point(this.x,this.y);
+		}
+
+		listened:boolean=false;
+		enableMouseHandler(listen:number):void{
+			if (!this.mouseEnabled) 
+				this.mouseEnabled=(true); 
+			//addEventNode(this);
+			if (listen && !this.listened)
+			{ 
+				this.listened=true;
+				this.$setTouchEnabled(true);
+				//        addEventListener<Z>(type: "touchMove" | "touchBegin" | "touchEnd" | "touchCancel" | "touchTap" | "touchReleaseOutside" | "touchRollOut" | "touchRollOver", 
+				//listener: (this: Z, e: TouchEvent) => void, thisObject: Z, useCapture?: boolean, priority?: number): any;
+				if((listen & 1)==1){
+					this.addEventListener("touchBegin",this.onTouchBegan,this,false);
+					this.addEventListener("touchEnd",this.onTouchEnded,this,false);
+				}
+				if((listen & 2)==2){
+					this.addEventListener("touchMove",this.onTouchMoved,this,false);
+				}
+				if(listen)
+					this.addEventListener("touchCancel",this.onTouchCancelled,this,false);
+    
+				// touchOnelistener = cocos2d::EventListenerTouchOneByOne::create();
+				// touchOnelistener.onTouchBegan = CC_CALLBACK_2(BaseNode::onTouchBegan, this);
+				// touchOnelistener.onTouchEnded = CC_CALLBACK_2(BaseNode::onTouchEnded, this);
+				// touchOnelistener.onTouchCancelled = CC_CALLBACK_2(BaseNode::onTouchCancelled, this);
+				// touchOnelistener.onTouchMoved = CC_CALLBACK_2(BaseNode::onTouchMoved, this);
+				// //touchOnelistener.setSwallowTouches(true);
+				// this.getEventDispatcher().addEventListenerWithSceneGraphPriority(touchOnelistener, this);
+			}
+		};
+		onTouchMoved(e:egret.TouchEvent){
+			if(this.touchMoved){
+				this.touchMoved(this,e);
+			}
+		}
+		onTouchBegan(e:egret.TouchEvent){
+			if(this.touchBegan){
+				this.touchBegan(this,e);
+			}
+		}
+		onTouchEnded(e:egret.TouchEvent){
+			if(this.touchEnded){
+				this.touchEnded(this,e);
+			}
+		}
+		onTouchCancelled(e:egret.TouchEvent){
+			if(this.touchCancelled){
+				this.touchCancelled(this,e);
+			}
+		}
 	}
 	export class MovieClipSubBase{
 		isReady:boolean=false;
@@ -172,7 +258,7 @@ module std{
         display:egret.DisplayObjectContainer=null;
 		disPos:egret.Point;
         slotName:string;
-		visible:boolean=true;
+		_visible:boolean=true;
 		
 		public constructor() {
 		 	this.isReady=false;
@@ -184,10 +270,10 @@ module std{
 			this.display=null;
 			this.disPos=new egret.Point(0,0);
 			this.slotName="";
-			this.visible=true;
+			this._visible=true;
 		}
 		setVisible(v:boolean):void{
-			this.visible = v;
+			this._visible = v;
 		}
 		getParentMC():MC 
 		{ 
@@ -208,18 +294,18 @@ module std{
 			else{
 				y = -(y);
 			}
-			//Size mcSize = dis->getContentSize();
-			//dragonBones::Transform*  global = root->getGlobal();
-			//Node * disPar = dis->getParent();
-			//dragonBones::Transform*  offset = root->getOffset();
-			//const dragonBones::Rectangle & aabb = mc->getArmature()->getArmatureData()->aabb;
+			//Size mcSize = dis.getContentSize();
+			//dragonBones::Transform*  global = root.getGlobal();
+			//Node * disPar = dis.getParent();
+			//dragonBones::Transform*  offset = root.getOffset();
+			//const dragonBones::Rectangle & aabb = mc.getArmature().getArmatureData().aabb;
 			//if (ISTYPE(dragonBones::CCArmatureDisplay, disPar)){
 			//	dragonBones::CCArmatureDisplay * aniDis = ISTYPE(dragonBones::CCArmatureDisplay, disPar);
-			//	const dragonBones::Rectangle & aabb = aniDis->getArmature()->getArmatureData()->aabb;
+			//	const dragonBones::Rectangle & aabb = aniDis.getArmature().getArmatureData().aabb;
 			//	y = y;
 			//}
 			this.disPos.x = x;
-			this.disPos.y = y;// = disPar->convertToNodeSpaceAR(Vec2(x, y));
+			this.disPos.y = y;// = disPar.convertToNodeSpaceAR(Vec2(x, y));
 			return this.disPos;
 		}
 		getDisArPos():egret.Point{
@@ -229,15 +315,15 @@ module std{
 			{
 				var dis:egret.DisplayObjectContainer = <egret.DisplayObjectContainer>this.slot.display;
 				std.setAnchorPoint(dis, 0.5, 0.5);
-				//thisPos = dis->convertToNodeSpace(dis->getPosition());
+				//thisPos = dis.convertToNodeSpace(dis.getPosition());
 				thisPos.x=dis.$anchorOffsetX;
 				thisPos.y=dis.$anchorOffsetY;
 				//dis.globalToLocal(dis.x,dis.y,thisPos);
 			}
-			//if (ISTYPE(MovieClipSub, this->mc) && ISTYPE(MCCase, this)){
-			//	MovieClipSub * mcs = ISTYPE(MovieClipSub, this->mc);
-			//	Size mcSize = mcs->container->getContentSize();
-			//	const dragonBones::Rectangle & aabb = mcs->container->getArmature()->getArmatureData()->aabb;
+			//if (ISTYPE(MovieClipSub, this.mc) && ISTYPE(MCCase, this)){
+			//	MovieClipSub * mcs = ISTYPE(MovieClipSub, this.mc);
+			//	Size mcSize = mcs.container.getContentSize();
+			//	const dragonBones::Rectangle & aabb = mcs.container.getArmature().getArmatureData().aabb;
 			//	thisPos.x = -aabb.width / 2;
 			//	thisPos.y = -aabb.height / 2;
 			// }  
@@ -304,7 +390,7 @@ module std{
 					else if (this.slot._displayData)
 						this.display.name=(this.slot._displayData.name);
 					if((this instanceof MovieClip) ||  (this instanceof MCMask))
-						this.display.$setVisible(this.visible);
+						this.display.$setVisible(this._visible);
 					if (!(this instanceof MovieClip)){
 						this.display.addChildAt(thsi,9999);
 					}
@@ -330,7 +416,7 @@ module std{
 					// if (!(this instanceof MovieClip))
 					// 	thsi.release();
 					if ((this instanceof MovieClipSub) || (this instanceof MCMask))
-						this.display.$setVisible(this.visible);
+						this.display.$setVisible(this._visible);
 					if ((this instanceof MovieClip))
 						thsi.removeChildren();//.removeAllChildren();
 					else
@@ -341,21 +427,38 @@ module std{
 			this.isReady = false; 
 			return false;
 		}
+		 
 	}
+ 	function convertToNode(mcbs:MovieClipSubBase): MCText|MCCase|MovieClip|MovieClipSub|MovieClipSubBase
+	{
+		if(!mcbs)return mcbs;
+		if(<MovieClipSub>mcbs){
+			return <MovieClipSub>mcbs;
+		}
+		if(<MovieClip>mcbs){
+			return <MovieClip>mcbs;
+		}if(<MCText>mcbs){
+			return <MCText>mcbs;
+		}if(<MCCase>mcbs){
+			return <MCCase>mcbs;
+		}
+		return mcbs;
+	};
   	export  class MC extends BaseNode implements MovieClipSubBase
 	{
-		
-		submc:Array<MovieClipSub>; 
+		//直接子mcbs 
 		submcbs:Array<MovieClipSubBase>;
+		//所有全部子集群,用于自动删除,包括孙子后的
 		allSubMcbs:Array<MovieClipSubBase>;
-        updateMcbs:Array<MovieClipSubBase>;
+		// allSubMcs:Array<MovieClipSub>;
 
-		currentFrame:number;
+		currentFrame:number=0;
 		defAniName:string;
-        totalFrames:number;
-        inPlay:boolean;
-        playTimes:number;
-        bindListenType:number;
+        totalFrames:number=0;
+        inPlay:boolean=false;
+        playTimes:number=0;
+        bindListenType:number=0;
+ 		container:dragonBones.EgretArmatureDisplay=null;
 
 		
 		getArmature():dragonBones.Armature{
@@ -364,8 +467,7 @@ module std{
 		getAnimation():dragonBones.Animation{
 			return null;
 		}
-		getTotalFrames(_aniName?:string):number
-		{
+		getTotalFrames(_aniName?:string):number		{
 			var aniName:string = _aniName?_aniName:"";
 			if (aniName == "")aniName = this.defAniName;
 			var aniData:dragonBones.AnimationData = this.getArmature().armatureData.animations[aniName];
@@ -385,8 +487,7 @@ module std{
 			this.inPlay = false;
 			this.getAnimation().gotoAndStopByFrame(aniName, this.currentFrame - 1);
 		}
- 		nextFram():void
-		{
+ 		nextFram():void		{
 			if (this.getArmature() == null || this.getAnimation() == null)return;
 			this.currentFrame++;
 			this.gotoAndStop(this.currentFrame);
@@ -399,8 +500,7 @@ module std{
 			this.getAnimation().stop(aniName);
 			this.inPlay = false;
 		}
-		play(_aniName?:number|string ,times:number=1):void
-		{
+		play(_aniName?:number|string ,times:number=1):void 		{
 			if(typeof _aniName== "string"){
 				if (!this.getArmature() || !this.getAnimation())return;
 				var aniName:string = _aniName?_aniName:"";
@@ -419,13 +519,11 @@ module std{
 					this.bindMovieListen(1);
 			} 
 		}
-
 		isPlay():boolean{
 			 return this.inPlay;
 		}
 
-		tryPlay():boolean
-		{
+		tryPlay():boolean		{
 			var mcs:MovieClipSub=null;
 			if(this instanceof MovieClipSub)
 				mcs=<MovieClipSub>this;
@@ -449,10 +547,9 @@ module std{
 		isPlayEnd():boolean{
 			return this.currentFrame == this.totalFrames;
 		}
-		completeHandler(event:egret.Event):void{//cocos2d::EventCustom *
-			var target:egret.DisplayObjectContainer = event.currentTarget;
-			var eventObject:dragonBones.EventObject = <dragonBones.EventObject>(event.data);
- 			if(event.type == dragonBones.EventObject.COMPLETE)
+		completeHandler(event:dragonBones.EgretEvent):void{//cocos2d::EventCustom *
+			var eventObject:dragonBones.EventObject = event.eventObject;
+ 			if(eventObject.type == dragonBones.EventObject.COMPLETE)
 			{
 				if (this.playTimes == 1) {
 					if (this.getAnimation() && this.inPlay) {
@@ -465,8 +562,7 @@ module std{
 				}
 			}
 		}
-		bindMovieListen(type:number):void 
-		{
+		bindMovieListen(type:number):void 		{
 			if(type == 1)
 			{
 			    if((this instanceof MovieClip))
@@ -502,46 +598,43 @@ module std{
 			    }
 			}
     	}
-
-
-	
-/*
-		virtual void addMcs(MovieClipSub * mcs, bool reinit = false);
-		virtual bool remove(MovieClipSub * ms);
-		static MovieClip * getRootMc(MC * mc);
-        virtual void addMCbs(MovieClipSubBase * mcs, bool reinit=false);
-		virtual bool remove(MovieClipSubBase * ms);
-        virtual Node * getMemNode(const string &  slotName);
-        MovieClipSub*  getMemSubMC(const string &  slotName);
-        template<typename T = Node> T * getMem(const string &  slotName) { return ISTYPE(T, getMemNode(slotName)); };
-*/
-		addMCbs(mcs:MovieClipSubBase, reinit:number=0):void 
-		{
+ 		addMCbs(mcbs:MovieClipSubBase, reinit:number=0):void 		{
+			mcbs.reinitType |= reinit;
 			if(reinit)
-				this.submcbs.push(mcs);
+				this.submcbs.push(mcbs);
 			var mcbs:MovieClipSubBase =null;
 			if(this instanceof MovieClipSubBase)
 				mcbs=<MovieClipSubBase>this;
-			if (reinit || (mcbs && mcbs.reinitType)){
-				this.submcbs.push(mcs);
-				mcs.reinitType |= 2;
+			if (!reinit && (mcbs && mcbs.reinitType)){ //继承控制重新初始化链
+				this.submcbs.push(mcbs);
+				mcbs.reinitType |= 2;
 			}
-			this.allSubMcbs.push(mcs);
+
+			this.allSubMcbs.push(mcbs);
+			// var _mcs:MovieClipSub =<MovieClipSub>mcbs;
+			// if(_mcs){
+			// 	this.allSubMcs.push(_mcs);
+			// }
 			// if (ISTYPE(Node, mcs)){
-			// 	ISTYPE(Node, mcs)->retain();
+			// 	ISTYPE(Node, mcs).retain();
 			// }
 			var mvc:MovieClip = this.getRootMc(this);
-			if (mvc)
-				mvc.mcbs.push(mcs);
-			//if (mcs instanceof MCText){
-			//    this.mct.push((MCText*)mcs);
-			//}
-			//else if (ISTYPE(MCCase, mcs)){
-			//    this->mcase.push((MCCase*)mcs);
-			//}
+			if (mvc){
+				// if(_mcs)
+				// 	mvc.allSubMcs.push(_mcs);
+				// else
+					mvc.allSubMcbs.push(mcbs);
+			}
+				//if (mcs instanceof MCText){
+				//    this.mct.push((MCText*)mcs);
+				//}
+				//else if (ISTYPE(MCCase, mcs)){
+				//    this.mcase.push((MCCase*)mcs);
+				//}
 		}
-  		getRootMc(mcc:MC):MovieClip
+  		getRootMc(mcc?:MC):MovieClip
 		{
+			mcc=mcc?mcc:this;
 			while (mcc != null)
 			{
 				if (mcc instanceof MovieClip)
@@ -554,8 +647,71 @@ module std{
 			}
 			return null;
 		}
-
-// list:Array<number>;
+		remove(ms:MovieClipSubBase):boolean{
+			var del:boolean=false;
+			for(var i=0;i<this.submcbs.length;i++){
+				if(this.submcbs[i]== ms){
+					this.submcbs.splice(i,1);
+					del= true;
+					break;
+				}
+			}
+			var rootMc=this.getRootMc();
+			if(rootMc){
+				for(var i=0;i<rootMc.allSubMcbs.length;i++){
+					if(rootMc.allSubMcbs[i]== ms){
+						rootMc.allSubMcbs.splice(i,1);
+						del= true;
+						break;
+					}
+				} 
+			}
+			return del;
+		};
+		getSubNode(slotName:string): MCText|MCCase|MovieClip|MovieClipSub|MovieClipSubBase		{
+			var mcbs:MovieClipSubBase=null; 
+			for (var i = 0; i < this.submcbs.length; i++)
+			{
+				var _node:MovieClipSubBase = <MovieClipSubBase> this.submcbs[i];
+				if (_node && slotName == _node.slotName)
+				{
+					mcbs=this.submcbs[i];
+					break;
+				}
+			} 
+			return convertToNode(mcbs);
+		}
+		getMemNode(slotName:string): MCText|MCCase|MovieClip|MovieClipSub|MovieClipSubBase		{
+			var mcbs:MovieClipSubBase=null; 
+			for (var i = 0; i < this.allSubMcbs.length; i++)
+			{
+				var _node:MovieClipSubBase = <MovieClipSubBase> this.allSubMcbs[i];
+				if (_node && slotName == _node.slotName)
+				{
+					mcbs=this.allSubMcbs[i];
+					break;
+				}
+			} 
+			return convertToNode(mcbs);
+		};
+		setContentSize(node:egret.DisplayObjectContainer,width:number,hegith:number){
+			node.$setWidth(width);
+			node.$setHeight(hegith);
+		}
+		reinitSubMcbs(inParInit?:boolean):void{
+			var l = this.submcbs.length;
+			for (var i = 0; i < l; i++)	{
+				var mcs:MovieClipSubBase = this.submcbs[i];
+				if(inParInit){
+					if ((mcs.reinitType & 2) == 2 )
+						this.submcbs[i].reinit();
+				}else{
+					if ((mcs.reinitType & 1) == 1 || !mcs.isReady)
+						this.submcbs[i].reinit();
+				}
+			}
+		}
+		// list:Array<number>;
 		public constructor() {
 			super();
 			this.currentFrame=0;
@@ -573,12 +729,10 @@ module std{
 			this.display=null;
 			this.disPos=new egret.Point(0,0);
 			this.slotName="";
-			this.visible=true;
+			this._visible=true;
 		}
 
-		 
- 
-//////////////create ///////////////
+	//////////////create ///////////////
 		createText(slot:string, reinit:number = 0):MCText
 		{
 			var mt:MCText= new MCText(this, slot);
@@ -601,7 +755,7 @@ module std{
 		}
 
 
-////////MovieClipSubBase////////////////////////////////////////////
+	////////MovieClipSubBase////////////////////////////////////////////
 		isReady:boolean=false;
 		reinitType:number=0;
         mc:MC=null;
@@ -611,12 +765,13 @@ module std{
         display:egret.DisplayObjectContainer=null;
 		disPos:egret.Point;
         slotName:string ;
-		visible:boolean=true;
+		_visible:boolean=true;
 		getParentMC():MC{
 		  	return this.mc;
 		}
 		setVisible(v:boolean):void{
-			this.visible = v;
+			// super.$setVisible(v);
+			this._visible = v;
 		}
 		getDisPosition():egret.Point{
 			var x:number = this.bone.origin.x;
@@ -633,18 +788,18 @@ module std{
 			else{
 				y = -(y);
 			}
-			//Size mcSize = dis->getContentSize();
-			//dragonBones::Transform*  global = root->getGlobal();
-			//Node * disPar = dis->getParent();
-			//dragonBones::Transform*  offset = root->getOffset();
-			//const dragonBones::Rectangle & aabb = mc->getArmature()->getArmatureData()->aabb;
+			//Size mcSize = dis.getContentSize();
+			//dragonBones::Transform*  global = root.getGlobal();
+			//Node * disPar = dis.getParent();
+			//dragonBones::Transform*  offset = root.getOffset();
+			//const dragonBones::Rectangle & aabb = mc.getArmature().getArmatureData().aabb;
 			//if (ISTYPE(dragonBones::CCArmatureDisplay, disPar)){
 			//	dragonBones::CCArmatureDisplay * aniDis = ISTYPE(dragonBones::CCArmatureDisplay, disPar);
-			//	const dragonBones::Rectangle & aabb = aniDis->getArmature()->getArmatureData()->aabb;
+			//	const dragonBones::Rectangle & aabb = aniDis.getArmature().getArmatureData().aabb;
 			//	y = y;
 			//}
 			this.disPos.x = x;
-			this.disPos.y = y;// = disPar->convertToNodeSpaceAR(Vec2(x, y));
+			this.disPos.y = y;// = disPar.convertToNodeSpaceAR(Vec2(x, y));
 			return this.disPos;
 		}
 		getDisArPos():egret.Point
@@ -655,15 +810,15 @@ module std{
 			if (!(this instanceof MCCase) && !(this instanceof MCText))
 			{//&& !ISTYPE(MovieClip, this)
 				std.setAnchorPoint(dis, 0.5, 0.5);
-				//thisPos = dis->convertToNodeSpace(dis->getPosition());
+				//thisPos = dis.convertToNodeSpace(dis.getPosition());
 				thisPos.x=dis.$anchorOffsetX;
 				thisPos.y=dis.$anchorOffsetY;
 				//dis.globalToLocal(dis.x,dis.y,thisPos);
 			}
-			//if (ISTYPE(MovieClipSub, this->mc) && ISTYPE(MCCase, this)){
-			//	MovieClipSub * mcs = ISTYPE(MovieClipSub, this->mc);
-			//	Size mcSize = mcs->container->getContentSize();
-			//	const dragonBones::Rectangle & aabb = mcs->container->getArmature()->getArmatureData()->aabb;
+			//if (ISTYPE(MovieClipSub, this.mc) && ISTYPE(MCCase, this)){
+			//	MovieClipSub * mcs = ISTYPE(MovieClipSub, this.mc);
+			//	Size mcSize = mcs.container.getContentSize();
+			//	const dragonBones::Rectangle & aabb = mcs.container.getArmature().getArmatureData().aabb;
 			//	thisPos.x = -aabb.width / 2;
 			//	thisPos.y = -aabb.height / 2;
 			// }  
@@ -730,7 +885,7 @@ module std{
 					else if (this.slot._displayData)
 						this.display.name=(this.slot._displayData.name);
 					if((this instanceof MovieClip) ||  (this instanceof MCMask))
-						this.display.$setVisible(this.visible);
+						this.display.$setVisible(this.);
 					if (!(this instanceof MovieClip)){
 						this.display.addChildAt(thsi,9999);
 					}
@@ -756,7 +911,7 @@ module std{
 					// if (!(this instanceof MovieClip))
 					// 	thsi.release();
 					if ((this instanceof MovieClipSub) || (this instanceof MCMask))
-						this.display.$setVisible(this.visible);
+						this.display.$setVisible(this.);
 					if ((this instanceof MovieClip))
 						thsi.removeChildren();//.removeAllChildren();
 					else
@@ -767,6 +922,11 @@ module std{
 			this.isReady = false; 
 			return false;
 		}
+	
+
+
+
+	
 	}
 
 	export class MovieClip extends MC
@@ -776,78 +936,706 @@ module std{
 		// allSubMcbs:Array<MC>;
         // updateMcbs:Array<MC>;
 
-//所有全部子集群,用于自动删除
-		mcs:Array<MovieClipSub>;
-		mcbs:Array<MovieClipSubBase>;
-
 		rootPath:string ;
 		armName:string;
 		dbName:string;
-        world:BaseNode;
-		myPoint:egret.Point;
-		myFrame:number;
-		speedX:number;
-		speedY:number;
-        isOnce:boolean; 
+        world:BaseNode=null;
+		myPoint:egret.Point=new egret.Point(0,0);
+		myFrame:number=0;
+		speedX:number=0;
+		speedY:number=0;
+        isOnce:boolean=false; 
 		
-		arPoint:egret.Point;
-		setAr:boolean;
-		_autoRemoveData:boolean;
+		arPoint:egret.Point=new egret.Point(0,0);
+		setAr:boolean=false;
+		_autoRemoveData:boolean=false;
 
-		container:dragonBones.EgretArmatureDisplay;
+		 
 
-		public constructor() {
+		//         MovieClip(World * world, const string &  rootPath, const string &  armName, const string &  dbName, const string &  defAniName = "");
+		//  	MovieClip(dragonBones::CCArmatureDisplay * container, const string &  defAniName = "");
+			// 		MovieClip() :world(0), isOnce(0){};//tmp
+			//         MovieClip(const string &  armName, const string &  dbName, BaseNode *node = NULL);
+			//         MovieClip(MC *mc, dragonBones::Slot * slot, const string &  rootPath, const string &  armName, const string &  dbName, const string &  defAniName = "", bool delay=false);
+			//         MovieClip(MC *mc, const string &  slot, const string &  rootPath, const string &  armName, const string &  dbName, const string &  defAniName = "", bool delay=false);
+			//         MovieClip(MC *mc, const string &  slot, const string &  rootPath, const string &  dbName, bool delay=false);
+
+		//         MovieClip(const string &  rootPath, const string &  armName, const string &  dbName, const string &  defAniName = "");
+		public constructor(rootPath?:string,armName?:string,dbName?:string,defAniName:string="" ) {
 			super();
+			this.rootPath=rootPath;
+			this.armName=armName;
+			this.dbName=dbName;
+			this.defAniName=defAniName;
+			this.init(rootPath, armName, dbName, defAniName);
 		}
+		setMcInit(mc:MC,slotName:string,rootPath?:string,dbName?:string,armName:string="",defAniName:string="",delay:boolean=false){
+			this.mc = mc;
+			this.rootPath = rootPath;
+			this.armName = armName;
+			this.dbName = dbName;
+			this.slotName = slotName;
+			this.setName(slotName);
+			if(!delay)
+				this.reinit();
+		}
+		// 		virtual bool init(const string &  rootPath, const string &  armName, const string &  dbName, const string &  defAniName = "");
+	 	init(rootPath:string,  armName:string,  dbName:string,_defAniName:string =""):boolean{
+			if (this.isReady && this.container && this.name == armName)
+			{
+				return true;
+			}
+			//Common::DateTime dt;
+			if(this.mc)
+				this.container = std.loadArmature(rootPath, armName, dbName);
+			else
+				this.display = this.container = std.loadArmature(rootPath, armName, dbName);
+			//int time = (Common::DateTime().GetTicks() - dt.GetTicks());
+			//CCLOG("MovieClip %s.%s 1 init time:%i", dbName.c_str(), armName.c_str(), time);
+			//dt = Common::DateTime();
 
-		// MCText * createText(const string &  slot, bool reinit = false);
-        // MovieClipSub * createMovieClipSub(const string &  slot,bool reinit=false);
-        // MovieClip * createMovieClip(const string &  slot, const string &  rootPath, const string &  armName, const string &  dbName, bool reinit = false,bool delay=false);
-        // MovieClip * createMovieClip(const string &  slot, const string &  rootPath, const string &  dbName);
-        // MovieClip * createMovieClip(const string &  slot, MovieClip * mc, bool reinit = false);
-        // MCCase * createCase(const string &  slot, bool reinit = false, bool draw = false);
-        // MCSprite * createSprite(const string &  slot, const string &  file, bool reinit = false);
-        // MCSprite * createSprite(const string &  slot, Sprite* file, bool reinit = false);
-        // MCMask * createMask(const string &  slot, bool reinit = false);
+			var defAniName:string = _defAniName;
+			this.defAniName = defAniName;
+			if (defAniName == "")
+				this.defAniName = defAniName = this.getArmature()._armatureData.defaultAnimation.name;
+			this.totalFrames = this.getArmature()._armatureData.animations[defAniName].frameCount + 1;//;
+			var duration:number = this.getArmature()._armatureData.animations[defAniName].duration;
+			//CCLOG("load %s totalFrames=%i duration=%f", defAniName.c_str(), totalFrames, duration);
+			//time = (Common::DateTime().GetTicks() - dt.GetTicks());
+			//CCLOG("MovieClip %s.%s 2 init time:%i", dbName.c_str(), armName.c_str(), time);
+			//dt = Common::DateTime();
+
+			this.addChild(this.container);
+
+			//time = (Common::DateTime().GetTicks() - dt.GetTicks());
+			//CCLOG("MovieClip %s.%s 3 init time:%i", dbName.c_str(), armName.c_str(), time);
+			//dt = Common::DateTime();
+			this.gotoAndStop(1);
+			
+			//time = (Common::DateTime().GetTicks() - dt.GetTicks());
+			//CCLOG("MovieClip %s.%s 4 init time:%i", dbName.c_str(), armName.c_str(), time);
+			//dt = Common::DateTime();
+			//std::setAnchorPoint(display, true);
+			this.contentSizeInit();//this.init();
+			//time = (Common::DateTime().GetTicks() - dt.GetTicks());
+			//CCLOG("MovieClip %s.%s 5 init time:%i", dbName.c_str(), armName.c_str(), time);
+			//dt = Common::DateTime();
+			this.resetSize();
+			this.setName(armName);
+			//time = (Common::DateTime().GetTicks() - dt.GetTicks());
+			//CCLOG("MovieClip %s.%s 6 init time:%i", dbName.c_str(), armName.c_str(), time);
+			//this.autorelease(); in BaseNode::init();
+			//this.isReady = true;
+			return true;
+		};
+		contentSizeInit():void{ 
+			if (this.container.width == 0 || this.container.height == 0){
+				var aabb:dragonBones.Rectangle = this.getArmature().armatureData.aabb;
+				this.container.$setWidth(aabb.width);
+				this.container.$setHeight(aabb.height);
+			}
+		}
+		//         virtual bool checkInit();
+		checkInit():boolean{
+			if(this.mc && !this.isReady)
+				this.reinit();
+			return this.isReady;
+		};
+		//         virtual	dragonBones::Armature *getArmature();
+ 		getAnimation():dragonBones.Animation{
+			this.checkInit();
+			if (this.container)
+				return this.container.animation;
+			else
+				return null;
+		};
+		// 		virtual dragonBones::Animation *getAnimation();
+		getArmature():dragonBones.Armature {
+			this.checkInit();
+			if(this.container)
+				return this.container.armature;
+			else
+				return null;
+		};
+		//         virtual void setName(const string &  name);
+		setName(name:string):void{
+			this.name=name;
+			if (this.mc && this.container)
+				this.container.name=(name);
+			else if (!this.mc && this.display)
+				this.display.name=(name);
+		};
+		// 		virtual void setVisible(bool v);
+		 setVisible(v:boolean):void{
+			super.$setVisible(v);
+			super.setVisible(v);
+		};
+		// 		virtual bool reinit();
+		reinit():boolean{
+ 			var isReinit:boolean = this.display != null;
+			//if(isReinit) 
+				// this.retain();
+			if(this.mc && super.reinit())
+			{
+				var _armName:string = this.armName;
+				if (_armName.length==0)
+					_armName = this.display.name;
+				//必需先初始化db 再加入节点
+				this.init(this.rootPath, _armName, this.dbName,this.defAniName);//display=_armName
+				this.reinitSubMcbs(true);
+				this.display.addChild(this);
+				std.changeAnchorPoint(this, 0.5,0.5);
+				this.setPosition(this.x+this.disPos.x,this.y+this.disPos.y);
+				//Node *cnode=Node::create();
+				//this.addChild(cnode);
+				//cnode.setContentSize(this.getContentSize() - Size(3, 3));
+				//cnode.setPosition(Vec2(0, 0) - this.getContentSize()/2);
+				//std::drawRange(cnode, Color4F::YELLOW);
+
+				//std::drawRange(this, Color4F::WHITE);
+				//std::drawRange(this.container, Color4F::BLACK);
+				std.drawRange(this.display, 0xffff00);
+				if(this.bindListenType)	{
+					var type:number = this.bindListenType;
+					this.bindListenType = 0;
+					this.bindMovieListen(type);
+				}
+			}
+			// if(isReinit)
+			// 	this.release();
+			//int time = (Common::DateTime().GetTicks() - dt.GetTicks());
+			//CCLOG("MovieClip %s.%s load time:%i", dbName.c_str(), armName.c_str(), time);
+			return this.isReady;
+		};
+		// 		virtual bool isVisible();
+		isVisible():boolean {
+			if (this.mc && !this.isReady)
+				this.reinit();
+			return std.getNodeVisible(this);
+		};
+		//         virtual void destroy(MovieClipSub * & mcs);
+		destroy(ms:MovieClipSub):void
+		{
+			var par:MC = null;
+			for (var i = 0; i < this.allSubMcbs.length; i++)
+			{
+				if (ms == this.allSubMcbs[i])
+				{
+					this.allSubMcbs.splice(i,1);
+					par = ms.mc;
+					par.remove(ms);
+					// delete ms;
+					ms = null;
+					break;
+				}
+			}
+		};
+		// 		virtual bool remove(MovieClipSub * ms);
+		remove(ms:MovieClipSub):boolean	{
+			var par:MC = null;
+			for (var i = 0; i < this.allSubMcbs.length; i++)
+			{
+				if (ms == this.allSubMcbs[i])
+				{
+					this.allSubMcbs.splice(i,1);
+					par = ms.mc;
+					if (par)
+						par.remove(ms);
+					else
+						super.remove(ms);
+					return true;
+				}
+			}
+			return false;
+		};
+		// 		virtual float getWidth();
+		getWidth():number{ 
+			return	this.container.$getWidth()*this.$getScaleX();
+		}
+		// 		virtual float getHeight();
+		getHeight():number{
+			return	this.container.height*this.$getScaleY();
+		}
+		// 		virtual   void setWidth(float w);
+		setWidth(w:number):void{
+ 			if (this.width > 0){
+				var r:number = w / (this.width*this.$getScaleX());
+				this.$setScaleX(this.$getScaleX()*r);
+			}else{
+				if(this.$getScaleX())
+					this.$setWidth(w/this.$getScaleX());
+			}
+		}
+		// 		virtual   void setHeight(float h);
+		setHeight(h:number):void{
+ 			if (this.height > 0){
+				var r:number = h / (this.height*this.$getScaleY());
+				this.$setScaleY(this.$getScaleY()*r);
+			}else{
+				if(this.$getScaleY())
+					this.$setHeight(h/this.$getScaleY());
+			}
+		}
+		// 		virtual   void resetSize();
+  		resetSize():void{
+			var aabb:dragonBones.Rectangle   = this.getRectangle();
+			this.setContentSize(this,aabb.width, aabb.height);
+			this.setContentSize(this.container,aabb.width-2, aabb.height-2);
+		};
+		// 		virtual void setAutoRemoveData(bool remove);
+		setAutoRemoveData(remove:boolean):void {
+			this._autoRemoveData = remove;
+		}
+		// 		virtual void removeArmature();
+		removeArmature():void {
+			if(this.dbName.length)
+				std.removeArmature(this.dbName);
+		};
+		// 		//增加删除事件
+		// 		virtual bool setOnceMove(World * world);
+		setOnceMove(_world:BaseNode,idx?:number):boolean
+		{
+			this.world = _world;
+			this.isOnce = true;
+			if (this.world){
+				this.world.addChildAt(this,idx?idx:3);
+			}else{
+				this.isOnce = false;
+			}
+			return this.isOnce;
+		}
+		// 		virtual void onEnter();
+		onEnter():void
+		{
+			if (this.world && this.isOnce && this.container)
+			{
+				// this.container.getEventDispatcher().setEnabled(true);
+				//container.getEventDispatcher().addCustomEventListener(EventObject::FRAME_EVENT, std::bind(&MovieClip::onceMovieHandler, this, std::placeholders::_1));
+				this.container.addDBEventListener(dragonBones.EventObject.COMPLETE, this.onceMovieHandler, this);
+				this.play(1);
+			}
+			if (this.setAr){
+				std.changeAnchorPoint(this, this.arPoint.x,this.arPoint.y);
+				std.changeAnchorPoint(this.container, this.arPoint.x,this.arPoint.y);
+				//this.container.setPosition(this.getAnchorPointInPoints());
+				//cocos2d::Vector<Node * > chlds = this.container.getChildren();
+				//for (size_t i = 0; i < chlds.size(); i++)
+				//{
+				//	std::setAnchorPoint(chlds.at(i), arPoint, true);
+				//}
+			}
+			super.onEnter();
+		};
+		// 		virtual void onExit();
+		onExit():void{
+			if (this.container) {
+				this.container.dispose();
+				if (this._autoRemoveData) {
+					this.removeArmature();
+				}
+				//this.container.getEventDispatcher().removeAllEventListeners();
+			}
+			//this.container.getEventDispatcher().removeCustomEventListeners(dragonBones::EventObject::COMPLETE);
+			var l:number = this.allSubMcbs.length;
+			for (var i = l - 1; i >= 0; i--)
+			{
+				var mcbs:MovieClipSubBase =this.allSubMcbs[i];
+				if(<MovieClipSub>mcbs){
+					var mcs:MovieClipSub=<MovieClipSub>mcbs;
+					if(mcs.container && mcs.container.hasDBEventListener(dragonBones.EventObject.COMPLETE))
+ 						mcs.container.removeDBEventListener(dragonBones.EventObject.COMPLETE,this.completeHandler,this);
+					//delete this.allSubMcbs[i];
+				}else{
+
+				}
+				this.allSubMcbs[i] = null;
+			}
+			this.allSubMcbs.length=0;
+			// l = this.mcbs.size();
+				// for (int i = l - 1; i >= 0; i--)
+				// {
+				// 	MovieClipSub * _mcs=ISTYPE(MovieClipSub, mcbs[i]);
+				// 	if(_mcs && _mcs.container)
+				// 		_mcs.container.getEventDispatcher().removeAllEventListeners();
+				// 		//ISTYPE(MovieClipSub, mcbs[i]).container.getEventDispatcher().removeCustomEventListeners(dragonBones::EventObject::COMPLETE);
+				// 	if (ISTYPE(Node, this.mcbs[i]))
+				// 		ISTYPE(Node, this.mcbs[i]).release();
+				// 	else
+				// 		delete this.mcbs[i];
+				// 	this.mcbs[i] = NULL;
+				// }
+				// this.mcbs.clear();
+		}
+		// 		virtual void onceMovieHandler(cocos2d::EventCustom *event);
+		onceMovieHandler(event:dragonBones.EgretEvent):void{ 
+			this.completeHandler(event);
+			var eventObject:dragonBones.EventObject = event.eventObject;
+ 			if(eventObject.type == dragonBones.EventObject.COMPLETE){
+				if (this.isOnce)
+					this.world.removeChild(this);
+			}
+		}
+		//         virtual void gotoAndStop(int cf, const string &  aniName = "");
+		gotoAndStop(cf:number,  aniName:string=""):void
+		{
+			if (this.mc && !this.isReady){
+				this.reinit();
+			}
+			if (this.mc && !this.isReady)return;
+			super.gotoAndStop(cf, aniName);
+			this.reinitSubMcbs();
+		}
+		
+		//         virtual void update(float dt = 0);
+		update(dt:number ):void	{
+			this.nextFram();
+		}
+		// 		virtual const dragonBones::Rectangle & getRectangle();
+		getRectangle():dragonBones.Rectangle{
+			return this.getArmature().armatureData.aabb;
+		};
+		// 		virtual void changeAnchorPoint(float xy);
+		changeAnchorPoint(x:number,y:number):void{
+			std.changeAnchorPoint(this, x,y);
+		}
+		// 		virtual  void drawRange();
+		drawRange():void{
+			std.drawRange(this, 0x00FF00);
+		}
+	
 	}
 	export class  MovieClipSub extends MC 
 	{
-
-
 		transform:egret.Matrix;//	cocos2d::Mat4 ;
-		setTrans:boolean;
+		setTrans:boolean=false;
+		name:string="";
+        arm:dragonBones.Armature=null;
+		userData={};
 
-		name:string;
-		//void * userData;
-        arm:dragonBones.Armature;
- 		container:dragonBones.EgretArmatureDisplay;
-
-		public constructor() {
+		public constructor(mc:MC,slotName:string,defAniName:string) {
 			super();
+			this.mc = mc;
+			this.slotName = slotName;
+			this.display =null;
+			this.container = null;
+			this.slot = null;
+			this.bone = null;
+			if (mc && mc.isReady)
+				this.reinit();
+		};
+		
+		// virtual dragonBones::Armature *getArmature();
+		getArmature():dragonBones.Armature{
+			return this.arm;
+		};
+		// virtual dragonBones::Animation *getAnimation();
+		getAnimation():dragonBones.Animation	{
+			if (!this.arm)return null;
+			return this.arm.animation;
+		};
+		// virtual void setVisible(bool v);
+		setVisible(v:boolean):void
+		{
+			if (this._visible != v)
+				super.setVisible(v);
+			super.$setVisible(v);
+			this.container.$setVisible(v);
+			// if (this.container && this.container.visible != v)
+			// {
+			// 	cocos2d::Mat4 _transform = this.container.getNodeToParentTransform();
+			// 	if (!this.container.()){
+			// 		this.container.$setVisible(v);
+			// 		if(v)
+			// 			this.container.setNodeToParentTransform(_transform);
+			// 	}
+			// 	else{
+			// 		this.container.$setVisible(v);
+			// 		if (v && !setTrans){// && _transform.m[12] != transform.m[12] && _transform.m[13] != transform.m[13]
+			// 			//_transform.m[12] += transform.m[12];
+			// 			//_transform.m[13] += transform.m[13];
+			// 			this.container.setNodeToParentTransform(transform);
+			// 			this.setTrans = true;
+			// 		}
+			// 	}
+			// }
+		}
+		// virtual bool isVisible();
+		isVisible():boolean{
+			return this.visible &&  std.getNodeVisible(this.display);
+		}
+		// virtual cocos2d::Point getPosition();
+		getPosition():egret.Point
+		{
+			if (!this.isReady)
+				this.reinit();
+			var sp:egret.DisplayObjectContainer = <egret.DisplayObjectContainer>this.slot.getDisplay();
+			if (sp){
+				if (sp != this.display){
+					this.display = sp; 
+					this.container = <dragonBones.EgretArmatureDisplay>this.display;
+				}
+				return new egret.Point(sp.x,sp.y);
+			}else{
+				return new egret.Point(0, 0);
+			} 
+		}
+		// float getPositionX();
+		getPositionX():number{
+			if (!this.isReady)
+				this.reinit();
+			return this.display.x;
+		}
+		// float getPositionY();
+		getPositionY():number{
+			if (!this.isReady)
+				this.reinit();
+			return this.display.y;
+		}
+		// void setPosition(const cocos2d::Point &pos);
+		setPosition(x:number,y:number):void {
+			if (!this.isReady)
+				this.reinit();
+			this.display.$setX(x);
+			this.display.$setY(y);
+		}
+		// void setPositionX(float x);
+		setPositionX(x:number):void {
+			if (!this.isReady)
+				this.reinit();
+			this.display.$setX(x); 
+		}
+		// void setPositionY(float y);
+		setPositionY(y:number):void {
+			if (!this.isReady)
+				this.reinit();
+			this.display.$setY(y); 
+		}
+		// Size getContentSize();
+		getContentSize():egret.Point{
+			if (!this.isReady)
+				this.reinit();
+			return new egret.Point(this.display.x,this.display.y);
+		};
+		// Node* getDisplayNode();
+		getDisplayNode():dragonBones.EgretArmatureDisplay {
+			if (!this.isReady)
+				this.reinit();
+			return this.container;
+		};
+		// inline float getScale() { return getDisplayNode().getScale(); };
+		getScale():number {return (this.getScaleX()+this.getScaleY())/2; }
+		// inline float getScaleX() { return getDisplayNode().getScaleX(); };
+		getScaleX():number{ return this.getDisplayNode().$getScaleX(); };
+		// inline float getScaleY() { return getDisplayNode().getScaleY(); };
+		getScaleY():number{ return this.getDisplayNode().$getScaleY(); };
+
+		// inline void setScaleX(float s) {   getDisplayNode().setScaleX(s); };
+		setScaleX(s:number):void {  
+			 this.getDisplayNode().$setScaleX(s); 
+		}
+		// inline void setScaleY(float s) { getDisplayNode().setScaleY(s); };
+		setScaleY(s:number):void {  
+			 this.getDisplayNode().$setScaleY(s); 
+		}
+		// inline void setScale(float s) { getDisplayNode().setScale(s); };
+		setScale(s:number):void {  
+			 this.getDisplayNode().$setScaleX(s); 
+			 this.getDisplayNode().$setScaleY(s); 
+		}
+		// inline float getRotation(){ return getDisplayNode().getRotation(); };
+		getRotation():number{ return this.getDisplayNode().rotation; };
+		// inline void 	setRotation(float r){return getDisplayNode().setRotation(r); };
+		setRotation(r:number){return this.getDisplayNode().$setRotation(r); };
+        // virtual Vec2 convertToWorldSpace(const Vec2 & pos);
+		convertToWorldSpace(pos:egret.Point):egret.Point {
+			if(this.isReady && this.display && this.display.parent)
+				return this.display.localToGlobal(0,0);
+				// return this.display.parent.localToGlobal(this.display.x,this.display.y);
+			else
+				return new egret.Point(0, 0);
+		}
+        // virtual Vec2 localToGlobal(const Vec2 &  pos);
+		localToGlobal(x:number,y:number):egret.Point {
+			if(this.isReady && this.display)
+				return this.getDisplayNode().localToGlobal(x,y);
+			else
+				return new egret.Point(-1, -1);
+		};
+        // virtual Vec2 globalToLocal(const Vec2 &  pos);
+		globalToLocal(x:number,y:number):egret.Point{
+			if(this.isReady && this.display)
+				return this.getDisplayNode().globalToLocal(x,y);
+			else
+				return new egret.Point(-1, -1);
 		}
 
-		// MCText * createText(const string &  slot, bool reinit = false);
-        // MovieClipSub * createMovieClipSub(const string &  slot,bool reinit=false);
-        // MovieClip * createMovieClip(const string &  slot, const string &  rootPath, const string &  armName, const string &  dbName, bool reinit = false,bool delay=false);
-        // MovieClip * createMovieClip(const string &  slot, const string &  rootPath, const string &  dbName);
-        // MovieClip * createMovieClip(const string &  slot, MovieClip * mc, bool reinit = false);
-        // MCCase * createCase(const string &  slot, bool reinit = false, bool draw = false);
-        // MCSprite * createSprite(const string &  slot, const string &  file, bool reinit = false);
-        // MCSprite * createSprite(const string &  slot, Sprite* file, bool reinit = false);
-        // MCMask * createMask(const string &  slot, bool reinit = false);
-	
+        // virtual void gotoAndStop(int cf, const string &  aniName = "");
+		gotoAndStop( cf:number,  aniName:string=""):void{
+			if (!this.isReady && this.reinitType){
+				this.reinit();
+			}
+			if (!this.isReady)return;
+			super.gotoAndStop(cf, aniName);
+			this.reinitSubMcbs(); 
+		};
+		// inline virtual void setAlpha(float op) { BaseNode::setAlpha(getDisplayNode(), op); };
+		setAlpha(op:number):void { this.getDisplayNode().$setAlpha(op); };
+		// inline virtual float getAlpha() { return  BaseNode::getAlpha(getDisplayNode()); };
+		getAlpha():number{
+			return this.getDisplayNode().alpha;
+		}
+		// inline virtual string getName() { return getDisplayNode().getName(); };
+		getName():string { return this.getDisplayNode().name; };
+		// virtual float getWidth();
+		getWidth(){ 
+			return	 this.getDisplayNode().width*this.getScaleX();
+		}
+		// virtual float getHeight();
+		getHeight(){ 
+			return	 this.getDisplayNode().height*this.getScaleX();
+		}
+		// virtual   void setWidth(float w);
+		setWidth(w:number){ 
+			if (this.getDisplayNode().width > 0){
+				var r:number = w / (this.getDisplayNode().width*this.getScaleX());
+				this.setScaleX(this.getScaleX()*r);
+			}
+		}
+		// virtual   void setHeight(float h);
+		setHeight(h:number){
+ 			if (this.getDisplayNode().width > 0){
+				var r:number = h / (this.getDisplayNode().height*this.getScaleY());
+				this.setScaleY(this.getScaleY()*r);
+			}
+		};
+		// void setUserData(void * data) { this.userData = data; };
+		setUserData(name:string,data) { this.userData[name] = data; };
+		getUserData(name:string):any { return this.userData[name]; };
+        // virtual void update(float dt = 0);
+		update(dt:number):void{
+			this.nextFram();
+		};
+        // virtual void setName(const string & name) { this.name = name; };
+		setName(name:string) { this.name = name;if(this.display)this.display.name=name; };
+		reinit():boolean{
+			if (!this.slot){
+				if (this.mc.getArmature()){
+					this.slot = this.mc.getArmature().getSlot(this.slotName);
+					this.bone = this.mc.getArmature().getBone(this.slotName);
+					this.root = this.mc.getArmature().getBone("root");
+				}else{
+					return false;
+				}
+			}
+			if (!this.slot) 
+				return false;
+			if (this.arm == this.slot.armature)
+				return false;
+			this.arm = this.slot.armature;
+			if (this.arm){
+				var oldDis:egret.DisplayObjectContainer = this.display;
+				this.display =  <egret.DisplayObjectContainer>this.slot.display;
+				if (this.display){
+					this.display.name=(this.slot.name);
+					this.display.$setVisible(this.visible);
+					this.container = null;
+
+					var disPos:egret.Point = this.getDisPosition();
+					std.setAnchorPoint(this.display, this.display.width/2, this.display.height/2);
+					// std.setAnchorPoint(this.display, 0.5, 0.5);
+					std.setPosition(this.display,disPos);
+					this.setDisScale();
+					//std::changeAnchorPoint(display, 0.5);
+					if (<dragonBones.EgretArmatureDisplay>this.display)
+					{
+						this.container = <dragonBones.EgretArmatureDisplay>this.display;
+						std.setAnchorPoint(this.display, 0, 0);
+						std.changeAnchorPoint(this.container, this.display.width/2, this.display.height/2);
+						this.transform = this.container.$getMatrix();
+						if(this.bindListenType)
+						{
+							var type:number = this.bindListenType;
+							this.bindListenType = 0;
+							this.bindMovieListen(type);
+						}
+						//display.setPosition(display.getPosition() + display.getAnchorPointInPoints());
+					}
+					if (oldDis) { 
+						this.display.$setX(oldDis.x);
+						this.display.$setX(oldDis.y);
+					}
+					this.isReady = true;
+					//if (ISTYPE(MovieClip, this.mc)){
+					//	MovieClip *smc = ISTYPE(MovieClip, this.mc);
+					//	if (ISTYPE(MovieClipSub, smc.mc)){
+					//		std::changeAnchorPoint(display, 0.5);
+					//		smc.display.setPosition(smc.display.getPosition() + smc.display.getAnchorPointInPoints());
+					//	}
+					//	//smc.changeAnchorPoint(0.5);
+					//	//Vec2 absPos1 = smc.display.getAnchorPointInPoints();
+					//	//smc.setPosition(smc.getPosition() + absPos1);
+					//}
+
+					//disPos = getDisPosition();
+					//disPos=this.display.getParent().convertToNodeSpaceAR(disPos);
+					//this.display.setPosition(disPos);
+					//std::setAnchorPoint(display);
+					// std::map<std::string, dragonBones::AnimationData*> & animations = this.arm._armatureData.animations;
+					//for each (std::pair<std::string, dragonBones::AnimationData*> it in animations)
+					//{
+					//    std::string aniName = it.first;
+					//    int totalFrames = it.second.frameCount+ 1;//;
+					//    float duration = it.second.duration;
+					//    CCLOG("load %s totalFrames=%i duration=%f", aniName.c_str(), totalFrames, duration);
+					//}
+					//if (Common::String(slotName).EndsWith("Sphere")){
+					//	this.setPosition(100, 100);
+					//}
+					/*string defAniName = this.defAniName;
+					if (defAniName == "")*/
+
+					this.defAniName = this.arm._armatureData.defaultAnimation.name;
+					this.totalFrames = this.arm._armatureData.animations[this.defAniName].frameCount + 1;//;
+					//float duration = this.arm._armatureData.animations[defAniName].duration;
+					//CCLOG("load %s totalFrames=%i duration=%f", defAniName.c_str(), totalFrames, duration);
+					this.gotoAndStop(1);
+					this.reinitSubMcbs(true);
+					return true;
+				}else{
+					this.isReady = false;
+					return false;
+				}
+			}else{
+				this.isReady = false;
+			}
+			return false;
+		}
 	}
 
     // class MCText;
     // class MCCase;
 	// class MCSprite;
-	export class MCCase extends egret.DisplayObjectContainer{
-
-	}
-	export class MCMask extends egret.DisplayObjectContainer{
-	}
-	export class MCText extends eui.TextInput implements MovieClipSubBase
-	{
+	export class MCCase extends BaseNode implements MovieClipSubBase{
+		 _draw:boolean;
+		// MCCase(MC * mc, const string &  slotName, bool mouseEnabled=true, bool draw = false);
+		constructor(pmc?:MC, slotName?:string,mouseEnabled:boolean=true,draw:boolean=false){
+			super();
+			this.mc=pmc;
+			this.slotName=slotName;
+			this.name=(slotName);
+			this.reinit();
+			if (mouseEnabled)
+				this.enableMouseHandler(std.useNodeEvent);
+			this.mouseEnabled = mouseEnabled;
+			//addEventNode(this);
+		}
+		// inline virtual void setAlpha(float op) { BaseNode::setAlpha(this, op); };
+		// inline virtual float getAlpha() {return BaseNode::getAlpha(this); };
+		// virtual void setVisible(bool v);
+		// virtual bool reinit();
+		// inline void stop(){};
+	
+	////////MovieClipSubBase////////////////////////////////////////////
 		isReady:boolean=false;
 		reinitType:number=0;
         mc:MC=null;
@@ -856,58 +1644,13 @@ module std{
 		root:dragonBones.Bone=null;
         display:egret.DisplayObjectContainer=null;
 		disPos:egret.Point;
-        slotName:string;
-		visible:boolean=true;
-		
-
-		constructor(pmc?:MC, slotName?:string){
-			super();
-			this.isReady=false;
-			this.reinitType=0;
-			this.mc=null;
-			this.slot=null;
-			this.bone=null;
-			this.root=null;
-			this.display=null;
-			this.disPos=new egret.Point(0,0);
-			this.slotName="";
-			this.visible=true;
-
-			this.textColor=0xffff00;
-			if(pmc){
-				// this->setFontName("Arial");//Arial
-				// //this->setFontName("宋体");//Arial
-				// this->setFontSize(14);
-				// //setNodeType("MCText");
-				// this->setColor(Color3B::YELLOW);
-				// this->setTextHorizontalAlignment(TextHAlignment::LEFT);
-				// this->setTextVerticalAlignment(TextVAlignment::CENTER);
-				// std::setAnchorPoint(this, 0);
-				// //this->ignoreContentAdaptWithSize(false);
-				// this->autorelease();
-				// this->mc = mc;
-				// this->slotName = slotName;
-				// this->setName(slotName);
-				// reinit();
-			}else{
-				std.setAnchorPoint(this, 0,0);
-			}
-		} 
-		// setAlpha(op:number):void {
-		// 	 BaseNode::setAlpha(this, op); };
-		// inline virtual float getAlpha() { return  BaseNode::getAlpha(this); };
-		// virtual void setVisible(bool v);
-		// virtual bool reinit();
-
-
-		
-		 
-		setVisible(v:boolean):void{
-			this.visible = v;
+        slotName:string ;
+		_visible:boolean=true;
+		getParentMC():MC{
+		  	return this.mc;
 		}
-		getParentMC():MC 
-		{ 
-			return this.mc;
+		setVisible(v:boolean):void{
+			this._visible = v;
 		}
 		getDisPosition():egret.Point{
 			var x:number = this.bone.origin.x;
@@ -924,36 +1667,37 @@ module std{
 			else{
 				y = -(y);
 			}
-			//Size mcSize = dis->getContentSize();
-			//dragonBones::Transform*  global = root->getGlobal();
-			//Node * disPar = dis->getParent();
-			//dragonBones::Transform*  offset = root->getOffset();
-			//const dragonBones::Rectangle & aabb = mc->getArmature()->getArmatureData()->aabb;
+			//Size mcSize = dis.getContentSize();
+			//dragonBones::Transform*  global = root.getGlobal();
+			//Node * disPar = dis.getParent();
+			//dragonBones::Transform*  offset = root.getOffset();
+			//const dragonBones::Rectangle & aabb = mc.getArmature().getArmatureData().aabb;
 			//if (ISTYPE(dragonBones::CCArmatureDisplay, disPar)){
 			//	dragonBones::CCArmatureDisplay * aniDis = ISTYPE(dragonBones::CCArmatureDisplay, disPar);
-			//	const dragonBones::Rectangle & aabb = aniDis->getArmature()->getArmatureData()->aabb;
+			//	const dragonBones::Rectangle & aabb = aniDis.getArmature().getArmatureData().aabb;
 			//	y = y;
 			//}
 			this.disPos.x = x;
-			this.disPos.y = y;// = disPar->convertToNodeSpaceAR(Vec2(x, y));
+			this.disPos.y = y;// = disPar.convertToNodeSpaceAR(Vec2(x, y));
 			return this.disPos;
 		}
-		getDisArPos():egret.Point{
+		getDisArPos():egret.Point
+		{
 			var thisPos:egret.Point=new egret.Point(0,0);
 			//return  thisPos;
-			var dis:egret.DisplayObjectContainer = <egret.DisplayObjectContainer>this.slot.display;
-			if (!(this instanceof MCCase) && !(this instanceof MCText))//&& !ISTYPE(MovieClip, this)
-			{
+			var dis:egret.DisplayObjectContainer = <egret.DisplayObjectContainer>(this.slot.display);
+			if (!(this instanceof MCCase) && !(this instanceof MCText))
+			{//&& !ISTYPE(MovieClip, this)
 				std.setAnchorPoint(dis, 0.5, 0.5);
-				//thisPos = dis->convertToNodeSpace(dis->getPosition());
+				//thisPos = dis.convertToNodeSpace(dis.getPosition());
 				thisPos.x=dis.$anchorOffsetX;
 				thisPos.y=dis.$anchorOffsetY;
 				//dis.globalToLocal(dis.x,dis.y,thisPos);
 			}
-			//if (ISTYPE(MovieClipSub, this->mc) && ISTYPE(MCCase, this)){
-			//	MovieClipSub * mcs = ISTYPE(MovieClipSub, this->mc);
-			//	Size mcSize = mcs->container->getContentSize();
-			//	const dragonBones::Rectangle & aabb = mcs->container->getArmature()->getArmatureData()->aabb;
+			//if (ISTYPE(MovieClipSub, this.mc) && ISTYPE(MCCase, this)){
+			//	MovieClipSub * mcs = ISTYPE(MovieClipSub, this.mc);
+			//	Size mcSize = mcs.container.getContentSize();
+			//	const dragonBones::Rectangle & aabb = mcs.container.getArmature().getArmatureData().aabb;
 			//	thisPos.x = -aabb.width / 2;
 			//	thisPos.y = -aabb.height / 2;
 			// }  
@@ -972,7 +1716,7 @@ module std{
 			if (this.root) r *= this.root.origin.rotation;
 			this.display.$setRotation(r);
 		}
-		initPos():void{};
+		initPos():void{}
 		reinit():boolean{
 			if (!this.slot)
 			{
@@ -1020,7 +1764,7 @@ module std{
 					else if (this.slot._displayData)
 						this.display.name=(this.slot._displayData.name);
 					if((this instanceof MovieClip) ||  (this instanceof MCMask))
-						this.display.$setVisible(this.visible);
+						this.display.$setVisible(this._visible);
 					if (!(this instanceof MovieClip)){
 						this.display.addChildAt(thsi,9999);
 					}
@@ -1046,7 +1790,7 @@ module std{
 					// if (!(this instanceof MovieClip))
 					// 	thsi.release();
 					if ((this instanceof MovieClipSub) || (this instanceof MCMask))
-						this.display.$setVisible(this.visible);
+						this.display.$setVisible(this._visible);
 					if ((this instanceof MovieClip))
 						thsi.removeChildren();//.removeAllChildren();
 					else
@@ -1057,7 +1801,403 @@ module std{
 			this.isReady = false; 
 			return false;
 		}
+	
+	}
+
+	export class MCText extends eui.TextInput implements MovieClipSubBase
+	{
+ 
+		
+
+		constructor(pmc?:MC, slotName?:string){
+			super();
+			this.isReady=false;
+			this.reinitType=0;
+			this.mc=null;
+			this.slot=null;
+			this.bone=null;
+			this.root=null;
+			this.display=null;
+			this.disPos=new egret.Point(0,0);
+			this.slotName="";
+			this._visible=true;
+
+			this.textColor=0xffff00;
+			if(pmc){
+				// this.setFontName("Arial");//Arial
+				// //this.setFontName("宋体");//Arial
+				// this.setFontSize(14);
+				// //setNodeType("MCText");
+				// this.setColor(Color3B::YELLOW);
+				// this.setTextHorizontalAlignment(TextHAlignment::LEFT);
+				// this.setTextVerticalAlignment(TextVAlignment::CENTER);
+				// std::setAnchorPoint(this, 0);
+				// //this.ignoreContentAdaptWithSize(false);
+				// this.autorelease();
+				// this.mc = mc;
+				// this.slotName = slotName;
+				// this.setName(slotName);
+				// reinit();
+			}else{
+				std.setAnchorPoint(this, 0,0);
+			}
+		} 
+		// setAlpha(op:number):void {
+		// 	 BaseNode::setAlpha(this, op); };
+		// inline virtual float getAlpha() { return  BaseNode::getAlpha(this); };
+		// virtual void setVisible(bool v);
+		// virtual bool reinit();
+
+
+		
+		
+	////////MovieClipSubBase////////////////////////////////////////////
+		isReady:boolean=false;
+		reinitType:number=0;
+        mc:MC=null;
+        slot:dragonBones.Slot=null;
+		bone:dragonBones.Bone=null;
+		root:dragonBones.Bone=null;
+        display:egret.DisplayObjectContainer=null;
+		disPos:egret.Point;
+        slotName:string ;
+		_visible:boolean=true;
+		getParentMC():MC{
+		  	return this.mc;
+		}
+		setVisible(v:boolean):void{
+			this._visible = v;
+		}
+		getDisPosition():egret.Point{
+			var x:number = this.bone.origin.x;
+			var y:number = this.bone.origin.y;
+			var x1:number = this.slot.origin.x;
+			var y1:number = this.slot.origin.y;
+			x += x1;
+			y += y1;
+			var dis:egret.DisplayObjectContainer = <egret.DisplayObjectContainer>this.slot.display;
+			if (this.root){
+				var orgin:dragonBones.Transform = this.root.origin;
+				y = -(orgin.y + y);
+			}
+			else{
+				y = -(y);
+			}
+			//Size mcSize = dis.getContentSize();
+			//dragonBones::Transform*  global = root.getGlobal();
+			//Node * disPar = dis.getParent();
+			//dragonBones::Transform*  offset = root.getOffset();
+			//const dragonBones::Rectangle & aabb = mc.getArmature().getArmatureData().aabb;
+			//if (ISTYPE(dragonBones::CCArmatureDisplay, disPar)){
+			//	dragonBones::CCArmatureDisplay * aniDis = ISTYPE(dragonBones::CCArmatureDisplay, disPar);
+			//	const dragonBones::Rectangle & aabb = aniDis.getArmature().getArmatureData().aabb;
+			//	y = y;
+			//}
+			this.disPos.x = x;
+			this.disPos.y = y;// = disPar.convertToNodeSpaceAR(Vec2(x, y));
+			return this.disPos;
+		}
+		getDisArPos():egret.Point
+		{
+			var thisPos:egret.Point=new egret.Point(0,0);
+			//return  thisPos;
+			var dis:egret.DisplayObjectContainer = <egret.DisplayObjectContainer>(this.slot.display);
+			if (!(this instanceof MCCase) && !(this instanceof MCText))
+			{//&& !ISTYPE(MovieClip, this)
+				std.setAnchorPoint(dis, 0.5, 0.5);
+				//thisPos = dis.convertToNodeSpace(dis.getPosition());
+				thisPos.x=dis.$anchorOffsetX;
+				thisPos.y=dis.$anchorOffsetY;
+				//dis.globalToLocal(dis.x,dis.y,thisPos);
+			}
+			//if (ISTYPE(MovieClipSub, this.mc) && ISTYPE(MCCase, this)){
+			//	MovieClipSub * mcs = ISTYPE(MovieClipSub, this.mc);
+			//	Size mcSize = mcs.container.getContentSize();
+			//	const dragonBones::Rectangle & aabb = mcs.container.getArmature().getArmatureData().aabb;
+			//	thisPos.x = -aabb.width / 2;
+			//	thisPos.y = -aabb.height / 2;
+			// }  
+			return  thisPos; 
+		}
+		setDisScale():void{
+			var scx:number = this.slot.origin.scaleX * this.bone.origin.scaleX;
+			if (this.root) 
+				scx *= this.root.origin.scaleX;
+			this.display.$setScaleX(scx);
+			var scy:number =this. slot.origin.scaleY * this.bone.origin.scaleY;
+			if (this.root) 
+				scy *= this.root.origin.scaleY;
+			this.display.$setScaleY(scy);
+			var r:number = this.slot.origin.rotation * this.bone.origin.rotation;
+			if (this.root) r *= this.root.origin.rotation;
+			this.display.$setRotation(r);
+		}
+		initPos():void{}
+		reinit():boolean{
+			if (!this.slot)
+			{
+				if (this.mc.getArmature())
+				{
+					this.slot = this.mc.getArmature().getSlot(this.slotName);
+					this.bone = this.mc.getArmature().getBone(this.slotName);
+					this.root = this.mc.getArmature().getBone("root");
+				}
+				else
+					return false;
+			}
+			if (!this.slot) return false;
+			if (this.display == this.slot.getDisplay())
+				return false;
+ 
+
+			var thsi:egret.DisplayObjectContainer =null;
+			if( this instanceof egret.DisplayObjectContainer)
+				thsi=<egret.DisplayObjectContainer>this;
+			var dis:egret.DisplayObject = <egret.DisplayObject> this.slot.getDisplay();
+			if (dis && dis instanceof egret.Sprite)
+			{
+				this.isReady = true;
+				var disPos = this.getDisPosition();
+				if (!this.display)
+				{
+					this.display = dis;
+					std.setPosition(this.display,disPos);
+					//this.display.setPosition(disPos  );
+					this.setDisScale();
+					std.setAnchorPoint(this.display, 0.5, 0.5);
+					//std::setAnchorPoint(display, Vec2(0, 0));
+					//std::changeAnchorPoint(display, 0.5);
+					this.disPos = getAnchorPointInPoints(this.display);
+					//display.setPosition(disPos - display.getAnchorPointInPoints());
+					std.changeAnchorPoint(this.display, 0,0);
+					if (!(this instanceof MovieClip))
+					{
+						//std.setAnchorPoint(display, 0, 0);
+						//std.setAnchorPoint(ISTYPE(Node, this), Vec2(0.5, 0.5));
+					}
+					if (!(this instanceof MovieClip))
+						this.display.name=(this.slotName);
+					else if (this.slot._displayData)
+						this.display.name=(this.slot._displayData.name);
+					if((this instanceof MovieClip) ||  (this instanceof MCMask))
+						this.display.$setVisible(this._visible);
+					if (!(this instanceof MovieClip)){
+						this.display.addChildAt(thsi,9999);
+					}
+					return true;
+				}
+				else
+				{
+					// if (!(this instanceof MovieClip))
+					// 	thsi.retain();
+					this.display.removeChild(thsi);
+					this.display = dis;
+					std.setPosition(this.display,disPos);
+					this.setDisScale();
+					std.setAnchorPoint(this.display, 0.5, 0.5);
+					this.disPos = std.getAnchorPointInPoints(this.display);
+					//display.setPosition(disPos - display.getAnchorPointInPoints());
+					if (!(this instanceof MCCase) && !(this instanceof MCText))
+						std.changeAnchorPoint(dis, 0,0);
+					if (!(this instanceof MovieClip))
+						this.display.name=this.slotName;
+					else if (this.slot._displayData)
+						this.display.name=(this.slot._displayData.name);
+					// if (!(this instanceof MovieClip))
+					// 	thsi.release();
+					if ((this instanceof MovieClipSub) || (this instanceof MCMask))
+						this.display.$setVisible(this._visible);
+					if ((this instanceof MovieClip))
+						thsi.removeChildren();//.removeAllChildren();
+					else
+						this.display.addChildAt(thsi, 9999);
+					return true;
+				}
+			}
+			this.isReady = false; 
+			return false;
+		}
+	
+	
 	}
 	
+	export class MCMask extends egret.DisplayObjectContainer implements MovieClipSubBase{
+
+	
+	////////MovieClipSubBase////////////////////////////////////////////
+		isReady:boolean=false;
+		reinitType:number=0;
+        mc:MC=null;
+        slot:dragonBones.Slot=null;
+		bone:dragonBones.Bone=null;
+		root:dragonBones.Bone=null;
+        display:egret.DisplayObjectContainer=null;
+		disPos:egret.Point;
+        slotName:string ;
+		_visible:boolean=true;
+		getParentMC():MC{
+		  	return this.mc;
+		}
+		setVisible(v:boolean):void{
+			//super.$setVisible(v);
+			this._visible = v;
+		}
+		getDisPosition():egret.Point{
+			var x:number = this.bone.origin.x;
+			var y:number = this.bone.origin.y;
+			var x1:number = this.slot.origin.x;
+			var y1:number = this.slot.origin.y;
+			x += x1;
+			y += y1;
+			var dis:egret.DisplayObjectContainer = <egret.DisplayObjectContainer>this.slot.display;
+			if (this.root){
+				var orgin:dragonBones.Transform = this.root.origin;
+				y = -(orgin.y + y);
+			}
+			else{
+				y = -(y);
+			}
+			//Size mcSize = dis.getContentSize();
+			//dragonBones::Transform*  global = root.getGlobal();
+			//Node * disPar = dis.getParent();
+			//dragonBones::Transform*  offset = root.getOffset();
+			//const dragonBones::Rectangle & aabb = mc.getArmature().getArmatureData().aabb;
+			//if (ISTYPE(dragonBones::CCArmatureDisplay, disPar)){
+			//	dragonBones::CCArmatureDisplay * aniDis = ISTYPE(dragonBones::CCArmatureDisplay, disPar);
+			//	const dragonBones::Rectangle & aabb = aniDis.getArmature().getArmatureData().aabb;
+			//	y = y;
+			//}
+			this.disPos.x = x;
+			this.disPos.y = y;// = disPar.convertToNodeSpaceAR(Vec2(x, y));
+			return this.disPos;
+		}
+		getDisArPos():egret.Point
+		{
+			var thisPos:egret.Point=new egret.Point(0,0);
+			//return  thisPos;
+			var dis:egret.DisplayObjectContainer = <egret.DisplayObjectContainer>(this.slot.display);
+			if (!(this instanceof MCCase) && !(this instanceof MCText))
+			{//&& !ISTYPE(MovieClip, this)
+				std.setAnchorPoint(dis, 0.5, 0.5);
+				//thisPos = dis.convertToNodeSpace(dis.getPosition());
+				thisPos.x=dis.$anchorOffsetX;
+				thisPos.y=dis.$anchorOffsetY;
+				//dis.globalToLocal(dis.x,dis.y,thisPos);
+			}
+			//if (ISTYPE(MovieClipSub, this.mc) && ISTYPE(MCCase, this)){
+			//	MovieClipSub * mcs = ISTYPE(MovieClipSub, this.mc);
+			//	Size mcSize = mcs.container.getContentSize();
+			//	const dragonBones::Rectangle & aabb = mcs.container.getArmature().getArmatureData().aabb;
+			//	thisPos.x = -aabb.width / 2;
+			//	thisPos.y = -aabb.height / 2;
+			// }  
+			return  thisPos; 
+		}
+		setDisScale():void{
+			var scx:number = this.slot.origin.scaleX * this.bone.origin.scaleX;
+			if (this.root) 
+				scx *= this.root.origin.scaleX;
+			this.display.$setScaleX(scx);
+			var scy:number =this. slot.origin.scaleY * this.bone.origin.scaleY;
+			if (this.root) 
+				scy *= this.root.origin.scaleY;
+			this.display.$setScaleY(scy);
+			var r:number = this.slot.origin.rotation * this.bone.origin.rotation;
+			if (this.root) r *= this.root.origin.rotation;
+			this.display.$setRotation(r);
+		}
+		initPos():void{}
+		reinit():boolean{
+			if (!this.slot)
+			{
+				if (this.mc.getArmature())
+				{
+					this.slot = this.mc.getArmature().getSlot(this.slotName);
+					this.bone = this.mc.getArmature().getBone(this.slotName);
+					this.root = this.mc.getArmature().getBone("root");
+				}
+				else
+					return false;
+			}
+			if (!this.slot) return false;
+			if (this.display == this.slot.getDisplay())
+				return false;
  
+
+			var thsi:egret.DisplayObjectContainer =null;
+			if( this instanceof egret.DisplayObjectContainer)
+				thsi=<egret.DisplayObjectContainer>this;
+			var dis:egret.DisplayObject = <egret.DisplayObject> this.slot.getDisplay();
+			if (dis && dis instanceof egret.Sprite)
+			{
+				this.isReady = true;
+				var disPos = this.getDisPosition();
+				if (!this.display)
+				{
+					this.display = dis;
+					std.setPosition(this.display,disPos);
+					//this.display.setPosition(disPos  );
+					this.setDisScale();
+					std.setAnchorPoint(this.display, 0.5, 0.5);
+					//std::setAnchorPoint(display, Vec2(0, 0));
+					//std::changeAnchorPoint(display, 0.5);
+					this.disPos = getAnchorPointInPoints(this.display);
+					//display.setPosition(disPos - display.getAnchorPointInPoints());
+					std.changeAnchorPoint(this.display, 0,0);
+					if (!(this instanceof MovieClip))
+					{
+						//std.setAnchorPoint(display, 0, 0);
+						//std.setAnchorPoint(ISTYPE(Node, this), Vec2(0.5, 0.5));
+					}
+					if (!(this instanceof MovieClip))
+						this.display.name=(this.slotName);
+					else if (this.slot._displayData)
+						this.display.name=(this.slot._displayData.name);
+					if((this instanceof MovieClip) ||  (this instanceof MCMask))
+						this.display.$setVisible(this._visible);
+					if (!(this instanceof MovieClip)){
+						this.display.addChildAt(thsi,9999);
+					}
+					return true;
+				}
+				else
+				{
+					// if (!(this instanceof MovieClip))
+					// 	thsi.retain();
+					this.display.removeChild(thsi);
+					this.display = dis;
+					std.setPosition(this.display,disPos);
+					this.setDisScale();
+					std.setAnchorPoint(this.display, 0.5, 0.5);
+					this.disPos = std.getAnchorPointInPoints(this.display);
+					//display.setPosition(disPos - display.getAnchorPointInPoints());
+					if (!(this instanceof MCCase) && !(this instanceof MCText))
+						std.changeAnchorPoint(dis, 0,0);
+					if (!(this instanceof MovieClip))
+						this.display.name=this.slotName;
+					else if (this.slot._displayData)
+						this.display.name=(this.slot._displayData.name);
+					// if (!(this instanceof MovieClip))
+					// 	thsi.release();
+					if ((this instanceof MovieClipSub) || (this instanceof MCMask))
+						this.display.$setVisible(this._visible);
+					if ((this instanceof MovieClip))
+						thsi.removeChildren();//.removeAllChildren();
+					else
+						this.display.addChildAt(thsi, 9999);
+					return true;
+				}
+			}
+			this.isReady = false; 
+			return false;
+		}
+	
+
+
+
+	
+	
+	}
+
+
 }
