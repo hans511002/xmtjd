@@ -1625,7 +1625,7 @@ module std{
 			this.name=(slotName);
 			this.reinit();
 			if (mouseEnabled)
-				this.enableMouseHandler(std.useNodeEvent);
+				this.enableMouseHandler(std.useNodeEvent?1:0);
 			this.mouseEnabled = mouseEnabled;
 			//addEventNode(this);
 		}
