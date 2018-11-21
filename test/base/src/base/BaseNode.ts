@@ -217,14 +217,6 @@ module std{
 				}
 				if(listen)
 					this.addEventListener("touchCancel",this.onTouchCancelled,this,false);
-    
-				// touchOnelistener = cocos2d::EventListenerTouchOneByOne::create();
-				// touchOnelistener.onTouchBegan = CC_CALLBACK_2(BaseNode::onTouchBegan, this);
-				// touchOnelistener.onTouchEnded = CC_CALLBACK_2(BaseNode::onTouchEnded, this);
-				// touchOnelistener.onTouchCancelled = CC_CALLBACK_2(BaseNode::onTouchCancelled, this);
-				// touchOnelistener.onTouchMoved = CC_CALLBACK_2(BaseNode::onTouchMoved, this);
-				// //touchOnelistener.setSwallowTouches(true);
-				// this.getEventDispatcher().addEventListenerWithSceneGraphPriority(touchOnelistener, this);
 			}
 		};
 		onTouchMoved(e:egret.TouchEvent){
