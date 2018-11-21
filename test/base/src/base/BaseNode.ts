@@ -276,7 +276,7 @@ module std{
 			}
 		}
 	}
-	export class MovieClipSubBase{
+	export class MovieClipSubBase extends BaseNode{
 		isReady:boolean=false;
 		reinitType:number=0;
         mc:MC=null;
@@ -289,6 +289,7 @@ module std{
 		_visible:boolean=true;
 		
 		public constructor() {
+			super();
 		 	this.isReady=false;
 			this.reinitType=0;
 			this.mc=null;
@@ -472,7 +473,7 @@ module std{
 		}
 		return mcbs;
 	};
-  	export  class MC extends BaseNode implements MovieClipSubBase
+  	export  class MC extends   MovieClipSubBase
 	{
 		//直接子mcbs 
 		submcbs:Array<MovieClipSubBase>;
@@ -1651,7 +1652,7 @@ module std{
     // class MCUI;
     // class MCCase;
 	// class MCSprite;
-	export class MCCase extends BaseNode implements MovieClipSubBase{
+	export class MCCase extends   MovieClipSubBase{
 		 _draw:boolean;
 		// MCCase(MC * mc, const string &  slotName, bool mouseEnabled=true, bool draw = false);
 		constructor(pmc?:MC, slotName?:string,mouseEnabled:boolean=true,draw:boolean=false){
@@ -1659,7 +1660,8 @@ module std{
 			this.mc=pmc;
 			this.slotName=slotName;
 			this.name=(slotName);
-			this.reinit();
+			if(this.mc)
+				this.reinit();
 			if (mouseEnabled)
 				this.enableMouseHandler(std.useNodeEvent?1:0);
 			this.mouseEnabled = mouseEnabled;
@@ -1864,12 +1866,12 @@ module std{
 	}
 
 	export class MCUI extends MovieClipSubBase{
-		container:eui.UIComponent;
-	// }
-	// //eui.TextInput 
-	// export class MCUI extends eui.Label implements MovieClipSubBase
-	// {
- 		constructor(con:eui.UIComponent,pmc?:MC, slotName?:string){
+		container:egret.DisplayObject;
+		// }
+		// //eui.TextInput 
+		// export class MCUI extends eui.Label implements MovieClipSubBase
+		// {
+ 		constructor(con:egret.DisplayObject,pmc?:MC, slotName?:string){
 			super();
 			this.container=con;
 			
@@ -2102,7 +2104,7 @@ module std{
 	
 	}
 	
-	export class MCMask extends egret.DisplayObjectContainer implements MovieClipSubBase{
+	export class MCMask extends  MovieClipSubBase{
 
 	
 	////////MovieClipSubBase////////////////////////////////////////////
