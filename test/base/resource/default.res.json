@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "egret_icon_png,description_json,BulletTower5_1_mc_ske_json,BulletTower5_1_mc_tex_json,BulletTower5_1_mc_tex_png",
+			"keys": "egret_icon_png,description_json,BulletTower5_1_mc_ske_json,BulletTower5_1_mc_tex_json,BulletTower5_1_mc_tex_png,worldCast_mc_ske_json,worldCast_mc_tex_json,worldCast_mc_tex_png,WorldInterface_mc_ske_json,WorldInterface_mc_tex_json,WorldInterface_mc_tex_png,worldLive_mc_ske_json,worldLive_mc_tex_json,worldLive_mc_tex_png,worldSphere_mc_ske_json,worldSphere_mc_tex_json,worldSphere_mc_tex_png,worldStart_mc_ske_json,worldStart_mc_tex_json,worldStart_mc_tex_png",
 			"name": "preload"
 		}
 	],
@@ -9,7 +9,7 @@
 		{
 			"name": "default.res.json",
 			"type": "json",
-			"url":"default.res.json"
+			"url": "default.res.json"
 		},
 		{
 			"name": "egret_icon_png",
@@ -35,6 +35,81 @@
 			"name": "BulletTower5_1_mc_tex_png",
 			"type": "image",
 			"url": "BulletTower5_1_mc/BulletTower5_1_mc_tex.png"
+		},
+		{
+			"name": "worldCast_mc_ske_json",
+			"type": "json",
+			"url": "work/worldCast_mc/worldCast_mc_ske.json"
+		},
+		{
+			"name": "worldCast_mc_tex_json",
+			"type": "json",
+			"url": "work/worldCast_mc/worldCast_mc_tex.json"
+		},
+		{
+			"name": "worldCast_mc_tex_png",
+			"type": "image",
+			"url": "work/worldCast_mc/worldCast_mc_tex.png"
+		},
+		{
+			"name": "WorldInterface_mc_ske_json",
+			"type": "json",
+			"url": "work/WorldInterface_mc/WorldInterface_mc_ske.json"
+		},
+		{
+			"name": "WorldInterface_mc_tex_json",
+			"type": "json",
+			"url": "work/WorldInterface_mc/WorldInterface_mc_tex.json"
+		},
+		{
+			"name": "WorldInterface_mc_tex_png",
+			"type": "image",
+			"url": "work/WorldInterface_mc/WorldInterface_mc_tex.png"
+		},
+		{
+			"name": "worldLive_mc_ske_json",
+			"type": "json",
+			"url": "work/worldLive_mc/worldLive_mc_ske.json"
+		},
+		{
+			"name": "worldLive_mc_tex_json",
+			"type": "json",
+			"url": "work/worldLive_mc/worldLive_mc_tex.json"
+		},
+		{
+			"name": "worldLive_mc_tex_png",
+			"type": "image",
+			"url": "work/worldLive_mc/worldLive_mc_tex.png"
+		},
+		{
+			"name": "worldSphere_mc_ske_json",
+			"type": "json",
+			"url": "work/worldSphere_mc/worldSphere_mc_ske.json"
+		},
+		{
+			"name": "worldSphere_mc_tex_json",
+			"type": "json",
+			"url": "work/worldSphere_mc/worldSphere_mc_tex.json"
+		},
+		{
+			"name": "worldSphere_mc_tex_png",
+			"type": "image",
+			"url": "work/worldSphere_mc/worldSphere_mc_tex.png"
+		},
+		{
+			"name": "worldStart_mc_ske_json",
+			"type": "json",
+			"url": "work/worldStart_mc/worldStart_mc_ske.json"
+		},
+		{
+			"name": "worldStart_mc_tex_json",
+			"type": "json",
+			"url": "work/worldStart_mc/worldStart_mc_tex.json"
+		},
+		{
+			"name": "worldStart_mc_tex_png",
+			"type": "image",
+			"url": "work/worldStart_mc/worldStart_mc_tex.png"
 		}
 	]
 }
