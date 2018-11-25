@@ -11,10 +11,11 @@
 		"libs/modules/eui/eui.js"
 	],
 	"game": [
-		"bin-debug/LoadingUI.js",
 		"bin-debug/base/BaseNode.js",
+		"bin-debug/LoadingUI.js",
 		"bin-debug/Main.js",
 		"bin-debug/mcTest.js",
-		"bin-debug/Platform.js"
+		"bin-debug/Platform.js",
+		"bin-debug/WorldInterface_mc.js"
 	]
 }

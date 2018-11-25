@@ -191,7 +191,21 @@ module std{
 		// 	}
 		// }
 	};
-
+	export function createBitmapByName(name: string):egret.Bitmap {
+        let result = new egret.Bitmap();
+        let texture: egret.Texture = RES.getRes(name);
+        result.texture = texture;
+        return result;
+    }
+	export function createBitmap(file: string):egret.Bitmap {
+		if(!urlMap[file])
+			initResMap();
+		if(!urlMap[file])return null;
+        let result = new egret.Bitmap();
+        let texture: egret.Texture = RES.getRes(urlMap[file]);
+        result.texture = texture;
+        return result;
+    }
 }
   
 module std{
@@ -208,6 +222,9 @@ module std{
 		setPosition(x:number,y:number):void{
 			this.$setX(x);
 			this.$setY(y);
+		}
+		setMouseEnabled(mouseEnabled:boolean){
+			this.mouseEnabled=mouseEnabled;
 		}
 		////////////////////////
 		$onAddToStage(stage: egret.Stage, nestLevel: number): void{
@@ -476,9 +493,9 @@ module std{
   	export  class MC extends   MovieClipSubBase
 	{
 		//直接子mcbs 
-		submcbs:Array<MovieClipSubBase>;
+		submcbs:Array<MovieClipSubBase>=[];
 		//所有全部子集群,用于自动删除,包括孙子后的
-		allSubMcbs:Array<MovieClipSubBase>;
+		allSubMcbs:Array<MovieClipSubBase>=[];
 		// allSubMcs:Array<MovieClipSub>;
 
 		currentFrame:number=0;
@@ -521,7 +538,7 @@ module std{
 			this.currentFrame++;
 			this.gotoAndStop(this.currentFrame);
 		}
-		stop(_aniName:string):void
+		stop(_aniName:string=""):void
 		{
 			if (!this.getArmature() || !this.getAnimation())return;
 			var aniName:string = _aniName?_aniName:"";
@@ -764,26 +781,74 @@ module std{
 	//////////////create ///////////////
 		createText(slot:string, reinit:number = 0):MCUI
 		{
-			var mt:MCUI = new MCUI(new eui.TextInput(),this, slot);
-			mt.reinitType = reinit;
-			this.addMCbs(mt, reinit);
+			var mt:MCUI = new MCUI(new eui.TextInput(),this, slot,reinit);
+			// mt.reinitType = reinit;
+			// this.addMCbs(mt, reinit);
         	return mt;
 		}
-		createLabel(slot:string, reinit:number = 0):MCUI 
+		createLabel(slot:string, reinit:number = 0):MCLabel 
 		{
-			var mt:MCUI = new MCUI(new eui.Label(),this, slot);
-			mt.reinitType = reinit;
-			this.addMCbs(mt, reinit);
+			var mt:MCLabel = new MCLabel(this, slot,reinit);
+			// mt.reinitType = reinit;
+			// this.addMCbs(mt, reinit);
         	return mt;
 		}
         // MovieClipSub * createMovieClipSub(const string &  slot,bool reinit=false);
+		createMovieClipSub(slotName:string,reinitType:number=0):MovieClipSub{
+			var mcs:MovieClipSub = new MovieClipSub(this, slotName,"",reinitType);
+			// mcs.reinitType = reinitType;
+			// this.addMCbs(mcs, reinitType);
+			return mcs;
+		};
         // MovieClip * createMovieClip(const string &  slot, const string &  rootPath, const string &  armName, const string &  dbName, bool reinit = false,bool delay=false);
         // MovieClip * createMovieClip(const string &  slot, const string &  rootPath, const string &  dbName);
         // MovieClip * createMovieClip(const string &  slot, MovieClip * mc, bool reinit = false);
+		createMovieClip(slot:string, rootPath:string, armName:string, dbName:string, reinit:number , delay:boolean=false ):MovieClip{
+			// public constructor(rootPath?:string,armName?:string,dbName?:string,defAniName:string="" ) {
+			//var mc:MovieClip = new MovieClip( rootPath, armName, dbName, "");
+			var mc:MovieClip=  new MovieClip();
+			if(armName.length==0){
+				reinit|=1;
+			}
+			mc.setMcInit(this,slot,rootPath,dbName,armName,"",delay,reinit);
+			return mc;
+		}
+    	addMovieClip(slot:string, mc:MovieClip, reinit:number=0 ):MovieClip
+		{
+			mc.reinitType = reinit;
+			mc.mc = this;
+			mc.display = null;
+			mc.slotName = slot;
+			mc.reinit();
+			this.addMCbs(mc, reinit);
+			return mc;
+		}
         // MCCase * createCase(const string &  slot, bool reinit = false, bool draw = false);
+		createCase(slotName:string,reinit:number=0,draw:boolean=false):MCCase
+		{
+			// constructor(pmc?:MC, slotName?:string,mouseEnabled:boolean=true,draw:boolean=false){
+			var mc:MCCase=  new MCCase(this, slotName, true, draw,reinit);
+			// mc.reinitType = reinit;
+			// this.addMCbs(mc, reinit);
+			return mc;
+		}
         // MCSprite * createSprite(const string &  slot, const string &  file, bool reinit = false);
         // MCSprite * createSprite(const string &  slot, Sprite* file, bool reinit = false);
+		createSprite(slotName:string, file:string, reinit:number=0):MCSprite
+		{
+			var mc:MCSprite= new MCSprite(this, slotName, file,reinit);
+			// mc.reinitType = reinit;
+			// this.addMCbs(mc, reinit);
+			return mc;
+		}; 
         // MCMask * createMask(const string &  slot, bool reinit = false);
+		createMask(slotName:string, reinit:number=0):MCMask
+		{
+			var mc:MCMask= new MCMask(this, slotName,reinit);
+			// mc.reinitType = reinit;
+			// this.addMCbs(mc, reinit);
+			return mc;
+		};
 		getSprite(slotName:string):egret.Sprite{
 			if(this.getArmature()==null || this.getArmature().getSlot(slotName)==null)
 				return null;
@@ -1006,13 +1071,15 @@ module std{
 			if(this.rootPath && this.armName && this.dbName)
 				this.init(rootPath, armName, dbName, defAniName);
 		}
-		setMcInit(mc:MC,slotName:string,rootPath?:string,dbName?:string,armName:string="",defAniName:string="",delay:boolean=false){
+		setMcInit(mc:MC,slotName:string,rootPath?:string,dbName?:string,armName:string="",defAniName:string="",delay:boolean=false,reinit:number=0){
 			this.mc = mc;
 			this.rootPath = rootPath;
 			this.armName = armName;
 			this.dbName = dbName;
 			this.slotName = slotName;
 			this.setName(slotName);
+			if(mc)
+				this.addMCbs(mc, reinit);
 			if(!delay)
 				this.reinit();
 		}
@@ -1349,14 +1416,18 @@ module std{
         arm:dragonBones.Armature=null;
 		userData={};
 
-		public constructor(mc?:MC,slotName?:string,defAniName?:string) {
+		public constructor(mc?:MC,slotName?:string,defAniName?:string,reinitType:number=0) {
 			super();
 			this.mc = mc;
 			this.slotName = slotName;
+			this.reinitType=reinitType;
 			this.display =null;
 			this.container = null;
 			this.slot = null;
 			this.bone = null;
+			if(mc){
+				mc.addMCbs(this,this.reinitType);
+			}
 			if (mc && mc.isReady)
 				this.reinit();
 		};
@@ -1492,11 +1563,16 @@ module std{
 				return new egret.Point(0, 0);
 		}
         // virtual Vec2 localToGlobal(const Vec2 &  pos);
-		localToGlobal(x:number,y:number):egret.Point {
-			if(this.isReady && this.display)
-				return this.getDisplayNode().localToGlobal(x,y);
-			else
+		localToGlobal(x:number|egret.Point,y?:number):egret.Point {
+			if(this.isReady && this.display){
+				if(x instanceof egret.Point){
+					return this.getDisplayNode().localToGlobal(x.x,x.y);
+				}else{
+					return this.getDisplayNode().localToGlobal(x,y);
+				}
+			}else{
 				return new egret.Point(-1, -1);
+			}
 		};
         // virtual Vec2 globalToLocal(const Vec2 &  pos);
 		globalToLocal(x:number,y:number):egret.Point{
@@ -1655,11 +1731,14 @@ module std{
 	export class MCCase extends   MovieClipSubBase{
 		 _draw:boolean;
 		// MCCase(MC * mc, const string &  slotName, bool mouseEnabled=true, bool draw = false);
-		constructor(pmc?:MC, slotName?:string,mouseEnabled:boolean=true,draw:boolean=false){
+		constructor(pmc?:MC, slotName?:string,mouseEnabled:boolean=true,draw:boolean=false, reinit:number=0){
 			super();
 			this.mc=pmc;
 			this.slotName=slotName;
 			this.name=(slotName);
+			if(this.mc){
+				this.mc.addMCbs(this,reinit);
+			}
 			if(this.mc)
 				this.reinit();
 			if (mouseEnabled)
@@ -1871,7 +1950,7 @@ module std{
 		// //eui.TextInput 
 		// export class MCUI extends eui.Label implements MovieClipSubBase
 		// {
- 		constructor(con:egret.DisplayObject,pmc?:MC, slotName?:string){
+ 		constructor(con:egret.DisplayObject,pmc?:MC, slotName?:string, reinit:number = 0){
 			super();
 			this.container=con;
 			
@@ -1884,6 +1963,7 @@ module std{
 			// this.textDisplay.
 			// egret.BitmapText
 			if(pmc){
+				pmc.addMCbs(this);
 				// this.setFontName("Arial");//Arial
 				// //this.setFontName("宋体");//Arial
 				// this.setFontSize(14);
@@ -1902,6 +1982,9 @@ module std{
 				std.setAnchorPoint(this.container, 0,0);
 			}
 		} 
+		getContainer(){
+			return this.container;
+		}
 		setAlpha(op:number):void { this.container.$setAlpha(op); };
 		getAlpha():number { return  this.container.alpha; };
 		setVisible(v:boolean):void{
@@ -2104,8 +2187,35 @@ module std{
 	
 	}
 	
-	export class MCMask extends  MovieClipSubBase{
-
+	export class MCText extends MCUI{
+		constructor(pmc?:MC, slotName?:string,reinit:number=0){
+			super(new eui.TextInput(),pmc,slotName,reinit);
+		}
+		getContainer():eui.TextInput{
+			return <eui.TextInput>this.container;
+		}
+	}
+	export class MCLabel extends MCUI{
+		constructor(pmc?:MC, slotName?:string,reinit:number=0){
+			super(new eui.Label(),pmc,slotName,reinit);
+		}
+		getContainer():eui.Label{
+			return <eui.Label>this.container;
+		}
+	}
+	export class MCSprite extends MCUI{
+		constructor(pmc:MC, slotName:string,sprite:string,reinit:number=0){//egret.Sprite){
+			super(std.createBitmap(sprite),pmc,slotName,reinit);
+		}
+		getContainer():egret.Bitmap{
+			return <egret.Bitmap>this.container;
+		}
+	}
+	
+	export class MCMask extends  MCUI{
+		public constructor(pmc:MC, slotName:string,reinit:number=0) {
+			super(new egret.Sprite(),pmc,slotName,reinit);
+		}
 	
 	////////MovieClipSubBase////////////////////////////////////////////
 		isReady:boolean=false;

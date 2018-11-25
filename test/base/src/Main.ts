@@ -159,7 +159,7 @@ class Main extends egret.DisplayObjectContainer {
         std.drawRange(textfield,0xff0000);
 
 
-        testMC();
+        testMC(this);
 
 
 
