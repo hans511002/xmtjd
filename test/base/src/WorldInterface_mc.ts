@@ -4,8 +4,8 @@ module test {
 			super();
 		}
 
-		book:std.MovieClipSub;
-		bookBookCase:std.MCCase;
+		// book:std.MovieClipSub;
+		// bookBookCase:std.MCCase;
 		butCastAir:std.MovieClipSub;
 		butCastAirCastAirCase:std.MCCase;
  		butCastAirCont:std.MovieClipSub;
@@ -63,7 +63,7 @@ module test {
 		iceNumTXT:std.MCLabel ;
 		iceSphere:std.MovieClipSub ;
 		iceSphereSphereCase:std.MCCase ;
-		lastTime:std.MCLabel ;
+		//lastTime:std.MCLabel ;
 		levinBack:std.MovieClipSub ;
 		levinBackCont:std.MovieClipSub ;
 		levinBacklight:std.MovieClipSub ;
@@ -72,9 +72,9 @@ module test {
 		levinSphereSphereCase:std.MCCase ;
 		liveTXT:std.MCLabel ;
 		moneyTXT:std.MCLabel ;
-		pause:std.MovieClipSub ;
-		pausePauseCase:std.MCCase ;
-		sell:std.MovieClipSub ;
+		//pause:std.MovieClipSub ;
+		//pausePauseCase:std.MCCase ;
+		//sell:std.MovieClipSub ;
 		//slow:std.MovieClipSub ;
 		startWaves:std.MovieClipSub ;
 		startWavesStartWavesCase:std.MCCase ;
@@ -93,22 +93,7 @@ module test {
 		stoneSphereMyPoint:egret.Point;
 		levinSphereMyPoint:egret.Point;
 		getAllMyPoint:egret.Point;
-
-		pauseOpenFlag:boolean;
-		pauseCloseFlag:boolean;
-		bookOpenFlag:boolean;
-		bookCloseFlag:boolean;
-
-		fireSphereOpened:boolean;
-		iceSphereOpened:boolean;
-		stoneSphereOpened:boolean;
-		levinSphereOpened:boolean;
-		getAllOpened:boolean;
-
-		fireBacklightTurnFlag:boolean;
-		iceBacklightTurnFlag:boolean;
-		stoneBacklightTurnFlag:boolean;
-		levinBacklightTurnFlag:boolean;
+ 
 
 		buyFireMyCost:number;
 		buyFireCoinMyPoint:egret.Point;
@@ -254,30 +239,33 @@ module test {
 			this.wiSphere.setPosition(220, 5);
 			this.wiStart.setPosition(this.stage.stageWidth - 230, this.stage.stageHeight-5);
 
-			this.pauseOpenFlag = false;
-			this.pauseCloseFlag = false;
-			this.bookOpenFlag = false;
-			this.bookCloseFlag = false;
-			this.fireSphereOpened = false;
-			this.iceSphereOpened = false;
-			this.stoneSphereOpened = false;
-			this.levinSphereOpened = false;
-			this.getAllOpened = false;
-			this.fireBacklightTurnFlag = false;
-			this.iceBacklightTurnFlag = false;
-			this.stoneBacklightTurnFlag = false;
-			this.levinBacklightTurnFlag = false;
-			this.buyFireMyCost = 0;
-			this.buyIceMyCost = 0;
-			this.buyStoneMyCost = 0;
-			this.buyLevinMyCost = 0;
-			this.buyGetAllMyCost = 0;
+			 
 			this.getAll.gotoAndStop(3);
 			this.fireBack.gotoAndStop(3);
 			this.iceBack.gotoAndStop(3);
 			this.stoneBack.gotoAndStop(3);
 			this.levinBack.gotoAndStop(3);
 			
+		}
+		_time:number;
+
+		//update
+		onTicker(timeStamp:number){
+			if(!this._time) {
+            	this._time = timeStamp;
+        	}
+
+        var now = timeStamp;
+        var pass = now - this._time;
+        this._time = now;
+ 		// this.fireBack.tryPlay();
+		// this.iceBack.tryPlay();
+		// this.stoneBack.tryPlay();
+		// this.levinBack.tryPlay();
+		this.fireSphere.tryPlay();
+        dragonBones.WorldClock.clock.advanceTime(pass / 1000);
+		egret.log("timeStamp "+timeStamp);
+        return false;
 		}
 	}
 }

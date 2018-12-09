@@ -54,7 +54,7 @@ module std{
 			}
 		}
 	}
-	export function initResMap(){
+	export async function initResMap(){
 		if(!urlLen){
 			var resJson=RES.getRes("default.res.json");
 			if(resJson){
@@ -66,7 +66,7 @@ module std{
 					urlMap[url]=name;
 				}
 			}else{
-				RES.getResByUrl("resource/default.res.json", function(data){
+				await RES.getResByUrl("resource/default.res.json", function(data){
 					var resList=data["resources"];
 					for(var i=0; i < resList.length;i++){
 						var item=resList[i];
@@ -1068,7 +1068,7 @@ module std{
 			this.armName=armName;
 			this.dbName=dbName;
 			this.defAniName=defAniName;
-			if(this.rootPath && this.armName && this.dbName)
+			if(this.armName && this.dbName)
 				this.init(rootPath, armName, dbName, defAniName);
 		}
 		setMcInit(mc:MC,slotName:string,rootPath?:string,dbName?:string,armName:string="",defAniName:string="",delay:boolean=false,reinit:number=0){
@@ -1447,7 +1447,8 @@ module std{
 			if (this._visible != v)
 				super.setVisible(v);
 			super.$setVisible(v);
-			this.container.$setVisible(v);
+			if(this.container)
+				this.container.$setVisible(v);
 			// if (this.container && this.container.visible != v)
 			// {
 			// 	cocos2d::Mat4 _transform = this.container.getNodeToParentTransform();

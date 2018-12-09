@@ -2,72 +2,28 @@
 
 
 function testMC(main:Main) {
-        var mc=new std.MovieClip();
-        var mcs=new std.MovieClipSub();
-        var mcase=new std.MCCase();
-        var mctext=new std.MCUI(new egret.TextField());
- 
-    
-        egret.log(typeof mc);
-        egret.log(typeof mcs); 
+        this.mc=new std.MovieClip("","BulletTower5_1_mc","BulletTower5_1_mc");
+        main.addChild(this.mc);
+		this.mc.tryPlay();
 
-
-        var mcbss:std.MovieClipSubBase=<std.MovieClipSubBase>mc;
-        if(mc instanceof std.MovieClipSubBase){
-            egret.log("mc instanceof std.MovieClipSubBase");
-            egret.log("mci instanceof std.MovieClipSubBase");
-
-        }else{
-            egret.log("mc not instanceof std.MovieClipSubBase");
-        }
-        if(mc instanceof std.MC){
-            egret.log("mc instanceof std.MC");
-        }else{
-            egret.log("mc not instanceof std.MC");
-        }
-
-        if(mcs instanceof std.MovieClipSubBase){
-            egret.log("mcs instanceof std.MovieClipSubBase");
-        }else{
-            egret.log("mcs not instanceof std.MovieClipSubBase");
-        }
-        if(mcs instanceof std.MC){
-            egret.log("mcs instanceof std.MC");
-        }else{
-            egret.log("mcs not instanceof std.MC");
-        }
-
-        if(mcase instanceof std.MovieClipSubBase){
-            egret.log("mcase instanceof std.MovieClipSubBase");
-        }else{
-            egret.log("mcase not instanceof std.MovieClipSubBase");
-        }
-        if(mcase instanceof std.MC){
-            egret.log("mcase instanceof std.MC");
-        }else{
-            egret.log("mcase not instanceof std.MC");
-        }
-         if(mctext instanceof std.MovieClipSubBase){
-            egret.log("mctext instanceof std.MovieClipSubBase");
-        }else{
-            egret.log("mctext not instanceof std.MovieClipSubBase");
-        }
-        if(mctext instanceof std.MC){
-            egret.log("mctext instanceof std.MC");
-        }else{
-            egret.log("mctext not instanceof std.MC");
-        }
-
-        //dragonBones.WorldClock.clock.advanceTime(0.033);
+		dragonBones.WorldClock.clock.advanceTime(0.033);
         egret.Ticker.getInstance().register(function (advancedTime) {
                 dragonBones.WorldClock.clock.advanceTime(advancedTime / 1000);
-            }, this);
-        var container=new test.WorldInterface_mc();
-        main.addChild(container);
-        container.init();
+            }, this.mc);
+			
+		if(this.mc)return;
+		        
         
 
-        
+
+
+
+        var container=new test.WorldInterface_mc();
+		this.container=container;
+        main.addChild(container);
+        container.init();
+
+
 		container.fireBack.play(0);
 		container.iceBack.play(0);
 		container.stoneBack.play(0);
@@ -89,9 +45,9 @@ function testMC(main:Main) {
 		container.buyStoneCoin.play(0);
 		container.buyLevinCoin.play(0);
 		container.buyGetAllCoin.play(0); 
-		container.sell.play(0);
-		container.book.play(0);
-		container.pause.play(0);
+		//container.sell.play(0);
+		//container.book.play(0);
+		//container.pause.play(0);
 		container.startWaves.play(0);
 		container.butCastGolem.play(0);
 		container.butCastIceman.play(0);
@@ -101,8 +57,8 @@ function testMC(main:Main) {
 		container.fast.play(0);
 		//container.traceBezier.play(0);
 		//container.barInfo.setPositionY(15);//Main:: - 585
-		container.bookBookCase.setMouseEnabled(true);
-		container.pausePauseCase.setMouseEnabled(true);
+		//container.bookBookCase.setMouseEnabled(true);
+		//container.pausePauseCase.setMouseEnabled(true);
 		container.startWavesStartWavesCase.setMouseEnabled(true);
 		container.butCastGolemCastGolemCase.setMouseEnabled(true);
 		container.butCastIcemanCastIcemanCase.setMouseEnabled(true);
@@ -126,7 +82,7 @@ function testMC(main:Main) {
 		container.butCastAir.setVisible(false);
 		//container.barInfo.setVisible(false);
 
-		container.lastTime.setVisible(false);
+		//container.lastTime.setVisible(false);
 		//container.buyFireLightUp.setVisible(false);
 		//container.buyIceLightUp.setVisible(false);
 		//container.buyStoneLightUp.setVisible(false);
@@ -140,11 +96,7 @@ function testMC(main:Main) {
 		container.stoneSphereMyPoint = container.stoneSphere.localToGlobal(container.stoneSphereSphereCase.getPosition());
 		container.levinSphereMyPoint = container.levinSphere.localToGlobal(container.levinSphereSphereCase.getPosition());
 		container.getAllMyPoint = container.getAll.localToGlobal(container.getAllSphereCase.getPosition());
- 
-		container.fireBacklightTurnFlag = true;
-		container.iceBacklightTurnFlag = true;
-		container.stoneBacklightTurnFlag = true;
-		container.levinBacklightTurnFlag = true;
+  
 		container.fireBacklight.play(0);
 		container.iceBacklight.play(0);
 		container.stoneBacklight.play(0);
@@ -154,5 +106,7 @@ function testMC(main:Main) {
 		container.stoneBacklight.setVisible(false);
 		container.levinBacklight.setVisible(false);
 		container.buyGetAll.setVisible(false);
+		
+        egret.startTick(this.container.onTicker, this.container);
 
 }

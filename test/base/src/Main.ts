@@ -70,8 +70,11 @@ class Main extends egret.DisplayObjectContainer {
     }
 
     private async runGame() {
+        egret.log("1 "+new Date().getTime());
         await this.loadResource()
+        egret.log("2 "+new Date().getTime());
         this.createGameScene();
+        egret.log("3 "+new Date().getTime());
         const result = await RES.getResAsync("description_json")
         this.startAnimation(result);
         await platform.login();
@@ -84,16 +87,27 @@ class Main extends egret.DisplayObjectContainer {
         try {
             const loadingView = new LoadingUI();
             this.stage.addChild(loadingView);
+        egret.log("4 "+new Date().getTime());
             await RES.loadConfig("resource/default.res.json", "resource/");
             await std.initResMap();
             await RES.loadGroup("preload", 0, loadingView); 
+            //RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE, this.onResourceLoadComplete, this);
             this.stage.removeChild(loadingView);
+        egret.log("5 "+new Date().getTime());
+            
         }
         catch (e) {
             console.error(e);
         }
     }
-
+    private onResourceLoadComplete(event:RES.ResourceEvent):void {
+        if (event.groupName == "preload") {
+            RES.removeEventListener(RES.ResourceEvent.GROUP_COMPLETE, this.onResourceLoadComplete, this);
+            // RES.removeEventListener(RES.ResourceEvent.GROUP_LOAD_ERROR, this.onResourceLoadError, this);
+            // RES.removeEventListener(RES.ResourceEvent.GROUP_PROGRESS, this.onResourceProgress, this);
+            this.createGameScene();
+        }
+    }
     private textfield: egret.TextField;
     icon:egret.Bitmap;
 
