@@ -206,6 +206,21 @@ module std{
         result.texture = texture;
         return result;
     }
+	export function replaceSlotToSprite(mcsb:MovieClipSubBase ,dis:egret.Bitmap):egret.Sprite{
+		var sprite=new egret.Sprite();
+		sprite.addChild(dis);
+		sprite.$setWidth(dis.width);
+		sprite.$setHeight(dis.height);
+		sprite.$setScaleX(dis.scaleX);
+		sprite.$setScaleY(dis.scaleY);
+		sprite.$setSkewX(dis.skewX);
+		sprite.$setSkewY(dis.skewY);
+		sprite.$setAlpha( dis.alpha);
+		sprite.$setRotation(dis.rotation);
+		mcsb.slot.display=sprite;
+		dis=mcsb.slot.display;
+		return sprite;
+	}
 }
   
 module std{
@@ -409,14 +424,16 @@ module std{
 			var thsi:egret.DisplayObjectContainer =null;
 			if( this instanceof egret.DisplayObjectContainer)
 				thsi=<egret.DisplayObjectContainer>this;
-			var dis:egret.DisplayObject = <egret.DisplayObject> this.slot.getDisplay();
-			if (dis && dis instanceof egret.Sprite)
-			{
+			var dis:egret.DisplayObject = <egret.DisplayObject> this.slot.display;
+			if (dis && dis instanceof egret.DisplayObject){
+				if(dis instanceof egret.Bitmap){
+					dis=std.replaceSlotToSprite(this,dis);
+				}
 				this.isReady = true;
 				var disPos = this.getDisPosition();
 				if (!this.display)
 				{
-					this.display = dis;
+					this.display = <egret.DisplayObjectContainer>dis;
 					std.setPosition(this.display,disPos);
 					//this.display.setPosition(disPos  );
 					this.setDisScale();
@@ -447,7 +464,7 @@ module std{
 					// if (!(this instanceof MovieClip))
 					// 	thsi.retain();
 					this.display.removeChild(thsi);
-					this.display = dis;
+					this.display = <egret.DisplayObjectContainer>dis;
 					std.setPosition(this.display,disPos);
 					this.setDisScale();
 					std.setAnchorPoint(this.display, 0.5, 0.5);
@@ -858,10 +875,10 @@ module std{
 			// this.addMCbs(mc, reinit);
 			return mc;
 		};
-		getSprite(slotName:string):egret.Sprite{
+		getSprite(slotName:string):egret.Bitmap{
 			if(this.getArmature()==null || this.getArmature().getSlot(slotName)==null)
 				return null;
-			return <egret.Sprite>(this.getArmature().getSlot(slotName).getDisplay());
+			return <egret.Bitmap>(this.getArmature().getSlot(slotName).getDisplay());
 		}
 
 
@@ -963,19 +980,21 @@ module std{
 			if (!this.slot) return false;
 			if (this.display == this.slot.getDisplay())
 				return false;
- 
 
 			var thsi:egret.DisplayObjectContainer =null;
 			if( this instanceof egret.DisplayObjectContainer)
 				thsi=<egret.DisplayObjectContainer>this;
 			var dis:egret.DisplayObject = <egret.DisplayObject> this.slot.getDisplay();
-			if (dis && dis instanceof egret.Sprite)
+			if (dis && dis instanceof egret.DisplayObject)
 			{
+				if(dis instanceof egret.Bitmap){
+					dis=std.replaceSlotToSprite(this,dis);
+				}
 				this.isReady = true;
 				var disPos = this.getDisPosition();
 				if (!this.display)
 				{
-					this.display = dis;
+					this.display = <egret.DisplayObjectContainer>dis;
 					std.setPosition(this.display,disPos);
 					//this.display.setPosition(disPos  );
 					this.setDisScale();
@@ -1006,7 +1025,7 @@ module std{
 					// if (!(this instanceof MovieClip))
 					// 	thsi.retain();
 					this.display.removeChild(thsi);
-					this.display = dis;
+					this.display = <egret.DisplayObjectContainer>dis;
 					std.setPosition(this.display,disPos);
 					this.setDisScale();
 					std.setAnchorPoint(this.display, 0.5, 0.5);
@@ -1700,12 +1719,13 @@ module std{
     // class MCCase;
 	// class MCSprite;
 	export class MCCase extends   MovieClipSubBase{
-		 _draw:boolean;
+		 _draw:boolean=false;
 		// MCCase(MC * mc, const string &  slotName, bool mouseEnabled=true, bool draw = false);
 		constructor(pmc?:MC, slotName?:string,mouseEnabled:boolean=true,draw:boolean=false, reinit:number=0){
 			super();
 			this.mc=pmc;
 			this.slotName=slotName;
+			this._draw=draw;
 			this.name=(slotName);
 			if(this.mc){
 				this.mc.addMCbs(this,reinit);
@@ -1849,13 +1869,16 @@ module std{
 			if( this instanceof egret.DisplayObjectContainer)
 				thsi=<egret.DisplayObjectContainer>this;
 			var dis:egret.DisplayObject = <egret.DisplayObject> this.slot.getDisplay();
-			if (dis && dis instanceof egret.Sprite)
+			if (dis && dis instanceof egret.DisplayObject)
 			{
+				if(dis instanceof egret.Bitmap){
+					dis=std.replaceSlotToSprite(this,dis);
+				}
 				this.isReady = true;
 				var disPos = this.getDisPosition();
 				if (!this.display)
 				{
-					this.display = dis;
+					this.display = <egret.DisplayObjectContainer>dis;
 					std.setPosition(this.display,disPos);
 					//this.display.setPosition(disPos  );
 					this.setDisScale();
@@ -1886,7 +1909,7 @@ module std{
 					// if (!(this instanceof MovieClip))
 					// 	thsi.retain();
 					this.display.removeChild(thsi);
-					this.display = dis;
+					this.display = <egret.DisplayObjectContainer>dis;
 					std.setPosition(this.display,disPos);
 					this.setDisScale();
 					std.setAnchorPoint(this.display, 0.5, 0.5);
@@ -2091,13 +2114,16 @@ module std{
 		// 	if( this instanceof egret.DisplayObjectContainer)
 		// 		thsi=<egret.DisplayObjectContainer>this;
 		// 	var dis:egret.DisplayObject = <egret.DisplayObject> this.slot.getDisplay();
-		// 	if (dis && dis instanceof egret.Sprite)
+		// 	if (dis && dis instanceof egret.displayObject)
 		// 	{
+		// 		if(dis instanceof egret.Bitmap){
+		// 			dis=std.replaceSlotToSprite(this,dis);
+		// 		}
 		// 		this.isReady = true;
 		// 		var disPos = this.getDisPosition();
 		// 		if (!this.display)
 		// 		{
-		// 			this.display = dis;
+		// 			this.display = <egret.DisplayObjectContainer>dis;
 		// 			std.setPosition(this.display,disPos);
 		// 			//this.display.setPosition(disPos  );
 		// 			this.setDisScale();
@@ -2175,7 +2201,7 @@ module std{
 		}
 	}
 	export class MCSprite extends MCUI{
-		constructor(pmc:MC, slotName:string,sprite:string,reinit:number=0){//egret.Sprite){
+		constructor(pmc:MC, slotName:string,sprite:string,reinit:number=0){//egret.Bitmap){
 			super(std.createBitmap(sprite),pmc,slotName,reinit);
 		}
 		getContainer():egret.Bitmap{
@@ -2292,13 +2318,16 @@ module std{
 			if( this instanceof egret.DisplayObjectContainer)
 				thsi=<egret.DisplayObjectContainer>this;
 			var dis:egret.DisplayObject = <egret.DisplayObject> this.slot.getDisplay();
-			if (dis && dis instanceof egret.Sprite)
+			if (dis && dis instanceof egret.DisplayObject)
 			{
+				if(dis instanceof egret.Bitmap){
+					dis=std.replaceSlotToSprite(this,dis);
+				}
 				this.isReady = true;
 				var disPos = this.getDisPosition();
 				if (!this.display)
 				{
-					this.display = dis;
+					this.display =<egret.DisplayObjectContainer> dis;
 					std.setPosition(this.display,disPos);
 					//this.display.setPosition(disPos  );
 					this.setDisScale();
@@ -2329,7 +2358,7 @@ module std{
 					// if (!(this instanceof MovieClip))
 					// 	thsi.retain();
 					this.display.removeChild(thsi);
-					this.display = dis;
+					this.display = <egret.DisplayObjectContainer>dis;
 					std.setPosition(this.display,disPos);
 					this.setDisScale();
 					std.setAnchorPoint(this.display, 0.5, 0.5);
