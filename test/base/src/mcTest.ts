@@ -1,18 +1,76 @@
 // TypeScript file
-
+// 60fps 
+function onTicker(timeStamp:number){
+		if(!this._time) {
+			this._time = timeStamp;
+		}
+        var now = timeStamp;
+        var pass = now - this._time;
+        this._time = now;
+ 		// this.fireBack.tryPlay();
+		// this.iceBack.tryPlay();
+		// this.stoneBack.tryPlay(); 
+		// this.levinBack.tryPlay();
+		if(!this.isPlay())
+			this.tryPlay();
+        dragonBones.WorldClock.clock.advanceTime(pass / 1000);
+		// egret.log("timeStamp="+timeStamp+"  pass="+pass);
+        return false;
+}
+// 帧频事件
+function enterFrameHandler(event: dragonBones.EgretEvent): void {
+	var dt:Date= new Date();
+	var ms:number =dt.getTime();
+	if(!this._time) {
+		this._time = ms;
+	}
+	var pass = ms - this._time;
+	// egret.log("timeStamp="+ms+"  pass="+pass);
+	this._time = ms;
+	if(!this.isPlay())
+		this.tryPlay();
+	// dragonBones.WorldClock.clock.advanceTime(-1);
+}
 
 function testMC(main:Main) {
-        this.mc=new std.MovieClip("","BulletTower5_1_mc","BulletTower5_1_mc");
+        var mc:std.MovieClip=new std.MovieClip("","BulletTower5_1_mc","BulletTower5_1_mc");
+		this.mc=mc;
+		mc.setPosition(100,100);
         main.addChild(this.mc);
 		this.mc.tryPlay();
+		// dragonBones.WorldClock.clock.add(mc.getArmature());
+		var wiStart=new std.MovieClip("work/", "worldStart_mc", "worldStart_mc");
 
-		dragonBones.WorldClock.clock.advanceTime(0.033);
-        egret.Ticker.getInstance().register(function (advancedTime) {
-                dragonBones.WorldClock.clock.advanceTime(advancedTime / 1000);
-            }, this.mc);
-			
-		if(this.mc)return;
-		        
+//   dragonBones.WorldClock.clock.add(  );
+
+
+		this.wiStart=wiStart;
+		wiStart.setPosition(100,200);
+
+        main.addChild(this.wiStart);
+
+		var fast= wiStart.createMovieClipSub("fast");
+		var fastFastCase = fast.createCase("fastCase");
+		var fastCont = fast.createMovieClipSub("cont", 1);// 4 5帧 才有
+		var startWaves = wiStart.createMovieClipSub("startWaves");
+		var startWavesStartWavesCase = startWaves.createCase("startWavesCase");
+
+		this.startWavesStartWavesCase =startWavesStartWavesCase;
+		this.startWaves =startWaves;
+		this.fast =fast;
+		this.fastFastCase =fastFastCase;
+		this.fastCont =fastCont;
+		
+		// egret.startTick(onTicker, this.mc);
+ 		// dragonBones.WorldClock.clock.advanceTime(0.033);
+        // egret.Ticker.getInstance().register(function (advancedTime) {
+        //         dragonBones.WorldClock.clock.advanceTime(advancedTime / 1000);
+        //     }, this.mc);
+		//egret.startTick(onTicker, this.mc);
+        main.stage.addEventListener(egret.Event.ENTER_FRAME, enterFrameHandler, mc);
+
+		if(this.mc)
+			return;
         
 
 

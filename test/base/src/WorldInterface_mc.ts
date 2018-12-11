@@ -254,18 +254,17 @@ module test {
 			if(!this._time) {
             	this._time = timeStamp;
         	}
-
-        var now = timeStamp;
-        var pass = now - this._time;
-        this._time = now;
- 		// this.fireBack.tryPlay();
-		// this.iceBack.tryPlay();
-		// this.stoneBack.tryPlay();
-		// this.levinBack.tryPlay();
-		this.fireSphere.tryPlay();
-        dragonBones.WorldClock.clock.advanceTime(pass / 1000);
-		egret.log("timeStamp "+timeStamp);
-        return false;
+			var now = timeStamp;
+			var pass = now - this._time;
+			this._time = now;
+			// this.fireBack.tryPlay();
+			// this.iceBack.tryPlay();
+			// this.stoneBack.tryPlay();
+			// this.levinBack.tryPlay();
+			this.fireSphere.tryPlay();
+			// dragonBones.WorldClock.clock.advanceTime(pass / 1000);
+			egret.log("timeStamp "+timeStamp);
+			return false;
 		}
 	}
 }

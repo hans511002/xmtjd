@@ -1,0 +1,45 @@
+{
+	"groups": [
+		{
+			"keys": "bg_jpg,egret_icon_png,description_json,CoreElement_json,CoreElement2_json,CoreElement_texture_1_json,CoreElement_texture_1_png",
+			"name": "preload"
+		}
+	],
+	"resources": [
+		{
+			"name": "bg_jpg",
+			"type": "image",
+			"url": "assets/bg.jpg"
+		},
+		{
+			"name": "egret_icon_png",
+			"type": "image",
+			"url": "assets/egret_icon.png"
+		},
+		{
+			"name": "description_json",
+			"type": "json",
+			"url": "config/description.json"
+		},
+		{
+			"name": "CoreElement_json",
+			"type": "json",
+			"url": "CoreElement.json"
+		},
+		{
+			"name": "CoreElement2_json",
+			"type": "json",
+			"url": "assets/CoreElement/CoreElement.json"
+		},
+		{
+			"name": "CoreElement_texture_1_json",
+			"type": "json",
+			"url": "assets/CoreElement/CoreElement_texture_1.json"
+		},
+		{
+			"name": "CoreElement_texture_1_png",
+			"type": "image",
+			"url": "assets/CoreElement/CoreElement_texture_1.png"
+		}
+	]
+}

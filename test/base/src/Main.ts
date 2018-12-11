@@ -73,13 +73,32 @@ class Main extends egret.DisplayObjectContainer {
         egret.log("1 "+new Date().getTime());
         await this.loadResource()
         egret.log("2 "+new Date().getTime());
-        this.createGameScene();
+        // this.createGameScene();
         egret.log("3 "+new Date().getTime());
-        const result = await RES.getResAsync("description_json")
-        this.startAnimation(result);
+        // const result = await RES.getResAsync("description_json")
+        // this.startAnimation(result);
         await platform.login();
         const userInfo = await platform.getUserInfo();
         console.log(userInfo);
+        
+
+        
+        let stageW = this.stage.stageWidth;
+        let stageH = this.stage.stageHeight;
+        // let sky = this.createBitmapByName("bg_jpg");
+        // this.addChild(sky);
+        // sky.width = stageW;
+        // sky.height = stageH;
+
+        let topMask = new egret.Shape();
+        topMask.graphics.beginFill(0x000000, 0.5);
+        topMask.graphics.drawRect(0, 0, stageW, stageH);
+        topMask.graphics.endFill();
+        topMask.y = 33;
+        this.anchorOffsetX=0;
+        this.anchorOffsetY=0;
+        this.addChild(topMask);
+        testMC(this);
 
     }
 
@@ -87,13 +106,13 @@ class Main extends egret.DisplayObjectContainer {
         try {
             const loadingView = new LoadingUI();
             this.stage.addChild(loadingView);
-        egret.log("4 "+new Date().getTime());
+            egret.log("4 "+new Date().getTime());
             await RES.loadConfig("resource/default.res.json", "resource/");
             await std.initResMap();
             await RES.loadGroup("preload", 0, loadingView); 
             //RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE, this.onResourceLoadComplete, this);
             this.stage.removeChild(loadingView);
-        egret.log("5 "+new Date().getTime());
+            egret.log("5 "+new Date().getTime());
             
         }
         catch (e) {
@@ -170,13 +189,7 @@ class Main extends egret.DisplayObjectContainer {
         var shape:egret.Shape = new egret.Shape();
         this.addChild(shape);
         std.drawRect(shape,50,50,100,100);
-        std.drawRange(textfield,0xff0000);
-
-
-        testMC(this);
-
-
-
+        std.drawRange(textfield,0xff0000); 
     }
 
     /**

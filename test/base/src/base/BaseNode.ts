@@ -232,8 +232,8 @@ module std{
 			super.$onAddToStage(stage,nestLevel);
 			this.afterOnEnter();
 		};
-		beforeOnEnter():void{this.onEnter();};
-        afterOnEnter():void{};
+		beforeOnEnter():void{};
+        afterOnEnter():void{this.onEnter();};
 		$onRemoveFromStage(): void{
 			this.onExit();
 			super.$onRemoveFromStage();
@@ -593,17 +593,22 @@ module std{
 		isPlayEnd():boolean{
 			return this.currentFrame == this.totalFrames;
 		}
-		completeHandler(event:dragonBones.EgretEvent):void{//cocos2d::EventCustom *
+		completeHandler(event:dragonBones.EgretEvent):void{//cocos2d::EventCustom * 
 			var eventObject:dragonBones.EventObject = event.eventObject;
  			if(eventObject.type == dragonBones.EventObject.COMPLETE)
 			{
 				if (this.playTimes == 1) {
 					if (this.getAnimation() && this.inPlay) {
-						if (eventObject.animationState == this.getAnimation().lastAnimationState)
+						if (eventObject.animationState == this.getAnimation().lastAnimationState) {
 							this.inPlay = false;
+						}
 					}
 					else {
 						this.inPlay = false;
+					}
+					if(!this.inPlay && this.container && this.container.hasDBEventListener(dragonBones.EventObject.COMPLETE)){
+						this.bindListenType=this.bindListenType & 0xFFFFFFE; // del 1
+						this.container.removeDBEventListener(dragonBones.EventObject.COMPLETE,this.completeHandler,this);
 					}
 				}
 			}
@@ -611,37 +616,41 @@ module std{
 		bindMovieListen(type:number):void 		{
 			if(type == 1)
 			{
-			    if((this instanceof MovieClip))
-			    {
-			        var mc:MovieClip = <MovieClip>(this);
-			        if(mc.container)
-			        {
-			            if((this.bindListenType & type)!=type)
-			            {
+				// if(this.container){
+				// 	if((this.bindListenType & type) != type) {
+				// 		//mcc.container.getEventDispatcher().setEnabled(true);
+				// 		mcc.container.addDBEventListener(dragonBones.EventObject.COMPLETE,this.completeHandler, this);
+				// 		this.bindListenType = this.bindListenType | type;
+				// 	}
+				// }
+				if(this.container)
+				{
+					if((this instanceof MovieClip))
+					{
+						let mc:MovieClip = <MovieClip>(this);
+						if((this.bindListenType & type) != type)
+						{
 							if (!mc.isOnce) {
-								// mc.container.$EventDispatcher.getEventDispatcher().setEnabled(true);
 								//addDBEventListener(type: EventStringType, listener: (event: EgretEvent) => void, target: any)
 								//addEventListener(type: string, listener: Function, thisObject: any, useCapture?: boolean, priority?: number): any;
-								//mc.container.addEventListener(dragonBones.EventObject.COMPLETE, std.bind(&MC.completeHandler, this, std::placeholders::_1));
 								mc.container.addDBEventListener(dragonBones.EventObject.COMPLETE, this.completeHandler, this);
+							}else{
+								mc.container.addDBEventListener(dragonBones.EventObject.COMPLETE, this.onceMovieHandler, this);
 							}
-			                this.bindListenType = this.bindListenType | type;
-			            }
-			        }
-			    }
-			    else if(this instanceof MovieClipSub)
-			    {
-			        var mcc:MovieClipSub = <MovieClipSub> this;
-			        if(mcc.container)
-			        {
-			            if((this.bindListenType & type) != type)
-			            {
-			                //mcc.container.getEventDispatcher().setEnabled(true);
+							this.bindListenType = this.bindListenType | type;
+						}
+					}
+					else if(this instanceof MovieClipSub)
+					{
+						let mcc:MovieClipSub = <MovieClipSub> this;
+						if((this.bindListenType & type) != type)
+						{
+							// mcc.container.$setTouchEnabled(true);
 							mcc.container.addDBEventListener(dragonBones.EventObject.COMPLETE,this.completeHandler, this);
-			                this.bindListenType = this.bindListenType | type;
-			            }
-			        }
-			    }
+							this.bindListenType = this.bindListenType | type;
+						}
+					}
+				}
 			}
     	}
  		addMCbs(mcbs:MovieClipSubBase, reinit:number=0):void 		{
@@ -824,7 +833,7 @@ module std{
 			return mc;
 		}
         // MCCase * createCase(const string &  slot, bool reinit = false, bool draw = false);
-		createCase(slotName:string,reinit:number=0,draw:boolean=false):MCCase
+		createCase(slotName:string,reinit:number=0,draw:boolean=true):MCCase
 		{
 			// constructor(pmc?:MC, slotName?:string,mouseEnabled:boolean=true,draw:boolean=false){
 			var mc:MCCase=  new MCCase(this, slotName, true, draw,reinit);
@@ -1085,8 +1094,7 @@ module std{
 		}
 		// 		virtual bool init(const string &  rootPath, const string &  armName, const string &  dbName, const string &  defAniName = "");
 	 	init(rootPath:string,  armName:string,  dbName:string,_defAniName:string =""):boolean{
-			if (this.isReady && this.container && this.name == armName)
-			{
+			if (this.isReady && this.container && this.name == armName){
 				return true;
 			}
 			//Common::DateTime dt;
@@ -1110,7 +1118,7 @@ module std{
 			//dt = Common::DateTime();
 
 			this.addChild(this.container);
-
+			this.isReady=true;
 			//time = (Common::DateTime().GetTicks() - dt.GetTicks());
 			//CCLOG("MovieClip %s.%s 3 init time:%i", dbName.c_str(), armName.c_str(), time);
 			//dt = Common::DateTime();
@@ -1315,7 +1323,7 @@ module std{
 			{
 				// this.container.getEventDispatcher().setEnabled(true);
 				//container.getEventDispatcher().addCustomEventListener(EventObject::FRAME_EVENT, std::bind(&MovieClip::onceMovieHandler, this, std::placeholders::_1));
-				this.container.addDBEventListener(dragonBones.EventObject.COMPLETE, this.onceMovieHandler, this);
+				// this.container.addDBEventListener(dragonBones.EventObject.COMPLETE, this.onceMovieHandler, this);
 				this.play(1);
 			}
 			if (this.setAr){
@@ -1643,9 +1651,9 @@ module std{
 			}
 			if (!this.slot) 
 				return false;
-			if (this.arm == this.slot.armature)
+			if (this.arm == this.slot.childArmature)
 				return false;
-			this.arm = this.slot.armature;
+			this.arm = this.slot.childArmature;
 			if (this.arm){
 				var oldDis:egret.DisplayObjectContainer = this.display;
 				this.display =  <egret.DisplayObjectContainer>this.slot.display;
@@ -1653,65 +1661,27 @@ module std{
 					this.display.name=(this.slot.name);
 					this.display.$setVisible(this.visible);
 					this.container = null;
-
-					var disPos:egret.Point = this.getDisPosition();
-					std.setAnchorPoint(this.display, this.display.width/2, this.display.height/2);
-					// std.setAnchorPoint(this.display, 0.5, 0.5);
-					std.setPosition(this.display,disPos);
-					this.setDisScale();
-					//std::changeAnchorPoint(display, 0.5);
-					if (<dragonBones.EgretArmatureDisplay>this.display)
-					{
+					//var disPos:egret.Point = this.getDisPosition();
+					//std.setAnchorPoint(this.display, 0.5,0.5);
+					//this.setDisScale();
+					if (<dragonBones.EgretArmatureDisplay>this.display){
 						this.container = <dragonBones.EgretArmatureDisplay>this.display;
-						std.setAnchorPoint(this.display, 0, 0);
-						std.changeAnchorPoint(this.container, this.display.width/2, this.display.height/2);
+						//std.setAnchorPoint(this.display, 0, 0);
+						//std.changeAnchorPoint(this.container, this.display.width/2, this.display.height/2);
 						this.transform = this.container.$getMatrix();
-						if(this.bindListenType)
-						{
+						if(this.bindListenType){
 							var type:number = this.bindListenType;
 							this.bindListenType = 0;
 							this.bindMovieListen(type);
 						}
-						//display.setPosition(display.getPosition() + display.getAnchorPointInPoints());
 					}
 					if (oldDis) { 
 						this.display.$setX(oldDis.x);
 						this.display.$setX(oldDis.y);
 					}
 					this.isReady = true;
-					//if (ISTYPE(MovieClip, this.mc)){
-					//	MovieClip *smc = ISTYPE(MovieClip, this.mc);
-					//	if (ISTYPE(MovieClipSub, smc.mc)){
-					//		std::changeAnchorPoint(display, 0.5);
-					//		smc.display.setPosition(smc.display.getPosition() + smc.display.getAnchorPointInPoints());
-					//	}
-					//	//smc.changeAnchorPoint(0.5);
-					//	//Vec2 absPos1 = smc.display.getAnchorPointInPoints();
-					//	//smc.setPosition(smc.getPosition() + absPos1);
-					//}
-
-					//disPos = getDisPosition();
-					//disPos=this.display.getParent().convertToNodeSpaceAR(disPos);
-					//this.display.setPosition(disPos);
-					//std::setAnchorPoint(display);
-					// std::map<std::string, dragonBones::AnimationData*> & animations = this.arm._armatureData.animations;
-					//for each (std::pair<std::string, dragonBones::AnimationData*> it in animations)
-					//{
-					//    std::string aniName = it.first;
-					//    int totalFrames = it.second.frameCount+ 1;//;
-					//    float duration = it.second.duration;
-					//    CCLOG("load %s totalFrames=%i duration=%f", aniName.c_str(), totalFrames, duration);
-					//}
-					//if (Common::String(slotName).EndsWith("Sphere")){
-					//	this.setPosition(100, 100);
-					//}
-					/*string defAniName = this.defAniName;
-					if (defAniName == "")*/
-
 					this.defAniName = this.arm._armatureData.defaultAnimation.name;
 					this.totalFrames = this.arm._armatureData.animations[this.defAniName].frameCount + 1;//;
-					//float duration = this.arm._armatureData.animations[defAniName].duration;
-					//CCLOG("load %s totalFrames=%i duration=%f", defAniName.c_str(), totalFrames, duration);
 					this.gotoAndStop(1);
 					this.reinitSubMcbs(true);
 					return true;
