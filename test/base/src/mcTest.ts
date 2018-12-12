@@ -193,8 +193,8 @@ function testMC(main:Main) {
 		testCase.$setWidth(50);
 		testCase.$setHeight(50);
 		testCase.enableMouseHandler(1);
-		testCase.$setX(10);
-		testCase.$setY(10);
+		testCase.$setX(50);
+		testCase.$setY(50);
 
         var mc:std.MovieClip=new std.MovieClip("","BulletTower5_1_mc","BulletTower5_1_mc");
 		this.mc=mc;

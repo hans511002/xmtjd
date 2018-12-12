@@ -172,12 +172,13 @@ module std{
 		//shape.graphics.beginFill(0xff0000, 1);
         shape.graphics.lineStyle(2, color?color:0);
         // shape.graphics.drawRect(x - w / 2, y - h / 2, w, h);
-		shape.graphics.moveTo(x,y);
-		shape.graphics.lineTo(x,y+h);
-		shape.graphics.lineTo(x+w,y+h);
-		shape.graphics.lineTo(x+w,y);
-		shape.graphics.lineTo(x,y);
-        shape.graphics.endFill();
+		shape.graphics.drawRect(x,y,w,h);
+		// shape.graphics.moveTo(x,y);
+		// shape.graphics.lineTo(x,y+h);
+		// shape.graphics.lineTo(x+w,y+h);
+		// shape.graphics.lineTo(x+w,y);
+		// shape.graphics.lineTo(x,y);
+        // shape.graphics.endFill();
     }
 	export function changeAnchorPoint(node:egret.DisplayObject, x:number,y:number):void {
 		var ax:number=node.anchorOffsetX;
@@ -1761,7 +1762,27 @@ module std{
 		setAlpha(op:number):void { this.$setAlpha(op); };
 		getAlpha():number {return this.alpha; };
 		stop():void{};
-	
+		enableMouseHandler(listen:number):void{
+			if (!this.mouseEnabled) 
+				this.mouseEnabled=(true); 
+			this.$setTouchChildren(this.mouseEnabled);
+			this.$setTouchEnabled(true);
+			//addEventNode(this);
+			if (listen && !this.listened)
+			{ 
+				this.$setTouchEnabled(true);
+				this.listened=true;
+				if((listen & 1)==1){
+					this.addEventListener(egret.TouchEvent.TOUCH_BEGIN,this.onTouchBegan,this,true);
+					this.addEventListener(egret.TouchEvent.TOUCH_END,this.onTouchEnded,this,true);
+				}
+				if((listen & 2)==2){
+					this.addEventListener(egret.TouchEvent.TOUCH_MOVE,this.onTouchMoved,this,false);
+				}
+				if(listen)
+					this.addEventListener(egret.TouchEvent.TOUCH_CANCEL,this.onTouchCancelled,this,false);
+			}
+		};
 	////////MovieClipSubBase////////////////////////////////////////////
 		isReady:boolean=false;
 		reinitType:number=0;
