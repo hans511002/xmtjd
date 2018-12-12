@@ -1,10 +1,17 @@
 
+module std{
+	export var urlMap={};
+	export var urlLen=0;
+	export var useNodeEvent:boolean = true;// false;
+	export var globalEventNodes=[];
+	export var sortGlobalNode:boolean=false;
+}
 
 module std{
 
 	export var urlMap={};
 	export var urlLen=0;
-	export var useNodeEvent:boolean =true;// false;
+	export var useNodeEvent:boolean = true;// false;
 	export var globalEventNodes=[];
 	export var sortGlobalNode:boolean=false;
 
@@ -273,6 +280,7 @@ module std{
 			this.$setY(y);
 		}
 		setMouseEnabled(mouseEnabled:boolean){
+			this.$setTouchEnabled(mouseEnabled);
 			this.mouseEnabled=mouseEnabled;
 		}
 		////////////////////////
@@ -303,22 +311,24 @@ module std{
 		enableMouseHandler(listen:number):void{
 			if (!this.mouseEnabled) 
 				this.mouseEnabled=(true); 
+			this.$setTouchChildren(this.mouseEnabled);
+			this.$setTouchEnabled(true);
 			//addEventNode(this);
 			if (listen && !this.listened)
 			{ 
-				this.listened=true;
 				this.$setTouchEnabled(true);
+				this.listened=true;
 				//        addEventListener<Z>(type: "touchMove" | "touchBegin" | "touchEnd" | "touchCancel" | "touchTap" | "touchReleaseOutside" | "touchRollOut" | "touchRollOver", 
 				//listener: (this: Z, e: TouchEvent) => void, thisObject: Z, useCapture?: boolean, priority?: number): any;
 				if((listen & 1)==1){
-					this.addEventListener("touchBegin",this.onTouchBegan,this,false);
-					this.addEventListener("touchEnd",this.onTouchEnded,this,false);
+					this.addEventListener(egret.TouchEvent.TOUCH_BEGIN,this.onTouchBegan,this,false);
+					this.addEventListener(egret.TouchEvent.TOUCH_END,this.onTouchEnded,this,false);
 				}
 				if((listen & 2)==2){
-					this.addEventListener("touchMove",this.onTouchMoved,this,false);
+					this.addEventListener(egret.TouchEvent.TOUCH_MOVE,this.onTouchMoved,this,false);
 				}
 				if(listen)
-					this.addEventListener("touchCancel",this.onTouchCancelled,this,false);
+					this.addEventListener(egret.TouchEvent.TOUCH_CANCEL,this.onTouchCancelled,this,false);
 			}
 		};
 		onTouchMoved(e:egret.TouchEvent){
@@ -870,7 +880,7 @@ module std{
 			return mc;
 		}
         // MCCase * createCase(const string &  slot, bool reinit = false, bool draw = false);
-		createCase(slotName:string,reinit:number=0,draw:boolean=true):MCCase
+		createCase(slotName:string,reinit:number=0,draw:boolean=false):MCCase
 		{
 			// constructor(pmc?:MC, slotName?:string,mouseEnabled:boolean=true,draw:boolean=false){
 			var mc:MCCase=  new MCCase(this, slotName, true, draw,reinit);
@@ -1738,14 +1748,14 @@ module std{
 			this.slotName=slotName;
 			this._draw=draw;
 			this.name=(slotName);
+			this.mouseEnabled = mouseEnabled;
 			if(this.mc){
 				this.mc.addMCbs(this,reinit);
 			}
 			if(this.mc)
 				this.reinit();
-			if (mouseEnabled)
+			if (this.mouseEnabled)
 				this.enableMouseHandler(std.useNodeEvent?1:0);
-			this.mouseEnabled = mouseEnabled;
 			// std.addEventNode(this);
 		}
 		setAlpha(op:number):void { this.$setAlpha(op); };

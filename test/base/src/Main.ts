@@ -144,7 +144,7 @@ class Main extends egret.DisplayObjectContainer {
 
         let topMask = new egret.Shape();
         topMask.graphics.beginFill(0x000000, 0.5);
-        topMask.graphics.drawRect(0, 0, stageW, 172);
+        topMask.graphics.drawRect(0, 0, stageW, stageH);
         topMask.graphics.endFill();
         topMask.y = 33;
         this.addChild(topMask);

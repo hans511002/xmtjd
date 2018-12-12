@@ -179,13 +179,22 @@ function fasterManage(param1:boolean) {
 }// end function
 function testMC(main:Main) {
 	    main.stage.addEventListener(egret.Event.ENTER_FRAME, enterFrameHandler, this);
-		main.stage.addEventListener(egret.TouchEvent.TOUCH_BEGIN, touchBeginHandler, this);
-		main.stage.addEventListener(egret.TouchEvent.TOUCH_END, touchEndHandler, this);
-		main.stage.addEventListener(egret.TouchEvent.TOUCH_CANCEL, touchCancelHandler, this);
-		main.stage.addEventListener(egret.TouchEvent.TOUCH_MOVE, touchMoveHandler, this);
-		main.stage.addEventListener(egret.TouchEvent.TOUCH_RELEASE_OUTSIDE, touchReleaseHandler, this);
+		// main.stage.addEventListener(egret.TouchEvent.TOUCH_BEGIN, touchBeginHandler, this);
+		// main.stage.addEventListener(egret.TouchEvent.TOUCH_END, touchEndHandler, this);
+		// main.stage.addEventListener(egret.TouchEvent.TOUCH_CANCEL, touchCancelHandler, this);
+		// main.stage.addEventListener(egret.TouchEvent.TOUCH_MOVE, touchMoveHandler, this);
+		// main.stage.addEventListener(egret.TouchEvent.TOUCH_RELEASE_OUTSIDE, touchReleaseHandler, this);
 		document.addEventListener("keydown", keyHandler);
 		document.addEventListener("keyup", keyHandler);
+
+		var testCase:std.MCCase=new std.MCCase(null,"",false);
+		main.addChild(testCase);
+		testCase.drawRange();
+		testCase.$setWidth(50);
+		testCase.$setHeight(50);
+		testCase.enableMouseHandler(1);
+		testCase.$setX(10);
+		testCase.$setY(10);
 
         var mc:std.MovieClip=new std.MovieClip("","BulletTower5_1_mc","BulletTower5_1_mc");
 		this.mc=mc;
