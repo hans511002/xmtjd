@@ -13,7 +13,7 @@ function onTicker(timeStamp:number){
 		// this.levinBack.tryPlay();
 		if(!this.isPlay())
 			this.tryPlay();
-        dragonBones.WorldClock.clock.advanceTime(pass / 1000);
+        // dragonBones.WorldClock.clock.advanceTime(pass / 1000);
 		// egret.log("timeStamp="+timeStamp+"  pass="+pass);
         return false;
 }
@@ -27,12 +27,166 @@ function enterFrameHandler(event: dragonBones.EgretEvent): void {
 	var pass = ms - this._time;
 	// egret.log("timeStamp="+ms+"  pass="+pass);
 	this._time = ms;
-	if(!this.isPlay())
-		this.tryPlay();
+	if(!this.mc.isPlay())
+		this.mc.tryPlay();
 	// dragonBones.WorldClock.clock.advanceTime(-1);
+
+
+	if (this.fastCont.isReady){
+		if (this.world.frameCounter % 2){
+			if (this.fastCont.currentFrame < this.fastCont.totalFrames){
+				this.fastCont.tryPlay();
+			}else{
+				this.fastCont.gotoAndStop(1);
+			}
+		}
+	}
+}
+function touchMoveHandler(event: egret.TouchEvent): void {
+	if (event.type != egret.TouchEvent.TOUCH_BEGIN) {
+		return;
+	}
+	var targetName:string =event.target.name;
+	if(targetName == "fastCase"){ 
+		if (this.fast.currentFrame == 1 || this.fast.currentFrame == 4)
+		{
+			var tempObject = 0;
+			if (this.fast.currentFrame == 4) {
+				tempObject = this.fastCont.currentFrame;
+			}
+			this.fast.gotoAndStop((this.fast.currentFrame + 1));
+			if (this.fast.currentFrame == 5) {
+				this.fastCont.gotoAndStop(tempObject);
+			}
+		}
+	}else if (this.fast.currentFrame == 2 || this.fast.currentFrame == 5) {
+		var tempObject = 0;
+		if (this.fast.currentFrame == 5) {
+			tempObject = this.fastCont.currentFrame;
+		}
+		this.fast.gotoAndStop((this.fast.currentFrame - 1));
+		if (this.fast.currentFrame == 4) {
+			this.fastCont.gotoAndStop(tempObject);
+		}
+	}
+}
+function touchBeginHandler(event: egret.TouchEvent): void {
+	if (event.type != egret.TouchEvent.TOUCH_BEGIN) {
+		return;
+	}
+	var targetName:string =event.target.name;
+	if (targetName == "fastCase"){ 
+		if (this.fast.currentFrame == 3 || this.fast.currentFrame == 6)	{
+			fasterManage(true);
+		}
+	}else if (this.fast.currentFrame == 3 || this.fast.currentFrame == 6)	{
+		this.fast.gotoAndStop(this.fast.currentFrame - 2);
+		if (this.fast.currentFrame == 4) {
+			this.fastCont.stop();
+		}
+	}
+}
+function touchEndHandler(event: egret.TouchEvent): void {
+	if (event.type != egret.TouchEvent.TOUCH_END) {
+		return;
+	}
+	var targetName:string =event.target.name;
+
+	if (targetName == "fastCase") {
+		if (this.fast.currentFrame == 3 || this.fast.currentFrame == 6) {
+			fasterManage(true);
+		}
+	} else if (this.fast.currentFrame == 3 || this.fast.currentFrame == 6) {
+		this.fast.gotoAndStop(this.fast.currentFrame - 2);
+		if (this.fast.currentFrame == 4) {
+			this.fastCont.stop();
+		}
+	}
+}
+function touchCancelHandler(event: egret.TouchEvent): void {
+	if (event.type != egret.TouchEvent.TOUCH_CANCEL) {
+		return;
+	}
+}
+function touchReleaseHandler(event: egret.TouchEvent): void {
+	if (event.type != egret.TouchEvent.TOUCH_RELEASE_OUTSIDE) {
+		return;
+	}
 }
 
+function keyHandler(event: KeyboardEvent): void {
+            const isDown: boolean = event.type == "keydown";
+            switch (event.keyCode) {
+                case 37:
+                case 65:
+                    //Game.instance._left = isDown;
+                    break;
+                case 39:
+                case 68:
+                    // Game.instance._right = isDown;
+                    break;
+
+                case 38:
+                case 87:
+                    // if (isDown) {
+                    //     Game.instance._player.jump();
+                    // }
+                    break;
+
+                case 83:
+                case 40:
+                    // Game.instance._player.squat(isDown);
+                    break;
+
+                case 81:
+                    // if (isDown) {
+                    //     Game.instance._player.switchWeaponR();
+                    // }
+                    break;
+
+                case 69:
+                    // if (isDown) {
+                    //     Game.instance._player.switchWeaponL();
+                    // }
+                    break;
+
+                case 32:
+                    // if (isDown) {
+                    //     Game.instance._player.switchWeaponR();
+                    //     Game.instance._player.switchWeaponL();
+                    // }
+                    break;
+            } 
+}
+
+function fasterManage(param1:boolean) {
+	if (this.fasterFlag != 2) {
+		if (param1) {
+			this.fast.gotoAndStop(5);
+		} else {
+			this.fast.gotoAndStop(4);
+		}
+		this.fastCont.stop();
+		this.fastPlayControl(2); 
+	}else{
+		if (param1)	{
+			this.fast.gotoAndStop(2);
+		}else{
+			this.fast.gotoAndStop(1);
+		}
+		this.fastPlayControl(0);
+	}
+}// end function
 function testMC(main:Main) {
+	    main.stage.addEventListener(egret.Event.ENTER_FRAME, enterFrameHandler, this);
+		main.stage.addEventListener(egret.TouchEvent.TOUCH_BEGIN, touchBeginHandler, this);
+		main.stage.addEventListener(egret.TouchEvent.TOUCH_END, touchEndHandler, this);
+		main.stage.addEventListener(egret.TouchEvent.TOUCH_CANCEL, touchCancelHandler, this);
+		main.stage.addEventListener(egret.TouchEvent.TOUCH_MOVE, touchMoveHandler, this);
+		main.stage.addEventListener(egret.TouchEvent.TOUCH_RELEASE_OUTSIDE, touchReleaseHandler, this);
+		document.addEventListener("keydown", keyHandler);
+		document.addEventListener("keyup", keyHandler);
+
         var mc:std.MovieClip=new std.MovieClip("","BulletTower5_1_mc","BulletTower5_1_mc");
 		this.mc=mc;
 		mc.setPosition(100,100);
@@ -55,6 +209,12 @@ function testMC(main:Main) {
 		var startWaves = wiStart.createMovieClipSub("startWaves");
 		var startWavesStartWavesCase = startWaves.createCase("startWavesCase");
 
+		// std.printNode(fast);
+		// std.printNode(fastFastCase);
+		// std.printNode(startWaves);
+		// std.printNode(startWavesStartWavesCase);
+
+
 		this.startWavesStartWavesCase =startWavesStartWavesCase;
 		this.startWaves =startWaves;
 		this.fast =fast;
@@ -66,9 +226,9 @@ function testMC(main:Main) {
         // egret.Ticker.getInstance().register(function (advancedTime) {
         //         dragonBones.WorldClock.clock.advanceTime(advancedTime / 1000);
         //     }, this.mc);
-		//egret.startTick(onTicker, this.mc);
-        main.stage.addEventListener(egret.Event.ENTER_FRAME, enterFrameHandler, mc);
+		//egret.startTick(onTicker, this.fast);
 
+		
 		if(this.mc)
 			return;
         
