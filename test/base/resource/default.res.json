@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "egret_icon_png,description_json,BulletTower5_1_mc_ske_json,BulletTower5_1_mc_tex_json,BulletTower5_1_mc_tex_png,worldCast_mc_ske_json,worldCast_mc_tex_json,worldCast_mc_tex_png,WorldInterface_mc_ske_json,WorldInterface_mc_tex_json,WorldInterface_mc_tex_png,worldLive_mc_ske_json,worldLive_mc_tex_json,worldLive_mc_tex_png,worldSphere_mc_ske_json,worldSphere_mc_tex_json,worldSphere_mc_tex_png,worldStart_mc_ske_json,worldStart_mc_tex_json,worldStart_mc_tex_png",
+			"keys": "egret_icon_png,description_json,BulletTower5_1_mc_ske_json,BulletTower5_1_mc_tex_json,BulletTower5_1_mc_tex_png,worldCast_mc_ske_json,worldCast_mc_tex_json,worldCast_mc_tex_png,WorldInterface_mc_ske_json,WorldInterface_mc_tex_json,WorldInterface_mc_tex_png,worldLive_mc_ske_json,worldLive_mc_tex_json,worldLive_mc_tex_png,worldSphere_mc_ske_json,worldSphere_mc_tex_json,worldSphere_mc_tex_png,worldStart_mc_ske_json,worldStart_mc_tex_json,worldStart_mc_tex_png,bg_png",
 			"name": "preload"
 		}
 	],
@@ -110,6 +110,11 @@
 			"name": "worldStart_mc_tex_png",
 			"type": "image",
 			"url": "work/worldStart_mc/worldStart_mc_tex.png"
+		},
+		{
+			"name": "bg_png",
+			"type": "image",
+			"url": "bg.png"
 		}
 	]
 }

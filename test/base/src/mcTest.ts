@@ -187,14 +187,30 @@ function testMC(main:Main) {
 		document.addEventListener("keydown", keyHandler);
 		document.addEventListener("keyup", keyHandler);
 
-		var testCase:std.MCCase=new std.MCCase(null,"",false);
+		var testCase:std.BaseNode=new std.BaseNode();
 		main.addChild(testCase);
 		testCase.drawRange();
-		testCase.$setWidth(50);
-		testCase.$setHeight(50);
+		testCase.$setWidth(500);
+		testCase.$setHeight(500);
 		testCase.enableMouseHandler(1);
 		testCase.$setX(50);
 		testCase.$setY(50);
+		var  shape:egret.Shape=new egret.Shape();
+		testCase.addChild(shape);
+		shape.$setWidth(200);
+		shape.$setHeight(200);
+		std.nodes["testCase"]=testCase;
+		//"bg_png"
+
+ 		var img:egret.Bitmap = new egret.Bitmap();
+		img.texture = RES.getRes("bg_png");
+		testCase.addChild(img);
+		img.$setWidth(100);
+		img.$setHeight(100);
+
+
+
+
 
         var mc:std.MovieClip=new std.MovieClip("","BulletTower5_1_mc","BulletTower5_1_mc");
 		this.mc=mc;
