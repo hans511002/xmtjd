@@ -27,23 +27,81 @@
 //
 //////////////////////////////////////////////////////////////////////////////////////
 
-class Main extends egret.DisplayObjectContainer {
+class Main extends  std.BaseNode {
+    static mouseX:number;
+    static mouseY:number;
 
 
+    body_cl:std.MovieClip;
+    card_8:card_mc;
+    cloak_cl:std.MovieClip;
+    foot1_cl:std.MovieClip;
+    foot2_cl:std.MovieClip;
+    h2:std.MovieClip;
+    hand_l_cl:std.MovieClip;
+    hand_r_cl:std.MovieClip;
+    head_cl:std.MovieClip;
+    icon_cl:std.MovieClip;
+    skirt_cl:std.MovieClip;
+    tail_cl:std.MovieClip;
+    wool_cl:std.MovieClip;
+    _App:App;
+    _Preloader:Preloader;
+    
+    static sav:any={"data":{}};//=egret.localStorage ;// static sav:SharedObject = SharedObject.getLocal("SharedObject");
+    static zvukReg:Boolean = true;
+    static _app_is_add:Boolean = false;
+    static lev_sound:Number = 1;
+    static mute_music:Boolean = false;
+    static mute_sfx:Boolean = false;
+    static xray_mode:Boolean = false;
+    static go_to_game:Boolean = false;
+    static first_target:Object;
+    static load_map_zvuk:Number = 1;
+    static muz_map_zvuk_zv:egret.Sound = new egret.Sound();
+    static muz_map_zvuk_can:egret.SoundChannel;
+    static load_elf_zvuk:Number = 1;
+    static muz_elf_zvuk_zv:egret.Sound = new egret.Sound();
+    static muz_elf_zvuk_can:egret.SoundChannel;
+    static load_water_zvuk:Number = 1;
+    static muz_water_zvuk_zv:egret.Sound = new egret.Sound();
+    static muz_water_zvuk_can:egret.SoundChannel;
+    static load_dance_zvuk:Number = 1;
+    static muz_dance_zvuk_zv:egret.Sound = new egret.Sound();
+    static muz_dance_zvuk_can:egret.SoundChannel;
+
+    root:std.MovieClip;
 
     public constructor() {
         super();
         this.addEventListener(egret.Event.ADDED_TO_STAGE, this.onAddToStage, this);
+
     }
 
-    private onAddToStage(event: egret.Event) {
-
-        egret.lifecycle.addLifecycleListener((context) => {
-            // custom lifecycle plugin
-
-            context.onUpdate = () => {
-
+    go_to_game_f(event:Event):void {
+        var _loc_2:any = null;
+        if (Main.go_to_game)
+        {
+            this.removeChild(this._Preloader);
+            this.root.gotoAndStop(1,"game");
+            _loc_2 = new App();
+            this. addChild(_loc_2);
+            _loc_2.init();
+            _loc_2.open_new_screen(Main.first_target);
             }
+    }// end function
+    
+    private onAddToStage(event: egret.Event) {
+    // onEnter() {
+        // super.onEnter();
+        // egret.ticker.$startTick
+        egret.ticker.$setFrameRate(30);
+        
+        egret.lifecycle.addLifecycleListener((context) => {
+        // custom lifecycle plugin
+        context.onUpdate = () => {
+            egret.log(egret.getTimer());
+        }
         })
 
         egret.lifecycle.onPause = () => {
@@ -56,18 +114,13 @@ class Main extends egret.DisplayObjectContainer {
 
         this.runGame().catch(e => {
             console.log(e);
-        })
-
-
-
+        }) 
     }
 
     private async runGame() {
         await this.loadResource()
-        this.createGameScene();
-        const result = await RES.getResAsync("description_json")
-        this.startAnimation(result);
         await platform.login();
+        this.createGameScene();
         const userInfo = await platform.getUserInfo();
         console.log(userInfo);
 
@@ -100,6 +153,15 @@ class Main extends egret.DisplayObjectContainer {
         sky.width = stageW;
         sky.height = stageH;
 
+
+
+
+
+    }
+    //默认样例
+    private test(){
+        let stageW = this.stage.stageWidth;
+        let stageH = this.stage.stageHeight;
         let topMask = new egret.Shape();
         topMask.graphics.beginFill(0x000000, 0.5);
         topMask.graphics.drawRect(0, 0, stageW, 172);
@@ -143,9 +205,9 @@ class Main extends egret.DisplayObjectContainer {
         textfield.y = 135;
         this.textfield = textfield;
 
-
+         const result =   RES.getRes("description_json")
+       this.startAnimation(result);
     }
-
     /**
      * 根据name关键字创建一个Bitmap对象。name属性请参考resources/resource.json配置文件的内容。
      * Create a Bitmap object according to name keyword.As for the property of name please refer to the configuration file of resources/resource.json.
