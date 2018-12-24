@@ -177,6 +177,12 @@ function fasterManage(param1:boolean) {
 		this.fastPlayControl(0);
 	}
 }// end function
+
+function frameFun(event:dragonBones.EventObject){
+ 	if (event.type == dragonBones.EventObject.COMPLETE) {
+	}
+}
+
 function testMC(main:Main) {
 	    main.stage.addEventListener(egret.Event.ENTER_FRAME, enterFrameHandler, this);
 		// main.stage.addEventListener(egret.TouchEvent.TOUCH_BEGIN, touchBeginHandler, this);
@@ -217,10 +223,11 @@ function testMC(main:Main) {
 		mc.setPosition(100,100);
         main.addChild(this.mc);
 		this.mc.tryPlay();
+		mc.container.addDBEventListener(dragonBones.EventObject.FRAME_EVENT,frameFun,this);
 		// dragonBones.WorldClock.clock.add(mc.getArmature());
 		var wiStart=new std.MovieClip("work/", "worldStart_mc", "worldStart_mc");
 
-//   dragonBones.WorldClock.clock.add(  );
+		//   dragonBones.WorldClock.clock.add(  );
 
 
 		this.wiStart=wiStart;

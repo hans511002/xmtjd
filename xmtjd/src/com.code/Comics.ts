@@ -33,7 +33,7 @@
         }// end function
 
         public frame609() {
-            stop();
+            // stop();
             return;
         }// end function
 
