@@ -240,11 +240,11 @@ module std {
 			mcsb.slot.display = sprite;
 			sprite.addChild(dis);
 			if (dis instanceof egret.Mesh) {
-				mcsb.$setX(mcsb.x - dis.width / 2);
-				mcsb.$setY(mcsb.y - dis.height / 2);
+				sprite.$setX(sprite.x - dis.width / 2);
+				sprite.$setY(sprite.y - dis.height / 2);
 			} else {
-				mcsb.$setX(mcsb.x - dis.anchorOffsetX);
-				mcsb.$setY(mcsb.y - dis.anchorOffsetY);
+				sprite.$setX(sprite.x - dis.anchorOffsetX);
+				sprite.$setY(sprite.y - dis.anchorOffsetY);
 			}
 			sprite.$setWidth(dis.width);
 			sprite.$setHeight(dis.height);
@@ -1506,8 +1506,11 @@ module std {
 					// var m=<egret.Mesh>this.$children[0];
 					// std.printNode(this);
 					// std.printNode(this.$children[0]);
-					// std.drawRange(this,0xFF0000);
-					// std.drawRange(this.$children[0],0x0000FF);
+					if (this._draw) {
+						this.width = this.width - 2;
+						this.height = this.height - 2;
+						std.drawRange(this.$children[0], 0x0000FF);
+					}
 				}
 				if (this._draw)
 					this.drawRange();// std.drawRange(this.display,0xFF0000);

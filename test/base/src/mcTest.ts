@@ -184,10 +184,7 @@ function frameFun(event: dragonBones.EgretEvent) {
 	}
 }
 function maskTestFrameHandler(event: dragonBones.EgretEvent) {
-	var maskTest: std.MovieClip = this;
-	var bg: egret.Bitmap = maskTest.getArmature().getSlot("b").display;
-	bg.mask = maskTest.getArmature().getSlot("mask").display;
-	bg.visible = false;
+	maskTicker.call(this, 0);
 }
 function maskTicker(timeStamp: number) {
 	var maskTest: std.MovieClip = this;
@@ -198,15 +195,50 @@ function maskTicker(timeStamp: number) {
 	if (bg instanceof egret.Sprite) {
 		var sprite = <egret.Sprite>bg;
 		if (mask) {
-			sprite.removeChildAt(1);
-			sprite.addChild(mask);
+			bg = <egret.Bitmap>sprite.getChildAt(0);
+			if (bg.mask != mask) {
+				bg.mask = mask;
+			}
+			// sprite.removeChildAt(1);
+			// sprite.addChild(mask);
 			// mslot.display = null;
 		}
 	} else {
 		var sprite = new egret.Sprite();
 		bslot.display = sprite;
 		sprite.addChild(bg);
-		sprite.addChild(mask);
+		if (bg instanceof egret.Mesh) {
+			sprite.$setX(sprite.x - bg.width / 2);
+			sprite.$setY(sprite.y - bg.height / 2);
+		} else {
+			// sprite.$setX(sprite.x + bg.anchorOffsetX);
+			// sprite.$setY(sprite.y + bg.anchorOffsetY);
+			// sprite.$setAnchorOffsetX(bg.x);
+			// sprite.$setAnchorOffsetY(bg.y);
+			// sprite.$setAnchorOffsetX(bg.anchorOffsetX);
+			// sprite.$setAnchorOffsetY(bg.anchorOffsetY);
+			// bg.anchorOffsetX = 0;
+			// bg.anchorOffsetY = 0;
+			// sprite.$setX(sprite.x - bg.anchorOffsetX);
+			// sprite.$setY(sprite.y - bg.anchorOffsetY);
+		}
+		sprite.$setWidth(bg.width);
+		sprite.$setHeight(bg.height);
+		sprite.$setScaleX(bg.scaleX);
+		sprite.$setScaleY(bg.scaleY);
+		sprite.$setSkewX(bg.skewX);
+		sprite.$setSkewY(bg.skewY);
+		sprite.$setAlpha(bg.alpha);
+		sprite.$setRotation(bg.rotation);
+		bg.$setScaleX(1);
+		bg.$setScaleY(1);
+		bg.$setAlpha(1);
+		bg.$setRotation(0);
+		bg.$setSkewX(0);
+		bg.$setSkewY(0);
+		bg.$setX(0);
+		bg.$setY(0);
+		// std.drawRange(sprite, 0x000000);
 		bg.mask = mask;
 		// mslot.display = null;
 	}
@@ -215,12 +247,12 @@ function maskTicker(timeStamp: number) {
 	// mask
 
 
-	// bslot.visible = (false);
-	console.log("bg=" + bg["timeStamp"]);
-	bg["timeStamp"] = timeStamp;
-	console.log("mask=" + mask["timeStamp"] + " displayIndex=" + mslot.displayIndex + " width=" + mask.width + " height=" + mask.height);
-	std.printNode(mask);
-	mask["timeStamp"] = timeStamp;
+	// // bslot.visible = (false);
+	// console.log("bg=" + bg["timeStamp"]);
+	// bg["timeStamp"] = timeStamp;
+	// console.log("mask=" + mask["timeStamp"] + " displayIndex=" + mslot.displayIndex + " width=" + mask.width + " height=" + mask.height);
+	// // std.printNode(mask);
+	// mask["timeStamp"] = timeStamp;
 
 
 	return false;
@@ -235,7 +267,19 @@ function testMC(main: Main) {
 	document.addEventListener("keydown", keyHandler);
 	document.addEventListener("keyup", keyHandler);
 
-	// var img: egret.Bitmap = Main.createBitmapByName("bg_png");
+	// var img: egret.Bitmap = Main.createBitmapByName("bg_jpg");
+	// var mask: egret.Bitmap = Main.createBitmapByName("test_tex_png");
+	// main.addChild(img);
+	// main.addChild(mask);
+	// // img.$setX(200);
+	// // img.$setY(200);
+	// // mask.$setY(200);
+	// // mask.$setY(200);
+	// img.mask = mask;
+	// let stageW = main.stage.stageWidth;
+	// let stageH = main.stage.stageHeight;
+	// img.width = stageW;
+	// img.height = stageH;
 
 	var mc: std.MovieClip = new std.MovieClip("", "BulletTower5_1_mc", "BulletTower5_1_mc");
 	this.mc = mc;
@@ -248,13 +292,14 @@ function testMC(main: Main) {
 	var maskTest: std.MovieClip = new std.MovieClip("", "skala_cl", "test");
 	this.maskTest = maskTest;
 	main.addChild(this.maskTest);
-	maskTest.addEventListener(egret.Event.ENTER_FRAME, maskTestFrameHandler, maskTest);
-	maskTest.gotoAndStop(20);
+	// maskTest.addEventListener(egret.Event.ENTER_FRAME, maskTestFrameHandler, maskTest);
+	// maskTest.gotoAndStop(20);
 	maskTest.play(0);
-	maskTest.setPosition(50, 50);
-	egret.startTick(this.maskTicker, this.maskTest);
-
-
+	maskTest.setPosition(150, 50);
+	// egret.startTick(this.maskTicker, this.maskTest);
+	// mc.container.addDBEventListener(dragonBones.EventObject.FADE_IN_COMPLETE, maskTestFrameHandler, maskTest);
+	mc.container.addEventListener(egret.Event.ENTER_FRAME, maskTestFrameHandler, maskTest);
+	// maskTestFrameHandler.call(maskTest, null);
 	if (maskTest) return;
 
 
@@ -270,10 +315,10 @@ function testMC(main: Main) {
 	main.addChild(this.wiStart);
 
 	var fast = wiStart.createMovieClipSub("fast");
-	var fastFastCase = fast.createCase("fastCase");
+	var fastFastCase = fast.createCase("fastCase", 0, true);
 	var fastCont = fast.createMovieClipSub("cont", 1);// 4 5帧 才有
 	var startWaves = wiStart.createMovieClipSub("startWaves");
-	var startWavesStartWavesCase = startWaves.createCase("startWavesCase");
+	var startWavesStartWavesCase = startWaves.createCase("startWavesCase", 0, true);
 
 	// std.printNode(fast);
 	// std.printNode(fastFastCase);
