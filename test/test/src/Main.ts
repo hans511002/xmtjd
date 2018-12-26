@@ -26,13 +26,6 @@
 //  EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 //////////////////////////////////////////////////////////////////////////////////////
-// import { std }  from './base/BaseNode';
-/// <reference path="base/BaseNode.ts" />
-
-//import * as std from './base/BaseNode';
-
-//import std = require("./base/BaseNode");
-
 
 class Main extends egret.DisplayObjectContainer {
 
@@ -70,35 +63,13 @@ class Main extends egret.DisplayObjectContainer {
     }
 
     private async runGame() {
-        egret.log("1 " + new Date().getTime());
         await this.loadResource()
-        egret.log("2 " + new Date().getTime());
-        // this.createGameScene();
-        egret.log("3 " + new Date().getTime());
-        // const result = await RES.getResAsync("description_json")
-        // this.startAnimation(result);
+        this.createGameScene();
+        const result = await RES.getResAsync("description_json")
+        this.startAnimation(result);
         await platform.login();
         const userInfo = await platform.getUserInfo();
         console.log(userInfo);
-
-
-
-        let stageW = this.stage.stageWidth;
-        let stageH = this.stage.stageHeight;
-        // let sky = this.createBitmapByName("bg_jpg");
-        // this.addChild(sky);
-        // sky.width = stageW;
-        // sky.height = stageH;
-
-        let topMask = new egret.Shape();
-        topMask.graphics.beginFill(0x000000, 0.5);
-        topMask.graphics.drawRect(0, 0, stageW, stageH);
-        topMask.graphics.endFill();
-        topMask.y = 33;
-        this.anchorOffsetX = 0;
-        this.anchorOffsetY = 0;
-        this.addChild(topMask);
-        testMC(this);
 
     }
 
@@ -106,52 +77,38 @@ class Main extends egret.DisplayObjectContainer {
         try {
             const loadingView = new LoadingUI();
             this.stage.addChild(loadingView);
-            egret.log("4 " + new Date().getTime());
             await RES.loadConfig("resource/default.res.json", "resource/");
-            await std.initResMap();
             await RES.loadGroup("preload", 0, loadingView);
-            //RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE, this.onResourceLoadComplete, this);
             this.stage.removeChild(loadingView);
-            egret.log("5 " + new Date().getTime());
-
         }
         catch (e) {
             console.error(e);
         }
     }
-    private onResourceLoadComplete(event: RES.ResourceEvent): void {
-        if (event.groupName == "preload") {
-            RES.removeEventListener(RES.ResourceEvent.GROUP_COMPLETE, this.onResourceLoadComplete, this);
-            // RES.removeEventListener(RES.ResourceEvent.GROUP_LOAD_ERROR, this.onResourceLoadError, this);
-            // RES.removeEventListener(RES.ResourceEvent.GROUP_PROGRESS, this.onResourceProgress, this);
-            this.createGameScene();
-        }
-    }
+
     private textfield: egret.TextField;
-    icon: egret.Bitmap;
 
     /**
      * 创建游戏场景
      * Create a game scene
      */
     private createGameScene() {
+        let sky = this.createBitmapByName("bg_jpg");
+        this.addChild(sky);
         let stageW = this.stage.stageWidth;
         let stageH = this.stage.stageHeight;
-        // let sky = this.createBitmapByName("bg_jpg");
-        // this.addChild(sky);
-        // sky.width = stageW;
-        // sky.height = stageH;
+        sky.width = stageW;
+        sky.height = stageH;
 
         let topMask = new egret.Shape();
         topMask.graphics.beginFill(0x000000, 0.5);
-        topMask.graphics.drawRect(0, 0, stageW, stageH);
+        topMask.graphics.drawRect(0, 0, stageW, 172);
         topMask.graphics.endFill();
         topMask.y = 33;
         this.addChild(topMask);
 
-        let icon = Main.createBitmapByName("egret_icon_png");
+        let icon = this.createBitmapByName("egret_icon_png");
         this.addChild(icon);
-        this.icon = icon;
         icon.x = 26;
         icon.y = 33;
 
@@ -186,22 +143,20 @@ class Main extends egret.DisplayObjectContainer {
         textfield.y = 135;
         this.textfield = textfield;
 
-        var shape: egret.Shape = new egret.Shape();
-        this.addChild(shape);
-        std.drawRect(shape, 50, 50, 100, 100);
-        std.drawRange(textfield, 0xff0000);
+
     }
 
     /**
      * 根据name关键字创建一个Bitmap对象。name属性请参考resources/resource.json配置文件的内容。
      * Create a Bitmap object according to name keyword.As for the property of name please refer to the configuration file of resources/resource.json.
      */
-    public static createBitmapByName(name: string) {
+    private createBitmapByName(name: string) {
         let result = new egret.Bitmap();
         let texture: egret.Texture = RES.getRes(name);
         result.texture = texture;
         return result;
     }
+
     /**
      * 描述文件加载成功，开始播放动画
      * Description file loading is successful, start to play the animation
@@ -227,8 +182,6 @@ class Main extends egret.DisplayObjectContainer {
             tw.wait(2000);
             tw.to({ "alpha": 0 }, 200);
             tw.call(change, this);
-            //var a=new std.BaseNode();
-            //var a=new baseNode();// setImgUrl(this.icon);
         };
 
         change();

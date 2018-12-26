@@ -19,6 +19,9 @@
       "name": "assetsmanager"
     },
     {
+      "name": "eui"
+    },
+    {
       "name": "dragonBones"
     },
     {
@@ -26,9 +29,6 @@
     },
     {
       "name": "promise"
-    },
-    {
-      "name": "eui"
     }
   ]
 }

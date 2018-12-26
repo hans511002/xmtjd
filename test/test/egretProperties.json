@@ -25,17 +25,7 @@
       "name": "dragonBones"
     },
     {
-      "name": "socket"
-    },
-    {
       "name": "promise"
-    },
-    {
-      "name": "egretia-sdk"
-    },
-    {
-      "name": "egretad",
-      "path": "./libs/egretad"
     }
   ]
 }

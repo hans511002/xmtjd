@@ -1,23 +1,50 @@
 {
-	"groups":[
-	{
-		"keys":"bg_jpg,egret_icon_png,description_json",
-		"name":"preload"
-	}],
-	"resources":[
-	{
-		"name":"bg_jpg",
-		"type":"image",
-		"url":"assets/bg.jpg"
-	},
-	{
-		"name":"egret_icon_png",
-		"type":"image",
-		"url":"assets/egret_icon.png"
-	},
-	{
-		"name":"description_json",
-		"type":"json",
-		"url":"config/description.json"
-	}]
+	"groups": [
+		{
+			"keys": "bg_jpg,egret_icon_png,description_json,texture_json,texture_png,test_tex_json,test_tex_png,test_ske_json",
+			"name": "preload"
+		}
+	],
+	"resources": [
+		{
+			"name": "bg_jpg",
+			"type": "image",
+			"url": "assets/bg.jpg"
+		},
+		{
+			"name": "egret_icon_png",
+			"type": "image",
+			"url": "assets/egret_icon.png"
+		},
+		{
+			"name": "description_json",
+			"type": "json",
+			"url": "config/description.json"
+		},
+		{
+			"name": "texture_json",
+			"type": "json",
+			"url": "assets/test/library/texture.json"
+		},
+		{
+			"name": "texture_png",
+			"type": "image",
+			"url": "assets/test/library/texture.png"
+		},
+		{
+			"name": "test_tex_json",
+			"type": "json",
+			"url": "assets/test/test_tex.json"
+		},
+		{
+			"name": "test_tex_png",
+			"type": "image",
+			"url": "assets/test/test_tex.png"
+		},
+		{
+			"name": "test_ske_json",
+			"type": "json",
+			"url": "assets/test/test_ske.json"
+		}
+	]
 }

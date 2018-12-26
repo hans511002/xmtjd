@@ -16,8 +16,8 @@ module std {
 	export var sortGlobalNode: boolean = false;
 	export var nodes = {};
 
-	export function _rnd(r:number){
-		return Math.random()*r;	
+	export function _rnd(r: number) {
+		return Math.random() * r;
 	}
 	export function getNodePath(node: egret.DisplayObject): string {
 		var par: egret.DisplayObject = node.parent;
