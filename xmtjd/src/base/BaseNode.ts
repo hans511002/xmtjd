@@ -1623,3 +1623,23 @@ module std {
 	}
 
 }
+module std {
+
+	export function maskDB(mc:MC){
+				// gotoAndPlay(animationName: string, fadeInTime?: number, duration?: number, playTimes?: number, layer?: number, group?: string | null, fadeOutMode?: AnimationFadeOutMode, pauseFadeOut?: boolean, pauseFadeIn?: boolean): AnimationState | null;
+		var upperBodyAnimationState:dragonBones.AnimationState =mc.getArmature().animation.gotoAndPlay("run",0,-1,0,0,"UPPER_BODY_GROUP",dragonBones.AnimationFadeOutMode.SameGroup);
+		var lowerBodyAnimationState:dragonBones.AnimationState = mc.getAnimation().gotoAndPlay("fire",0,-1,0,0,"LOWER_BODY_GROUP",dragonBones.AnimationFadeOutMode.SameGroup);
+		
+		
+		upperBodyAnimationState.addBoneMask("head");
+		upperBodyAnimationState.addBoneMask("body");
+		lowerBodyAnimationState.addBoneMask("leg");
+		lowerBodyAnimationState.addBoneMask("foot");
+
+		
+	}
+
+}
+
+
+

@@ -1,31 +1,27 @@
-﻿module com.code
-{
- 
-    export class Aby extends DataMovieClip
-    {
-        _game:Game;
-        _app:App;
-        skin:std.MovieClip;
-        type:number;
-        id:number;
-        ex_aby:boolean;
-        reload_time:number;
-        reload_time2:number;
-        time:number;
-        frame_action:number;
-        power:number;
-        type_aby:number;
-        qe:number;
+﻿module com.code {
 
-        public   Aby()
-        {
+    export class Aby extends DataMovieClip {
+        _game: Game;
+        _app: App;
+        skin: aby_mc;
+        type: number;
+        id: number;
+        ex_aby: boolean;
+        reload_time: number;
+        reload_time2: number;
+        time: number;
+        frame_action: number;
+        power: number;
+        type_aby: number;
+        qe: number;
+
+        public Aby() {
             this._game = Game.getInstance();
             this._app = App.getInstance();
             return;
         }// end function
 
-        public   init() : void
-        {
+        public init(): void {
             this.skin = this._sp(aby_mc, this, 285 - (this._game.arr_cat.length - 1) * 78, 387);
             this.id = this._game.arr_cat.length;
             this.type = Main.sav.data["cat_aby_" + this.id];
@@ -35,15 +31,13 @@
             this.power = this._game._info.got_power(this.type);
             this.frame_action = this._game._info.got_frame(this.type);
             this.time = this._game._info.got_time(this.type);
-            if (this.type == 0)
-            {
+            if (this.type == 0) {
                 this.ex_aby = false;
                 this.skin.icon_cl.visible = false;
                 this.skin.bt_telo.visible = false;
                 this.skin.icon_cl.icon2.icon_cl.gotoAndStop(1);
             }
-            else
-            {
+            else {
                 this.ex_aby = false;
                 this.skin.icon_cl.visible = true;
                 this.skin.bt_telo.visible = true;
@@ -55,22 +49,19 @@
             this.set_scale(Main.sav.data["cat_hp_" + this.id]);
             this.reload_time2 = this._game._info.got_reload(this.type);
             this.qe = 1;
-            i = 1;
-            while (i <= Main.sav.data["cat_speed_level_" + this.id])
-            {
-                
+            this.i = 1;
+            while (this.i <= Main.sav.data["cat_speed_level_" + this.id]) {
+
                 this.qe = this.qe - 0.015;
-                var _loc_2:* = i + 1;
-                i = _loc_2;
+                this.i++;
             }
             this.reload_time2 = this.reload_time2 * this.qe;
-            this.reload_time = int(this.reload_time2 * 0.5);
+            this.reload_time = (this.reload_time2 * 0.5);
             this.skin.cat2.gotoAndStop(1);
             return;
         }// end function
 
-        public dress_up(param1, param2)
-        {
+        public dress_up(param1, param2) {
             param1.head_cl.wool_cl.gotoAndStop(this.id);
             param1.hand_l_cl.wool_cl.gotoAndStop(this.id);
             param1.hand_r_cl.wool_cl.gotoAndStop(this.id);
@@ -93,9 +84,8 @@
             return;
         }// end function
 
-        public set_scale(param1)
-        {
-            this.skin.skala_cl.gotoAndStop(int(param1 / Main.sav.data["cat_hp2_" + this.id] * 100));
+        public set_scale(param1) {
+            this.skin.skala_cl.gotoAndStop((param1 / Main.sav.data["cat_hp2_" + this.id] * 100));
             return;
         }// end function
 
