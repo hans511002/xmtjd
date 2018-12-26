@@ -31,23 +31,6 @@ class Main extends  std.BaseNode {
     static mouseX:number;
     static mouseY:number;
 
-
-    body_cl:std.MovieClip;
-    card_8:card_mc;
-    cloak_cl:std.MovieClip;
-    foot1_cl:std.MovieClip;
-    foot2_cl:std.MovieClip;
-    h2:std.MovieClip;
-    hand_l_cl:std.MovieClip;
-    hand_r_cl:std.MovieClip;
-    head_cl:std.MovieClip;
-    icon_cl:std.MovieClip;
-    skirt_cl:std.MovieClip;
-    tail_cl:std.MovieClip;
-    wool_cl:std.MovieClip;
-    _App:App;
-    _Preloader:Preloader;
-    
     static sav:any={"data":{}};//=egret.localStorage ;// static sav:SharedObject = SharedObject.getLocal("SharedObject");
     static zvukReg:Boolean = true;
     static _app_is_add:Boolean = false;
@@ -72,10 +55,27 @@ class Main extends  std.BaseNode {
 
     root:std.MovieClip;
 
+
+    body_cl:std.MovieClip;
+    card_8:card_mc;
+    cloak_cl:std.MovieClip;
+    foot1_cl:std.MovieClip;
+    foot2_cl:std.MovieClip;
+    h2:std.MovieClip;
+    hand_l_cl:std.MovieClip;
+    hand_r_cl:std.MovieClip;
+    head_cl:std.MovieClip;
+    icon_cl:std.MovieClip;
+    skirt_cl:std.MovieClip;
+    tail_cl:std.MovieClip;
+    wool_cl:std.MovieClip;
+    _App:App;
+    _Preloader:Preloader;
+    
     public constructor() {
         super();
         this.addEventListener(egret.Event.ADDED_TO_STAGE, this.onAddToStage, this);
-
+//addFrameScript(0,this.frame1);
     }
 
     go_to_game_f(event:Event):void {

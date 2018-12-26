@@ -1,0 +1,5 @@
+小猫们会自动坐下吃饭.
+--- RECORDSEPARATOR ---
+当小猫的活力不足25%时,
+--- RECORDSEPARATOR ---
+则无法训练.

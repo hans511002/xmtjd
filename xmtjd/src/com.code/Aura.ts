@@ -17,7 +17,7 @@
             this.type = param2;
             this.side = param1;
             this.time2 = param3;
-            this.skin = this._sp(new aura_all_mc(), this, 0, 0);
+            this.skin = this._sp(aura_all_mc, this, 0, 0);
             this.skin.gotoAndStop(this.type);
             if (this.type == 1) {
                 this.skin.icon_cl.gotoAndStop(5);

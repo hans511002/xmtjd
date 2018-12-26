@@ -1,0 +1,7 @@
+你的小猫受了重伤
+--- RECORDSEPARATOR ---
+他需要医生的关怀. 
+--- RECORDSEPARATOR ---
+每次重伤会损失小猫 
+--- RECORDSEPARATOR ---
+活力值上限25%的活力.

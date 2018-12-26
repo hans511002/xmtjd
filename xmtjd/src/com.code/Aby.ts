@@ -26,7 +26,7 @@
 
         public   init() : void
         {
-            this.skin = this._sp(new aby_mc(), this, 285 - (this._game.arr_cat.length - 1) * 78, 387);
+            this.skin = this._sp(aby_mc, this, 285 - (this._game.arr_cat.length - 1) * 78, 387);
             this.id = this._game.arr_cat.length;
             this.type = Main.sav.data["cat_aby_" + this.id];
             this.skin.cat2.gotoAndStop(this.id);

@@ -74,11 +74,12 @@
             return (Math.random() * param1);
         }// end function
 
-        public _sp(param1, param2, param3, param4) {
-            param2.addChild(param1);
-            param1.x = param3;
-            param1.y = param4;
-            return param1;
+        public _sp(param1:*, param2:*, param3:*, param4:*) : * {
+         var _loc5_:* = new param1();
+         param2.addChild(_loc5_);
+         _loc5_.x = param3;
+         _loc5_.y = param4;
+         return _loc5_;
         }// end function
 
         public _re(param1, param2) {

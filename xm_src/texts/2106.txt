@@ -1,0 +1,7 @@
+你确定吗?
+--- RECORDSEPARATOR ---
+这将会有
+--- RECORDSEPARATOR ---
+0-4
+--- RECORDSEPARATOR ---
+的积分惩罚
