@@ -279,12 +279,13 @@ function testMC(main: Main) {
 	// maskTest.gotoAndStop(20);
 	maskTest.setPosition(150, 50);
 	maskTest.mcMask = new std.MCMask(maskTest, dragonBones.EventObject.START, "mask", "b");
-	maskTest.play(0);
 	maskTest.addFrameScript(30, function (blt) {
-		console.log(egret.getTimer());
+		console.log(egret.getTimer() + "    " + this.getAnimation().lastAnimationState.currentTime);
 		// this.stop();
 		blt.stop();
+
 	}, mc, maskTest);
+	maskTest.play(0);
 
 	// egret.startTick(this.maskTicker, this.maskTest);
 	// mc.container.addDBEventListener(dragonBones.EventObject.FADE_IN_COMPLETE, maskTestFrameHandler, maskTest);

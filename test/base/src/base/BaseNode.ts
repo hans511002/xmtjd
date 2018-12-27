@@ -1782,6 +1782,7 @@ module std {
 		params: any[] = [];
 		acTime: number = -1;
 		ckTime: number = 0;
+		frameRate: number = 0;
 		constructor(mc: T, frameIndex: number, fun: Function, params: any[]) {
 			this.frameIndex = frameIndex;
 			this.mc = mc;
@@ -1801,8 +1802,14 @@ module std {
 				if (!fs.mc.isReady) return;
 				if (!fs.mc.getArmature()) return;
 				if (fs.mc.isPlay()) {//播放中
-					fs.mc.currentFrame = fs.mc.currentFrame % fs.mc.totalFrames + 1;
-					if (fs.frameIndex == fs.mc.currentFrame - 1) {
+					let ctate: dragonBones.AnimationState = fs.mc.getAnimation().lastAnimationState;
+					let ctime = ctate.currentTime;
+					if (!fs.frameRate)
+						fs.frameRate = fs.mc.getArmature().armatureData.frameRate;
+					let cuFrame = Math.floor(ctime * fs.frameRate);
+					// console.log(fs.mc.currentFrame + "   " + cuFrame);
+					fs.mc.currentFrame = cuFrame;// fs.mc.currentFrame % fs.mc.totalFrames + 1;
+					if (fs.frameIndex == fs.mc.currentFrame) {
 						callFun(fs.fun, fs.mc, fs.params);
 						fs.acTime = ntime;
 					}
