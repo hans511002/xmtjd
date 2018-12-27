@@ -16,8 +16,8 @@ module std {
 	export var sortGlobalNode: boolean = false;
 	export var nodes = {};
 
-	export function _rnd(r:number){
-		return Math.random()*r;	
+	export function _rnd(r: number) {
+		return Math.random() * r;
 	}
 	export function getNodePath(node: egret.DisplayObject): string {
 		var par: egret.DisplayObject = node.parent;
@@ -240,11 +240,11 @@ module std {
 			mcsb.slot.display = sprite;
 			sprite.addChild(dis);
 			if (dis instanceof egret.Mesh) {
-				mcsb.$setX(mcsb.x - dis.width / 2);
-				mcsb.$setY(mcsb.y - dis.height / 2);
+				sprite.$setX(sprite.x - dis.width / 2);
+				sprite.$setY(sprite.y - dis.height / 2);
 			} else {
-				mcsb.$setX(mcsb.x - dis.anchorOffsetX);
-				mcsb.$setY(mcsb.y - dis.anchorOffsetY);
+				sprite.$setX(sprite.x - dis.anchorOffsetX);
+				sprite.$setY(sprite.y - dis.anchorOffsetY);
 			}
 			sprite.$setWidth(dis.width);
 			sprite.$setHeight(dis.height);
@@ -576,8 +576,13 @@ module std {
 		playTimes: number = 0;
 		bindListenType: number = 0;
 		container: dragonBones.EgretArmatureDisplay = null;
+		mcMask: MCMask = null;
 
-
+		addFrameScript(frameIndex: number, fun: Function, ...params: any[]) {
+			if (std.addFrameScript) {
+				std.addFrameScript(this, frameIndex, fun, params);
+			}
+		}
 		getArmature(): dragonBones.Armature {
 			return null;
 		}
@@ -881,11 +886,23 @@ module std {
 			return mc;
 		};
 		// MCMask * createMask(const string &  slot, bool reinit = false);
-		createMask(slotName: string, reinit: number = 0): MCMask {
-			var mc: MCMask = new MCMask(this, slotName, reinit);
-			// mc.reinitType = reinit;
-			// this.addMCbs(mc, reinit);
-			return mc;
+		createMask(listenType: string, maskSlot: string | egret.Bitmap, slotName: string, ...imgSlots: string[]): MCMask {
+			if (imgSlots.length == 0) return new MCMask(this, listenType, maskSlot, slotName);
+			else if (imgSlots.length == 1) return new MCMask(this, listenType, maskSlot, slotName, imgSlots[0]);
+			else if (imgSlots.length == 2) return new MCMask(this, listenType, maskSlot, slotName, imgSlots[0], imgSlots[1]);
+			else if (imgSlots.length == 3) return new MCMask(this, listenType, maskSlot, slotName, imgSlots[0], imgSlots[1], imgSlots[2]);
+			else if (imgSlots.length == 4) return new MCMask(this, listenType, maskSlot, slotName, imgSlots[0], imgSlots[1], imgSlots[2], imgSlots[3]);
+			else if (imgSlots.length == 5) return new MCMask(this, listenType, maskSlot, slotName, imgSlots[0], imgSlots[1], imgSlots[2], imgSlots[3], imgSlots[4]);
+			else if (imgSlots.length == 6) return new MCMask(this, listenType, maskSlot, slotName, imgSlots[0], imgSlots[1], imgSlots[2], imgSlots[3], imgSlots[4], imgSlots[5]);
+			else if (imgSlots.length == 7) return new MCMask(this, listenType, maskSlot, slotName, imgSlots[0], imgSlots[1], imgSlots[2], imgSlots[3], imgSlots[4], imgSlots[5], imgSlots[6]);
+			else if (imgSlots.length == 8) return new MCMask(this, listenType, maskSlot, slotName, imgSlots[0], imgSlots[1], imgSlots[2], imgSlots[3], imgSlots[4], imgSlots[5], imgSlots[6], imgSlots[7]);
+			else if (imgSlots.length == 9) return new MCMask(this, listenType, maskSlot, slotName, imgSlots[0], imgSlots[1], imgSlots[2], imgSlots[3], imgSlots[4], imgSlots[5], imgSlots[6], imgSlots[7], imgSlots[8]);
+			else if (imgSlots.length == 10) return new MCMask(this, listenType, maskSlot, slotName, imgSlots[0], imgSlots[1], imgSlots[2], imgSlots[3], imgSlots[4], imgSlots[5], imgSlots[6], imgSlots[7], imgSlots[8], imgSlots[9]);
+			else if (imgSlots.length == 11) return new MCMask(this, listenType, maskSlot, slotName, imgSlots[0], imgSlots[1], imgSlots[2], imgSlots[3], imgSlots[4], imgSlots[5], imgSlots[6], imgSlots[7], imgSlots[8], imgSlots[9], imgSlots[10]);
+			else if (imgSlots.length == 12) return new MCMask(this, listenType, maskSlot, slotName, imgSlots[0], imgSlots[1], imgSlots[2], imgSlots[3], imgSlots[4], imgSlots[5], imgSlots[6], imgSlots[7], imgSlots[8], imgSlots[9], imgSlots[10], imgSlots[11]);
+			else if (imgSlots.length == 13) return new MCMask(this, listenType, maskSlot, slotName, imgSlots[0], imgSlots[1], imgSlots[2], imgSlots[3], imgSlots[4], imgSlots[5], imgSlots[6], imgSlots[7], imgSlots[8], imgSlots[9], imgSlots[10], imgSlots[11], imgSlots[12]);
+			else if (imgSlots.length == 14) return new MCMask(this, listenType, maskSlot, slotName, imgSlots[0], imgSlots[1], imgSlots[2], imgSlots[3], imgSlots[4], imgSlots[5], imgSlots[6], imgSlots[7], imgSlots[8], imgSlots[9], imgSlots[10], imgSlots[11], imgSlots[12], imgSlots[13]);
+			else if (imgSlots.length == 15) return new MCMask(this, listenType, maskSlot, slotName, imgSlots[0], imgSlots[1], imgSlots[2], imgSlots[3], imgSlots[4], imgSlots[5], imgSlots[6], imgSlots[7], imgSlots[8], imgSlots[9], imgSlots[10], imgSlots[11], imgSlots[12], imgSlots[13], imgSlots[14]);
 		};
 		getSprite(slotName: string): egret.Bitmap {
 			if (this.getArmature() == null || this.getArmature().getSlot(slotName) == null)
@@ -1035,7 +1052,9 @@ module std {
 				this.display.addChild(this);
 				// std.changeAnchorPoint(this, 0.5,0.5);
 				// this.setPosition(this.x+this.disPos.x,this.y+this.disPos.y);
-
+				if (this.mcMask) {
+					this.mcMask.resetMask();
+				}
 				std.drawRange(this.display, 0xffff00);
 				if (this.bindListenType) {
 					var type: number = this.bindListenType;
@@ -1454,6 +1473,9 @@ module std {
 					this.totalFrames = this.arm._armatureData.animations[this.defAniName].frameCount + 1;//;
 					this.gotoAndStop(1);
 					this.reinitSubMcbs(true);
+					if (this.mcMask) {
+						this.mcMask.resetMask();
+					}
 					return true;
 				} else {
 					this.isReady = false;
@@ -1506,8 +1528,11 @@ module std {
 					// var m=<egret.Mesh>this.$children[0];
 					// std.printNode(this);
 					// std.printNode(this.$children[0]);
-					// std.drawRange(this,0xFF0000);
-					// std.drawRange(this.$children[0],0x0000FF);
+					if (this._draw) {
+						this.width = this.width - 2;
+						this.height = this.height - 2;
+						std.drawRange(this.$children[0], 0x0000FF);
+					}
 				}
 				if (this._draw)
 					this.drawRange();// std.drawRange(this.display,0xFF0000);
@@ -1616,30 +1641,228 @@ module std {
 		}
 	}
 
-	export class MCMask extends MCUI {
-		public constructor(pmc: MC, slotName: string, reinit: number = 0) {
-			super(new egret.Sprite(), pmc, slotName, reinit);
-		}
-	}
-
 }
 module std {
 
-	export function maskDB(mc:MC){
-				// gotoAndPlay(animationName: string, fadeInTime?: number, duration?: number, playTimes?: number, layer?: number, group?: string | null, fadeOutMode?: AnimationFadeOutMode, pauseFadeOut?: boolean, pauseFadeIn?: boolean): AnimationState | null;
-		var upperBodyAnimationState:dragonBones.AnimationState =mc.getArmature().animation.gotoAndPlay("run",0,-1,0,0,"UPPER_BODY_GROUP",dragonBones.AnimationFadeOutMode.SameGroup);
-		var lowerBodyAnimationState:dragonBones.AnimationState = mc.getAnimation().gotoAndPlay("fire",0,-1,0,0,"LOWER_BODY_GROUP",dragonBones.AnimationFadeOutMode.SameGroup);
-		
-		
+	export class MCMask {
+		maskSlotName: string = "";
+		bitMapSlotNames: Array<string> = [];
+		maskSlot: dragonBones.Slot = null;
+		maskImg: egret.Bitmap = null;
+		bitMapSlots: Array<dragonBones.Slot> = [];
+		mc: MC;
+		isImg: boolean = false;
+		//dragonBones.EventObject:START  FADE_IN FADE_IN_COMPLETE  FRAME_EVENT   
+		//egret.Event ADDED_TO_STAGE ADDED RENDER  CHANGE ENTER_FRAME
+		listenType: string = "";
+		public constructor(pmc: MC, listenType: string, maskSlot: string | egret.Bitmap, imgSlot: string, ...imgSlots: string[]) {
+			this.mc = pmc;
+			if (maskSlot instanceof egret.Bitmap) {
+				this.isImg = true;
+				this.maskImg = maskSlot;
+			} else {
+				this.isImg = false;
+				this.maskSlotName = maskSlot;
+			}
+			this.listenType = listenType;
+			this.mc.mcMask = this;
+			this.bitMapSlotNames.push(imgSlot);
+			imgSlots.forEach(element => { this.bitMapSlotNames.push(element); });
+			if (listenType != dragonBones.EventObject.START && listenType != dragonBones.EventObject.FADE_IN && listenType != dragonBones.EventObject.FADE_IN_COMPLETE
+				&& listenType != dragonBones.EventObject.FRAME_EVENT && listenType != egret.Event.ADDED_TO_STAGE && listenType != egret.Event.ADDED
+				&& listenType != egret.Event.RENDER && listenType != egret.Event.CHANGE && listenType != egret.Event.ENTER_FRAME) {
+				listenType = dragonBones.EventObject.START;
+			}
+			this.resetMask();
+		}
+		//用于mc重新初始后的设置
+		resetMask() {
+			if (!this.mc.isReady) return;
+			let arm: dragonBones.Armature = this.mc.getArmature();
+			if (!arm) return;
+			if (!this.isImg) {
+				this.maskSlot = arm.getSlot(this.maskSlotName);
+				if (!this.maskSlot) {
+					throw "armature " + arm.name + " not exists slot[" + this.maskSlotName + "]";
+				}
+			}
+			this.bitMapSlotNames.forEach(element => {
+				let slot: dragonBones.Slot = arm.getSlot(element);
+				if (!this.maskSlot) {
+					throw "armature " + arm.name + " not exists slot[" + element + "]";
+				}
+				this.bitMapSlots.push(slot);
+			});
+			switch (this.listenType) {
+				case dragonBones.EventObject.START:
+					this.maskTicker(0);
+					break;
+				case dragonBones.EventObject.FADE_IN:
+				case dragonBones.EventObject.FADE_IN_COMPLETE:
+				case dragonBones.EventObject.FRAME_EVENT:
+					this.mc.container.addDBEventListener(this.listenType, this.maskHandler, this);
+					break;
+				case egret.Event.ADDED:
+				case egret.Event.ADDED_TO_STAGE:
+					this.maskTicker(0);
+					break;
+				case egret.Event.RENDER:
+				case egret.Event.CHANGE:
+				case egret.Event.ENTER_FRAME:
+					this.mc.container.addEventListener(this.listenType, this.maskHandler, this);
+					break;
+			}
+		}
+		maskHandler(event: dragonBones.EgretEvent) {
+			this.maskTicker(0);
+		}
+		maskTicker(timeStamp: number) {
+			let tmask: egret.Bitmap = this.maskImg;
+			if (!this.isImg) {
+				tmask = this.maskSlot.display;
+			}
+			this.bitMapSlots.forEach(bslot => {
+				let bg: egret.Bitmap | egret.Sprite = bslot.display;
+				if (bg instanceof egret.Sprite) {
+					let sprite = <egret.Sprite>bg;
+					if (tmask) {
+						bg = <egret.Bitmap>sprite.getChildAt(0);
+						if (bg.mask != tmask) {
+							bg.mask = tmask;
+						}
+					}
+				} else {
+					let sprite = new egret.Sprite();
+					bslot.display = sprite;
+					sprite.addChild(bg);
+					if (bg instanceof egret.Mesh) {
+						// sprite.$setX(sprite.x - bg.width / 2);
+						// sprite.$setY(sprite.y - bg.height / 2);
+					} else {
+						// sprite.$setX(sprite.x + bg.anchorOffsetX);
+						// sprite.$setY(sprite.y + bg.anchorOffsetY);
+						// sprite.$setAnchorOffsetX(bg.x);
+						// sprite.$setAnchorOffsetY(bg.y);
+						// sprite.$setAnchorOffsetX(bg.anchorOffsetX);
+						// sprite.$setAnchorOffsetY(bg.anchorOffsetY);
+						// bg.anchorOffsetX = 0;
+						// bg.anchorOffsetY = 0;
+						// sprite.$setX(sprite.x - bg.anchorOffsetX);
+						// sprite.$setY(sprite.y - bg.anchorOffsetY);
+					}
+					sprite.$setWidth(bg.width);
+					sprite.$setHeight(bg.height);
+					sprite.$setScaleX(bg.scaleX);
+					sprite.$setScaleY(bg.scaleY);
+					sprite.$setSkewX(bg.skewX);
+					sprite.$setSkewY(bg.skewY);
+					sprite.$setAlpha(bg.alpha);
+					sprite.$setRotation(bg.rotation);
+					bg.$setScaleX(1);
+					bg.$setScaleY(1);
+					bg.$setAlpha(1);
+					bg.$setRotation(0);
+					bg.$setSkewX(0);
+					bg.$setSkewY(0);
+					bg.$setX(0);
+					bg.$setY(0);
+					// std.drawRange(sprite, 0x000000);
+					bg.mask = tmask;
+				}
+			});
+			return false;
+		}
+
+	}
+
+	class FrameScript<T extends MC> {
+		frameIndex: number;
+		mc: T;
+		fun: Function;
+		params: any[] = [];
+		acTime: number = -1;
+		ckTime: number = 0;
+		constructor(mc: T, frameIndex: number, fun: Function, params: any[]) {
+			this.frameIndex = frameIndex;
+			this.mc = mc;
+			this.fun = fun;
+			this.params = params;
+		}
+	}
+	class FrameScriptHandler {
+		frameScriptList: Array<FrameScript<MC>> = [];
+		container: egret.Sprite = new egret.Sprite();
+		constructor() {
+			this.container.addEventListener(egret.Event.ENTER_FRAME, this.enterFrame, this);
+		}
+		enterFrame(event: dragonBones.EgretEvent) {
+			let ntime: number = egret.getTimer();
+			this.frameScriptList.forEach(fs => {
+				if (!fs.mc.isReady) return;
+				if (!fs.mc.getArmature()) return;
+				if (fs.mc.isPlay()) {//播放中
+					fs.mc.currentFrame = fs.mc.currentFrame % fs.mc.totalFrames + 1;
+					if (fs.frameIndex == fs.mc.currentFrame - 1) {
+						callFun(fs.fun, fs.mc, fs.params);
+						fs.acTime = ntime;
+					}
+				} else {
+					if (fs.frameIndex == fs.mc.currentFrame) {
+						if (fs.ckTime != fs.acTime) {
+							callFun(fs.fun, fs.mc, fs.params);// fs.fun.call(fs.mc, fs.params);
+							fs.acTime = ntime;
+						}
+					}
+				}
+				fs.ckTime = ntime;
+			});
+		}
+	}
+
+	export var frameScript: FrameScriptHandler = new FrameScriptHandler();
+	export function addFrameScript(mc: MC, frameIndex: number, fun: Function, params: any[]) {
+		let fs = new FrameScript(mc, frameIndex, fun, params);
+		// fs.frameIndex = frameIndex;
+		// fs.mc = mc;
+		// fs.fun = fun;
+		// fs.params = params;
+		frameScript.frameScriptList.push(fs);
+	}
+
+	function callFun(fun: Function, obj: any, params: any[]) {
+		if (params.length == 0) return fun.call(obj);
+		else if (params.length == 1) return fun.call(obj, params[0]);
+		else if (params.length == 2) return fun.call(obj, params[0], params[1]);
+		else if (params.length == 3) return fun.call(obj, params[0], params[1], params[2]);
+		else if (params.length == 4) return fun.call(obj, params[0], params[1], params[2], params[3]);
+		else if (params.length == 5) return fun.call(obj, params[0], params[1], params[2], params[3], params[4]);
+		else if (params.length == 6) return fun.call(obj, params[0], params[1], params[2], params[3], params[4], params[5]);
+		else if (params.length == 7) return fun.call(obj, params[0], params[1], params[2], params[3], params[4], params[5], params[6]);
+		else if (params.length == 8) return fun.call(obj, params[0], params[1], params[2], params[3], params[4], params[5], params[6], params[7]);
+		else if (params.length == 9) return fun.call(obj, params[0], params[1], params[2], params[3], params[4], params[5], params[6], params[7], params[8]);
+		else if (params.length == 10) return fun.call(obj, params[0], params[1], params[2], params[3], params[4], params[5], params[6], params[7], params[8], params[9]);
+		else if (params.length == 11) return fun.call(obj, params[0], params[1], params[2], params[3], params[4], params[5], params[6], params[7], params[8], params[9], params[10]);
+		else if (params.length == 12) return fun.call(obj, params[0], params[1], params[2], params[3], params[4], params[5], params[6], params[7], params[8], params[9], params[10], params[11]);
+		else if (params.length == 13) return fun.call(obj, params[0], params[1], params[2], params[3], params[4], params[5], params[6], params[7], params[8], params[9], params[10], params[11], params[12]);
+		else if (params.length == 14) return fun.call(obj, params[0], params[1], params[2], params[3], params[4], params[5], params[6], params[7], params[8], params[9], params[10], params[11], params[12], params[13]);
+		else if (params.length == 15) return fun.call(obj, params[0], params[1], params[2], params[3], params[4], params[5], params[6], params[7], params[8], params[9], params[10], params[11], params[12], params[13], params[14]);
+		else if (params.length == 16) return fun.call(obj, params[0], params[1], params[2], params[3], params[4], params[5], params[6], params[7], params[8], params[9], params[10], params[11], params[12], params[13], params[14], params[15]);
+		else if (params.length == 17) return fun.call(obj, params[0], params[1], params[2], params[3], params[4], params[5], params[6], params[7], params[8], params[9], params[10], params[11], params[12], params[13], params[14], params[15], params[16]);
+		else if (params.length == 18) return fun.call(obj, params[0], params[1], params[2], params[3], params[4], params[5], params[6], params[7], params[8], params[9], params[10], params[11], params[12], params[13], params[14], params[15], params[16], params[17]);
+		else if (params.length == 19) return fun.call(obj, params[0], params[1], params[2], params[3], params[4], params[5], params[6], params[7], params[8], params[9], params[10], params[11], params[12], params[13], params[14], params[15], params[16], params[17], params[18]);
+		else if (params.length == 20) return fun.call(obj, params[0], params[1], params[2], params[3], params[4], params[5], params[6], params[7], params[8], params[9], params[10], params[11], params[12], params[13], params[14], params[15], params[16], params[17], params[18], params[19]);
+	}
+
+
+	//db混合 mask
+	function maskDB(mc: MC, aniNames: string[], slot: string) {
+		// gotoAndPlay(animationName: string, fadeInTime?: number, duration?: number, playTimes?: number, layer?: number, group?: string | null, fadeOutMode?: AnimationFadeOutMode, pauseFadeOut?: boolean, pauseFadeIn?: boolean): AnimationState | null;
+		var upperBodyAnimationState: dragonBones.AnimationState = mc.getAnimation().gotoAndPlay("run", 0, -1, 0, 0, "UPPER_BODY_GROUP", dragonBones.AnimationFadeOutMode.SameGroup);
+		var lowerBodyAnimationState: dragonBones.AnimationState = mc.getAnimation().gotoAndPlay("fire", 0, -1, 0, 0, "LOWER_BODY_GROUP", dragonBones.AnimationFadeOutMode.SameGroup);
 		upperBodyAnimationState.addBoneMask("head");
 		upperBodyAnimationState.addBoneMask("body");
 		lowerBodyAnimationState.addBoneMask("leg");
 		lowerBodyAnimationState.addBoneMask("foot");
-
-		
 	}
-
 }
-
-
 

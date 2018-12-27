@@ -294,11 +294,14 @@ function testMC(main: Main) {
 	main.addChild(this.maskTest);
 	// maskTest.addEventListener(egret.Event.ENTER_FRAME, maskTestFrameHandler, maskTest);
 	// maskTest.gotoAndStop(20);
-	maskTest.play(0);
 	maskTest.setPosition(150, 50);
+	maskTest.mcMask = new std.MCMask(maskTest, dragonBones.EventObject.START, "mask", "b");
+	maskTest.play(0);
+	maskTest.addFrameScript(10, maskTicker, mc, maskTest);
+
 	// egret.startTick(this.maskTicker, this.maskTest);
 	// mc.container.addDBEventListener(dragonBones.EventObject.FADE_IN_COMPLETE, maskTestFrameHandler, maskTest);
-	mc.container.addEventListener(egret.Event.ENTER_FRAME, maskTestFrameHandler, maskTest);
+	// mc.container.addEventListener(egret.Event.ENTER_FRAME, maskTestFrameHandler, maskTest);
 	// maskTestFrameHandler.call(maskTest, null);
 	if (maskTest) return;
 
