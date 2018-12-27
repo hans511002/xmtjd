@@ -1,22 +1,5 @@
 // TypeScript file
-// 60fps 
-function onTicker(timeStamp: number) {
-	if (!this._time) {
-		this._time = timeStamp;
-	}
-	var now = timeStamp;
-	var pass = now - this._time;
-	this._time = now;
-	// this.fireBack.tryPlay();
-	// this.iceBack.tryPlay();
-	// this.stoneBack.tryPlay(); 
-	// this.levinBack.tryPlay();
-	if (!this.isPlay())
-		this.tryPlay();
-	// dragonBones.WorldClock.clock.advanceTime(pass / 1000);
-	// egret.log("timeStamp="+timeStamp+"  pass="+pass);
-	return false;
-}
+
 // 帧频事件
 function enterFrameHandler(event: dragonBones.EgretEvent): void {
 	var dt: Date = new Date();
@@ -258,7 +241,7 @@ function maskTicker(timeStamp: number) {
 	return false;
 }
 function testMC(main: Main) {
-	main.stage.addEventListener(egret.Event.ENTER_FRAME, enterFrameHandler, this);
+	// main.stage.addEventListener(egret.Event.ENTER_FRAME, enterFrameHandler, this);
 	// main.stage.addEventListener(egret.TouchEvent.TOUCH_BEGIN, touchBeginHandler, this);
 	// main.stage.addEventListener(egret.TouchEvent.TOUCH_END, touchEndHandler, this);
 	// main.stage.addEventListener(egret.TouchEvent.TOUCH_CANCEL, touchCancelHandler, this);
@@ -297,7 +280,11 @@ function testMC(main: Main) {
 	maskTest.setPosition(150, 50);
 	maskTest.mcMask = new std.MCMask(maskTest, dragonBones.EventObject.START, "mask", "b");
 	maskTest.play(0);
-	maskTest.addFrameScript(10, maskTicker, mc, maskTest);
+	maskTest.addFrameScript(30, function (blt) {
+		console.log(egret.getTimer());
+		// this.stop();
+		blt.stop();
+	}, mc, maskTest);
 
 	// egret.startTick(this.maskTicker, this.maskTest);
 	// mc.container.addDBEventListener(dragonBones.EventObject.FADE_IN_COMPLETE, maskTestFrameHandler, maskTest);
@@ -439,6 +426,6 @@ function testMC(main: Main) {
 	container.levinBacklight.setVisible(false);
 	container.buyGetAll.setVisible(false);
 
-	egret.startTick(this.container.onTicker, this.container);
+	// egret.startTick(this.container.onTicker, this.container);
 
 }
