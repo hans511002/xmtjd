@@ -26,26 +26,26 @@
             this.id = this._game.arr_cat.length;
             this.type = Main.sav.data["cat_aby_" + this.id];
             this.skin.cat2.gotoAndStop(this.id);
-            this.skin.icon_cl.lock_cl.visible = false;
+            this.skin.icon_clLock_cl.setVisible(false);
             this.type_aby = this._game._info.got_type(this.type);
             this.power = this._game._info.got_power(this.type);
             this.frame_action = this._game._info.got_frame(this.type);
             this.time = this._game._info.got_time(this.type);
             if (this.type == 0) {
                 this.ex_aby = false;
-                this.skin.icon_cl.visible = false;
-                this.skin.bt_telo.visible = false;
-                this.skin.icon_cl.icon2.icon_cl.gotoAndStop(1);
+                this.skin.icon_cl.setVisible(false);
+                this.skin.bt_telo.setVisible(false);
+                this.skin.icon_clIcon2Icon_cl.gotoAndStop(1);
             }
             else {
                 this.ex_aby = false;
                 this.skin.icon_cl.visible = true;
                 this.skin.bt_telo.visible = true;
-                this.skin.icon_cl.icon2.icon_cl.gotoAndStop(this.type_aby);
+                this.skin.icon_clIcon2Icon_cl.gotoAndStop(this.type_aby);
             }
             this.skin.defeat_card.visible = false;
-            this.skin.icon_cl.icon2.scale_cl.gotoAndStop(1);
-            this.skin.icon_cl.icon2.bg_cl.gotoAndStop(2);
+            this.skin.icon_clIcon2Scale_cl.gotoAndStop(1);
+            this.skin.icon_clIcon2Bg_cl.gotoAndStop(2);
             this.set_scale(Main.sav.data["cat_hp_" + this.id]);
             this.reload_time2 = this._game._info.got_reload(this.type);
             this.qe = 1;
@@ -61,25 +61,25 @@
             return;
         }// end function
 
-        public dress_up(param1, param2) {
-            param1.head_cl.wool_cl.gotoAndStop(this.id);
-            param1.hand_l_cl.wool_cl.gotoAndStop(this.id);
-            param1.hand_r_cl.wool_cl.gotoAndStop(this.id);
-            param1.body_cl.wool_cl.gotoAndStop(this.id);
-            param1.foot1_cl.wool_cl.gotoAndStop(this.id);
-            param1.foot2_cl.wool_cl.gotoAndStop(this.id);
-            param1.tail_cl.gotoAndStop(this.id);
+        public dress_up(cat: aby_mc, param2: number) {
+            cat.cat2Head_clWool_cl.gotoAndStop(this.id);
+            cat.cat2Hand_l_clWool_cl.gotoAndStop(this.id);
+            cat.cat2Hand_r_clWool_cl.gotoAndStop(this.id);
+            cat.cat2Body_clWool_cl.gotoAndStop(this.id);
+            cat.cat2Foot1_clWool_cl.gotoAndStop(this.id);
+            cat.cat2Foot2_clWool_cl.gotoAndStop(this.id);
+            cat.cat2Tail_cl.gotoAndStop(this.id);
             param2 = param2 + 1;
-            param1.head_cl.h2.gotoAndStop(param2);
-            param1.hand_l_cl.sleeve_cl.gotoAndStop(param2);
-            param1.hand_l_cl.w2.gotoAndStop(param2);
-            param1.hand_r_cl.sleeve_cl.gotoAndStop(param2);
-            param1.hand_r_cl.s2.gotoAndStop(param2);
-            param1.body_cl.b2.gotoAndStop(param2);
-            param1.foot1_cl.p2.gotoAndStop(param2);
-            param1.foot2_cl.p2.gotoAndStop(param2);
-            param1.skirt_cl.gotoAndStop(param2);
-            param1.cloak_cl.gotoAndStop(param2);
+            cat.cat2Head_clH2.gotoAndStop(param2);
+            cat.cat2Hand_l_clSleeve_cl.gotoAndStop(param2);
+            cat.cat2Hand_l_clW2.gotoAndStop(param2);
+            cat.cat2Hand_r_clSleeve_cl.gotoAndStop(param2);
+            cat.cat2Hand_r_clS2.gotoAndStop(param2);
+            cat.cat2Body_clB2.gotoAndStop(param2);
+            cat.cat2Foot1_clP2.gotoAndStop(param2);
+            cat.cat2Foot2_clP2.gotoAndStop(param2);
+            cat.cat2Skirt_cl.gotoAndStop(param2);
+            cat.cat2Cloak_cl.gotoAndStop(param2);
             param2 = param2 - 1;
             return;
         }// end function

@@ -1,0 +1,4 @@
+<TextureAtlas name="card_game_mc" imagePath="texture.png">
+ <SubTexture name="card_mc" x="570" y="0" width="1" height="1"/>
+ <SubTexture name="Symbol 2361" x="0" y="0" width="568" height="568"/>
+</TextureAtlas>

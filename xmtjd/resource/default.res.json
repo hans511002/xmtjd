@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "bg_jpg,egret_icon_png,description_json,texture_json,texture_png,test_tex_json,test_tex_png,test_ske_json",
+			"keys": "bg_jpg,egret_icon_png,description_json,texture_json,texture_png,test_tex_json,test_tex_png,test_ske_json,texture2_png,aby_mc_tex_json,aby_mc_tex_png,aby_mc_ske_json,texture3_png,texture4_png",
 			"name": "preload"
 		}
 	],
@@ -45,6 +45,36 @@
 			"name": "test_ske_json",
 			"type": "json",
 			"url": "assets/test/test_ske.json"
+		},
+		{
+			"name": "texture2_png",
+			"type": "image",
+			"url": "assets/aby_mc/library/texture.png"
+		},
+		{
+			"name": "aby_mc_tex_json",
+			"type": "json",
+			"url": "assets/aby_mc/aby_mc_tex.json"
+		},
+		{
+			"name": "aby_mc_tex_png",
+			"type": "image",
+			"url": "assets/aby_mc/aby_mc_tex.png"
+		},
+		{
+			"name": "aby_mc_ske_json",
+			"type": "json",
+			"url": "assets/aby_mc/aby_mc_ske.json"
+		},
+		{
+			"name": "texture3_png",
+			"type": "image",
+			"url": "assets/aby_mc/library/texture.png"
+		},
+		{
+			"name": "texture4_png",
+			"type": "image",
+			"url": "assets/card_game_mc/library/texture.png"
 		}
 	]
 }
