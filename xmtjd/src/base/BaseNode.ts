@@ -390,7 +390,7 @@ module std {
 		display: egret.DisplayObjectContainer = null;
 		disPos: egret.Point;
 		slotName: string;
-		_visible: boolean = true;
+		// _visible: boolean = true;
 
 		public constructor() {
 			super();
@@ -403,10 +403,10 @@ module std {
 			this.display = null;
 			this.disPos = new egret.Point(0, 0);
 			this.slotName = "";
-			this._visible = true;
+			// this._visible = true;
 		}
 		setVisible(v: boolean): void {
-			this._visible = v;
+			this.visible = v;
 		}
 		getParentMC(): MC {
 			return this.mc;
@@ -484,7 +484,7 @@ module std {
 						else if (this.slot._displayData)
 							this.display.name = (this.slot._displayData.name);
 						if ((this instanceof MovieClip) || (this instanceof MCMask))
-							this.display.$setVisible(this._visible);
+							this.display.$setVisible(this.visible);
 						if (!(this instanceof MovieClipSub) && this.display != this) {
 							this.display.addChildAt(thsi, 9999);
 						}
@@ -502,7 +502,7 @@ module std {
 						else if (this.slot._displayData)
 							this.display.name = (this.slot._displayData.name);
 						if ((this instanceof MovieClipSub) || (this instanceof MCMask))
-							this.display.$setVisible(this._visible);
+							this.display.$setVisible(this.visible);
 						if ((this instanceof MovieClip))
 							thsi.removeChildren();
 						else if (!(this instanceof MovieClipSub) && this.display != this)
@@ -517,7 +517,7 @@ module std {
 						else if (this.slot._displayData)
 							this.display.name = (this.slot._displayData.name);
 						if ((this instanceof MovieClip) || (this instanceof MCMask))
-							this.display.$setVisible(this._visible);
+							this.display.$setVisible(this.visible);
 						if (!(this instanceof MovieClipSub) && this.display != this) {
 							this.display.addChildAt(thsi, 9999);
 						}
@@ -534,7 +534,7 @@ module std {
 						else if (this.slot._displayData)
 							this.display.name = (this.slot._displayData.name);
 						if ((this instanceof MovieClipSub) || (this instanceof MCMask))
-							this.display.$setVisible(this._visible);
+							this.display.$setVisible(this.visible);
 						if ((this instanceof MovieClip))
 							thsi.removeChildren();
 						else if (!(this instanceof MovieClipSub) && this.display != this)
@@ -824,7 +824,7 @@ module std {
 			this.display = null;
 			this.disPos = new egret.Point(0, 0);
 			this.slotName = "";
-			this._visible = true;
+			this.visible = true;
 		}
 
 		//////////////create ///////////////
@@ -843,6 +843,13 @@ module std {
 		// MovieClipSub * createMovieClipSub(const string &  slot,bool reinit=false);
 		createMovieClipSub(slotName: string, reinitType: number = 0): MovieClipSub {
 			var mcs: MovieClipSub = new MovieClipSub(this, slotName, "", reinitType);
+			// mcs.reinitType = reinitType;
+			// this.addMCbs(mcs, reinitType);
+			return mcs;
+		};
+
+		createMCButton(slotName: string, reinitType: number = 0): MovieClipSub {
+			var mcs: MCButton = new MCButton(this, slotName, "", reinitType);
 			// mcs.reinitType = reinitType;
 			// this.addMCbs(mcs, reinitType);
 			return mcs;
@@ -1265,7 +1272,7 @@ module std {
 		};
 		// virtual void setVisible(bool v);
 		setVisible(v: boolean): void {
-			if (this._visible != v)
+			if (this.visible != v)
 				super.setVisible(v);
 			super.$setVisible(v);
 			if (this.container)
@@ -1487,7 +1494,12 @@ module std {
 			return false;
 		}
 	}
+	export class MCButton extends MovieClipSub {
+		public constructor(mc?: MC, slotName?: string, defAniName?: string, reinitType: number = 0) {
+			super(mc, slotName, defAniName, reinitType);
+		}
 
+	}
 	// class MCUI;
 	// class MCCase;
 	// class MCSprite;
