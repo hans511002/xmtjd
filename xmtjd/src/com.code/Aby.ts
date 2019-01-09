@@ -1,25 +1,26 @@
 ﻿module com.code {
 
     export class Aby extends DataMovieClip {
-        _game: Game;
-        _app: App;
+        _game: Game = null;
+        _app: App = null;
         skin: aby_mc;
-        type: number;
-        id: number;
-        ex_aby: boolean;
-        reload_time: number;
-        reload_time2: number;
-        time: number;
-        frame_action: number;
-        power: number;
-        type_aby: number;
-        qe: number;
+        type: number = 0;
+        id: number = 0;
+        ex_aby: boolean = false;
+        reload_time: number = 0;
+        reload_time2: number = 0;
+        time: number = 0;
+        frame_action: number = 0;
+        power: number = 0;
+        type_aby: number = 0;
+        qe: number = 0;
 
-        public Aby() {
+        public constructor()
+        {
+            super();
             this._game = Game.getInstance();
             this._app = App.getInstance();
-            return;
-        }// end function
+         }
 
         public init(): void {
             this.skin = this._sp(aby_mc, this, 285 - (this._game.arr_cat.length - 1) * 78, 387);
@@ -39,11 +40,11 @@
             }
             else {
                 this.ex_aby = false;
-                this.skin.icon_cl.visible = true;
-                this.skin.bt_telo.visible = true;
+                this.skin.icon_cl.$setVisible(true);
+                this.skin.bt_telo.$setVisible(true);
                 this.skin.icon_clIcon2Icon_cl.gotoAndStop(this.type_aby);
             }
-            this.skin.defeat_card.visible = false;
+            this.skin.defeat_card.$setVisible(false);
             this.skin.icon_clIcon2Scale_cl.gotoAndStop(1);
             this.skin.icon_clIcon2Bg_cl.gotoAndStop(2);
             this.set_scale(Main.sav.data["cat_hp_" + this.id]);
@@ -84,10 +85,9 @@
             return;
         }// end function
 
-        public set_scale(param1) {
-            this.skin.skala_cl.gotoAndStop((param1 / Main.sav.data["cat_hp2_" + this.id] * 100));
-            return;
-        }// end function
-
+        public set_scale(param1: any): any
+        {
+            this.skinSkala_cl.gotoAndStop(Math.floor(param1 / Main.sav.data["cat_hp2_" + this.id] * 100));
+        }
     }
 }

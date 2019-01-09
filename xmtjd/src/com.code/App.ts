@@ -1,58 +1,62 @@
-﻿module com.code {
-    export class App extends egret.Sprite {
-        i: number;
-        i2: number;
-        i3: number;
-        i4: number;
-        i5: number;
-        i6: number;
-        j: number;
-        j2: number;
-        j3: number;
-        j4: number;
-        j5: number;
-        rnd_for: number;
-        rnd_for2: number;
-        rnd_for3: number;
-        rnd_for4: number;
-        rnd_for5: number;
-        rnd_for6: number;
-        rnd_for7: number;
-        rnd_for8: number;
-        _Preloader: Preloader;
-        _Team_register: Team_register;
-        _Game: Game;
-        _Menu: Menu;
-        _Comics: Comics;
-        _Finish: Finish;
-        _Fps: FPS;
-        _Deqaf: Deqaf;
-        _Done: Done;
-        _Upg: Upg;
-        _Dress: Dress;
-        _Playoff: Playoff;
-        _Splash: Splash;
-        _so: LoadSounds;
-        _music: LoadMusic;
-        old_scene: string = "none";
-        zone_bg: egret.Sprite;
-        zone_up: egret.Sprite;
-        my_context_menu: ContextMenu;
-        team_enemy: number = 2;
-        team_enemy_id: number = 15;
-        team_enemy_level: number;
-        arr_enemy_row: any = [];
-        train_mode: boolean = false;
-        static _instance: App;
-        static game_stop: boolean = false;
-
-        public App() {
+﻿module com.code
+{
+    export class App extends Sprite
+    {
+        private static _instance: App = null;
+        public static game_stop: boolean = false; 
+        i: number = 0;
+        i2: number = 0;
+        i3: number = 0;
+        i4: number = 0;
+        i5: number = 0;
+        i6: number = 0;
+        j: number = 0;
+        j2: number = 0;
+        j3: number = 0;
+        j4: number = 0;
+        j5: number = 0;
+        rnd_for: number = 0;
+        rnd_for2: number = 0;
+        rnd_for3: number = 0;
+        rnd_for4: number = 0;
+        rnd_for5: number = 0;
+        rnd_for6: number = 0;
+        rnd_for7: number = 0;
+        rnd_for8: number = 0;
+        private _Preloader: Preloader = null;
+        private _Team_register: Team_register = null;
+        private _Game: Game = null;
+        private _Menu: Menu = null;
+        private _Comics: Comics = null;
+        private _Finish: Finish = null;
+        private _Fps: FPS = null;
+        private _Deqaf: Deqaf = null;
+        private _Done: Done = null;
+        private _Upg: Upg = null;
+        private _Dress: Dress = null;
+        private _Playoff: Playoff = null;
+        private _Splash: Splash = null;
+        public _so: LoadSounds = null;
+        public _music: LoadMusic = null;
+        private old_scene: String = "none";
+        private zone_bg: Sprite = null;
+        private zone_up: Sprite = null;
+        my_context_menu: ContextMenu = null;
+        public team_enemy: number = 2;
+        public team_enemy_id: number = 15;
+        public team_enemy_level: number = 0;
+        public arr_enemy_row: any = [];
+        public train_mode: boolean = false;
+        public constructor(){
             this.arr_enemy_row = [];
-            App._instance = this;
-            return;
-        }// end function
-
-        public init(): void {
+            super();
+            _instance = this;
+        }
+        public static public getInstance(): App
+        {
+            return _instance == null?new App():_instance;
+        }
+        public init(): void{
             this.zone_bg = new egret.Sprite();
             this.addChild(this.zone_bg);
             this.zone_up = new egret.Sprite();
@@ -61,12 +65,10 @@
             this._music = new egret.LoadMusic();
             this.my_context_menu = new ContextMenu();
             this.my_context_menu.hideBuiltInItems();
-            // contextMenu = this.my_context_menu;
-            this.arr_enemy_row.push(2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22);
-            return;
-        }// end function
-
-        public init_save_kitty() {
+            contextMenu = this.my_context_menu;
+            this.arr_enemy_row.push(2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22);
+        }
+        public init_save_kitty(): any{
             Main.sav.data.chance_injury = 94;
             Main.sav.data.cat_place_1 = 9;
             Main.sav.data.cat_place_2 = 10;
@@ -89,13 +91,15 @@
             Main.sav.data.cat_injury2_4 = 0;
             Main.sav.data.cat_injury3_4 = 0;
             this.i = 1;
-            while (this.i <= 4) {
+            while(this.i <= 4)
+            {
                 this.i2 = 1;
-                while (this.i2 <= 3) {
+                while(this.i2 <= 3)
+                {
                     Main.sav.data["cat_injury" + this.i2 + "_time_" + this.i] = 0;
-                    this.i2 = this.i2 + 1;
+                    this.i2++;
                 }
-                this.i = this.i+1;
+                this.i++;
             }
             Main.sav.data.stuff_level_1 = 1;
             Main.sav.data.stuff_level_2 = 1;
@@ -115,40 +119,38 @@
             Main.sav.data.stuff_price_3 = 200;
             Main.sav.data.stuff_price_4 = 400;
             Main.sav.data.stuff_price_5 = 300;
-            var _loc_1 = 40;
             Main.sav.data.cat_stat1_1 = 0;
             Main.sav.data.cat_stat1_2 = 0;
             Main.sav.data.cat_stat1_3 = 0;
             Main.sav.data.cat_stat1_4 = 0;
-            Main.sav.data.cat_stat1_2_1 = _loc_1;
-            Main.sav.data.cat_stat1_2_2 = _loc_1;
-            Main.sav.data.cat_stat1_2_3 = _loc_1;
-            Main.sav.data.cat_stat1_2_4 = _loc_1;
+            Main.sav.data.cat_stat1_2_1 = 40;
+            Main.sav.data.cat_stat1_2_2 = 40;
+            Main.sav.data.cat_stat1_2_3 = 40;
+            Main.sav.data.cat_stat1_2_4 = 40;
             Main.sav.data.cat_stat2_1 = 0;
             Main.sav.data.cat_stat2_2 = 0;
             Main.sav.data.cat_stat2_3 = 0;
             Main.sav.data.cat_stat2_4 = 0;
-            Main.sav.data.cat_stat2_2_1 = _loc_1;
-            Main.sav.data.cat_stat2_2_2 = _loc_1;
-            Main.sav.data.cat_stat2_2_3 = _loc_1;
-            Main.sav.data.cat_stat2_2_4 = _loc_1;
+            Main.sav.data.cat_stat2_2_1 = 40;
+            Main.sav.data.cat_stat2_2_2 = 40;
+            Main.sav.data.cat_stat2_2_3 = 40;
+            Main.sav.data.cat_stat2_2_4 = 40;
             Main.sav.data.cat_stat3_1 = 0;
             Main.sav.data.cat_stat3_2 = 0;
             Main.sav.data.cat_stat3_3 = 0;
             Main.sav.data.cat_stat3_4 = 0;
-            Main.sav.data.cat_stat3_2_1 = _loc_1;
-            Main.sav.data.cat_stat3_2_2 = _loc_1;
-            Main.sav.data.cat_stat3_2_3 = _loc_1;
-            Main.sav.data.cat_stat3_2_4 = _loc_1;
+            Main.sav.data.cat_stat3_2_1 = 40;
+            Main.sav.data.cat_stat3_2_2 = 40;
+            Main.sav.data.cat_stat3_2_3 = 40;
+            Main.sav.data.cat_stat3_2_4 = 40;
             Main.sav.data.cat_hp_koff_1 = 1;
             Main.sav.data.cat_hp_koff_2 = 1;
             Main.sav.data.cat_hp_koff_3 = 1;
             Main.sav.data.cat_hp_koff_4 = 1;
-            var _loc_2 = 20;
-            Main.sav.data.cat_hp_1 = _loc_2;
-            Main.sav.data.cat_hp_2 = _loc_2;
-            Main.sav.data.cat_hp_3 = _loc_2;
-            Main.sav.data.cat_hp_4 = _loc_2;
+            Main.sav.data.cat_hp_1 = 20;
+            Main.sav.data.cat_hp_2 = 20;
+            Main.sav.data.cat_hp_3 = 20;
+            Main.sav.data.cat_hp_4 = 20;
             Main.sav.data.cat_hp2_1 = 50;
             Main.sav.data.cat_hp2_2 = 50;
             Main.sav.data.cat_hp2_3 = 50;
@@ -219,34 +221,34 @@
             Main.sav.data.count_final_1 = 0;
             Main.sav.data.count_final_2 = 0;
             this.i = 1;
-            while (this.i <= 22) {
+            while(this.i <= 22)
+            {
                 Main.sav.data["team_games_" + this.i] = 0;
                 Main.sav.data["team_w_" + this.i] = 0;
                 Main.sav.data["team_d_" + this.i] = 0;
                 Main.sav.data["team_pts_" + this.i] = 0;
-                this.i = this.i + 1;
+                this.i++;
             }
             this.i = 2;
-            while (this.i <= 22) {
-
+            while(this.i <= 22)
+            {
                 this.i2 = 2;
-                while (this.i2 <= 22) {
-
-                    if (this.i != this.i2) {
+                while(this.i2 <= 22)
+                {
+                    if(this.i != this.i2)
+                    {
                         Main.sav.data["match_" + this.i + "_vs_" + this.i2] = 0;
                         Main.sav.data["match_" + this.i2 + "_vs_" + this.i] = 0;
                     }
-                    this.i2 = this.i2 + 1;
+                    this.i2++;
                 }
-                this.i = this.i + 1;
+                this.i++;
             }
             Main.sav.data.gold = 0;
             Main.sav.data.gold_overall = 0;
             Main.sav.flush();
-            return;
-        }// end function
-
-        public init_save() {
+        }
+        public init_save(): any{
             Main.sav.data.tuto1 = 1;
             Main.sav.data.tuto2 = 1;
             Main.sav.data.tuto3 = 1;
@@ -257,10 +259,11 @@
             Main.sav.data.gold = 0;
             Main.sav.data.gold_overall = 0;
             this.i = 1;
-            while (this.i <= 90) { 
-                Main.sav.data["dress_" + this.i] = 0; 
-                this.i = this.i + 1;
-             }
+            while(this.i <= 90)
+            {
+                Main.sav.data["dress_" + this.i] = 0;
+                this.i++;
+            }
             Main.sav.data.shop_1 = 2;
             Main.sav.data.shop_2 = 3;
             Main.sav.data.shop_3 = 39;
@@ -272,206 +275,147 @@
             Main.sav.data.shop_buy_4 = 0;
             Main.sav.data.shop_buy_5 = 0;
             this.i = 1;
-            while (this.i <= 22) { 
+            while(this.i <= 22)
+            {
                 Main.sav.data["team_games_" + this.i] = 0;
                 Main.sav.data["team_w_" + this.i] = 0;
                 Main.sav.data["team_d_" + this.i] = 0;
-                Main.sav.data["team_pts_" + this.i] = 0; 
-                this.i = this.i + 1;
+                Main.sav.data["team_pts_" + this.i] = 0;
+                this.i++;
             }
             this.i = 2;
-            while (this.i <= 22) { 
+            while(this.i <= 22)
+            {
                 this.i2 = 2;
-                while (this.i2 <= 22) { 
-                    if (this.i != this.i2) {
+                while(this.i2 <= 22)
+                {
+                    if(this.i != this.i2)
+                    {
                         Main.sav.data["match_" + this.i + "_vs_" + this.i2] = 0;
                         Main.sav.data["match_" + this.i2 + "_vs_" + this.i] = 0;
-                    } 
-                    this.i2 = this.i2 + 1;
-                } 
-                this.i = this.i + 1;
+                    }
+                    this.i2++;
+                }
+                this.i++;
             }
             this.init_save_kitty();
             Main.sav.data.team_name_1 = "猫咪队伍";
             Main.sav.data.chance_injury = 104;
             Main.sav.flush();
-            return;
-        }// end function
-
-        public open_new_screen(param1) {
+        }
+        public open_new_screen(param1: any): any{
             this.free();
-            switch (param1) {
+            switch(param1)
+            {
                 case "game":
-                    {
-                        this._Game = new Game();
-                        this.zone_bg.addChild(this._Game);
-                        this._Game.init();
-                        break;
-                    }
+                    this._Game = new Game();
+                    this.zone_bg.addChild(this._Game);
+                    this._Game.init();
+                    break;
                 case "menu":
-                    {
-                        this._Menu = new Menu();
-                        this.zone_bg.addChild(this._Menu);
-                        this._Menu.init();
-                        break;
-                    }
+                    this._Menu = new Menu();
+                    this.zone_bg.addChild(this._Menu);
+                    this._Menu.init();
+                    break;
                 case "upg":
-                    {
-                        this._Upg = new Upg();
-                        this.zone_bg.addChild(this._Upg);
-                        this._Upg.init();
-                        break;
-                    }
+                    this._Upg = new Upg();
+                    this.zone_bg.addChild(this._Upg);
+                    this._Upg.init();
+                    break;
                 case "dress":
-                    {
-                        this._Dress = new Dress();
-                        this.zone_bg.addChild(this._Dress);
-                        this._Dress.init();
-                        break;
-                    }
+                    this._Dress = new Dress();
+                    this.zone_bg.addChild(this._Dress);
+                    this._Dress.init();
+                    break;
                 case "playoff":
-                    {
-                        this._Playoff = new Playoff();
-                        this.zone_bg.addChild(this._Playoff);
-                        this._Playoff.init();
-                        break;
-                    }
+                    this._Playoff = new Playoff();
+                    this.zone_bg.addChild(this._Playoff);
+                    this._Playoff.init();
+                    break;
                 case "comics":
-                    {
-                        this._Comics = new Comics();
-                        this.zone_bg.addChild(this._Comics);
-                        this._Comics.init();
-                        break;
-                    }
+                    this._Comics = new Comics();
+                    this.zone_bg.addChild(this._Comics);
+                    this._Comics.init();
+                    break;
                 case "finish":
-                    {
-                        this._Finish = new Finish();
-                        this.zone_bg.addChild(this._Finish);
-                        this._Finish.init();
-                        break;
-                    }
+                    this._Finish = new Finish();
+                    this.zone_bg.addChild(this._Finish);
+                    this._Finish.init();
+                    break;
                 case "team_register":
-                    {
-                        this._Team_register = new Team_register();
-                        this.zone_bg.addChild(this._Team_register);
-                        this._Team_register.init();
-                        break;
-                    }
+                    this._Team_register = new Team_register();
+                    this.zone_bg.addChild(this._Team_register);
+                    this._Team_register.init();
+                    break;
                 case "deqaf":
-                    {
-                        this._Deqaf = new Deqaf();
-                        this.zone_bg.addChild(this._Deqaf);
-                        this._Deqaf.x = -50;
-                        this._Deqaf.y = -50;
-                        this._Deqaf.init();
-                        break;
-                    }
+                    this._Deqaf = new Deqaf();
+                    this.zone_bg.addChild(this._Deqaf);
+                    this._Deqaf.$setX(-50);
+                    this._Deqaf.$setY(-50);
+                    this._Deqaf.init();
+                    break;
                 case "splash":
-                    {
-                        this._Splash = new Splash();
-                        this.zone_bg.addChild(this._Splash);
-                        this._Splash.init();
-                        break;
-                    }
+                    this._Splash = new Splash();
+                    this.zone_bg.addChild(this._Splash);
+                    this._Splash.init();
+                    break;
                 case "done":
-                    {
-                        this._Done = new Done();
-                        this.zone_bg.addChild(this._Done);
-                        this._Done.init();
-                        break;
-                    }
-                default:
-                    {
-                        break;
-                    }
+                    this._Done = new Done();
+                    this.zone_bg.addChild(this._Done);
+                    this._Done.init();
             }
             this.old_scene = param1;
-            return;
-        }// end function
-
-        public free() {
-            switch (this.old_scene) {
+        }
+        public free(): any{
+            switch(this.old_scene)
+            {
                 case "game":
-                    {
-                        this._Game.delete_f();
-                        this.zone_bg.removeChild(this._Game);
-                        break;
-                    }
+                    this._Game.delete_f();
+                    this.zone_bg.removeChild(this._Game);
+                    break;
                 case "menu":
-                    {
-                        this._Menu.delete_f();
-                        this.zone_bg.removeChild(this._Menu);
-                        break;
-                    }
+                    this._Menu.delete_f();
+                    this.zone_bg.removeChild(this._Menu);
+                    break;
                 case "upg":
-                    {
-                        this._Upg.delete_f();
-                        this.zone_bg.removeChild(this._Upg);
-                        break;
-                    }
+                    this._Upg.delete_f();
+                    this.zone_bg.removeChild(this._Upg);
+                    break;
                 case "dress":
-                    {
-                        this._Dress.delete_f();
-                        this.zone_bg.removeChild(this._Dress);
-                        break;
-                    }
+                    this._Dress.delete_f();
+                    this.zone_bg.removeChild(this._Dress);
+                    break;
                 case "finish":
-                    {
-                        this._Finish.delete_f();
-                        this.zone_bg.removeChild(this._Finish);
-                        break;
-                    }
+                    this._Finish.delete_f();
+                    this.zone_bg.removeChild(this._Finish);
+                    break;
                 case "comics":
-                    {
-                        this._Comics.delete_f();
-                        this.zone_bg.removeChild(this._Comics);
-                        break;
-                    }
+                    this._Comics.delete_f();
+                    this.zone_bg.removeChild(this._Comics);
+                    break;
                 case "deqaf":
-                    {
-                        this._Deqaf.delete_f();
-                        this.zone_bg.removeChild(this._Deqaf);
-                        break;
-                    }
+                    this._Deqaf.delete_f();
+                    this.zone_bg.removeChild(this._Deqaf);
+                    break;
                 case "splash":
-                    {
-                        this._Splash.delete_f();
-                        this.zone_bg.removeChild(this._Splash);
-                        break;
-                    }
+                    this._Splash.delete_f();
+                    this.zone_bg.removeChild(this._Splash);
+                    break;
                 case "team_register":
-                    {
-                        this._Team_register.delete_f();
-                        this.zone_bg.removeChild(this._Team_register);
-                        break;
-                    }
+                    this._Team_register.delete_f();
+                    this.zone_bg.removeChild(this._Team_register);
+                    break;
                 case "playoff":
-                    {
-                        this._Playoff.delete_f();
-                        this.zone_bg.removeChild(this._Playoff);
-                        break;
-                    }
+                    this._Playoff.delete_f();
+                    this.zone_bg.removeChild(this._Playoff);
+                    break;
                 case "done":
-                    {
-                        this._Done.delete_f();
-                        this.zone_bg.removeChild(this._Done);
-                        break;
-                    }
-                default:
-                    {
-                        break;
-                    }
+                    this._Done.delete_f();
+                    this.zone_bg.removeChild(this._Done);
             }
-            return;
-        }// end function
-
-        public _rnd(param1) {
-            return (Math.random() * param1);
-        }// end function
-
-        public static getInstance(): App {
-            return this._instance == null ? (new App) : (this._instance);
-        }// end function
-
+        }
+        public _rnd(param1: any): any{
+            return Math.floor(Math.random() * param1);
+        }
     }
 }
