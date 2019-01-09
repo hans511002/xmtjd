@@ -1,11 +1,8 @@
-class cat_drag_mc extends std.MovieClip {
-
-
-    cat1: std.MovieClip;
-
-    telo: std.MovieClip;
-
-    public constructor() {
+export class cat_drag_mc extends std.MovieClip
+{
+    public cat1: std.MovieClip = null;
+    public telo: std.MovieClip = null;
+    public constructor(){
         super();
     }
-} 
+}

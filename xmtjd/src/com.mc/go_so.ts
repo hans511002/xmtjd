@@ -1,8 +1,6 @@
-class go_so extends egret.Sound {
-
-
-    public constructor() {
+export class go_so extends egret.Sound
+{
+    public constructor(){
         super();
     }
 }
-

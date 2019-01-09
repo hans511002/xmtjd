@@ -8,8 +8,7 @@ module com.code
         }
         public got_frame(param1: any): any{
             this.s = this.got_type(param1);
-            switch(this.s)
-            {
+            switch(this.s){
                 case 1:
                     return 8;
                 case 2:
@@ -46,8 +45,7 @@ module com.code
         }
         public got_des(param1: any): any{
             this.s = this.got_type(param1);
-            switch(this.s)
-            {
+            switch(this.s){
                 case 1:
                     return "力量 " + this.got_power(param1);
                 case 2:
@@ -84,8 +82,7 @@ module com.code
         }
         public got_title(param1: any): any{
             this.s = this.got_type(param1);
-            switch(this.s)
-            {
+            switch(this.s){
                 case 1:
                     return "猛击";
                 case 2:
@@ -119,8 +116,7 @@ module com.code
             }
         }
         public got_skin(param1: any): any{
-            switch(param1)
-            {
+            switch(param1){
                 case 1:
                     return 27;
                 case 2:
@@ -294,8 +290,7 @@ module com.code
             }
         }
         public got_type(param1: any): any{
-            switch(param1)
-            {
+            switch(param1){
                 case 1:
                     return 1;
                 case 2:
@@ -469,8 +464,7 @@ module com.code
             }
         }
         public got_power(param1: any): any{
-            switch(param1)
-            {
+            switch(param1){
                 case 1:
                     return 20;
                 case 2:
@@ -644,8 +638,7 @@ module com.code
             }
         }
         public got_reload(param1: any): any{
-            switch(param1)
-            {
+            switch(param1){
                 case 1:
                     return 600;
                 case 2:
@@ -819,8 +812,7 @@ module com.code
             }
         }
         public got_time(param1: any): any{
-            switch(param1)
-            {
+            switch(param1){
                 case 1:
                     return 1;
                 case 2:
@@ -994,8 +986,7 @@ module com.code
             }
         }
         public got_price(param1: any): any{
-            switch(param1)
-            {
+            switch(param1){
                 case 1:
                     return 100;
                 case 2:
@@ -1169,8 +1160,7 @@ module com.code
             }
         }
         public got_level(param1: any): any{
-            switch(param1)
-            {
+            switch(param1){
                 case 1:
                     return 1;
                 case 2:

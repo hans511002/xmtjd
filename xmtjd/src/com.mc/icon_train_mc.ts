@@ -1,13 +1,11 @@
-class icon_train_mc extends std.MovieClip {
-    icon2: std.MovieClip;
-
-    public constructor() {
+export class icon_train_mc extends std.MovieClip
+{
+    public icon2: std.MovieClip = null;
+    public constructor(){
         super();
-        //  addFrameScript(25,this.frame26);
+        this.addFrameScript(25,this.frame26);
     }
-
-    public frame26() {
+    public frame26(): any{
         this.stop();
     }
-
 }

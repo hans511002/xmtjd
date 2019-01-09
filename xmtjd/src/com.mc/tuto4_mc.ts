@@ -1,9 +1,7 @@
-class tuto4_mc extends std.MovieClip {
-
-    ok_bt: eui.Button;//SimpleButton;
-
-    public constructor() {
+export class tuto4_mc extends std.MovieClip
+{
+    public ok_bt: std.MCSimpleButton = null;
+    public constructor(){
         super();
-
     }
 }

@@ -1,19 +1,14 @@
-module com.code {
-    export class Sponsor_button2 extends MovieClip
-   {
-       
-      
-   armor_bt:SimpleButton;
-      
-      public   constructor()
-      {
-         super();
-         this.addEventListener(MouseEvent.CLICK,this.click_f);
-      }
-      
-      public click_f(param1:MouseEvent) : *
-      {
-         navigateToURL(new URLRequest("http://armor.ag/MoreGames"),"_blank");
-      }
-   }
+module com.code
+{
+    export class Sponsor_button2 extends std.MovieClip
+    {
+        public armor_bt: std.MCSimpleButton = null;
+        public constructor(){
+            super();
+            this.addEventListener(egret.TouchEvent.TOUCH_TAP,this.click_f,this);
+        }
+        public click_f(param1: egret.TouchEvent): any{
+            navigateToURL(new URLRequest("http://armor.ag/MoreGames"),"_blank");
+        }
+    }
 }

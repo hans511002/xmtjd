@@ -1,9 +1,7 @@
-class info_aby_mc extends std.MovieClip {
-
-    des_tx: std.MCLabel;
-
-    public constructor() {
+export class info_aby_mc extends std.MovieClip
+{
+    public des_tx: TextField = null;
+    public constructor(){
         super();
-
     }
 }

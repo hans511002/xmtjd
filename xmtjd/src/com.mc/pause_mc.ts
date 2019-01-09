@@ -1,9 +1,8 @@
-class pause_mc extends std.MovieClip {
-
-    home_bt: std.MovieClip;
-    resume_bt: eui.Button;
-
-    public constructor() {
+export class pause_mc extends std.MovieClip
+{
+    public home_bt: std.MovieClip = null;
+    public resume_bt: std.MCSimpleButton = null;
+    public constructor(){
         super();
     }
 }

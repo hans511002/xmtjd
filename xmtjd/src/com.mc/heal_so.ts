@@ -1,8 +1,6 @@
-class heal_so extends egret.Sound {
-
-
-    public constructor() {
+export class heal_so extends egret.Sound
+{
+    public constructor(){
         super();
-
     }
 }

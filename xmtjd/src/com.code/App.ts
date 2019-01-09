@@ -1,4 +1,4 @@
-﻿module com.code
+module com.code
 {
     export class App extends Sprite
     {
@@ -91,11 +91,9 @@
             Main.sav.data.cat_injury2_4 = 0;
             Main.sav.data.cat_injury3_4 = 0;
             this.i = 1;
-            while(this.i <= 4)
-            {
+            while(this.i <= 4){
                 this.i2 = 1;
-                while(this.i2 <= 3)
-                {
+                while(this.i2 <= 3){
                     Main.sav.data["cat_injury" + this.i2 + "_time_" + this.i] = 0;
                     this.i2++;
                 }
@@ -221,8 +219,7 @@
             Main.sav.data.count_final_1 = 0;
             Main.sav.data.count_final_2 = 0;
             this.i = 1;
-            while(this.i <= 22)
-            {
+            while(this.i <= 22){
                 Main.sav.data["team_games_" + this.i] = 0;
                 Main.sav.data["team_w_" + this.i] = 0;
                 Main.sav.data["team_d_" + this.i] = 0;
@@ -230,13 +227,10 @@
                 this.i++;
             }
             this.i = 2;
-            while(this.i <= 22)
-            {
+            while(this.i <= 22){
                 this.i2 = 2;
-                while(this.i2 <= 22)
-                {
-                    if(this.i != this.i2)
-                    {
+                while(this.i2 <= 22){
+                    if(this.i != this.i2){
                         Main.sav.data["match_" + this.i + "_vs_" + this.i2] = 0;
                         Main.sav.data["match_" + this.i2 + "_vs_" + this.i] = 0;
                     }
@@ -259,8 +253,7 @@
             Main.sav.data.gold = 0;
             Main.sav.data.gold_overall = 0;
             this.i = 1;
-            while(this.i <= 90)
-            {
+            while(this.i <= 90){
                 Main.sav.data["dress_" + this.i] = 0;
                 this.i++;
             }
@@ -275,8 +268,7 @@
             Main.sav.data.shop_buy_4 = 0;
             Main.sav.data.shop_buy_5 = 0;
             this.i = 1;
-            while(this.i <= 22)
-            {
+            while(this.i <= 22){
                 Main.sav.data["team_games_" + this.i] = 0;
                 Main.sav.data["team_w_" + this.i] = 0;
                 Main.sav.data["team_d_" + this.i] = 0;
@@ -284,13 +276,10 @@
                 this.i++;
             }
             this.i = 2;
-            while(this.i <= 22)
-            {
+            while(this.i <= 22){
                 this.i2 = 2;
-                while(this.i2 <= 22)
-                {
-                    if(this.i != this.i2)
-                    {
+                while(this.i2 <= 22){
+                    if(this.i != this.i2){
                         Main.sav.data["match_" + this.i + "_vs_" + this.i2] = 0;
                         Main.sav.data["match_" + this.i2 + "_vs_" + this.i] = 0;
                     }
@@ -305,8 +294,7 @@
         }
         public open_new_screen(param1: any): any{
             this.free();
-            switch(param1)
-            {
+            switch(param1){
                 case "game":
                     this._Game = new Game();
                     this.zone_bg.addChild(this._Game);
@@ -367,8 +355,7 @@
             this.old_scene = param1;
         }
         public free(): any{
-            switch(this.old_scene)
-            {
+            switch(this.old_scene){
                 case "game":
                     this._Game.delete_f();
                     this.zone_bg.removeChild(this._Game);

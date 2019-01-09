@@ -1,153 +1,115 @@
-﻿module com.code
-{ 
-    export class Preloader extends egret.Sprite
+module com.code
+{
+    export class Preloader extends Sprite
     {
-        name_in_cl:std.MovieClip;
-        play_cl:std.MovieClip;
-        skala:std.MovieClip;
-        loaded:number;
-        total:number;
-        rnd_for:number = 0;
-        i_in:string;
-        site_good:number = 0;
-        _app:App;
-
-        public Preloader()
-        {
+        public name_in_cl: std.MovieClip = null;
+        public play_cl: std.MovieClip = null;
+        public skala: std.MovieClip = null;
+        loaded: number = 0;
+        total: number = 0;
+        rnd_for: number = 0;
+        i_in: String = null;
+        site_good: number = 0;
+        _app: App = null;
+        public constructor(){
             this._app = App.getInstance();
-            if (this.stage)
-            {
+            super();
+            if(stage){
                 this.init();
             }
-            else
-            {
-                addEventListener(egret.Event.ADDED_TO_STAGE, this.init);
+            else{
+                this.addEventListener(egret.Event.ADDED_TO_STAGE,this.init,this);
             }
-            return;
-        }// end function
-
-        public init(event:Event = null) : void
-        {
-            this.play_cl.visible = false;
-            loaderInfo.addEventListener(ProgressEvent.PROGRESS, this.progressHandler);
-            loaderInfo.addEventListener(Event.COMPLETE, this.startGame_f);
-            addEventListener(egret.Event.ENTER_FRAME, this.preloader_f);
+        }
+        public init(param1: egret.Event = null): void{
+            this.play_cl.$setVisible(false);
+            loaderInfo.addEventListener(ProgressEvent.PROGRESS,this.progressHandler,this);
+            loaderInfo.addEventListener(egret.Event.COMPLETE,this.startGame_f,this);
+            this.addEventListener(egret.Event.ENTER_FRAME,this.preloader_f,this);
             this.init_cpm();
-            return;
-        }// end function
-
-        public add_armor_ads()
-        {
-            var abs;
-            var loadComplete:Function;
-            loadComplete = function (event:Event) : void
-            {
-                abs = event.currentTarget.content;
+        }
+        public add_armor_ads(): any{
+            var abs:* = undefined;
+            var loadComplete:Function = null;
+            loadComplete = function(param1: egret.Event):void{
+                abs = param1.currentTarget.content;
                 this.name_in_cl.lol.addChild(abs);
-                abs.show({x:-150, y:-100});
-                return;
-            }// end function
-            ;
-            var abs_url:string;
-            // Security.allowDomain(abs_url);
-            var urlRequest = new URLRequest(abs_url);
-            var loader = new Loader();
-            loader.contentLoaderInfo.addEventListener(egret.Event.COMPLETE, loadComplete);
+                abs.show({
+                    "x":0 - 150,
+                    "y":0 - 100
+                });
+            };
+            var abs_url:String = "./ABS.swf";
+            Security.allowDomain(abs_url);
+            var urlRequest:URLRequest = new URLRequest(abs_url);
+            var loader:Loader = new Loader();
+            loader.contentLoaderInfo.addEventListener(egret.Event.COMPLETE,loadComplete,this);
             loader.load(urlRequest);
-            return;
-        }// end function
-
-        public init_cpm()
-        {
-            var _loc_1  = NaN;
-            var _loc_2  = this.stage.loaderInfo.loaderURL;
-            var _loc_3  = _loc_2.indexOf("://") + 3;
-            var _loc_4  = _loc_2.indexOf("/", _loc_3);
-            var _loc_5  = _loc_2.substring(_loc_3, _loc_4);
-            var _loc_6  = _loc_5.lastIndexOf(".") - 1;
-            var _loc_7  = _loc_5.lastIndexOf(".", _loc_6) + 1;
-            _loc_5 = _loc_5.substring(_loc_7, _loc_5.length);
-            var _loc_8  = [];
-            _loc_8.push("www.kongregate.com");
-            _loc_8.push("kongregate.com");
-            _loc_8.push("newgrounds.com");
-            _loc_8.push("www.newgrounds.com");
-            _loc_8.push("uploads.ungrounded.net");
-            _loc_8.push("ungrounded.net");
-            _loc_8.push("ngfiles.com");
-            _loc_1 = 0;
-            while (_loc_1 < _loc_8.length)
-            {
-                
-                if (_loc_5 == _loc_8[_loc_1])
-                {
+        }
+        public init_cpm(): any{
+            var _loc1_:number = NaN;
+            var _loc2_:String = this.stage.loaderInfo.loaderURL;
+            var _loc3_:number = _loc2_.indexOf("://") + 3;
+            var _loc4_:number = _loc2_.indexOf("/",_loc3_);
+            var _loc5_:String = _loc2_.substring(_loc3_,_loc4_);
+            var _loc6_:number = _loc5_.lastIndexOf(".") - 1;
+            var _loc7_:number = _loc5_.lastIndexOf(".",_loc6_) + 1;
+            _loc5_ = _loc5_.substring(_loc7_,_loc5_.length);
+            var _loc8_:Array = [];
+            _loc8_.push("www.kongregate.com");
+            _loc8_.push("kongregate.com");
+            _loc8_.push("newgrounds.com");
+            _loc8_.push("www.newgrounds.com");
+            _loc8_.push("uploads.ungrounded.net");
+            _loc8_.push("ungrounded.net");
+            _loc8_.push("ngfiles.com");
+;
+            while(_loc1_ < _loc8_.length){
+                if(_loc5_ == _loc8_[_loc1_]){
                     this.site_good = 1;
                 }
-                _loc_1 = _loc_1 + 1;
+                _loc1_++;
             }
-            if (this.site_good == 0)
-            {
+            if(this.site_good == 0){
                 this.name_in_cl.gotoAndStop(1);
                 this.add_armor_ads();
             }
-            else
-            {
+            else{
                 this.name_in_cl.gotoAndStop(2);
-                this.play_cl.y = 297;
+                this.play_cl.$setY(297);
             }
-            return;
-        }// end function
-
-        public progressHandler(event:ProgressEvent) : void
-        {
-            this.loaded = event.bytesLoaded;
-            this.total = event.bytesTotal;
-            return;
-        }// end function
-
-        public preloader_f(event:Event)
-        {
-            this.skala.gotoAndStop(((this.total - (this.total - this.loaded)) * 100 / this.total) );
-            if ( (this.loaded / this.total * 100) >= 100)
-            {
+        }
+        public progressHandler(param1: ProgressEvent): void{
+            this.loaded = param1.bytesLoaded;
+            this.total = param1.bytesTotal;
+        }
+        public preloader_f(param1: egret.Event): any{
+            this.skala.gotoAndStop(Math.floor((this.total - (this.total - this.loaded)) * 100 / this.total));
+            if(int(this.loaded / this.total * 100) >= 100){
                 this.load_end();
             }
-            return;
-        }// end function
-
-        public startGame_f(event:Event)
-        {
+        }
+        public startGame_f(param1: egret.Event): any{
             this.load_end();
-            return;
-        }// end function
-
-        public load_end()
-        {
+        }
+        public load_end(): any{
             this.skala.gotoAndStop(100);
-            this.play_cl.visible = true;
+            this.play_cl.$setVisible(true);
             this.play_cl.gotoAndPlay(2);
-            this.play_cl.addEventListener(MouseEvent.CLICK, this.bt_play);
-            removeEventListener(Event.ENTER_FRAME, this.preloader_f);
-            loaderInfo.removeEventListener(egret.Event.COMPLETE, this.startGame_f);
-            loaderInfo.removeEventListener(ProgressEvent.PROGRESS, this.progressHandler);
-            return;
-        }// end function
-
-        public bt_play(event:MouseEvent)
-        {
+            this.play_cl.addEventListener(egret.TouchEvent.TOUCH_TAP,this.bt_play,this);
+            this.removeEventListener(egret.Event.ENTER_FRAME,this.preloader_f,this);
+            loaderInfo.removeEventListener(egret.Event.COMPLETE,this.startGame_f,this);
+            loaderInfo.removeEventListener(ProgressEvent.PROGRESS,this.progressHandler,this);
+        }
+        public bt_play(param1: egret.TouchEvent): any{
             Main.go_to_game = true;
             Main.first_target = "game";
             Main.first_target = "dress";
             Main.first_target = "upg";
             Main.first_target = "menu";
             Main.first_target = "splash";
-            return;
-        }// end function
-
-        public delete_f()
-        {
-            return;
-        }// end function
-
+        }
+        public delete_f(): any{
+        }
     }
 }

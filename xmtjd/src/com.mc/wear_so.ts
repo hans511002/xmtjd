@@ -1,8 +1,6 @@
-class wear_so extends egret.Sound {
-
-
-    public constructor() {
+export class wear_so extends egret.Sound
+{
+    public constructor(){
         super();
     }
 }
-

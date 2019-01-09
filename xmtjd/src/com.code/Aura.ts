@@ -18,29 +18,23 @@ module com.code
             this.time2 = param3;
             this.skin = this._sp(aura_all_mc,this,0,0);
             this.skin.gotoAndStop(this.type);
-            if(this.type == 1)
-            {
+            if(this.type == 1){
                 this.skin.icon_cl.gotoAndStop(5);
             }
-            else if(this.type == 2)
-            {
+            else if(this.type == 2){
                 this.skin.icon_cl.gotoAndStop(6);
             }
-            else if(this.type == 3)
-            {
+            else if(this.type == 3){
                 this.skin.icon_cl.gotoAndStop(8);
             }
-            else
-            {
+            else{
                 this.skin.icon_cl.gotoAndStop(9);
             }
-            if(this.side == 1)
-            {
+            if(this.side == 1){
                 this.skin.$setX(25 + 50 * this._game.arr_aura_cat.length);
                 this.skin.$setY(25);
             }
-            else
-            {
+            else{
                 this.skin.$setX(625 - 50 * this._game.arr_aura_fox.length);
                 this.skin.$setY(25);
             }
