@@ -1,0 +1,5 @@
+<TextureAtlas name="menu_bt_mc" imagePath="texture.png">
+ <SubTexture name="Symbol 1868" x="65" y="0" width="59" height="23"/>
+ <SubTexture name="__dbTextures/Symbol 1872/Layer 2_3" x="0" y="0" width="64" height="28"/>
+ <SubTexture name="Symbol 1870" x="65" y="24" width="13" height="15"/>
+</TextureAtlas>

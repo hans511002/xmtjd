@@ -1,0 +1,6 @@
+<TextureAtlas name="hit_mc" imagePath="texture.png">
+ <SubTexture name="__dbTextures/hit_mc/Layer 2_3" x="0" y="0" width="98" height="255"/>
+ <SubTexture name="Symbol 2320" x="333" y="0" width="71" height="123"/>
+ <SubTexture name="Symbol 2321" x="223" y="0" width="109" height="175"/>
+ <SubTexture name="Symbol 2322" x="99" y="0" width="123" height="219"/>
+</TextureAtlas>

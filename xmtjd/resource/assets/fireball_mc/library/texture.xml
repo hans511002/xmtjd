@@ -1,0 +1,9 @@
+<TextureAtlas name="fireball_mc" imagePath="texture.png">
+ <SubTexture name="__dbTextures/fireball_mc/Layer 2_0" x="85" y="87" width="41" height="30"/>
+ <SubTexture name="__dbTextures/fireball_mc/Layer 2_3" x="70" y="0" width="41" height="39"/>
+ <SubTexture name="__dbTextures/fireball_mc/Layer 2_6" x="0" y="68" width="41" height="30"/>
+ <SubTexture name="__dbTextures/fireball_mc/Layer 2_9" x="43" y="87" width="41" height="30"/>
+ <SubTexture name="__dbTextures/fireball_mc/Layer 2_11" x="70" y="40" width="30" height="46"/>
+ <SubTexture name="__dbTextures/fireball_mc/Layer 2_13" x="38" y="0" width="31" height="56"/>
+ <SubTexture name="__dbTextures/fireball_mc/Layer 2_15" x="0" y="0" width="37" height="67"/>
+</TextureAtlas>

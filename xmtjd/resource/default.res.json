@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "bg_jpg,egret_icon_png,description_json,texture_json,texture_png,test_tex_json,test_tex_png,test_ske_json,texture2_png,aby_mc_tex_json,aby_mc_tex_png,aby_mc_ske_json,texture3_png,texture4_png",
+			"keys": "bg_jpg,egret_icon_png,description_json,texture_json,texture_png,test_tex_json,test_tex_png,test_ske_json,texture2_png,aby_mc_tex_json,aby_mc_tex_png,aby_mc_ske_json,texture3_png,texture4_png,card_game_mc_tex_json,card_game_mc_tex_png,card_game_mc_ske_json,texture5_png,cat_drag_mc_tex_json,cat_drag_mc_tex_png,cat_drag_mc_ske_json,texture6_png,damage_mc_tex_json,damage_mc_tex_png,damage_mc_ske_json,texture7_png,down_panel_mc_tex_json,down_panel_mc_tex_png,down_panel_mc_ske_json,texture8_png,fireball_mc_tex_json,fireball_mc_tex_png,fireball_mc_ske_json,texture9_png,got_cup_mc_tex_json,got_cup_mc_tex_png,got_cup_mc_ske_json,texture10_png,grand_mc_tex_json,grand_mc_tex_png,grand_mc_ske_json,texture11_png,texture12_png,hit_mc_tex_json,hit_mc_tex_png,hit_mc_ske_json,texture13_png,icon_train_mc_tex_json,icon_train_mc_tex_png,icon_train_mc_ske_json,texture14_png,info_aby_mc_tex_json,info_aby_mc_tex_png,info_aby_mc_ske_json,texture15_png,location_mc_tex_json,location_mc_tex_png,location_mc_ske_json,texture16_png,menu_bt_mc_tex_json,menu_bt_mc_tex_png,menu_bt_mc_ske_json,texture17_png,panel_view_hit_mc_tex_json,panel_view_hit_mc_tex_png,panel_view_hit_mc_ske_json,texture18_png,panel_view_not_hit_mc_tex_json,panel_view_not_hit_mc_tex_png,panel_view_not_hit_mc_ske_json,texture19_png,paper_mc_tex_json,paper_mc_tex_png,paper_mc_ske_json",
 			"name": "preload"
 		}
 	],
@@ -75,6 +75,306 @@
 			"name": "texture4_png",
 			"type": "image",
 			"url": "assets/card_game_mc/library/texture.png"
+		},
+		{
+			"name": "card_game_mc_tex_json",
+			"type": "json",
+			"url": "assets/card_game_mc/card_game_mc_tex.json"
+		},
+		{
+			"name": "card_game_mc_tex_png",
+			"type": "image",
+			"url": "assets/card_game_mc/card_game_mc_tex.png"
+		},
+		{
+			"name": "card_game_mc_ske_json",
+			"type": "json",
+			"url": "assets/card_game_mc/card_game_mc_ske.json"
+		},
+		{
+			"name": "texture5_png",
+			"type": "image",
+			"url": "assets/cat_drag_mc/library/texture.png"
+		},
+		{
+			"name": "cat_drag_mc_tex_json",
+			"type": "json",
+			"url": "assets/cat_drag_mc/cat_drag_mc_tex.json"
+		},
+		{
+			"name": "cat_drag_mc_tex_png",
+			"type": "image",
+			"url": "assets/cat_drag_mc/cat_drag_mc_tex.png"
+		},
+		{
+			"name": "cat_drag_mc_ske_json",
+			"type": "json",
+			"url": "assets/cat_drag_mc/cat_drag_mc_ske.json"
+		},
+		{
+			"name": "texture6_png",
+			"type": "image",
+			"url": "assets/damage_mc/library/texture.png"
+		},
+		{
+			"name": "damage_mc_tex_json",
+			"type": "json",
+			"url": "assets/damage_mc/damage_mc_tex.json"
+		},
+		{
+			"name": "damage_mc_tex_png",
+			"type": "image",
+			"url": "assets/damage_mc/damage_mc_tex.png"
+		},
+		{
+			"name": "damage_mc_ske_json",
+			"type": "json",
+			"url": "assets/damage_mc/damage_mc_ske.json"
+		},
+		{
+			"name": "texture7_png",
+			"type": "image",
+			"url": "assets/down_panel_mc/library/texture.png"
+		},
+		{
+			"name": "down_panel_mc_tex_json",
+			"type": "json",
+			"url": "assets/down_panel_mc/down_panel_mc_tex.json"
+		},
+		{
+			"name": "down_panel_mc_tex_png",
+			"type": "image",
+			"url": "assets/down_panel_mc/down_panel_mc_tex.png"
+		},
+		{
+			"name": "down_panel_mc_ske_json",
+			"type": "json",
+			"url": "assets/down_panel_mc/down_panel_mc_ske.json"
+		},
+		{
+			"name": "texture8_png",
+			"type": "image",
+			"url": "assets/fireball_mc/library/texture.png"
+		},
+		{
+			"name": "fireball_mc_tex_json",
+			"type": "json",
+			"url": "assets/fireball_mc/fireball_mc_tex.json"
+		},
+		{
+			"name": "fireball_mc_tex_png",
+			"type": "image",
+			"url": "assets/fireball_mc/fireball_mc_tex.png"
+		},
+		{
+			"name": "fireball_mc_ske_json",
+			"type": "json",
+			"url": "assets/fireball_mc/fireball_mc_ske.json"
+		},
+		{
+			"name": "texture9_png",
+			"type": "image",
+			"url": "assets/got_cup_mc/library/texture.png"
+		},
+		{
+			"name": "got_cup_mc_tex_json",
+			"type": "json",
+			"url": "assets/got_cup_mc/got_cup_mc_tex.json"
+		},
+		{
+			"name": "got_cup_mc_tex_png",
+			"type": "image",
+			"url": "assets/got_cup_mc/got_cup_mc_tex.png"
+		},
+		{
+			"name": "got_cup_mc_ske_json",
+			"type": "json",
+			"url": "assets/got_cup_mc/got_cup_mc_ske.json"
+		},
+		{
+			"name": "texture10_png",
+			"type": "image",
+			"url": "assets/grand_mc/library/texture.png"
+		},
+		{
+			"name": "grand_mc_tex_json",
+			"type": "json",
+			"url": "assets/grand_mc/grand_mc_tex.json"
+		},
+		{
+			"name": "grand_mc_tex_png",
+			"type": "image",
+			"url": "assets/grand_mc/grand_mc_tex.png"
+		},
+		{
+			"name": "grand_mc_ske_json",
+			"type": "json",
+			"url": "assets/grand_mc/grand_mc_ske.json"
+		},
+		{
+			"name": "texture11_png",
+			"type": "image",
+			"url": "assets/grand_mc/library/texture.png"
+		},
+		{
+			"name": "texture12_png",
+			"type": "image",
+			"url": "assets/hit_mc/library/texture.png"
+		},
+		{
+			"name": "hit_mc_tex_json",
+			"type": "json",
+			"url": "assets/hit_mc/hit_mc_tex.json"
+		},
+		{
+			"name": "hit_mc_tex_png",
+			"type": "image",
+			"url": "assets/hit_mc/hit_mc_tex.png"
+		},
+		{
+			"name": "hit_mc_ske_json",
+			"type": "json",
+			"url": "assets/hit_mc/hit_mc_ske.json"
+		},
+		{
+			"name": "texture13_png",
+			"type": "image",
+			"url": "assets/icon_train_mc/library/texture.png"
+		},
+		{
+			"name": "icon_train_mc_tex_json",
+			"type": "json",
+			"url": "assets/icon_train_mc/icon_train_mc_tex.json"
+		},
+		{
+			"name": "icon_train_mc_tex_png",
+			"type": "image",
+			"url": "assets/icon_train_mc/icon_train_mc_tex.png"
+		},
+		{
+			"name": "icon_train_mc_ske_json",
+			"type": "json",
+			"url": "assets/icon_train_mc/icon_train_mc_ske.json"
+		},
+		{
+			"name": "texture14_png",
+			"type": "image",
+			"url": "assets/info_aby_mc/library/texture.png"
+		},
+		{
+			"name": "info_aby_mc_tex_json",
+			"type": "json",
+			"url": "assets/info_aby_mc/info_aby_mc_tex.json"
+		},
+		{
+			"name": "info_aby_mc_tex_png",
+			"type": "image",
+			"url": "assets/info_aby_mc/info_aby_mc_tex.png"
+		},
+		{
+			"name": "info_aby_mc_ske_json",
+			"type": "json",
+			"url": "assets/info_aby_mc/info_aby_mc_ske.json"
+		},
+		{
+			"name": "texture15_png",
+			"type": "image",
+			"url": "assets/location_mc/library/texture.png"
+		},
+		{
+			"name": "location_mc_tex_json",
+			"type": "json",
+			"url": "assets/location_mc/location_mc_tex.json"
+		},
+		{
+			"name": "location_mc_tex_png",
+			"type": "image",
+			"url": "assets/location_mc/location_mc_tex.png"
+		},
+		{
+			"name": "location_mc_ske_json",
+			"type": "json",
+			"url": "assets/location_mc/location_mc_ske.json"
+		},
+		{
+			"name": "texture16_png",
+			"type": "image",
+			"url": "assets/menu_bt_mc/library/texture.png"
+		},
+		{
+			"name": "menu_bt_mc_tex_json",
+			"type": "json",
+			"url": "assets/menu_bt_mc/menu_bt_mc_tex.json"
+		},
+		{
+			"name": "menu_bt_mc_tex_png",
+			"type": "image",
+			"url": "assets/menu_bt_mc/menu_bt_mc_tex.png"
+		},
+		{
+			"name": "menu_bt_mc_ske_json",
+			"type": "json",
+			"url": "assets/menu_bt_mc/menu_bt_mc_ske.json"
+		},
+		{
+			"name": "texture17_png",
+			"type": "image",
+			"url": "assets/panel_view_hit_mc/library/texture.png"
+		},
+		{
+			"name": "panel_view_hit_mc_tex_json",
+			"type": "json",
+			"url": "assets/panel_view_hit_mc/panel_view_hit_mc_tex.json"
+		},
+		{
+			"name": "panel_view_hit_mc_tex_png",
+			"type": "image",
+			"url": "assets/panel_view_hit_mc/panel_view_hit_mc_tex.png"
+		},
+		{
+			"name": "panel_view_hit_mc_ske_json",
+			"type": "json",
+			"url": "assets/panel_view_hit_mc/panel_view_hit_mc_ske.json"
+		},
+		{
+			"name": "texture18_png",
+			"type": "image",
+			"url": "assets/panel_view_not_hit_mc/library/texture.png"
+		},
+		{
+			"name": "panel_view_not_hit_mc_tex_json",
+			"type": "json",
+			"url": "assets/panel_view_not_hit_mc/panel_view_not_hit_mc_tex.json"
+		},
+		{
+			"name": "panel_view_not_hit_mc_tex_png",
+			"type": "image",
+			"url": "assets/panel_view_not_hit_mc/panel_view_not_hit_mc_tex.png"
+		},
+		{
+			"name": "panel_view_not_hit_mc_ske_json",
+			"type": "json",
+			"url": "assets/panel_view_not_hit_mc/panel_view_not_hit_mc_ske.json"
+		},
+		{
+			"name": "texture19_png",
+			"type": "image",
+			"url": "assets/paper_mc/library/texture.png"
+		},
+		{
+			"name": "paper_mc_tex_json",
+			"type": "json",
+			"url": "assets/paper_mc/paper_mc_tex.json"
+		},
+		{
+			"name": "paper_mc_tex_png",
+			"type": "image",
+			"url": "assets/paper_mc/paper_mc_tex.png"
+		},
+		{
+			"name": "paper_mc_ske_json",
+			"type": "json",
+			"url": "assets/paper_mc/paper_mc_ske.json"
 		}
 	]
 }

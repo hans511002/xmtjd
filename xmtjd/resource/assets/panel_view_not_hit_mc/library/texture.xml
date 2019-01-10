@@ -1,0 +1,16 @@
+<TextureAtlas name="panel_view_not_hit_mc" imagePath="texture.png">
+ <SubTexture name="Symbol 2077" x="0" y="0" width="650" height="450"/>
+ <SubTexture name="Symbol 2078" x="652" y="0" width="345" height="189"/>
+ <SubTexture name="位图 14" x="652" y="190" width="337" height="83"/>
+ <SubTexture name="Symbol 2081" x="652" y="275" width="69" height="63"/>
+ <SubTexture name="Symbol 2083" x="865" y="275" width="45" height="57"/>
+ <SubTexture name="Symbol 2085" x="820" y="275" width="44" height="61"/>
+ <SubTexture name="Symbol 2087" x="722" y="275" width="48" height="57"/>
+ <SubTexture name="Symbol 2089" x="771" y="275" width="48" height="57"/>
+ <SubTexture name="位图 13" x="912" y="275" width="41" height="54"/>
+ <SubTexture name="Symbol 1695" x="955" y="275" width="53" height="40"/>
+ <SubTexture name="位图 9" x="722" y="333" width="42" height="45"/>
+ <SubTexture name="位图 10" x="955" y="316" width="44" height="46"/>
+ <SubTexture name="位图 11" x="865" y="333" width="42" height="45"/>
+ <SubTexture name="位图 12" x="766" y="333" width="42" height="45"/>
+</TextureAtlas>

@@ -848,7 +848,7 @@ module std {
 			return mcs;
 		};
 
-		createMCButton(slotName: string, reinitType: number = 0): MovieClipSub {
+		createMCButton(slotName: string, reinitType: number = 0): MCButton {
 			var mcs: MCButton = new MCButton(this, slotName, "", reinitType);
 			// mcs.reinitType = reinitType;
 			// this.addMCbs(mcs, reinitType);
@@ -1494,11 +1494,19 @@ module std {
 			return false;
 		}
 	}
+	export class Button extends MovieClip {
+		label: std.MCLabel;
+		public constructor(rootPath: string, armName: string, dbName: string, defAniName: string = "") {
+			super(rootPath, armName, dbName, defAniName);
+			this.label = this.createLabel("label");
+		}
+	}
 	export class MCButton extends MovieClipSub {
+		label: std.MCLabel;
 		public constructor(mc?: MC, slotName?: string, defAniName?: string, reinitType: number = 0) {
 			super(mc, slotName, defAniName, reinitType);
+			this.label = this.createLabel("label");
 		}
-
 	}
 	// class MCUI;
 	// class MCCase;

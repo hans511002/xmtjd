@@ -1,0 +1,4 @@
+<TextureAtlas name="damage_mc" imagePath="texture.png">
+ <SubTexture name="位图 2" x="116" y="0" width="114" height="75"/>
+ <SubTexture name="位图 1" x="0" y="0" width="114" height="80"/>
+</TextureAtlas>

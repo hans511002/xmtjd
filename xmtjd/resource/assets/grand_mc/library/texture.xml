@@ -1,0 +1,4 @@
+<TextureAtlas name="grand_mc" imagePath="texture.png">
+ <SubTexture name="Symbol 2077" x="0" y="0" width="650" height="450"/>
+ <SubTexture name="Symbol 2635" x="0" y="452" width="435" height="426"/>
+</TextureAtlas>

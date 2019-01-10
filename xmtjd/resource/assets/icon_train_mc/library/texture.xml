@@ -1,0 +1,8 @@
+<TextureAtlas name="icon_train_mc" imagePath="texture.png">
+ <SubTexture name="Symbol 2048" x="0" y="44" width="19" height="17"/>
+ <SubTexture name="Symbol 2046" x="20" y="45" width="19" height="16"/>
+ <SubTexture name="Symbol 2050" x="0" y="27" width="22" height="16"/>
+ <SubTexture name="Symbol 2564" x="0" y="0" width="27" height="26"/>
+ <SubTexture name="Symbol 2566" x="28" y="0" width="26" height="23"/>
+ <SubTexture name="__dbTextures/icon2/Layer 1_5" x="28" y="24" width="20" height="20"/>
+</TextureAtlas>
