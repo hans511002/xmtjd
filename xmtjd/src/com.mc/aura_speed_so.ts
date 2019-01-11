@@ -1,6 +1,5 @@
-export class aura_speed_so extends egret.Sound
-{
-    public constructor(){
+class aura_speed_so extends egret.Sound {
+    public constructor() {
         super();
     }
 }

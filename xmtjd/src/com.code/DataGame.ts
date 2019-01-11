@@ -1,7 +1,5 @@
-module com.code
-{
-    export class DataGame extends DataMovieClip
-    {
+module com.code {
+    export class DataGame extends DataMovieClip {
         arr_last_frame_skin: any = [];
         arr_last_frame_zone: any = [];
         game_stop: boolean = false;
@@ -29,12 +27,12 @@ module com.code
         down_panel_cl: std.MovieClip = null;
         time_began: number = 0;
         status_began: number = 0;
-        zone_cat: Sprite = null;
-        zone_fox: Sprite = null;
-        zone_up_all: Sprite = null;
-        zone_panel: Sprite = null;
-        zone_bg: Sprite = null;
-        zone_tuto: Sprite = null;
+        zone_cat: egret.Sprite = null;
+        zone_fox: egret.Sprite = null;
+        zone_up_all: egret.Sprite = null;
+        zone_panel: egret.Sprite = null;
+        zone_bg: egret.Sprite = null;
+        zone_tuto: egret.Sprite = null;
         pause_cl: std.MovieClip = null;
         pause_ex: boolean = false;
         menu_bt_cl: std.MovieClip = null;
@@ -82,7 +80,8 @@ module com.code
         numbef_of_two: boolean = false;
         arr_op: any = [];
         arr_op2: any = [];
-        public constructor(){
+        public constructor() {
+            super();
             this.arr_last_frame_skin = [];
             this.arr_last_frame_zone = [];
             this.arr_cat = [];
@@ -101,26 +100,25 @@ module com.code
             this.arr_temp2 = [];
             this.arr_op = [];
             this.arr_op2 = [];
-            super();
         }
-        public _to_last(param1: any, param2: any): any{
+        public _to_last(param1: any, param2: any): any {
             this.arr_last_frame_skin.push(param1);
             this.arr_last_frame_zone.push(param2);
         }
-        public _remove_array(param1: any): any{
-            param1.splice(0,param1.length);
+        public _remove_array(param1: any): any {
+            param1.splice(0, param1.length);
         }
-        public got_sqrt(param1: any, param2: any): any{
+        public got_sqrt(param1: any, param2: any): any {
             return Math.sqrt((Math.abs(param1.x - param2.x) ^ 2) + (Math.abs(param1.y - param2.y) ^ 2));
         }
-        public got_sqrt2(param1: any, param2: any, param3: any): any{
+        public got_sqrt2(param1: any, param2: any, param3: any): any {
             return Math.sqrt((Math.abs(param1.x - param2) ^ 2) + (Math.abs(param1.y - param3) ^ 2));
         }
-        public got_vracenie(param1: any, param2: any, param3: any, param4: any): any{
-            dx = param1 - param3;
-            dy = param2 - param4;
-            ugol = Math.atan2(dx,dy);
-            return ugol * 360 / (-2 * Math.PI);
+        public got_vracenie(param1: any, param2: any, param3: any, param4: any): any {
+            this.dx = param1 - param3;
+            this.dy = param2 - param4;
+            this.ugol = Math.atan2(this.dx, this.dy);
+            return this.ugol * 360 / (-2 * Math.PI);
         }
     }
 }

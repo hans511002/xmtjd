@@ -1,6 +1,6 @@
-export class armor_all_so extends egret.Sound
-{
-    public constructor(){
+class armor_all_so extends egret.Sound {
+
+    public constructor() {
         super();
     }
 }

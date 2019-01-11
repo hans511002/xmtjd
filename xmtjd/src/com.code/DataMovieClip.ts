@@ -1,7 +1,5 @@
-module com.code
-{
-    export class DataMovieClip extends std.MovieClip
-    {
+module com.code {
+    export class DataMovieClip extends std.MovieClip {
         i: number = 0;
         i2: number = 0;
         i3: number = 0;
@@ -39,44 +37,44 @@ module com.code
         temp_x: number = 0;
         temp_y: number = 0;
         sprite_var: std.MovieClip = null;
-        public constructor(){
+        public constructor() {
             super();
         }
-        public _hit(param1: any, param2: any): any{
-            if(param1.hitTestObject(param2)){
+        public _hit(param1: any, param2: any): any {
+            if (param1.hitTestObject(param2)) {
                 return 1;
             }
             return 0;
         }
-        public _mo(param1: any): any{
-            if(param1.hitTestPoint(mouseX,mouseY)){
+        public _mo(param1: any): any {
+            if (param1.hitTestPoint(Main.mouseX, Main.mouseY)) {
                 return 1;
             }
             return 0;
         }
-        public _frame(param1: any): any{
-            if(param1.currentFrame == param1.totalFrames){
+        public _frame(param1: any): any {
+            if (param1.currentFrame == param1.totalFrames) {
                 return 1;
             }
             return 0;
         }
-        public _frame2(param1: any, param2: any): any{
-            if(param1.currentFrame == param2){
+        public _frame2(param1: any, param2: any): any {
+            if (param1.currentFrame == param2) {
                 return 1;
             }
             return 0;
         }
-        public _rnd(param1: any): any{
+        public _rnd(param1: any): any {
             return Math.floor(Math.random() * param1);
         }
-        public _sp(param1: any, param2: any, param3: any, param4: any): any{
-            var _loc5_:* = new param1();
+        public _sp(param1: any, param2: any, param3: any, param4: any): any {
+            var _loc5_ = new param1();
             param2.addChild(_loc5_);
             _loc5_.$setX(param3);
             _loc5_.$setY(param4);
             return _loc5_;
         }
-        public _re(param1: any, param2: any): any{
+        public _re(param1: any, param2: any): any {
             param2.removeChild(param1);
         }
     }

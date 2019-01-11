@@ -1,7 +1,5 @@
-module SFKLeague_fla
-{
-    export class catx_rayenemy_208 extends std.MovieClip
-    {
+module SFKLeague_fla {
+    export class catx_rayenemy_208 extends std.MovieClip {
         public body_cl: std.MovieClip = null;
         public cloak_cl: std.MovieClip = null;
         public foot1_cl: std.MovieClip = null;
@@ -11,17 +9,21 @@ module SFKLeague_fla
         public head_cl: std.MovieClip = null;
         public skirt_cl: std.MovieClip = null;
         public tail_cl: std.MovieClip = null;
-        public constructor(){
+
+        public constructor() {
             super();
             this.addFrameScript(25,this.frame26,51,this.frame52,77,this.frame78);
         }
-        public frame26(): any{
+
+        public frame26(): any {
             this.stop();
         }
-        public frame52(): any{
+
+        public frame52(): any {
             this.stop();
         }
-        public frame78(): any{
+
+        public frame78(): any {
             this.stop();
         }
     }

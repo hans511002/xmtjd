@@ -1,12 +1,12 @@
-module com.code
-{
-    export class Enemy extends DataMovieClip
-    {
-        public constructor(){
+module com.code {
+    export class Enemy extends DataMovieClip {
+
+        public constructor() {
             super();
         }
-        public got_title(param1: any): any{
-            switch(param1){
+
+        public got_title(param1: any): any {
+            switch(param1) {
                 case 1:
                     return Main.sav.data.team_name_1;
                 case 2:

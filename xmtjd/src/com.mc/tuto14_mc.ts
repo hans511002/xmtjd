@@ -1,6 +1,5 @@
-export class tuto14_mc extends std.MovieClip
-{
-    public constructor(){
+class tuto14_mc extends std.MovieClip {
+    public constructor() {
         super();
     }
 }

@@ -1,4 +1,4 @@
-export class icon_train_mc extends std.MovieClip {
+class icon_train_mc extends std.MovieClip {
     public icon2: std.MovieClipSub = null;
     public constructor() {
         super(Config.mcRoot, "icon_train_mc", "icon_train_mc");

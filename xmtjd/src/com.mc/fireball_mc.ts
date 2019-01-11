@@ -1,4 +1,4 @@
-export class fireball_mc extends std.MovieClip {
+class fireball_mc extends std.MovieClip {
     public constructor() {
         super(Config.mcRoot, "fireball_mc", "fireball_mc");
         this.addFrameScript(9, this.frame10, 17, this.frame18);

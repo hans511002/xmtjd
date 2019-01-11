@@ -1,15 +1,13 @@
-module com.code
-{
-    export class Done extends DataMovieClip
-    {
+module com.code {
+    export class Done extends DataMovieClip {
         _app: App = null;
-        public constructor(){
-            this._app = App.getInstance();
+        public constructor() {
             super();
+            this._app = App.getInstance();
         }
-        public init(): void{
+        public init(): void {
         }
-        public delete_f(): any{
+        public delete_f(): any {
         }
     }
 }

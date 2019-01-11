@@ -1,6 +1,6 @@
-export class stun_so extends egret.Sound
-{
-    public constructor(){
+class stun_so extends egret.Sound {
+
+    public constructor() {
         super();
     }
 }

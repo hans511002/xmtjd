@@ -15,14 +15,13 @@
         type_aby: number = 0;
         qe: number = 0;
 
-        public constructor()
-        {
+        public constructor() {
             super();
             this._game = Game.getInstance();
             this._app = App.getInstance();
-         }
+        }
 
-        public init(): void {
+        public init(): boolean {
             this.skin = this._sp(aby_mc, this, 285 - (this._game.arr_cat.length - 1) * 78, 387);
             this.id = this._game.arr_cat.length;
             this.type = Main.sav.data["cat_aby_" + this.id];
@@ -85,9 +84,8 @@
             return;
         }// end function
 
-        public set_scale(param1: any): any
-        {
-            this.skinSkala_cl.gotoAndStop(Math.floor(param1 / Main.sav.data["cat_hp2_" + this.id] * 100));
+        public set_scale(param1: any): any {
+            this.skin.skala_cl.gotoAndStop(Math.floor(param1 / Main.sav.data["cat_hp2_" + this.id] * 100));
         }
     }
 }

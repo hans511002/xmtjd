@@ -1,5 +1,4 @@
-export class tuto6_mc extends std.MovieClip
-{
+class tuto6_mc extends std.MovieClip {
     public arrow_1: std.MovieClip = null;
     public arrow_2: std.MovieClip = null;
     public arrow_3: std.MovieClip = null;
@@ -8,7 +7,8 @@ export class tuto6_mc extends std.MovieClip
     public over2: std.MovieClip = null;
     public over3: std.MovieClip = null;
     public over4: std.MovieClip = null;
-    public constructor(){
+
+    public constructor() {
         super();
     }
 }

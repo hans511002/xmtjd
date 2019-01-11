@@ -1,7 +1,5 @@
-module com.code
-{
-    export class Aby extends DataMovieClip
-    {
+module com.code {
+    export class Aby extends DataMovieClip {
         _game: Game = null;
         _app: App = null;
         skin: std.MovieClip = null;
@@ -15,12 +13,14 @@ module com.code
         power: number = 0;
         type_aby: number = 0;
         qe: number = 0;
-        public constructor(){
+
+        public constructor() {
             this._game = Game.getInstance();
             this._app = App.getInstance();
             super();
         }
-        public init(): void{
+
+        public init(): void {
             this.skin = this._sp(aby_mc,this,285 - (this._game.arr_cat.length - 1) * 78,387);
             this.id = this._game.arr_cat.length;
             this.type = Main.sav.data["cat_aby_" + this.id];
@@ -30,13 +30,12 @@ module com.code
             this.power = this._game._info.got_power(this.type);
             this.frame_action = this._game._info.got_frame(this.type);
             this.time = this._game._info.got_time(this.type);
-            if(this.type == 0){
+            if(this.type == 0) {
                 this.ex_aby = false;
                 this.skin.icon_cl.$setVisible(false);
                 this.skin.bt_telo.$setVisible(false);
                 this.skin.icon_clIcon2Icon_cl.gotoAndStop(1);
-            }
-            else{
+            } else {
                 this.ex_aby = false;
                 this.skin.icon_cl.$setVisible(true);
                 this.skin.bt_telo.$setVisible(true);
@@ -49,7 +48,7 @@ module com.code
             this.reload_time2 = this._game._info.got_reload(this.type);
             this.qe = 1;
             i = 1;
-            while(i <= Main.sav.data["cat_speed_level_" + this.id]){
+            while(i <= Main.sav.data["cat_speed_level_" + this.id]) {
                 this.qe = this.qe - 0.015;
                 i++;
             }
@@ -57,7 +56,8 @@ module com.code
             this.reload_time = Math.floor(this.reload_time2 * 0.5);
             this.skin.cat2.gotoAndStop(1);
         }
-        public dress_up(param1: any, param2: any): any{
+
+        public dress_up(param1: any, param2: any): any {
             param1.head_clWool_cl.gotoAndStop(this.id);
             param1.hand_l_clWool_cl.gotoAndStop(this.id);
             param1.hand_r_clWool_cl.gotoAndStop(this.id);
@@ -78,7 +78,8 @@ module com.code
             param1.cloak_cl.gotoAndStop(param2);
             param2--;
         }
-        public set_scale(param1: any): any{
+
+        public set_scale(param1: any): any {
             this.skin.skala_cl.gotoAndStop(Math.floor(param1 / Main.sav.data["cat_hp2_" + this.id] * 100));
         }
     }

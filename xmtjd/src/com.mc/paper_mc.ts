@@ -1,4 +1,4 @@
-export class paper_mc extends std.MovieClip {
+class paper_mc extends std.MovieClip {
     public data_tx: std.MCLabel = null;
     public fish_tx: std.MCLabel = null;
     public news_cl: std.MovieClipSub = null;

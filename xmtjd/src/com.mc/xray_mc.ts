@@ -1,7 +1,6 @@
-export class xray_mc extends std.MovieClip
-{
+class xray_mc extends std.MovieClip {
     public ray2: std.MovieClip = null;
-    public constructor(){
+    public constructor() {
         super();
     }
 }

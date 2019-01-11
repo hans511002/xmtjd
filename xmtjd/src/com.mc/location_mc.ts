@@ -1,4 +1,4 @@
-export class location_mc extends std.MovieClip {
+class location_mc extends std.MovieClip {
     public enemy_fans_cl: std.MovieClipSub = null;
     public flag2_cl: std.MovieClipSub = null;
     public flag_cl: std.MovieClipSub = null;

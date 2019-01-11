@@ -35,8 +35,8 @@ module com.code
                 abs = param1.currentTarget.content;
                 this.name_in_cl.lol.addChild(abs);
                 abs.show({
-                    "x":0 - 150,
-                    "y":0 - 100
+                    "x":-150,
+                    "y":-100
                 });
             };
             var abs_url:String = "./ABS.swf";

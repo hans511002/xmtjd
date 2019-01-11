@@ -1,6 +1,5 @@
-export class power_kick_so extends egret.Sound
-{
-    public constructor(){
+class power_kick_so extends egret.Sound {
+    public constructor() {
         super();
     }
 }

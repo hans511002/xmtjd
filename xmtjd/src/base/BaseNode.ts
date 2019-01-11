@@ -606,6 +606,15 @@ module std {
 			this.inPlay = false;
 			this.getAnimation().gotoAndStopByFrame(aniName, this.currentFrame - 1);
 		}
+		gotoAndPlay(cf: number, _aniName: string = "") {
+			if (!this.getArmature() || !this.getAnimation()) return;
+			if (cf == 0) cf = 1;
+			var aniName: string = _aniName ? _aniName : "";
+			if (aniName == "") aniName = this.defAniName;
+			this.currentFrame = (cf - 1) % this.totalFrames + 1;
+			this.inPlay = false;
+			this.getAnimation().gotoAndPlayByFrame(aniName, this.currentFrame - 1, 1);
+		}
 		nextFram(): void {
 			if (this.getArmature() == null || this.getAnimation() == null) return;
 			this.currentFrame++;
@@ -941,7 +950,7 @@ module std {
 			this.dbName = dbName;
 			this.defAniName = defAniName;
 			if (this.armName && this.dbName)
-				this.init(rootPath, armName, dbName, defAniName);
+				this.initCnt(rootPath, armName, dbName, defAniName);
 		}
 		setMcInit(mc: MC, slotName: string, rootPath?: string, dbName?: string, armName: string = "", defAniName: string = "", delay: boolean = false, reinit: number = 0) {
 			this.mc = mc;
@@ -956,7 +965,7 @@ module std {
 				this.reinit();
 		}
 		// 		virtual bool init(const string &  rootPath, const string &  armName, const string &  dbName, const string &  defAniName = "");
-		init(rootPath: string, armName: string, dbName: string, _defAniName: string = ""): boolean {
+		initCnt(rootPath: string, armName: string, dbName: string, _defAniName: string = ""): boolean {
 			if (this.isReady && this.container && this.name == armName) {
 				return true;
 			}
@@ -1054,7 +1063,7 @@ module std {
 				if (_armName.length == 0)
 					_armName = this.display.name;
 				//必需先初始化db 再加入节点
-				this.init(this.rootPath, _armName, this.dbName, this.defAniName);//display=_armName
+				this.initCnt(this.rootPath, _armName, this.dbName, this.defAniName);//display=_armName
 				this.reinitSubMcbs(true);
 				this.display.addChild(this);
 				// std.changeAnchorPoint(this, 0.5,0.5);
@@ -1401,6 +1410,7 @@ module std {
 			super.gotoAndStop(cf, aniName);
 			this.reinitSubMcbs();
 		};
+
 		// inline virtual void setAlpha(float op) { BaseNode::setAlpha(getDisplayNode(), op); };
 		setAlpha(op: number): void { this.getDisplayNode().$setAlpha(op); };
 		// inline virtual float getAlpha() { return  BaseNode::getAlpha(getDisplayNode()); };
@@ -1605,7 +1615,7 @@ module std {
 		setAlpha(op: number): void { this.container.$setAlpha(op); };
 		getAlpha(): number { return this.container.alpha; };
 		setVisible(v: boolean): void {
-			this._visible = v;
+			// this._visible = v;
 			this.container.$setVisible(v);
 		}
 		reinit(): boolean {
@@ -1645,8 +1655,10 @@ module std {
 		}
 	}
 	export class MCLabel extends MCUI {
+		label: eui.Label;
 		constructor(pmc?: MC, slotName?: string, reinit: number = 0) {
 			super(new eui.Label(), pmc, slotName, reinit);
+			this.label = this.getContainer();
 		}
 		getContainer(): eui.Label {
 			return <eui.Label>this.container;

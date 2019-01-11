@@ -1,13 +1,15 @@
-export class fireball_mc extends std.MovieClip
-{
-    public constructor(){
+class fireball_mc extends std.MovieClip {
+
+    public constructor() {
         super();
         this.addFrameScript(9,this.frame10,17,this.frame18);
     }
-    public frame10(): any{
+
+    public frame10(): any {
         this.stop();
     }
-    public frame18(): any{
+
+    public frame18(): any {
         this.stop();
     }
 }

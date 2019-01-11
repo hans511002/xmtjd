@@ -1,5 +1,5 @@
 ﻿
-export class cat_mc extends std.MovieClip {
+class cat_mc extends std.MovieClip {
     armor_cl: std.MovieClipSub;
     cat1: std.MovieClipSub;
     cat1Cat2: std.MovieClipSub;

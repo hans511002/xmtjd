@@ -1,9 +1,7 @@
-module com.code
-{
-    export class App extends Sprite
-    {
+module com.code {
+    export class App extends egret.Sprite {
         private static _instance: App = null;
-        public static game_stop: boolean = false; 
+        public static game_stop: boolean = false;
         i: number = 0;
         i2: number = 0;
         i3: number = 0;
@@ -39,36 +37,35 @@ module com.code
         public _so: LoadSounds = null;
         public _music: LoadMusic = null;
         private old_scene: String = "none";
-        private zone_bg: Sprite = null;
-        private zone_up: Sprite = null;
-        my_context_menu: ContextMenu = null;
+        private zone_bg: egret.Sprite = null;
+        private zone_up: egret.Sprite = null;
+        // my_context_menu: ContextMenu = null;
         public team_enemy: number = 2;
         public team_enemy_id: number = 15;
         public team_enemy_level: number = 0;
         public arr_enemy_row: any = [];
         public train_mode: boolean = false;
-        public constructor(){
-            this.arr_enemy_row = [];
+        public constructor() {
             super();
-            _instance = this;
+            this.arr_enemy_row = [];
+            App._instance = this;
         }
-        public static public getInstance(): App
-        {
-            return _instance == null?new App():_instance;
+        public static getInstance(): App {
+            return App._instance == null ? new App() : App._instance;
         }
-        public init(): void{
+        public init(): void {
             this.zone_bg = new egret.Sprite();
             this.addChild(this.zone_bg);
             this.zone_up = new egret.Sprite();
             this.addChild(this.zone_up);
-            this._so = new egret.LoadSounds();
-            this._music = new egret.LoadMusic();
-            this.my_context_menu = new ContextMenu();
-            this.my_context_menu.hideBuiltInItems();
-            contextMenu = this.my_context_menu;
-            this.arr_enemy_row.push(2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22);
+            this._so = new LoadSounds();
+            this._music = new LoadMusic();
+            // this.my_context_menu = new ContextMenu();
+            // this.my_context_menu.hideBuiltInItems();
+            // contextMenu = this.my_context_menu;
+            this.arr_enemy_row.push(2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22);
         }
-        public init_save_kitty(): any{
+        public init_save_kitty(): any {
             Main.sav.data.chance_injury = 94;
             Main.sav.data.cat_place_1 = 9;
             Main.sav.data.cat_place_2 = 10;
@@ -91,9 +88,9 @@ module com.code
             Main.sav.data.cat_injury2_4 = 0;
             Main.sav.data.cat_injury3_4 = 0;
             this.i = 1;
-            while(this.i <= 4){
+            while (this.i <= 4) {
                 this.i2 = 1;
-                while(this.i2 <= 3){
+                while (this.i2 <= 3) {
                     Main.sav.data["cat_injury" + this.i2 + "_time_" + this.i] = 0;
                     this.i2++;
                 }
@@ -219,7 +216,7 @@ module com.code
             Main.sav.data.count_final_1 = 0;
             Main.sav.data.count_final_2 = 0;
             this.i = 1;
-            while(this.i <= 22){
+            while (this.i <= 22) {
                 Main.sav.data["team_games_" + this.i] = 0;
                 Main.sav.data["team_w_" + this.i] = 0;
                 Main.sav.data["team_d_" + this.i] = 0;
@@ -227,10 +224,10 @@ module com.code
                 this.i++;
             }
             this.i = 2;
-            while(this.i <= 22){
+            while (this.i <= 22) {
                 this.i2 = 2;
-                while(this.i2 <= 22){
-                    if(this.i != this.i2){
+                while (this.i2 <= 22) {
+                    if (this.i != this.i2) {
                         Main.sav.data["match_" + this.i + "_vs_" + this.i2] = 0;
                         Main.sav.data["match_" + this.i2 + "_vs_" + this.i] = 0;
                     }
@@ -242,7 +239,7 @@ module com.code
             Main.sav.data.gold_overall = 0;
             Main.sav.flush();
         }
-        public init_save(): any{
+        public init_save(): any {
             Main.sav.data.tuto1 = 1;
             Main.sav.data.tuto2 = 1;
             Main.sav.data.tuto3 = 1;
@@ -253,7 +250,7 @@ module com.code
             Main.sav.data.gold = 0;
             Main.sav.data.gold_overall = 0;
             this.i = 1;
-            while(this.i <= 90){
+            while (this.i <= 90) {
                 Main.sav.data["dress_" + this.i] = 0;
                 this.i++;
             }
@@ -268,7 +265,7 @@ module com.code
             Main.sav.data.shop_buy_4 = 0;
             Main.sav.data.shop_buy_5 = 0;
             this.i = 1;
-            while(this.i <= 22){
+            while (this.i <= 22) {
                 Main.sav.data["team_games_" + this.i] = 0;
                 Main.sav.data["team_w_" + this.i] = 0;
                 Main.sav.data["team_d_" + this.i] = 0;
@@ -276,10 +273,10 @@ module com.code
                 this.i++;
             }
             this.i = 2;
-            while(this.i <= 22){
+            while (this.i <= 22) {
                 this.i2 = 2;
-                while(this.i2 <= 22){
-                    if(this.i != this.i2){
+                while (this.i2 <= 22) {
+                    if (this.i != this.i2) {
                         Main.sav.data["match_" + this.i + "_vs_" + this.i2] = 0;
                         Main.sav.data["match_" + this.i2 + "_vs_" + this.i] = 0;
                     }
@@ -292,9 +289,9 @@ module com.code
             Main.sav.data.chance_injury = 104;
             Main.sav.flush();
         }
-        public open_new_screen(param1: any): any{
+        public open_new_screen(param1: any): any {
             this.free();
-            switch(param1){
+            switch (param1) {
                 case "game":
                     this._Game = new Game();
                     this.zone_bg.addChild(this._Game);
@@ -354,8 +351,8 @@ module com.code
             }
             this.old_scene = param1;
         }
-        public free(): any{
-            switch(this.old_scene){
+        public free(): any {
+            switch (this.old_scene) {
                 case "game":
                     this._Game.delete_f();
                     this.zone_bg.removeChild(this._Game);
@@ -401,7 +398,7 @@ module com.code
                     this.zone_bg.removeChild(this._Done);
             }
         }
-        public _rnd(param1: any): any{
+        public _rnd(param1: any): any {
             return Math.floor(Math.random() * param1);
         }
     }

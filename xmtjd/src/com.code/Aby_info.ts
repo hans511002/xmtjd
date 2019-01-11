@@ -1,14 +1,12 @@
-module com.code
-{
-    export class Aby_info extends std.MovieClip
-    {
+module com.code {
+    export class Aby_info extends std.MovieClip {
         s: number = 0;
-        public constructor(){
+        public constructor() {
             super();
         }
-        public got_frame(param1: any): any{
+        public got_frame(param1: number): number {
             this.s = this.got_type(param1);
-            switch(this.s){
+            switch (this.s) {
                 case 1:
                     return 8;
                 case 2:
@@ -43,9 +41,9 @@ module com.code
                     return;
             }
         }
-        public got_des(param1: any): any{
+        public got_des(param1: number): string {
             this.s = this.got_type(param1);
-            switch(this.s){
+            switch (this.s) {
                 case 1:
                     return "力量 " + this.got_power(param1);
                 case 2:
@@ -80,9 +78,9 @@ module com.code
                     return;
             }
         }
-        public got_title(param1: any): any{
+        public got_title(param1: number): string {
             this.s = this.got_type(param1);
-            switch(this.s){
+            switch (this.s) {
                 case 1:
                     return "猛击";
                 case 2:
@@ -115,8 +113,8 @@ module com.code
                     return;
             }
         }
-        public got_skin(param1: any): any{
-            switch(param1){
+        public got_skin(param1: number): number {
+            switch (param1) {
                 case 1:
                     return 27;
                 case 2:
@@ -286,11 +284,11 @@ module com.code
                 case 84:
                     return 287;
                 default:
-                    return "1";
+                    return 1;
             }
         }
-        public got_type(param1: any): any{
-            switch(param1){
+        public got_type(param1: number): number {
+            switch (param1) {
                 case 1:
                     return 1;
                 case 2:
@@ -463,8 +461,8 @@ module com.code
                     return 1;
             }
         }
-        public got_power(param1: any): any{
-            switch(param1){
+        public got_power(param1: number): number {
+            switch (param1) {
                 case 1:
                     return 20;
                 case 2:
@@ -637,8 +635,8 @@ module com.code
                     return 1;
             }
         }
-        public got_reload(param1: any): any{
-            switch(param1){
+        public got_reload(param1: number): number {
+            switch (param1) {
                 case 1:
                     return 600;
                 case 2:
@@ -811,8 +809,8 @@ module com.code
                     return 1;
             }
         }
-        public got_time(param1: any): any{
-            switch(param1){
+        public got_time(param1: number): number {
+            switch (param1) {
                 case 1:
                     return 1;
                 case 2:
@@ -985,8 +983,8 @@ module com.code
                     return 1;
             }
         }
-        public got_price(param1: any): any{
-            switch(param1){
+        public got_price(param1: number): number {
+            switch (param1) {
                 case 1:
                     return 100;
                 case 2:
@@ -1159,8 +1157,8 @@ module com.code
                     return 1;
             }
         }
-        public got_level(param1: any): any{
-            switch(param1){
+        public got_level(param1: number): number {
+            switch (param1) {
                 case 1:
                     return 1;
                 case 2:
