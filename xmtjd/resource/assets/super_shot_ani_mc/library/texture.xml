@@ -1,0 +1,8 @@
+<TextureAtlas name="super_shot_ani_mc" imagePath="texture.png">
+ <SubTexture name="__dbTextures/super_shot_ani_mc/Layer 1_0" x="0" y="0" width="303" height="225"/>
+ <SubTexture name="__dbTextures/super_shot_ani_mc/Layer 1_1" x="610" y="227" width="303" height="225"/>
+ <SubTexture name="__dbTextures/super_shot_ani_mc/Layer 1_2" x="0" y="227" width="303" height="225"/>
+ <SubTexture name="__dbTextures/super_shot_ani_mc/Layer 1_3" x="305" y="227" width="303" height="225"/>
+ <SubTexture name="__dbTextures/super_shot_ani_mc/Layer 1_4" x="610" y="0" width="303" height="225"/>
+ <SubTexture name="__dbTextures/super_shot_ani_mc/Layer 1_5" x="305" y="0" width="303" height="225"/>
+</TextureAtlas>

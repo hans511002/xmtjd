@@ -466,8 +466,7 @@ module com.code {
                     if (this.i2 == 1 || this.i2 == 2) {
                         if (Main.sav.data.stuff_level_1 == 7) {
                             this["train_" + this.i2].cat_cl.cat1.gotoAndStop(7);
-                        }
-                        else {
+                        } else {
                             this["train_" + this.i2].cat_cl.cat1.gotoAndStop(5);
                         }
                         this["train_" + this.i2].cat_cl.cat1Cat2Tr_cl.gotoAndStop(Main.sav.data.stuff_level_1);
@@ -1521,25 +1520,25 @@ module com.code {
             param2.skirt_cl.gotoAndStop(this.set_id);
             param2.cloak_cl.gotoAndStop(this.set_id);
         }
-        public dress_up2(param1: any, param2: any, param3: any): any {
-            param2.head_clWool_cl.gotoAndStop(param1);
-            param2.hand_l_clWool_cl.gotoAndStop(param1);
-            param2.hand_r_clWool_cl.gotoAndStop(param1);
-            param2.body_clWool_cl.gotoAndStop(param1);
-            param2.foot1_clWool_cl.gotoAndStop(param1);
-            param2.foot2_clWool_cl.gotoAndStop(param1);
-            param2.tail_cl.gotoAndStop(param1);
+        public dress_up2(param1: number, param2: paper_cat, param3: number): any {
+            param2.catHead_clWool_cl.gotoAndStop(param1);
+            param2.catHand_l_clWool_cl.gotoAndStop(param1);
+            param2.catHand_r_clWool_cl.gotoAndStop(param1);
+            param2.catBody_clWool_cl.gotoAndStop(param1);
+            param2.catFoot1_clWool_cl.gotoAndStop(param1);
+            param2.catFoot2_clWool_cl.gotoAndStop(param1);
+            param2.catTail_cl.gotoAndStop(param1);
             param3++;
-            param2.head_clH2.gotoAndStop(param3);
-            param2.hand_l_clSleeve_cl.gotoAndStop(param3);
-            param2.hand_l_clW2.gotoAndStop(param3);
-            param2.hand_r_clSleeve_cl.gotoAndStop(param3);
-            param2.hand_r_clS2.gotoAndStop(param3);
-            param2.body_clB2.gotoAndStop(param3);
-            param2.foot1_clP2.gotoAndStop(param3);
-            param2.foot2_clP2.gotoAndStop(param3);
-            param2.skirt_cl.gotoAndStop(param3);
-            param2.cloak_cl.gotoAndStop(param3);
+            param2.catHead_clH2.gotoAndStop(param3);
+            param2.catHand_l_clSleeve_cl.gotoAndStop(param3);
+            param2.catHand_l_clW2.gotoAndStop(param3);
+            param2.catHand_r_clSleeve_cl.gotoAndStop(param3);
+            param2.catHand_r_clS2.gotoAndStop(param3);
+            param2.catBody_clB2.gotoAndStop(param3);
+            param2.catFoot1_clP2.gotoAndStop(param3);
+            param2.catFoot2_clP2.gotoAndStop(param3);
+            param2.catSkirt_cl.gotoAndStop(param3);
+            param2.catCloak_cl.gotoAndStop(param3);
             param3--;
         }
         public simulate_day(): any {
@@ -1750,7 +1749,7 @@ module com.code {
                                 else {
                                     this._app._so.load_by_name(take_cat_so);
                                 }
-                                this.dress_up(this.cat_type, this.cat_drag.cat1.cat2);
+                                this.dress_up(this.cat_type, this.cat_drag.cat1Cat2);
                                 break;
                             }
                         }

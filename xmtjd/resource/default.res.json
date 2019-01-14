@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "bg_jpg,egret_icon_png,description_json,texture_json,texture_png,test_tex_json,test_tex_png,test_ske_json,texture2_png,aby_mc_tex_json,aby_mc_tex_png,aby_mc_ske_json,texture3_png,texture4_png,card_game_mc_tex_json,card_game_mc_tex_png,card_game_mc_ske_json,texture5_png,cat_drag_mc_tex_json,cat_drag_mc_tex_png,cat_drag_mc_ske_json,texture6_png,damage_mc_tex_json,damage_mc_tex_png,damage_mc_ske_json,texture7_png,down_panel_mc_tex_json,down_panel_mc_tex_png,down_panel_mc_ske_json,texture8_png,fireball_mc_tex_json,fireball_mc_tex_png,fireball_mc_ske_json,texture9_png,got_cup_mc_tex_json,got_cup_mc_tex_png,got_cup_mc_ske_json,texture10_png,grand_mc_tex_json,grand_mc_tex_png,grand_mc_ske_json,texture11_png,texture12_png,hit_mc_tex_json,hit_mc_tex_png,hit_mc_ske_json,texture13_png,icon_train_mc_tex_json,icon_train_mc_tex_png,icon_train_mc_ske_json,texture14_png,info_aby_mc_tex_json,info_aby_mc_tex_png,info_aby_mc_ske_json,texture15_png,location_mc_tex_json,location_mc_tex_png,location_mc_ske_json,texture16_png,menu_bt_mc_tex_json,menu_bt_mc_tex_png,menu_bt_mc_ske_json,texture17_png,panel_view_hit_mc_tex_json,panel_view_hit_mc_tex_png,panel_view_hit_mc_ske_json,texture18_png,panel_view_not_hit_mc_tex_json,panel_view_not_hit_mc_tex_png,panel_view_not_hit_mc_ske_json,texture19_png,paper_mc_tex_json,paper_mc_tex_png,paper_mc_ske_json,1701_mp3,1702_mp3,1706_mp3,1707_mp3,1708_mp3,1710_mp3,1714_mp3,1715_mp3,applo_so_mp3,armor_all_so_mp3,armor_so_mp3,aura_dead_so_mp3,aura_power_so_mp3,aura_speed_so_mp3,buy_so_mp3,cat_dead_so_mp3,click_so_mp3,comics_so_mp3,com_music_zvuk_mp3,dance_music_zvuk_mp3,dead_b_so_mp3,defeat_so_mp3,deqaf_zvuk_mp3,elf_music_zvuk_mp3,enemy_dead_so_mp3,fireball_hit_so_mp3,fireball_so_mp3,gong_so_mp3,go_so_mp3,grand_so_mp3,heal_so_mp3,injury_so_mp3,kick2_so_mp3,kick_so_mp3,league_so_mp3,light_so_mp3,next_day_so_mp3,paper_so_mp3,power_kick_so_mp3,reload_all_so_mp3,StartBattle_so_mp3,stun_so_mp3,take_ball_so_mp3,take_cat2_so_mp3,take_cat_so_mp3,to_bed_so_mp3,to_bubble_so_mp3,to_table_so_mp3,train1_so_mp3,train2_so_mp3,train3_so_mp3,up_wear_so_mp3,water_music_zvuk_mp3,wear_so_mp3,won_so_mp3,x_ray_so_mp3",
+			"keys": "bg_jpg,egret_icon_png,description_json,texture_json,texture_png,test_tex_json,test_tex_png,test_ske_json,texture2_png,aby_mc_tex_json,aby_mc_tex_png,aby_mc_ske_json,texture3_png,texture4_png,card_game_mc_tex_json,card_game_mc_tex_png,card_game_mc_ske_json,texture5_png,cat_drag_mc_tex_json,cat_drag_mc_tex_png,cat_drag_mc_ske_json,texture6_png,damage_mc_tex_json,damage_mc_tex_png,damage_mc_ske_json,texture7_png,down_panel_mc_tex_json,down_panel_mc_tex_png,down_panel_mc_ske_json,texture8_png,fireball_mc_tex_json,fireball_mc_tex_png,fireball_mc_ske_json,texture9_png,got_cup_mc_tex_json,got_cup_mc_tex_png,got_cup_mc_ske_json,texture10_png,grand_mc_tex_json,grand_mc_tex_png,grand_mc_ske_json,texture11_png,texture12_png,hit_mc_tex_json,hit_mc_tex_png,hit_mc_ske_json,texture13_png,icon_train_mc_tex_json,icon_train_mc_tex_png,icon_train_mc_ske_json,texture14_png,info_aby_mc_tex_json,info_aby_mc_tex_png,info_aby_mc_ske_json,texture15_png,location_mc_tex_json,location_mc_tex_png,location_mc_ske_json,texture16_png,menu_bt_mc_tex_json,menu_bt_mc_tex_png,menu_bt_mc_ske_json,texture17_png,panel_view_hit_mc_tex_json,panel_view_hit_mc_tex_png,panel_view_hit_mc_ske_json,texture18_png,panel_view_not_hit_mc_tex_json,panel_view_not_hit_mc_tex_png,panel_view_not_hit_mc_ske_json,texture19_png,paper_mc_tex_json,paper_mc_tex_png,paper_mc_ske_json,1701_mp3,1702_mp3,1706_mp3,1707_mp3,1708_mp3,1710_mp3,1714_mp3,1715_mp3,applo_so_mp3,armor_all_so_mp3,armor_so_mp3,aura_dead_so_mp3,aura_power_so_mp3,aura_speed_so_mp3,buy_so_mp3,cat_dead_so_mp3,click_so_mp3,comics_so_mp3,com_music_zvuk_mp3,dance_music_zvuk_mp3,dead_b_so_mp3,defeat_so_mp3,deqaf_zvuk_mp3,elf_music_zvuk_mp3,enemy_dead_so_mp3,fireball_hit_so_mp3,fireball_so_mp3,gong_so_mp3,go_so_mp3,grand_so_mp3,heal_so_mp3,injury_so_mp3,kick2_so_mp3,kick_so_mp3,league_so_mp3,light_so_mp3,next_day_so_mp3,paper_so_mp3,power_kick_so_mp3,reload_all_so_mp3,StartBattle_so_mp3,stun_so_mp3,take_ball_so_mp3,take_cat2_so_mp3,take_cat_so_mp3,to_bed_so_mp3,to_bubble_so_mp3,to_table_so_mp3,train1_so_mp3,train2_so_mp3,train3_so_mp3,up_wear_so_mp3,water_music_zvuk_mp3,wear_so_mp3,won_so_mp3,x_ray_so_mp3,texture20_png,texture21_png,pause_mc_tex_json,pause_mc_tex_png,pause_mc_ske_json,texture22_png,paper_new_mc_tex_json,paper_new_mc_tex_png,paper_new_mc_ske_json,texture23_png,pre_battle_mc_tex_json,pre_battle_mc_tex_png,pre_battle_mc_ske_json,texture24_png,super_shot_ani_mc_tex_json,super_shot_ani_mc_tex_png,super_shot_ani_mc_ske_json,texture25_png,sure_mc_tex_json,sure_mc_tex_png,sure_mc_ske_json,texture26_png,surrender_battle_mc_tex_json,surrender_battle_mc_tex_png,surrender_battle_mc_ske_json,texture27_png,tuto10_mc_tex_json,tuto10_mc_tex_png,tuto10_mc_ske_json",
 			"name": "preload"
 		}
 	],
@@ -655,6 +655,151 @@
 			"name": "x_ray_so_mp3",
 			"type": "sound",
 			"url": "sounds/x_ray_so.mp3"
+		},
+		{
+			"name": "texture20_png",
+			"type": "image",
+			"url": "assets/cat_drag_mc/library/texture.png"
+		},
+		{
+			"name": "texture21_png",
+			"type": "image",
+			"url": "assets/pause_mc/library/texture.png"
+		},
+		{
+			"name": "pause_mc_tex_json",
+			"type": "json",
+			"url": "assets/pause_mc/pause_mc_tex.json"
+		},
+		{
+			"name": "pause_mc_tex_png",
+			"type": "image",
+			"url": "assets/pause_mc/pause_mc_tex.png"
+		},
+		{
+			"name": "pause_mc_ske_json",
+			"type": "json",
+			"url": "assets/pause_mc/pause_mc_ske.json"
+		},
+		{
+			"name": "texture22_png",
+			"type": "image",
+			"url": "assets/paper_new_mc/library/texture.png"
+		},
+		{
+			"name": "paper_new_mc_tex_json",
+			"type": "json",
+			"url": "assets/paper_new_mc/paper_new_mc_tex.json"
+		},
+		{
+			"name": "paper_new_mc_tex_png",
+			"type": "image",
+			"url": "assets/paper_new_mc/paper_new_mc_tex.png"
+		},
+		{
+			"name": "paper_new_mc_ske_json",
+			"type": "json",
+			"url": "assets/paper_new_mc/paper_new_mc_ske.json"
+		},
+		{
+			"name": "texture23_png",
+			"type": "image",
+			"url": "assets/pre_battle_mc/library/texture.png"
+		},
+		{
+			"name": "pre_battle_mc_tex_json",
+			"type": "json",
+			"url": "assets/pre_battle_mc/pre_battle_mc_tex.json"
+		},
+		{
+			"name": "pre_battle_mc_tex_png",
+			"type": "image",
+			"url": "assets/pre_battle_mc/pre_battle_mc_tex.png"
+		},
+		{
+			"name": "pre_battle_mc_ske_json",
+			"type": "json",
+			"url": "assets/pre_battle_mc/pre_battle_mc_ske.json"
+		},
+		{
+			"name": "texture24_png",
+			"type": "image",
+			"url": "assets/super_shot_ani_mc/library/texture.png"
+		},
+		{
+			"name": "super_shot_ani_mc_tex_json",
+			"type": "json",
+			"url": "assets/super_shot_ani_mc/super_shot_ani_mc_tex.json"
+		},
+		{
+			"name": "super_shot_ani_mc_tex_png",
+			"type": "image",
+			"url": "assets/super_shot_ani_mc/super_shot_ani_mc_tex.png"
+		},
+		{
+			"name": "super_shot_ani_mc_ske_json",
+			"type": "json",
+			"url": "assets/super_shot_ani_mc/super_shot_ani_mc_ske.json"
+		},
+		{
+			"name": "texture25_png",
+			"type": "image",
+			"url": "assets/sure_mc/library/texture.png"
+		},
+		{
+			"name": "sure_mc_tex_json",
+			"type": "json",
+			"url": "assets/sure_mc/sure_mc_tex.json"
+		},
+		{
+			"name": "sure_mc_tex_png",
+			"type": "image",
+			"url": "assets/sure_mc/sure_mc_tex.png"
+		},
+		{
+			"name": "sure_mc_ske_json",
+			"type": "json",
+			"url": "assets/sure_mc/sure_mc_ske.json"
+		},
+		{
+			"name": "texture26_png",
+			"type": "image",
+			"url": "assets/surrender_battle_mc/library/texture.png"
+		},
+		{
+			"name": "surrender_battle_mc_tex_json",
+			"type": "json",
+			"url": "assets/surrender_battle_mc/surrender_battle_mc_tex.json"
+		},
+		{
+			"name": "surrender_battle_mc_tex_png",
+			"type": "image",
+			"url": "assets/surrender_battle_mc/surrender_battle_mc_tex.png"
+		},
+		{
+			"name": "surrender_battle_mc_ske_json",
+			"type": "json",
+			"url": "assets/surrender_battle_mc/surrender_battle_mc_ske.json"
+		},
+		{
+			"name": "texture27_png",
+			"type": "image",
+			"url": "assets/tuto10_mc/library/texture.png"
+		},
+		{
+			"name": "tuto10_mc_tex_json",
+			"type": "json",
+			"url": "assets/tuto10_mc/tuto10_mc_tex.json"
+		},
+		{
+			"name": "tuto10_mc_tex_png",
+			"type": "image",
+			"url": "assets/tuto10_mc/tuto10_mc_tex.png"
+		},
+		{
+			"name": "tuto10_mc_ske_json",
+			"type": "json",
+			"url": "assets/tuto10_mc/tuto10_mc_ske.json"
 		}
 	]
 }

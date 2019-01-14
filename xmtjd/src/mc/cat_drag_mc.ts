@@ -1,6 +1,6 @@
 class cat_drag_mc extends std.MovieClip {
     public cat1: std.MovieClipSub = null;
-    public telo: std.MCSprite = null;
+    public telo: std.MCCase = null;
 
     cat1Cat2: std.MovieClipSub = null;
 
@@ -31,15 +31,19 @@ class cat_drag_mc extends std.MovieClip {
     public cat1Cat2Cloak_cl: std.MovieClipSub;
     public cat1Cat2Tail_cl: std.MovieClipSub;
 
+    cat1Cat2Mask: std.MovieClipSub = null;
+    cat1Cat2Tr_cl: std.MovieClipSub = null;
+    cat1Cat2Eat: std.MovieClipSub = null;
+
     public constructor() {
         super(Config.mcRoot, "cat_drag_mc", "cat_drag_mc");
         this.cat1 = this.createMovieClipSub("cat1", 1);
-        this.cat1Cat2 = this.cat1.createMovieClipSub("cat2");
-        // this.telo = this.createMovieClipSub("telo");
+        this.cat1Cat2 = this.cat1.createMovieClipSub("cat2", 1);
+        this.telo = this.createCase("telo");
+        this.subInit();
     }
     subInit(): void {
-        this.cat1 = this.createMovieClipSub("cat1");
-        this.cat1Cat2 = this.cat1.createMovieClipSub("cat2", 1);
+
         this.cat1Cat2Head_cl = this.cat1Cat2.createMovieClipSub("head_cl");
         this.cat1Cat2Hand_r_cl = this.cat1Cat2.createMovieClipSub("hand_r_cl");
         this.cat1Cat2Hand_l_cl = this.cat1Cat2.createMovieClipSub("hand_l_cl");
@@ -72,5 +76,17 @@ class cat_drag_mc extends std.MovieClip {
         this.cat1Cat2Hand_l_clWool_cl = this.cat1Cat2Hand_l_cl.createMovieClipSub("wool_cl");
 
 
+        if (this.currentFrame == 6) {
+            this.cat1Cat2Eat = this.cat1Cat2.createMovieClipSub("eat");
+            this.cat1Cat2.mcMask = this.cat1Cat2.createMask(dragonBones.EventObject.START, "mask", "hand_r_cl", "head_cl", "skirt_cl", "body_cl", "foot1_cl", "foot2_cl", "hand_l_cl", "cloak_cl", "tail_cl");
+        } else if (this.currentFrame == 3) {
+            this.cat1Cat2Mask = this.cat1Cat2.createMovieClipSub("massk");
+            this.cat1Cat2Mask.mcMask = this.cat1Cat2Mask.createMask(dragonBones.EventObject.START, "mask", "bg");
+            this.cat1Cat2Tr_cl = this.createMovieClipSub("tr_cl");
+        } else if (this.currentFrame == 4 || this.currentFrame == 5 || this.currentFrame == 7) {
+            this.cat1Cat2Tr_cl = this.createMovieClipSub("tr_cl");
+        }
+
     }
+
 }

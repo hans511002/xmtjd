@@ -1,0 +1,21 @@
+<TextureAtlas name="pause_mc" imagePath="texture.png">
+ <SubTexture name="__dbTextures/pause_mc/Layer 20_0" x="0" y="0" width="650" height="454"/>
+ <SubTexture name="Symbol 171" x="884" y="109" width="22" height="21"/>
+ <SubTexture name="Symbol 2605" x="913" y="37" width="47" height="57"/>
+ <SubTexture name="Symbol 2606" x="652" y="0" width="260" height="108"/>
+ <SubTexture name="Symbol 2625" x="913" y="0" width="93" height="36"/>
+ <SubTexture name="__dbTextures/pause_mc/Layer 1_0" x="1007" y="42" width="14" height="12"/>
+ <SubTexture name="Symbol 1729" x="961" y="85" width="47" height="49"/>
+ <SubTexture name="Symbol 2609" x="700" y="109" width="45" height="47"/>
+ <SubTexture name="Symbol 2610" x="746" y="109" width="45" height="46"/>
+ <SubTexture name="Symbol 2611" x="961" y="37" width="45" height="47"/>
+ <SubTexture name="Symbol 2608" x="1007" y="0" width="15" height="19"/>
+ <SubTexture name="__dbTextures/resume_bt/Layer 1_3" x="1007" y="21" width="15" height="19"/>
+ <SubTexture name="home_bt1" x="913" y="95" width="47" height="49"/>
+ <SubTexture name="Symbol 2613" x="652" y="109" width="47" height="49"/>
+ <SubTexture name="Symbol 2616" x="792" y="109" width="45" height="47"/>
+ <SubTexture name="Symbol 2617" x="961" y="135" width="45" height="45"/>
+ <SubTexture name="Symbol 2621" x="884" y="131" width="20" height="20"/>
+ <SubTexture name="Symbol 2618" x="838" y="109" width="45" height="47"/>
+ <SubTexture name="__dbTextures/home_bt2/Layer 1_3" x="905" y="145" width="20" height="20"/>
+</TextureAtlas>

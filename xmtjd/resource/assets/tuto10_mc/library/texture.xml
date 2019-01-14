@@ -1,0 +1,5 @@
+<TextureAtlas name="tuto10_mc" imagePath="texture.png">
+ <SubTexture name="Symbol 2022" x="0" y="0" width="650" height="450"/>
+ <SubTexture name="Symbol 2029" x="652" y="0" width="134" height="68"/>
+ <SubTexture name="Symbol 1965" x="787" y="0" width="32" height="35"/>
+</TextureAtlas>

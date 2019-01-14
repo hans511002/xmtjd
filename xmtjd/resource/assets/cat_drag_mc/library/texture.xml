@@ -1,920 +1,1144 @@
 <TextureAtlas name="cat_drag_mc" imagePath="texture.png">
  <SubTexture name="Symbol 2310" x="106" y="0" width="102" height="85"/>
- <SubTexture name="cat_drag_mc.cat.hand_r_cl" x="171" y="328" width="22" height="19"/>
- <SubTexture name="shark" x="184" y="648" width="31" height="10"/>
- <SubTexture name="Symbol 2292" x="362" y="238" width="13" height="13"/>
+ <SubTexture name="__dbTextures/cat_drag_mc.cat2/Layer 1_0" x="558" y="379" width="19" height="22"/>
+ <SubTexture name="shark" x="727" y="862" width="31" height="10"/>
+ <SubTexture name="Symbol 2292" x="541" y="468" width="13" height="13"/>
  <SubTexture name="__dbTextures/cat_drag_mc.cat6/mask_0" x="0" y="0" width="105" height="84"/>
- <SubTexture name="Symbol 2296" x="109" y="637" width="38" height="12"/>
- <SubTexture name="Symbol 191" x="746" y="277" width="21" height="24"/>
- <SubTexture name="Symbol 192" x="148" y="313" width="21" height="24"/>
- <SubTexture name="Symbol 193" x="149" y="288" width="21" height="24"/>
- <SubTexture name="__dbTextures/cat2.tail_cl/tail_cl_3" x="171" y="301" width="24" height="26"/>
- <SubTexture name="__dbTextures/cat2.tail_cl/tail_cl_4" x="808" y="616" width="34" height="21"/>
- <SubTexture name="__dbTextures/cat2.tail_cl/tail_cl_5" x="173" y="604" width="33" height="23"/>
- <SubTexture name="__dbTextures/cat2.tail_cl/tail_cl_6" x="501" y="606" width="32" height="25"/>
- <SubTexture name="Symbol 198" x="754" y="604" width="33" height="23"/>
- <SubTexture name="__dbTextures/cat2.tail_cl/tail_cl_8" x="698" y="632" width="37" height="17"/>
- <SubTexture name="__dbTextures/cat2.tail_cl/tail_cl_9" x="0" y="617" width="32" height="18"/>
- <SubTexture name="__dbTextures/cat2.tail_cl/tail_cl_10" x="534" y="633" width="37" height="17"/>
- <SubTexture name="__dbTextures/cat2.tail_cl/tail_cl_11" x="33" y="632" width="37" height="17"/>
- <SubTexture name="Symbol 203" x="149" y="263" width="21" height="24"/>
- <SubTexture name="__dbTextures/cat3.foot.mask/bg_0" x="441" y="0" width="95" height="13"/>
- <SubTexture name="__dbTextures/cat3.foot.mask/mask_0" x="439" y="634" width="59" height="10"/>
- <SubTexture name="Symbol 206" x="565" y="454" width="41" height="34"/>
- <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_9" x="733" y="470" width="32" height="29"/>
- <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_16" x="666" y="585" width="32" height="29"/>
- <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_27" x="945" y="100" width="19" height="24"/>
- <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_36" x="342" y="584" width="32" height="29"/>
- <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_59" x="733" y="440" width="32" height="29"/>
- <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_61" x="305" y="313" width="45" height="36"/>
- <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_75" x="933" y="284" width="27" height="25"/>
- <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_85" x="54" y="322" width="45" height="36"/>
- <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_92" x="365" y="634" width="73" height="23"/>
- <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_93" x="572" y="636" width="84" height="14"/>
- <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_98" x="744" y="324" width="23" height="26"/>
- <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_104" x="754" y="573" width="35" height="30"/>
- <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_118" x="173" y="573" width="35" height="30"/>
- <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_119" x="608" y="559" width="35" height="30"/>
- <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_130" x="938" y="218" width="25" height="34"/>
- <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_146" x="812" y="586" width="32" height="29"/>
- <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_155" x="939" y="148" width="25" height="33"/>
- <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_156" x="149" y="236" width="21" height="26"/>
- <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_175" x="237" y="570" width="35" height="30"/>
- <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_187" x="862" y="571" width="35" height="30"/>
- <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_202" x="470" y="375" width="44" height="36"/>
- <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_203" x="283" y="566" width="35" height="30"/>
- <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_209" x="171" y="87" width="36" height="48"/>
- <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_210" x="733" y="408" width="32" height="31"/>
- <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_214" x="939" y="183" width="25" height="34"/>
- <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_219" x="549" y="586" width="32" height="29"/>
- <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_224" x="0" y="587" width="32" height="29"/>
- <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_240" x="951" y="585" width="32" height="29"/>
- <SubTexture name="__dbTextures/cat6.skirt_cl/Layer 1_4" x="135" y="404" width="27" height="14"/>
- <SubTexture name="__dbTextures/cat6.skirt_cl/Layer 1_12" x="0" y="636" width="30" height="16"/>
- <SubTexture name="__dbTextures/cat6.skirt_cl/Layer 1_65" x="352" y="282" width="20" height="11"/>
- <SubTexture name="__dbTextures/cat6.skirt_cl/Layer 1_202" x="931" y="334" width="29" height="13"/>
- <SubTexture name="Symbol 2297" x="885" y="637" width="36" height="14"/>
- <SubTexture name="Symbol 2298" x="826" y="638" width="33" height="16"/>
- <SubTexture name="Symbol 2299" x="283" y="597" width="34" height="23"/>
- <SubTexture name="__dbTextures/eat/Layer 1_4" x="983" y="619" width="40" height="16"/>
- <SubTexture name="__dbTextures/eat/Layer 1_5" x="501" y="632" width="32" height="16"/>
- <SubTexture name="__dbTextures/eat/Layer 1_6" x="983" y="636" width="35" height="18"/>
- <SubTexture name="__dbTextures/eat/Layer 1_7" x="856" y="602" width="41" height="19"/>
- <SubTexture name="__dbTextures/cat2.hand.wool_cl/wool_cl_1" x="592" y="105" width="9" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.wool_cl/wool_cl_2" x="592" y="120" width="9" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.wool_cl/wool_cl_3" x="426" y="149" width="9" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.wool_cl/wool_cl_4" x="426" y="104" width="9" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.wool_cl/wool_cl_5" x="592" y="90" width="9" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.wool_cl/wool_cl_6" x="759" y="150" width="9" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.wool_cl/wool_cl_7" x="759" y="120" width="10" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.wool_cl/wool_cl_8" x="426" y="119" width="9" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.wool_cl/wool_cl_9" x="1014" y="195" width="9" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.wool_cl/wool_cl_10" x="1014" y="180" width="9" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.wool_cl/wool_cl_11" x="759" y="135" width="10" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.wool_cl/wool_cl_18" x="426" y="134" width="9" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.wool_cl/wool_cl_19" x="723" y="419" width="9" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_1" x="554" y="449" width="10" height="11"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_2" x="561" y="437" width="10" height="11"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_3" x="810" y="280" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_4" x="564" y="384" width="11" height="11"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_5" x="121" y="585" width="11" height="8"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_6" x="41" y="328" width="12" height="14"/>
- <SubTexture name="Symbol 257" x="46" y="268" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_10" x="755" y="247" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_12" x="250" y="208" width="13" height="13"/>
- <SubTexture name="Symbol 260" x="672" y="435" width="10" height="11"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_14" x="159" y="123" width="11" height="15"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_15" x="406" y="449" width="10" height="11"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_17" x="169" y="442" width="10" height="11"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_18" x="415" y="283" width="12" height="14"/>
- <SubTexture name="Symbol 265" x="382" y="576" width="9" height="8"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_20" x="575" y="266" width="12" height="14"/>
- <SubTexture name="Symbol 267" x="423" y="238" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_25" x="858" y="453" width="10" height="11"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_26" x="861" y="429" width="11" height="11"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_27" x="133" y="592" width="9" height="7"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_28" x="273" y="593" width="9" height="7"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_29" x="163" y="597" width="9" height="7"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_30" x="163" y="589" width="9" height="7"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_32" x="46" y="209" width="13" height="13"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_33" x="1001" y="438" width="10" height="11"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_34" x="868" y="333" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_36" x="810" y="340" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_37" x="244" y="341" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_38" x="810" y="265" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_39" x="1009" y="285" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_40" x="868" y="348" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_41" x="1012" y="447" width="10" height="11"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_42" x="1009" y="240" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_43" x="350" y="438" width="10" height="11"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_44" x="412" y="425" width="10" height="11"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_45" x="147" y="435" width="10" height="11"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_46" x="816" y="250" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_47" x="823" y="171" width="14" height="19"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_48" x="586" y="135" width="15" height="22"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_49" x="577" y="237" width="13" height="13"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_50" x="643" y="146" width="16" height="26"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_51" x="414" y="328" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_54" x="362" y="175" width="13" height="16"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_55" x="240" y="449" width="10" height="11"/>
- <SubTexture name="Symbol 295" x="350" y="450" width="10" height="11"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_57" x="1005" y="384" width="11" height="12"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_59" x="229" y="444" width="10" height="11"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_60" x="699" y="595" width="10" height="8"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_62" x="352" y="294" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_63" x="159" y="139" width="11" height="15"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_64" x="640" y="598" width="10" height="8"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_65" x="952" y="44" width="13" height="17"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_68" x="952" y="63" width="13" height="17"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_69" x="41" y="438" width="10" height="11"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_70" x="1012" y="435" width="10" height="11"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_71" x="424" y="194" width="11" height="12"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_72" x="363" y="107" width="12" height="16"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_73" x="153" y="607" width="9" height="6"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_74" x="423" y="207" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_75" x="36" y="574" width="11" height="9"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_76" x="1005" y="360" width="12" height="12"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_77" x="613" y="451" width="10" height="11"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_80" x="47" y="192" width="13" height="16"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_81" x="41" y="450" width="10" height="11"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_82" x="249" y="281" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_83" x="645" y="51" width="15" height="32"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_84" x="244" y="326" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_85" x="1009" y="300" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_87" x="810" y="310" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_88" x="637" y="240" width="12" height="13"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_89" x="861" y="441" width="10" height="11"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_90" x="412" y="373" width="12" height="12"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_91" x="41" y="386" width="11" height="12"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_92" x="570" y="326" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_93" x="249" y="311" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_94" x="319" y="593" width="10" height="10"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_95" x="537" y="593" width="10" height="10"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_96" x="654" y="593" width="10" height="10"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_97" x="801" y="593" width="10" height="10"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_98" x="352" y="309" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_99" x="444" y="599" width="10" height="9"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_100" x="41" y="399" width="11" height="12"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_102" x="156" y="454" width="10" height="12"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_103" x="807" y="370" width="12" height="12"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_105" x="879" y="234" width="11" height="11"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_108" x="41" y="426" width="11" height="11"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_109" x="826" y="44" width="11" height="20"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_110" x="47" y="152" width="17" height="21"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_111" x="244" y="396" width="11" height="12"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_112" x="868" y="388" width="11" height="12"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_114" x="627" y="344" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_115" x="816" y="236" width="13" height="13"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_116" x="319" y="582" width="11" height="10"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_118" x="157" y="189" width="13" height="16"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_119" x="627" y="359" width="11" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_120" x="41" y="313" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_121" x="360" y="267" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_122" x="249" y="266" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_123" x="41" y="373" width="12" height="12"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_124" x="1009" y="270" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_125" x="634" y="269" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_126" x="869" y="318" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_127" x="877" y="288" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_128" x="414" y="343" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_129" x="415" y="298" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_130" x="269" y="601" width="10" height="9"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_131" x="339" y="426" width="12" height="9"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_132" x="868" y="376" width="11" height="11"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_133" x="339" y="436" width="10" height="11"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_134" x="153" y="599" width="9" height="7"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_135" x="564" y="396" width="11" height="12"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_136" x="630" y="314" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_137" x="643" y="195" width="14" height="13"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_141" x="1005" y="373" width="12" height="10"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_142" x="806" y="448" width="10" height="11"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_143" x="1013" y="571" width="10" height="10"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_144" x="807" y="355" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_145" x="414" y="358" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_146" x="423" y="222" width="12" height="15"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_147" x="392" y="583" width="10" height="10"/>
- <SubTexture name="Symbol 371" x="1002" y="571" width="10" height="10"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_149" x="564" y="356" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_150" x="1009" y="315" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_151" x="816" y="221" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_152" x="250" y="222" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_153" x="157" y="171" width="13" height="16"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_154" x="244" y="356" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_155" x="826" y="134" width="12" height="16"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_156" x="249" y="296" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_157" x="637" y="254" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_158" x="1009" y="330" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_159" x="46" y="253" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_160" x="826" y="100" width="12" height="16"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_161" x="630" y="329" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_162" x="254" y="172" width="14" height="19"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_165" x="331" y="585" width="10" height="9"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_166" x="845" y="586" width="10" height="9"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_167" x="654" y="582" width="11" height="9"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_168" x="758" y="221" width="11" height="12"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_169" x="1005" y="397" width="11" height="12"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_170" x="232" y="391" width="11" height="12"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_171" x="939" y="580" width="11" height="10"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_172" x="877" y="273" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_173" x="564" y="341" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_174" x="423" y="268" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_175" x="415" y="313" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_177" x="935" y="591" width="10" height="9"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_178" x="582" y="587" width="10" height="9"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_179" x="444" y="589" width="10" height="9"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_180" x="362" y="207" width="12" height="15"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_181" x="1005" y="345" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_182" x="352" y="426" width="11" height="11"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_183" x="362" y="223" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_184" x="134" y="447" width="10" height="11"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_186" x="423" y="253" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_187" x="424" y="164" width="11" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_188" x="363" y="141" width="12" height="16"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_189" x="581" y="178" width="14" height="17"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_190" x="41" y="283" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_191" x="570" y="311" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_192" x="145" y="447" width="10" height="11"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_193" x="758" y="165" width="11" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_194" x="249" y="251" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_195" x="992" y="574" width="9" height="8"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_196" x="755" y="262" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_197" x="229" y="432" width="10" height="11"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_198" x="133" y="583" width="9" height="8"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_199" x="412" y="386" width="11" height="12"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_200" x="570" y="296" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_201" x="132" y="600" width="10" height="9"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_202" x="807" y="383" width="11" height="11"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_203" x="158" y="442" width="10" height="11"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_204" x="209" y="602" width="10" height="8"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_205" x="41" y="298" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_206" x="586" y="158" width="14" height="19"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_207" x="869" y="303" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_208" x="952" y="81" width="13" height="18"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_209" x="363" y="124" width="12" height="16"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_210" x="810" y="295" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_211" x="634" y="284" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_213" x="806" y="436" width="10" height="11"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_214" x="935" y="601" width="10" height="9"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_215" x="826" y="117" width="12" height="16"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_216" x="159" y="155" width="11" height="15"/>
- <SubTexture name="Symbol 435" x="46" y="238" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_218" x="807" y="395" width="11" height="12"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_219" x="362" y="192" width="13" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_220" x="339" y="448" width="10" height="11"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_221" x="46" y="223" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_222" x="143" y="598" width="9" height="7"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_223" x="826" y="83" width="12" height="16"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_225" x="613" y="439" width="10" height="11"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_226" x="360" y="252" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_227" x="821" y="205" width="13" height="15"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_228" x="810" y="325" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_229" x="613" y="427" width="11" height="11"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_230" x="385" y="605" width="9" height="7"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_231" x="244" y="384" width="11" height="11"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_232" x="581" y="210" width="12" height="15"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_233" x="424" y="179" width="11" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_234" x="121" y="594" width="10" height="10"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_235" x="790" y="584" width="10" height="9"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_236" x="41" y="358" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_237" x="153" y="580" width="9" height="8"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_240" x="362" y="158" width="13" height="16"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_241" x="845" y="605" width="9" height="6"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_242" x="1001" y="450" width="10" height="11"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_243" x="392" y="573" width="12" height="9"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_244" x="575" y="281" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_245" x="643" y="173" width="16" height="21"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_246" x="594" y="46" width="7" height="6"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_247" x="637" y="226" width="13" height="13"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_248" x="758" y="180" width="11" height="13"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_249" x="823" y="151" width="14" height="19"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_250" x="209" y="582" width="12" height="9"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_251" x="852" y="577" width="9" height="8"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_252" x="319" y="572" width="12" height="9"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_253" x="995" y="603" width="9" height="8"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_254" x="790" y="603" width="10" height="8"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_255" x="143" y="606" width="9" height="6"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_256" x="241" y="437" width="10" height="11"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_257" x="643" y="210" width="12" height="15"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_258" x="598" y="575" width="9" height="8"/>
- <SubTexture name="Symbol 474" x="758" y="194" width="11" height="12"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_260" x="412" y="399" width="11" height="11"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_261" x="143" y="579" width="9" height="8"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_262" x="1009" y="255" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_263" x="826" y="65" width="12" height="17"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_264" x="135" y="435" width="10" height="11"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_265" x="448" y="579" width="12" height="9"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_266" x="1006" y="593" width="10" height="9"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_268" x="759" y="104" width="10" height="15"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_269" x="564" y="371" width="12" height="12"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_270" x="244" y="371" width="12" height="12"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_271" x="845" y="596" width="10" height="8"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_272" x="254" y="152" width="14" height="19"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_273" x="582" y="597" width="10" height="8"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_274" x="254" y="192" width="13" height="15"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_275" x="1009" y="224" width="11" height="15"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_276" x="984" y="603" width="10" height="8"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_277" x="790" y="594" width="10" height="8"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_278" x="634" y="299" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_279" x="877" y="258" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_280" x="582" y="606" width="9" height="7"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_281" x="588" y="578" width="9" height="8"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_282" x="133" y="571" width="9" height="11"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_283" x="995" y="593" width="10" height="9"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_284" x="879" y="246" width="11" height="11"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_285" x="801" y="572" width="12" height="9"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_287" x="250" y="237" width="12" height="13"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_288" x="620" y="386" width="11" height="12"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_289" x="163" y="580" width="9" height="8"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_290" x="41" y="343" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_291" x="412" y="437" width="10" height="11"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_292" x="577" y="251" width="12" height="14"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_293" x="593" y="594" width="11" height="8"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_294" x="330" y="595" width="11" height="8"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_295" x="33" y="595" width="11" height="8"/>
- <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_296" x="375" y="595" width="11" height="8"/>
- <SubTexture name="__dbTextures/cat2.foot.wool_cl/wool_cl_1" x="140" y="487" width="9" height="13"/>
- <SubTexture name="__dbTextures/cat2.foot.wool_cl/wool_cl_2" x="154" y="481" width="9" height="13"/>
- <SubTexture name="__dbTextures/cat2.foot.wool_cl/wool_cl_3" x="666" y="487" width="9" height="13"/>
- <SubTexture name="__dbTextures/cat2.foot.wool_cl/wool_cl_4" x="346" y="490" width="9" height="13"/>
- <SubTexture name="__dbTextures/cat2.foot.wool_cl/wool_cl_5" x="160" y="496" width="9" height="13"/>
- <SubTexture name="__dbTextures/cat2.foot.wool_cl/wool_cl_6" x="331" y="502" width="9" height="13"/>
- <SubTexture name="__dbTextures/cat2.foot.wool_cl/wool_cl_7" x="144" y="459" width="9" height="13"/>
- <SubTexture name="__dbTextures/cat2.foot.wool_cl/wool_cl_8" x="229" y="456" width="9" height="13"/>
- <SubTexture name="__dbTextures/cat2.foot.wool_cl/wool_cl_9" x="1012" y="459" width="9" height="13"/>
- <SubTexture name="__dbTextures/cat2.foot.wool_cl/wool_cl_10" x="149" y="551" width="9" height="13"/>
- <SubTexture name="__dbTextures/cat2.foot.wool_cl/wool_cl_11" x="177" y="454" width="9" height="13"/>
- <SubTexture name="__dbTextures/cat2.foot.wool_cl/wool_cl_18" x="607" y="463" width="9" height="13"/>
- <SubTexture name="__dbTextures/cat2.foot.wool_cl/wool_cl_19" x="346" y="476" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_1" x="709" y="546" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_3" x="341" y="504" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_4" x="650" y="612" width="9" height="6"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_5" x="935" y="611" width="9" height="6"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_6" x="332" y="546" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_7" x="984" y="592" width="10" height="10"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_8" x="217" y="611" width="9" height="6"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_9" x="399" y="545" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_10" x="997" y="490" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_11" x="209" y="592" width="10" height="9"/>
- <SubTexture name="Symbol 715" x="805" y="488" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_14" x="646" y="551" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_18" x="38" y="504" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_19" x="640" y="608" width="9" height="6"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_20" x="394" y="478" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_21" x="227" y="573" width="9" height="10"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_22" x="542" y="573" width="9" height="10"/>
- <SubTexture name="Symbol 722" x="123" y="557" width="9" height="13"/>
- <SubTexture name="Symbol 723" x="163" y="566" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_26" x="452" y="551" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_27" x="845" y="612" width="9" height="6"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_28" x="375" y="613" width="9" height="6"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_29" x="984" y="612" width="9" height="6"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_30" x="141" y="613" width="9" height="6"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_34" x="129" y="529" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_36" x="452" y="523" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_37" x="404" y="517" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_38" x="1007" y="515" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_39" x="170" y="510" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_40" x="606" y="505" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_41" x="805" y="502" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_42" x="140" y="501" width="9" height="13"/>
- <SubTexture name="Symbol 737" x="38" y="490" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_46" x="406" y="461" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_48" x="548" y="475" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_50" x="336" y="474" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_51" x="174" y="468" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_52" x="1013" y="543" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_53" x="389" y="520" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_54" x="341" y="518" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_55" x="543" y="517" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_56" x="941" y="538" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_57" x="129" y="515" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_58" x="452" y="537" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_59" x="852" y="549" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_60" x="788" y="612" width="9" height="6"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_62" x="997" y="504" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_63" x="347" y="412" width="10" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_65" x="269" y="611" width="9" height="6"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_67" x="130" y="501" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_68" x="227" y="559" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_69" x="217" y="568" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_70" x="336" y="488" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_71" x="992" y="560" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_72" x="804" y="544" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_73" x="153" y="566" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_74" x="174" y="482" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_75" x="455" y="481" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_76" x="592" y="611" width="9" height="6"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_77" x="723" y="462" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_78" x="798" y="612" width="9" height="6"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_80" x="170" y="496" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_81" x="41" y="412" width="10" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_82" x="723" y="476" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_83" x="169" y="524" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_84" x="139" y="529" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_85" x="804" y="530" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_86" x="375" y="585" width="11" height="9"/>
- <SubTexture name="Symbol 773" x="598" y="547" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_88" x="577" y="226" width="15" height="10"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_89" x="328" y="612" width="9" height="5"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_90" x="387" y="594" width="9" height="10"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_91" x="322" y="558" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_92" x="149" y="523" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_93" x="554" y="461" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_94" x="801" y="604" width="9" height="7"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_95" x="121" y="605" width="9" height="7"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_96" x="994" y="612" width="9" height="6"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_97" x="163" y="605" width="9" height="7"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_98" x="588" y="550" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_99" x="399" y="559" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_100" x="36" y="560" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_101" x="868" y="401" width="10" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_102" x="879" y="220" width="11" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_103" x="654" y="571" width="11" height="10"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_104" x="758" y="207" width="11" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_105" x="164" y="482" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_106" x="224" y="470" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_107" x="992" y="583" width="9" height="8"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_108" x="758" y="234" width="11" height="12"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_109" x="150" y="495" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_110" x="801" y="558" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_111" x="723" y="434" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_112" x="807" y="408" width="10" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_113" x="163" y="613" width="9" height="6"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_114" x="143" y="565" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_115" x="627" y="374" width="12" height="11"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_116" x="716" y="504" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_117" x="1012" y="424" width="11" height="10"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_118" x="230" y="517" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_119" x="412" y="411" width="10" height="13"/>
- <SubTexture name="Symbol 806" x="806" y="460" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_121" x="1003" y="557" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_122" x="448" y="565" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_123" x="318" y="611" width="9" height="6"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_124" x="598" y="533" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_125" x="709" y="532" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_126" x="133" y="557" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_127" x="394" y="492" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_128" x="1007" y="529" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_129" x="217" y="554" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_130" x="234" y="489" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_131" x="1006" y="610" width="9" height="6"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_132" x="273" y="570" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_134" x="699" y="585" width="11" height="9"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_135" x="121" y="613" width="9" height="5"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_136" x="945" y="482" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_141" x="404" y="489" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_142" x="41" y="476" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_143" x="666" y="459" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_144" x="243" y="423" width="10" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_145" x="853" y="479" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_146" x="699" y="604" width="9" height="8"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_147" x="134" y="459" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_148" x="598" y="561" width="9" height="12"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_149" x="224" y="484" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_150" x="852" y="563" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_151" x="130" y="487" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_152" x="455" y="495" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_153" x="945" y="496" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_154" x="38" y="532" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_155" x="331" y="516" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_156" x="220" y="512" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_157" x="646" y="537" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_158" x="656" y="557" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_159" x="858" y="465" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_160" x="232" y="418" width="10" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_161" x="620" y="413" width="10" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_162" x="861" y="415" width="10" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_165" x="548" y="503" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_166" x="1007" y="501" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_167" x="38" y="518" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_168" x="332" y="560" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_169" x="273" y="584" width="9" height="8"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_170" x="131" y="610" width="9" height="5"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_171" x="1014" y="210" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_172" x="593" y="603" width="10" height="7"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_173" x="542" y="545" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_174" x="1003" y="543" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_175" x="149" y="537" width="9" height="13"/>
- <SubTexture name="Symbol 855" x="336" y="460" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_178" x="332" y="532" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_179" x="230" y="531" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_180" x="941" y="524" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_181" x="598" y="519" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_182" x="804" y="516" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_183" x="561" y="423" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_184" x="455" y="509" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_186" x="644" y="565" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_187" x="588" y="564" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_188" x="999" y="462" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_189" x="999" y="476" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_190" x="234" y="475" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_191" x="666" y="473" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_192" x="154" y="467" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_193" x="807" y="422" width="10" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_194" x="656" y="543" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_195" x="169" y="552" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_196" x="406" y="475" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_197" x="38" y="546" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_198" x="234" y="503" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_199" x="33" y="611" width="9" height="6"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_200" x="394" y="506" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_201" x="945" y="510" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_203" x="879" y="206" width="11" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_205" x="542" y="559" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_206" x="346" y="462" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_207" x="224" y="498" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_208" x="853" y="507" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_209" x="709" y="518" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_210" x="322" y="530" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_211" x="543" y="531" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_212" x="382" y="562" width="9" height="12"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_213" x="389" y="534" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_214" x="169" y="538" width="9" height="13"/>
- <SubTexture name="Symbol 890" x="217" y="540" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_216" x="358" y="412" width="10" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_217" x="139" y="543" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_218" x="723" y="448" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_219" x="227" y="545" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_220" x="993" y="546" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_221" x="1001" y="424" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_222" x="941" y="552" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_224" x="1013" y="557" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_225" x="939" y="566" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_226" x="993" y="532" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_227" x="389" y="548" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_228" x="852" y="535" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_229" x="220" y="526" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_230" x="399" y="531" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_231" x="123" y="571" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_232" x="656" y="529" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_233" x="159" y="524" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_234" x="852" y="521" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_236" x="716" y="490" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_237" x="1009" y="473" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_238" x="644" y="579" width="9" height="8"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_239" x="220" y="595" width="11" height="8"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_240" x="805" y="474" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_241" x="332" y="574" width="9" height="10"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_242" x="239" y="461" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_243" x="129" y="543" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_244" x="661" y="515" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_245" x="159" y="538" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_246" x="160" y="510" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_247" x="150" y="509" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_248" x="375" y="604" width="9" height="8"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_249" x="704" y="560" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_250" x="143" y="588" width="9" height="9"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_251" x="232" y="404" width="10" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_252" x="222" y="584" width="10" height="10"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_253" x="598" y="584" width="9" height="9"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_254" x="651" y="604" width="9" height="7"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_255" x="207" y="611" width="9" height="6"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_256" x="537" y="604" width="9" height="8"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_257" x="646" y="523" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_258" x="1009" y="487" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_259" x="801" y="582" width="10" height="10"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_260" x="144" y="473" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_261" x="164" y="468" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_262" x="606" y="491" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_263" x="41" y="462" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_264" x="607" y="477" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_265" x="443" y="609" width="9" height="7"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_266" x="704" y="574" width="9" height="10"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_267" x="672" y="447" width="10" height="11"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_268" x="548" y="489" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_269" x="1002" y="582" width="10" height="10"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_270" x="661" y="501" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_271" x="1013" y="582" width="10" height="10"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_272" x="723" y="405" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_273" x="790" y="573" width="10" height="10"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_274" x="997" y="518" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_275" x="134" y="473" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_276" x="620" y="399" width="10" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_277" x="404" y="503" width="9" height="13"/>
- <SubTexture name="Symbol 951" x="139" y="515" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_280" x="644" y="588" width="9" height="9"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_281" x="153" y="589" width="9" height="9"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_282" x="322" y="544" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_283" x="159" y="552" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_284" x="537" y="584" width="11" height="8"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_285" x="330" y="604" width="10" height="7"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_286" x="36" y="584" width="10" height="10"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_287" x="672" y="421" width="10" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_288" x="167" y="454" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_289" x="853" y="493" width="9" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_290" x="243" y="409" width="10" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_291" x="561" y="409" width="10" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_292" x="1005" y="410" width="10" height="13"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_293" x="318" y="604" width="11" height="6"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_294" x="1006" y="603" width="11" height="6"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_295" x="33" y="604" width="11" height="6"/>
- <SubTexture name="__dbTextures/Symbol 969/p2_296" x="220" y="604" width="11" height="6"/>
- <SubTexture name="__dbTextures/Symbol 985/wool_cl_1" x="351" y="346" width="21" height="21"/>
- <SubTexture name="__dbTextures/Symbol 985/wool_cl_2" x="164" y="392" width="21" height="21"/>
- <SubTexture name="__dbTextures/Symbol 985/wool_cl_3" x="146" y="360" width="21" height="21"/>
- <SubTexture name="__dbTextures/Symbol 985/wool_cl_4" x="142" y="382" width="21" height="21"/>
- <SubTexture name="__dbTextures/Symbol 985/wool_cl_5" x="168" y="370" width="21" height="21"/>
- <SubTexture name="__dbTextures/Symbol 985/wool_cl_6" x="168" y="348" width="21" height="21"/>
- <SubTexture name="__dbTextures/Symbol 985/wool_cl_7" x="746" y="302" width="21" height="21"/>
- <SubTexture name="__dbTextures/Symbol 985/wool_cl_8" x="146" y="338" width="21" height="21"/>
- <SubTexture name="__dbTextures/Symbol 985/wool_cl_9" x="347" y="390" width="21" height="21"/>
- <SubTexture name="__dbTextures/Symbol 985/wool_cl_10" x="742" y="351" width="21" height="21"/>
- <SubTexture name="__dbTextures/Symbol 985/wool_cl_11" x="349" y="368" width="21" height="21"/>
- <SubTexture name="__dbTextures/Symbol 985/wool_cl_18" x="931" y="348" width="21" height="21"/>
- <SubTexture name="__dbTextures/Symbol 985/wool_cl_19" x="351" y="324" width="21" height="21"/>
- <SubTexture name="__dbTextures/cat2.wool_cl/wool_cl_1" x="814" y="518" width="37" height="35"/>
- <SubTexture name="__dbTextures/cat2.wool_cl/wool_cl_2" x="719" y="533" width="37" height="35"/>
- <SubTexture name="__dbTextures/cat2.wool_cl/wool_cl_3" x="671" y="517" width="37" height="35"/>
- <SubTexture name="__dbTextures/cat2.wool_cl/wool_cl_4" x="465" y="521" width="37" height="35"/>
- <SubTexture name="__dbTextures/cat2.wool_cl/wool_cl_5" x="955" y="521" width="37" height="35"/>
- <SubTexture name="__dbTextures/cat2.wool_cl/wool_cl_6" x="0" y="520" width="37" height="35"/>
- <SubTexture name="__dbTextures/cat2.wool_cl/wool_cl_7" x="608" y="523" width="37" height="35"/>
- <SubTexture name="__dbTextures/cat2.wool_cl/wool_cl_8" x="907" y="482" width="37" height="36"/>
- <SubTexture name="__dbTextures/cat2.wool_cl/wool_cl_9" x="414" y="517" width="37" height="35"/>
- <SubTexture name="__dbTextures/cat2.wool_cl/wool_cl_10" x="766" y="510" width="37" height="34"/>
- <SubTexture name="__dbTextures/cat2.wool_cl/wool_cl_11" x="0" y="483" width="37" height="36"/>
- <SubTexture name="__dbTextures/cat2.wool_cl/wool_cl_18" x="254" y="436" width="41" height="35"/>
- <SubTexture name="__dbTextures/cat2.wool_cl/wool_cl_19" x="465" y="484" width="37" height="36"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_1" x="427" y="337" width="44" height="37"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_2" x="823" y="291" width="45" height="39"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_3" x="0" y="120" width="64" height="31"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_4" x="581" y="196" width="17" height="13"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_5" x="733" y="373" width="32" height="34"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_6" x="100" y="328" width="45" height="37"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_7" x="823" y="331" width="44" height="38"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_9" x="624" y="459" width="41" height="35"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_10" x="328" y="634" width="36" height="18"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_12" x="273" y="0" width="49" height="76"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_13" x="190" y="391" width="41" height="38"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_14" x="757" y="546" width="43" height="26"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_15" x="91" y="513" width="37" height="34"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_16" x="657" y="639" width="35" height="11"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_17" x="501" y="575" width="35" height="30"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_18" x="881" y="354" width="42" height="38"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_20" x="676" y="483" width="39" height="33"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_22" x="710" y="596" width="43" height="17"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_23" x="0" y="328" width="40" height="41"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_24" x="205" y="200" width="44" height="44"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_27" x="699" y="615" width="49" height="16"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_28" x="534" y="616" width="49" height="16"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_29" x="584" y="619" width="49" height="16"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_30" x="121" y="620" width="49" height="16"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_31" x="171" y="265" width="30" height="35"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_33" x="966" y="139" width="51" height="40"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_34" x="249" y="472" width="40" height="34"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_35" x="376" y="104" width="49" height="46"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_36" x="768" y="349" width="38" height="42"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_37" x="338" y="614" width="36" height="19"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_38" x="898" y="589" width="36" height="23"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_39" x="240" y="541" width="42" height="28"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_40" x="683" y="446" width="39" height="36"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_41" x="608" y="590" width="31" height="28"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_42" x="486" y="165" width="42" height="47"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_43" x="0" y="282" width="40" height="45"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_46" x="843" y="622" width="41" height="15"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_47" x="65" y="136" width="38" height="45"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_48" x="766" y="432" width="39" height="38"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_49" x="273" y="77" width="41" height="56"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_50" x="602" y="51" width="42" height="57"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_51" x="537" y="0" width="64" height="45"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_52" x="503" y="509" width="39" height="32"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_53" x="48" y="516" width="39" height="32"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_54" x="945" y="615" width="37" height="22"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_55" x="101" y="289" width="46" height="38"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_56" x="922" y="638" width="37" height="10"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_57" x="84" y="583" width="36" height="25"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_58" x="711" y="152" width="46" height="43"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_59" x="232" y="601" width="36" height="24"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_60" x="790" y="638" width="35" height="13"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_61" x="868" y="363" width="12" height="12"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_62" x="416" y="481" width="38" height="35"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_63" x="951" y="557" width="40" height="26"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_64" x="529" y="215" width="47" height="40"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_65" x="645" y="84" width="14" height="33"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_67" x="179" y="539" width="37" height="33"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_68" x="572" y="416" width="40" height="37"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_70" x="964" y="266" width="44" height="40"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_71" x="508" y="473" width="39" height="35"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_72" x="666" y="553" width="37" height="31"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_73" x="461" y="588" width="39" height="21"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_74" x="92" y="475" width="37" height="37"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_75" x="880" y="393" width="41" height="37"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_76" x="961" y="307" width="47" height="35"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_77" x="898" y="613" width="36" height="23"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_78" x="171" y="180" width="33" height="44"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_80" x="436" y="255" width="41" height="44"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_81" x="684" y="405" width="38" height="40"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_82" x="863" y="507" width="39" height="32"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_83" x="383" y="0" width="57" height="57"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_84" x="269" y="181" width="41" height="47"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_85" x="487" y="117" width="47" height="47"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_86" x="453" y="610" width="47" height="23"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_87" x="323" y="61" width="52" height="45"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_88" x="643" y="118" width="16" height="27"/>
- <SubTexture name="Symbol 1389" x="207" y="626" width="58" height="20"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_90" x="536" y="90" width="55" height="41"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_91" x="957" y="455" width="41" height="34"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_92" x="315" y="156" width="45" height="44"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_93" x="965" y="180" width="48" height="41"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_94" x="901" y="44" width="50" height="51"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_95" x="914" y="447" width="42" height="34"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_96" x="487" y="67" width="48" height="49"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_97" x="104" y="165" width="52" height="38"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_98" x="773" y="0" width="65" height="43"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_99" x="770" y="137" width="52" height="39"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_100" x="306" y="273" width="45" height="39"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_101" x="692" y="340" width="49" height="31"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_102" x="839" y="43" width="61" height="40"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_103" x="882" y="320" width="48" height="33"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_104" x="269" y="621" width="58" height="23"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_105" x="0" y="197" width="45" height="42"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_106" x="190" y="362" width="53" height="28"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_107" x="467" y="412" width="41" height="36"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_108" x="862" y="540" width="39" height="30"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_109" x="428" y="300" width="47" height="36"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_110" x="376" y="151" width="47" height="44"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_111" x="684" y="372" width="48" height="32"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_112" x="839" y="124" width="51" height="42"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_113" x="0" y="152" width="46" height="44"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_114" x="966" y="0" width="56" height="48"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_115" x="487" y="14" width="49" height="51"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_116" x="770" y="94" width="55" height="42"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_117" x="517" y="372" width="46" height="33"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_118" x="616" y="495" width="44" height="27"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_119" x="890" y="277" width="42" height="42"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_120" x="105" y="87" width="65" height="35"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_121" x="955" y="490" width="41" height="30"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_122" x="891" y="147" width="47" height="45"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_123" x="601" y="162" width="41" height="48"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_124" x="0" y="409" width="40" height="37"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_125" x="960" y="417" width="40" height="37"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_126" x="631" y="421" width="40" height="37"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_127" x="298" y="422" width="40" height="37"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_128" x="188" y="430" width="40" height="37"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_129" x="814" y="554" width="37" height="31"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_130" x="903" y="519" width="37" height="35"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_131" x="660" y="616" width="37" height="22"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_132" x="726" y="500" width="39" height="32"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_133" x="945" y="125" width="20" height="22"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_134" x="93" y="399" width="41" height="38"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_135" x="891" y="193" width="46" height="42"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_136" x="660" y="95" width="50" height="45"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_137" x="821" y="192" width="15" height="12"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_138" x="84" y="610" width="36" height="22"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_139" x="964" y="222" width="44" height="43"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_140" x="479" y="213" width="49" height="38"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_141" x="558" y="516" width="39" height="33"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_142" x="720" y="0" width="52" height="56"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_143" x="409" y="553" width="38" height="31"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_144" x="171" y="628" width="35" height="18"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_145" x="466" y="449" width="41" height="34"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_146" x="162" y="430" width="24" height="11"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_147" x="924" y="370" width="35" height="37"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_148" x="961" y="343" width="43" height="38"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_149" x="256" y="397" width="41" height="38"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_150" x="436" y="121" width="49" height="45"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_152" x="59" y="278" width="41" height="43"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_153" x="257" y="357" width="41" height="39"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_154" x="817" y="442" width="40" height="36"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_155" x="356" y="478" width="37" height="38"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_156" x="93" y="438" width="40" height="36"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_157" x="0" y="447" width="40" height="35"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_158" x="966" y="49" width="52" height="47"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_159" x="966" y="98" width="55" height="40"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_160" x="376" y="196" width="46" height="43"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_161" x="509" y="440" width="44" height="32"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_162" x="361" y="445" width="44" height="32"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_163" x="749" y="628" width="40" height="17"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_164" x="43" y="613" width="40" height="18"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_165" x="766" y="392" width="40" height="39"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_166" x="552" y="550" width="35" height="35"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_167" x="262" y="318" width="42" height="38"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_168" x="244" y="508" width="39" height="32"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_169" x="640" y="384" width="43" height="36"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_170" x="640" y="345" width="43" height="38"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_171" x="711" y="104" width="47" height="47"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_172" x="171" y="225" width="31" height="39"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_173" x="305" y="350" width="43" height="38"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_174" x="351" y="517" width="37" height="35"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_175" x="766" y="471" width="38" height="38"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_176" x="71" y="633" width="37" height="16"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_177" x="462" y="557" width="38" height="30"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_178" x="342" y="553" width="39" height="30"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_179" x="0" y="556" width="35" height="30"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_180" x="922" y="408" width="37" height="38"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_181" x="441" y="14" width="45" height="58"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_182" x="503" y="542" width="38" height="32"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_183" x="661" y="0" width="58" height="50"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_184" x="202" y="287" width="46" height="38"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_185" x="835" y="206" width="43" height="44"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_186" x="135" y="419" width="26" height="15"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_187" x="373" y="325" width="40" height="40"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_188" x="59" y="231" width="41" height="46"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_189" x="524" y="293" width="45" height="39"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_190" x="478" y="294" width="41" height="42"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_191" x="262" y="275" width="42" height="42"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_192" x="395" y="609" width="47" height="23"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_193" x="315" y="107" width="47" height="48"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_194" x="196" y="326" width="46" height="35"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_195" x="184" y="468" width="39" height="37"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_196" x="524" y="256" width="50" height="36"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_197" x="300" y="389" width="46" height="32"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_198" x="296" y="460" width="39" height="37"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_199" x="66" y="85" width="38" height="50"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_200" x="0" y="85" width="65" height="34"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_201" x="436" y="209" width="42" height="45"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_202" x="558" y="490" width="47" height="25"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_203" x="383" y="58" width="52" height="45"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_204" x="717" y="58" width="52" height="45"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_205" x="51" y="481" width="39" height="34"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_206" x="535" y="132" width="50" height="42"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_207" x="163" y="414" width="26" height="15"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_208" x="263" y="229" width="42" height="45"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_209" x="815" y="479" width="37" height="38"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_210" x="773" y="44" width="52" height="49"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_211" x="839" y="0" width="64" height="42"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_212" x="583" y="339" width="43" height="38"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_213" x="594" y="211" width="42" height="46"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_214" x="284" y="530" width="37" height="35"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_215" x="376" y="240" width="46" height="39"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_216" x="369" y="408" width="42" height="36"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_217" x="86" y="549" width="36" height="33"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_218" x="93" y="366" width="48" height="32"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_219" x="54" y="359" width="38" height="42"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_220" x="960" y="382" width="44" height="34"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_221" x="602" y="0" width="58" height="50"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_222" x="933" y="310" width="26" height="23"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_223" x="53" y="402" width="39" height="40"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_224" x="472" y="337" width="44" height="36"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_226" x="373" y="280" width="41" height="44"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_227" x="269" y="134" width="45" height="46"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_228" x="656" y="225" width="43" height="43"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_229" x="47" y="174" width="15" height="17"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_230" x="48" y="549" width="37" height="32"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_231" x="209" y="117" width="59" height="34"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_232" x="891" y="236" width="46" height="40"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_233" x="403" y="585" width="40" height="23"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_234" x="647" y="306" width="44" height="38"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_235" x="839" y="84" width="58" height="39"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_236" x="868" y="469" width="38" height="37"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_237" x="819" y="403" width="41" height="38"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_238" x="700" y="236" width="54" height="33"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_239" x="311" y="201" width="50" height="38"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_240" x="820" y="370" width="47" height="32"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_241" x="898" y="96" width="46" height="49"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_242" x="602" y="109" width="40" height="51"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_243" x="768" y="261" width="41" height="44"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_244" x="436" y="73" width="50" height="47"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_245" x="104" y="204" width="44" height="44"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_246" x="306" y="240" width="53" height="32"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_247" x="63" y="182" width="40" height="48"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_248" x="660" y="141" width="50" height="41"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_249" x="938" y="253" width="25" height="30"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_250" x="290" y="498" width="40" height="31"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_251" x="209" y="79" width="61" height="37"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_252" x="714" y="569" width="39" height="26"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_253" x="373" y="366" width="38" height="41"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_254" x="661" y="51" width="55" height="43"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_255" x="323" y="0" width="58" height="60"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_256" x="537" y="46" width="56" height="43"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_257" x="479" y="252" width="44" height="41"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_258" x="171" y="136" width="37" height="43"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_259" x="423" y="446" width="42" height="34"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_260" x="829" y="251" width="47" height="39"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_261" x="590" y="258" width="42" height="43"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_262" x="902" y="555" width="36" height="33"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_263" x="520" y="333" width="43" height="38"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_264" x="583" y="302" width="46" height="36"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_265" x="529" y="175" width="51" height="39"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_266" x="0" y="370" width="40" height="38"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_267" x="52" y="443" width="39" height="37"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_268" x="149" y="206" width="21" height="29"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_269" x="101" y="249" width="47" height="39"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_270" x="697" y="270" width="48" height="37"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_271" x="692" y="308" width="51" height="31"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_272" x="577" y="378" width="42" height="37"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_273" x="180" y="506" width="39" height="32"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_274" x="515" y="406" width="45" height="33"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_275" x="770" y="218" width="45" height="42"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_276" x="904" y="0" width="60" height="43"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_277" x="708" y="196" width="49" height="39"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_278" x="203" y="245" width="45" height="40"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_279" x="0" y="241" width="45" height="40"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_280" x="768" y="306" width="41" height="42"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_281" x="873" y="431" width="40" height="37"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_282" x="436" y="167" width="49" height="41"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_283" x="209" y="152" width="44" height="46"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_284" x="838" y="167" width="52" height="38"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_285" x="209" y="0" width="63" height="78"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_286" x="647" y="269" width="49" height="36"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_287" x="770" y="177" width="50" height="40"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_288" x="105" y="123" width="53" height="40"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_289" x="48" y="582" width="35" height="30"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_290" x="425" y="375" width="44" height="35"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_291" x="423" y="411" width="43" height="34"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_292" x="660" y="183" width="47" height="41"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_293" x="439" y="645" width="35" height="10"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_294" x="148" y="647" width="35" height="10"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_295" x="266" y="645" width="35" height="10"/>
- <SubTexture name="__dbTextures/Symbol 1595/h2_296" x="736" y="646" width="35" height="10"/>
+ <SubTexture name="Symbol 2296" x="886" y="849" width="38" height="12"/>
+ <SubTexture name="Symbol 191" x="758" y="381" width="21" height="24"/>
+ <SubTexture name="Symbol 192" x="751" y="433" width="21" height="24"/>
+ <SubTexture name="Symbol 193" x="555" y="427" width="21" height="24"/>
+ <SubTexture name="__dbTextures/cat2.tail_cl/tail_cl_3" x="266" y="338" width="24" height="26"/>
+ <SubTexture name="__dbTextures/cat2.tail_cl/tail_cl_4" x="776" y="832" width="34" height="21"/>
+ <SubTexture name="__dbTextures/cat2.tail_cl/tail_cl_5" x="72" y="826" width="33" height="23"/>
+ <SubTexture name="__dbTextures/cat2.tail_cl/tail_cl_6" x="180" y="827" width="32" height="25"/>
+ <SubTexture name="Symbol 198" x="0" y="827" width="33" height="23"/>
+ <SubTexture name="__dbTextures/cat2.tail_cl/tail_cl_8" x="811" y="836" width="37" height="17"/>
+ <SubTexture name="__dbTextures/cat2.tail_cl/tail_cl_9" x="991" y="830" width="32" height="18"/>
+ <SubTexture name="__dbTextures/cat2.tail_cl/tail_cl_10" x="329" y="839" width="37" height="17"/>
+ <SubTexture name="__dbTextures/cat2.tail_cl/tail_cl_11" x="659" y="834" width="37" height="17"/>
+ <SubTexture name="Symbol 203" x="758" y="356" width="21" height="24"/>
+ <SubTexture name="Graphic/shape 2257" x="415" y="0" width="98" height="58"/>
+ <SubTexture name="MovieClip/sprite 2259" x="541" y="403" width="16" height="16"/>
+ <SubTexture name="Graphic/shape 2247" x="312" y="0" width="102" height="60"/>
+ <SubTexture name="Graphic/shape 2253" x="209" y="0" width="102" height="60"/>
+ <SubTexture name="Graphic/shape 2255" x="514" y="0" width="98" height="58"/>
+ <SubTexture name="Graphic/shape 2262" x="613" y="0" width="98" height="58"/>
+ <SubTexture name="Graphic/shape 2264" x="811" y="0" width="98" height="58"/>
+ <SubTexture name="Graphic/shape 2266" x="712" y="0" width="98" height="58"/>
+ <SubTexture name="Graphic/shape 2260" x="810" y="59" width="92" height="43"/>
+ <SubTexture name="MovieClip/sprite 2249" x="288" y="819" width="49" height="9"/>
+ <SubTexture name="Graphic/shape 2250" x="507" y="116" width="85" height="22"/>
+ <SubTexture name="MovieClip/sprite 2252" x="462" y="162" width="12" height="54"/>
+ <SubTexture name="Graphic/shape 2254" x="510" y="59" width="86" height="56"/>
+ <SubTexture name="Graphic/shape 2256" x="712" y="59" width="84" height="55"/>
+ <SubTexture name="Graphic/shape 2261" x="312" y="61" width="83" height="53"/>
+ <SubTexture name="Graphic/shape 2263" x="209" y="61" width="83" height="53"/>
+ <SubTexture name="Graphic/shape 2265" x="415" y="59" width="85" height="58"/>
+ <SubTexture name="Graphic/shape 2267" x="910" y="0" width="87" height="67"/>
+ <SubTexture name="__dbTextures/cat3.foot.mask/bg_0" x="594" y="863" width="95" height="13"/>
+ <SubTexture name="__dbTextures/cat3.foot.mask/mask_0" x="568" y="779" width="59" height="10"/>
+ <SubTexture name="Graphic/shape 2273" x="628" y="777" width="55" height="21"/>
+ <SubTexture name="Graphic/shape 2274" x="134" y="656" width="55" height="26"/>
+ <SubTexture name="Graphic/shape 2275" x="125" y="708" width="61" height="26"/>
+ <SubTexture name="Graphic/shape 2276" x="134" y="683" width="55" height="24"/>
+ <SubTexture name="Graphic/shape 2277" x="125" y="735" width="60" height="24"/>
+ <SubTexture name="Graphic/shape 2278" x="556" y="790" width="66" height="24"/>
+ <SubTexture name="Graphic/shape 2279" x="113" y="784" width="67" height="26"/>
+ <SubTexture name="Graphic/shape 2289" x="674" y="139" width="37" height="58"/>
+ <SubTexture name="Graphic/shape 2283" x="162" y="87" width="40" height="73"/>
+ <SubTexture name="Graphic/shape 2284" x="60" y="85" width="43" height="73"/>
+ <SubTexture name="Graphic/shape 2285" x="960" y="68" width="36" height="74"/>
+ <SubTexture name="Graphic/shape 2286" x="875" y="103" width="27" height="70"/>
+ <SubTexture name="Graphic/shape 2287" x="765" y="115" width="29" height="74"/>
+ <SubTexture name="Graphic/shape 2288" x="676" y="59" width="35" height="79"/>
+ <SubTexture name="Symbol 206" x="399" y="638" width="41" height="34"/>
+ <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_9" x="760" y="619" width="32" height="29"/>
+ <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_16" x="958" y="800" width="32" height="29"/>
+ <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_27" x="955" y="368" width="19" height="24"/>
+ <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_36" x="759" y="683" width="32" height="29"/>
+ <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_59" x="991" y="800" width="32" height="29"/>
+ <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_61" x="793" y="519" width="45" height="36"/>
+ <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_75" x="857" y="287" width="27" height="25"/>
+ <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_85" x="193" y="508" width="45" height="36"/>
+ <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_92" x="660" y="810" width="73" height="23"/>
+ <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_93" x="33" y="866" width="84" height="14"/>
+ <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_98" x="751" y="406" width="23" height="26"/>
+ <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_104" x="534" y="688" width="35" height="30"/>
+ <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_118" x="791" y="771" width="35" height="30"/>
+ <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_119" x="520" y="782" width="35" height="30"/>
+ <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_130" x="761" y="230" width="25" height="34"/>
+ <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_146" x="786" y="802" width="32" height="29"/>
+ <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_155" x="996" y="220" width="25" height="33"/>
+ <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_156" x="758" y="329" width="21" height="26"/>
+ <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_175" x="223" y="771" width="35" height="30"/>
+ <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_187" x="36" y="792" width="35" height="30"/>
+ <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_202" x="404" y="563" width="44" height="36"/>
+ <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_203" x="0" y="772" width="35" height="30"/>
+ <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_209" x="355" y="329" width="36" height="48"/>
+ <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_210" x="760" y="587" width="32" height="31"/>
+ <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_214" x="865" y="221" width="25" height="34"/>
+ <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_219" x="918" y="801" width="32" height="29"/>
+ <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_224" x="429" y="802" width="32" height="29"/>
+ <SubTexture name="__dbTextures/cat6.cloak_cl/Layer 1_240" x="217" y="802" width="32" height="29"/>
+ <SubTexture name="__dbTextures/cat6.skirt_cl/Layer 1_4" x="543" y="590" width="27" height="14"/>
+ <SubTexture name="__dbTextures/cat6.skirt_cl/Layer 1_12" x="359" y="857" width="30" height="16"/>
+ <SubTexture name="__dbTextures/cat6.skirt_cl/Layer 1_65" x="571" y="575" width="20" height="11"/>
+ <SubTexture name="__dbTextures/cat6.skirt_cl/Layer 1_202" x="842" y="860" width="29" height="13"/>
+ <SubTexture name="Symbol 2297" x="622" y="848" width="36" height="14"/>
+ <SubTexture name="Symbol 2298" x="925" y="850" width="33" height="16"/>
+ <SubTexture name="Symbol 2299" x="0" y="803" width="34" height="23"/>
+ <SubTexture name="__dbTextures/eat/Layer 1_4" x="288" y="829" width="40" height="16"/>
+ <SubTexture name="__dbTextures/eat/Layer 1_5" x="489" y="851" width="32" height="16"/>
+ <SubTexture name="__dbTextures/eat/Layer 1_6" x="379" y="838" width="35" height="18"/>
+ <SubTexture name="__dbTextures/eat/Layer 1_7" x="505" y="813" width="41" height="19"/>
+ <SubTexture name="__dbTextures/cat2.hand.wool_cl/wool_cl_0" x="139" y="376" width="9" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.wool_cl/wool_cl_1" x="485" y="398" width="9" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.wool_cl/wool_cl_2" x="243" y="381" width="9" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.wool_cl/wool_cl_3" x="243" y="396" width="9" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.wool_cl/wool_cl_4" x="486" y="323" width="9" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.wool_cl/wool_cl_5" x="486" y="308" width="9" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.wool_cl/wool_cl_6" x="485" y="368" width="9" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.wool_cl/wool_cl_7" x="485" y="338" width="10" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.wool_cl/wool_cl_8" x="139" y="391" width="9" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.wool_cl/wool_cl_9" x="243" y="411" width="9" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.wool_cl/wool_cl_10" x="139" y="406" width="9" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.wool_cl/wool_cl_11" x="485" y="353" width="10" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.wool_cl/wool_cl_18" x="485" y="383" width="9" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.wool_cl/wool_cl_19" x="139" y="421" width="9" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_1" x="235" y="597" width="10" height="11"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_2" x="460" y="609" width="10" height="11"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_3" x="451" y="518" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_4" x="287" y="564" width="11" height="11"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_5" x="328" y="740" width="11" height="8"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_6" x="541" y="512" width="12" height="14"/>
+ <SubTexture name="Symbol 257" x="478" y="489" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_10" x="966" y="544" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_12" x="451" y="446" width="13" height="13"/>
+ <SubTexture name="Symbol 260" x="271" y="596" width="10" height="11"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_14" x="549" y="328" width="11" height="15"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_15" x="877" y="604" width="10" height="11"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_17" x="963" y="597" width="10" height="11"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_18" x="477" y="534" width="12" height="14"/>
+ <SubTexture name="Symbol 265" x="280" y="726" width="9" height="8"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_20" x="136" y="536" width="12" height="14"/>
+ <SubTexture name="Symbol 267" x="465" y="467" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_25" x="449" y="598" width="10" height="11"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_26" x="248" y="592" width="11" height="11"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_27" x="743" y="728" width="9" height="7"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_28" x="954" y="728" width="9" height="7"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_29" x="250" y="729" width="9" height="7"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_30" x="871" y="728" width="9" height="7"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_32" x="882" y="447" width="13" height="13"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_33" x="443" y="610" width="10" height="11"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_34" x="464" y="542" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_36" x="392" y="494" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_37" x="647" y="534" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_38" x="478" y="474" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_39" x="940" y="541" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_40" x="477" y="504" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_41" x="930" y="608" width="10" height="11"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_42" x="252" y="537" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_43" x="749" y="599" width="10" height="11"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_44" x="131" y="590" width="10" height="11"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_45" x="260" y="596" width="10" height="11"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_46" x="240" y="497" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_47" x="654" y="364" width="14" height="19"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_48" x="653" y="385" width="15" height="22"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_49" x="652" y="460" width="13" height="13"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_50" x="975" y="386" width="16" height="26"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_51" x="451" y="533" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_54" x="392" y="422" width="13" height="16"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_55" x="749" y="611" width="10" height="11"/>
+ <SubTexture name="Symbol 295" x="524" y="609" width="10" height="11"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_57" x="647" y="564" width="11" height="12"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_59" x="268" y="608" width="10" height="11"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_60" x="742" y="751" width="10" height="8"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_62" x="477" y="519" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_63" x="549" y="344" width="11" height="15"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_64" x="328" y="759" width="10" height="8"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_65" x="393" y="403" width="13" height="17"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_68" x="780" y="405" width="13" height="17"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_69" x="246" y="604" width="10" height="11"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_70" x="472" y="602" width="10" height="11"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_71" x="943" y="408" width="11" height="12"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_72" x="253" y="363" width="12" height="16"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_73" x="954" y="736" width="9" height="6"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_74" x="482" y="444" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_75" x="225" y="738" width="11" height="9"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_76" x="131" y="551" width="12" height="12"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_77" x="952" y="596" width="10" height="11"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_80" x="453" y="413" width="13" height="16"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_81" x="390" y="606" width="10" height="11"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_82" x="647" y="549" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_83" x="294" y="302" width="15" height="32"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_84" x="968" y="484" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_85" x="541" y="482" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_87" x="287" y="521" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_88" x="451" y="474" width="12" height="13"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_89" x="941" y="596" width="10" height="11"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_90" x="749" y="559" width="12" height="12"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_91" x="250" y="565" width="11" height="12"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_92" x="291" y="491" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_93" x="239" y="527" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_94" x="628" y="750" width="10" height="10"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_95" x="941" y="749" width="10" height="10"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_96" x="270" y="750" width="10" height="10"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_97" x="930" y="749" width="10" height="10"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_98" x="968" y="529" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_99" x="381" y="759" width="10" height="9"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_100" x="951" y="573" width="11" height="12"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_102" x="570" y="612" width="10" height="12"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_103" x="940" y="556" width="12" height="12"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_105" x="943" y="502" width="11" height="11"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_108" x="285" y="590" width="11" height="11"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_109" x="943" y="327" width="11" height="20"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_110" x="291" y="393" width="17" height="21"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_111" x="939" y="569" width="11" height="12"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_112" x="462" y="570" width="11" height="12"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_114" x="252" y="522" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_115" x="882" y="461" width="13" height="13"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_116" x="919" y="738" width="11" height="10"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_118" x="652" y="427" width="13" height="16"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_119" x="879" y="550" width="11" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_120" x="968" y="514" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_121" x="535" y="542" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_122" x="968" y="499" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_123" x="535" y="557" width="12" height="12"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_124" x="879" y="520" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_125" x="253" y="477" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_126" x="651" y="474" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_127" x="451" y="548" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_128" x="239" y="542" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_129" x="392" y="539" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_130" x="930" y="760" width="10" height="9"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_131" x="950" y="586" width="12" height="9"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_132" x="449" y="563" width="11" height="11"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_133" x="963" y="609" width="10" height="11"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_134" x="435" y="729" width="9" height="7"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_135" x="391" y="567" width="11" height="12"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_136" x="651" y="489" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_137" x="467" y="437" width="14" height="13"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_141" x="966" y="559" width="12" height="10"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_142" x="282" y="602" width="10" height="11"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_143" x="569" y="723" width="10" height="10"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_144" x="288" y="506" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_145" x="464" y="527" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_146" x="392" y="452" width="12" height="15"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_147" x="732" y="730" width="10" height="10"/>
+ <SubTexture name="Symbol 371" x="520" y="719" width="10" height="10"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_149" x="882" y="475" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_150" x="239" y="512" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_151" x="465" y="452" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_152" x="541" y="453" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_153" x="541" y="420" width="13" height="16"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_154" x="240" y="482" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_155" x="883" y="430" width="12" height="16"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_156" x="541" y="527" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_157" x="953" y="546" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_158" x="392" y="524" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_159" x="253" y="507" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_160" x="253" y="380" width="12" height="16"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_161" x="464" y="512" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_162" x="393" y="383" width="14" height="19"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_165" x="328" y="749" width="10" height="9"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_166" x="569" y="745" width="10" height="9"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_167" x="931" y="738" width="11" height="9"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_168" x="943" y="476" width="11" height="12"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_169" x="966" y="570" width="11" height="12"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_170" x="749" y="572" width="11" height="12"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_171" x="381" y="738" width="11" height="10"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_172" x="749" y="544" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_173" x="392" y="479" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_174" x="136" y="506" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_175" x="392" y="509" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_177" x="114" y="748" width="10" height="9"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_178" x="732" y="741" width="10" height="9"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_179" x="249" y="745" width="10" height="9"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_180" x="253" y="431" width="12" height="15"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_181" x="882" y="490" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_182" x="472" y="590" width="11" height="11"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_183" x="955" y="456" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_184" x="257" y="608" width="10" height="11"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_186" x="291" y="476" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_187" x="549" y="360" width="11" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_188" x="974" y="430" width="12" height="16"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_189" x="470" y="402" width="14" height="17"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_190" x="541" y="497" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_191" x="879" y="505" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_192" x="571" y="600" width="10" height="11"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_193" x="943" y="364" width="11" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_194" x="451" y="488" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_195" x="445" y="719" width="9" height="8"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_196" x="650" y="504" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_197" x="877" y="592" width="10" height="11"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_198" x="954" y="719" width="9" height="8"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_199" x="879" y="565" width="11" height="12"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_200" x="287" y="536" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_201" x="742" y="760" width="10" height="9"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_202" x="477" y="564" width="11" height="11"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_203" x="941" y="608" width="10" height="11"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_204" x="941" y="760" width="10" height="8"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_205" x="953" y="531" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_206" x="470" y="364" width="14" height="19"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_207" x="451" y="503" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_208" x="653" y="408" width="13" height="18"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_209" x="482" y="427" width="12" height="16"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_210" x="253" y="492" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_211" x="477" y="549" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_213" x="461" y="597" width="10" height="11"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_214" x="919" y="760" width="10" height="9"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_215" x="253" y="397" width="12" height="16"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_216" x="943" y="348" width="11" height="15"/>
+ <SubTexture name="Symbol 435" x="955" y="471" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_218" x="532" y="570" width="11" height="12"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_219" x="541" y="438" width="13" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_220" x="643" y="603" width="10" height="11"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_221" x="478" y="459" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_222" x="260" y="729" width="9" height="7"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_223" x="253" y="414" width="12" height="16"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_225" x="532" y="597" width="10" height="11"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_226" x="955" y="516" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_227" x="652" y="444" width="13" height="15"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_228" x="650" y="519" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_229" x="643" y="591" width="11" height="11"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_230" x="455" y="735" width="9" height="7"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_231" x="131" y="564" width="11" height="11"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_232" x="253" y="447" width="12" height="15"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_233" x="943" y="379" width="11" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_234" x="513" y="751" width="10" height="10"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_235" x="520" y="741" width="10" height="9"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_236" x="940" y="526" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_237" x="230" y="719" width="9" height="8"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_240" x="468" y="420" width="13" height="16"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_241" x="743" y="736" width="9" height="6"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_242" x="131" y="602" width="10" height="11"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_243" x="225" y="728" width="12" height="9"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_244" x="136" y="521" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_245" x="884" y="389" width="16" height="21"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_246" x="980" y="223" width="7" height="6"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_247" x="451" y="460" width="13" height="13"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_248" x="943" y="394" width="11" height="13"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_249" x="654" y="344" width="14" height="19"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_250" x="921" y="728" width="12" height="9"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_251" x="743" y="719" width="9" height="8"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_252" x="921" y="718" width="12" height="9"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_253" x="453" y="761" width="9" height="8"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_254" x="442" y="761" width="10" height="8"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_255" x="580" y="735" width="9" height="6"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_256" x="930" y="596" width="10" height="11"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_257" x="974" y="447" width="12" height="15"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_258" x="270" y="726" width="9" height="8"/>
+ <SubTexture name="Symbol 474" x="943" y="421" width="11" height="12"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_260" x="449" y="575" width="11" height="11"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_261" x="1014" y="723" width="9" height="8"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_262" x="955" y="486" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_263" x="253" y="345" width="12" height="17"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_264" x="390" y="594" width="10" height="11"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_265" x="330" y="730" width="12" height="9"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_266" x="455" y="751" width="10" height="9"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_268" x="658" y="328" width="10" height="15"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_269" x="464" y="557" width="12" height="12"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_270" x="237" y="557" width="12" height="12"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_271" x="236" y="758" width="10" height="8"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_272" x="393" y="363" width="14" height="19"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_273" x="225" y="758" width="10" height="8"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_274" x="453" y="430" width="13" height="15"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_275" x="291" y="460" width="11" height="15"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_276" x="431" y="761" width="10" height="8"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_277" x="114" y="758" width="10" height="8"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_278" x="955" y="501" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_279" x="464" y="497" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_280" x="465" y="736" width="9" height="7"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_281" x="435" y="720" width="9" height="8"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_282" x="385" y="716" width="9" height="11"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_283" x="952" y="750" width="10" height="9"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_284" x="943" y="514" width="11" height="11"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_285" x="330" y="720" width="12" height="9"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_287" x="253" y="463" width="12" height="13"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_288" x="237" y="570" width="11" height="12"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_289" x="628" y="725" width="9" height="8"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_290" x="879" y="535" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_291" x="235" y="609" width="10" height="11"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_292" x="465" y="482" width="12" height="14"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_293" x="443" y="752" width="11" height="8"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_294" x="1004" y="755" width="11" height="8"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_295" x="568" y="755" width="11" height="8"/>
+ <SubTexture name="__dbTextures/cat2.hand.sleeve_cl/sleeve_cl_296" x="431" y="752" width="11" height="8"/>
+ <SubTexture name="MovieClip/sprite 206" x="653" y="646" width="41" height="34"/>
+ <SubTexture name="Graphic/shape 511" x="976" y="356" width="16" height="29"/>
+ <SubTexture name="Graphic/shape 512" x="561" y="314" width="16" height="32"/>
+ <SubTexture name="Graphic/shape 513" x="795" y="172" width="13" height="51"/>
+ <SubTexture name="Graphic/shape 514" x="945" y="241" width="11" height="39"/>
+ <SubTexture name="Graphic/shape 515" x="566" y="189" width="20" height="43"/>
+ <SubTexture name="Graphic/shape 516" x="487" y="177" width="12" height="51"/>
+ <SubTexture name="Graphic/shape 517" x="957" y="306" width="18" height="31"/>
+ <SubTexture name="Graphic/shape 518" x="266" y="390" width="24" height="24"/>
+ <SubTexture name="Graphic/shape 519" x="391" y="115" width="4" height="15"/>
+ <SubTexture name="Graphic/shape 522" x="255" y="270" width="12" height="30"/>
+ <SubTexture name="Graphic/shape 523" x="391" y="554" width="12" height="12"/>
+ <SubTexture name="Graphic/shape 524" x="475" y="177" width="11" height="52"/>
+ <SubTexture name="MovieClip/sprite 526" x="266" y="461" width="24" height="17"/>
+ <SubTexture name="Graphic/shape 527" x="571" y="587" width="20" height="12"/>
+ <SubTexture name="Graphic/shape 528" x="300" y="123" width="10" height="56"/>
+ <SubTexture name="Graphic/shape 529" x="903" y="59" width="6" height="32"/>
+ <SubTexture name="Graphic/shape 530" x="949" y="201" width="8" height="39"/>
+ <SubTexture name="Graphic/shape 531" x="261" y="174" width="23" height="45"/>
+ <SubTexture name="Graphic/shape 532" x="571" y="559" width="22" height="15"/>
+ <SubTexture name="Graphic/shape 533" x="955" y="418" width="18" height="12"/>
+ <SubTexture name="Graphic/shape 534" x="980" y="201" width="7" height="10"/>
+ <SubTexture name="Graphic/shape 535" x="980" y="212" width="7" height="10"/>
+ <SubTexture name="MovieClip/sprite 539" x="997" y="118" width="24" height="51"/>
+ <SubTexture name="Graphic/shape 540" x="579" y="297" width="26" height="26"/>
+ <SubTexture name="MovieClip/sprite 542" x="453" y="844" width="35" height="18"/>
+ <SubTexture name="Graphic/shape 543" x="893" y="174" width="9" height="56"/>
+ <SubTexture name="Graphic/shape 544" x="277" y="275" width="16" height="36"/>
+ <SubTexture name="Graphic/shape 545" x="759" y="649" width="33" height="33"/>
+ <SubTexture name="Graphic/shape 546" x="300" y="180" width="9" height="50"/>
+ <SubTexture name="Graphic/shape 547" x="501" y="59" width="5" height="69"/>
+ <SubTexture name="Graphic/shape 548" x="566" y="233" width="15" height="41"/>
+ <SubTexture name="Graphic/shape 550" x="781" y="307" width="14" height="32"/>
+ <SubTexture name="Graphic/shape 551" x="561" y="347" width="16" height="31"/>
+ <SubTexture name="Graphic/shape 552" x="487" y="275" width="8" height="32"/>
+ <SubTexture name="Graphic/shape 553" x="396" y="230" width="12" height="40"/>
+ <SubTexture name="Graphic/shape 554" x="280" y="232" width="15" height="42"/>
+ <SubTexture name="Graphic/shape 555" x="473" y="271" width="13" height="30"/>
+ <SubTexture name="Graphic/shape 556" x="903" y="92" width="6" height="28"/>
+ <SubTexture name="Graphic/shape 557" x="980" y="277" width="11" height="27"/>
+ <SubTexture name="Graphic/shape 558" x="673" y="198" width="37" height="55"/>
+ <SubTexture name="Graphic/shape 559" x="871" y="174" width="21" height="46"/>
+ <SubTexture name="MovieClip/sprite 561" x="259" y="799" width="29" height="18"/>
+ <SubTexture name="Graphic/shape 562" x="984" y="849" width="32" height="18"/>
+ <SubTexture name="Graphic/shape 563" x="371" y="115" width="19" height="57"/>
+ <SubTexture name="Graphic/shape 564" x="998" y="0" width="23" height="57"/>
+ <SubTexture name="Graphic/shape 565" x="416" y="853" width="31" height="15"/>
+ <SubTexture name="Graphic/shape 566" x="268" y="269" width="8" height="34"/>
+ <SubTexture name="Graphic/shape 567" x="255" y="220" width="12" height="49"/>
+ <SubTexture name="Graphic/shape 568" x="782" y="267" width="14" height="39"/>
+ <SubTexture name="Graphic/shape 569" x="265" y="541" width="21" height="13"/>
+ <SubTexture name="Graphic/shape 570" x="555" y="253" width="8" height="37"/>
+ <SubTexture name="Graphic/shape 571" x="576" y="519" width="20" height="20"/>
+ <SubTexture name="MovieClip/sprite 573" x="106" y="848" width="35" height="17"/>
+ <SubTexture name="Graphic/shape 574" x="0" y="851" width="32" height="16"/>
+ <SubTexture name="Graphic/shape 575" x="296" y="267" width="13" height="34"/>
+ <SubTexture name="Graphic/shape 576" x="884" y="359" width="15" height="28"/>
+ <SubTexture name="Graphic/shape 577" x="944" y="281" width="12" height="25"/>
+ <SubTexture name="Graphic/shape 578" x="993" y="328" width="30" height="20"/>
+ <SubTexture name="Graphic/shape 579" x="849" y="842" width="35" height="16"/>
+ <SubTexture name="Graphic/shape 580" x="883" y="411" width="17" height="18"/>
+ <SubTexture name="Graphic/shape 581" x="968" y="463" width="16" height="9"/>
+ <SubTexture name="MovieClip/sprite 583" x="259" y="781" width="30" height="17"/>
+ <SubTexture name="Graphic/shape 584" x="290" y="123" width="9" height="59"/>
+ <SubTexture name="Graphic/shape 585" x="968" y="473" width="16" height="10"/>
+ <SubTexture name="Graphic/shape 572" x="34" y="846" width="35" height="17"/>
+ <SubTexture name="Graphic/shape 586" x="416" y="832" width="36" height="20"/>
+ <SubTexture name="Graphic/shape 587" x="593" y="125" width="18" height="48"/>
+ <SubTexture name="Graphic/shape 588" x="285" y="183" width="12" height="48"/>
+ <SubTexture name="Graphic/shape 589" x="749" y="524" width="19" height="19"/>
+ <SubTexture name="Graphic/shape 590" x="960" y="143" width="27" height="57"/>
+ <SubTexture name="Graphic/shape 591" x="597" y="59" width="14" height="65"/>
+ <SubTexture name="Graphic/shape 592" x="266" y="479" width="24" height="18"/>
+ <SubTexture name="Graphic/shape 593" x="266" y="520" width="20" height="20"/>
+ <SubTexture name="Graphic/shape 594" x="558" y="402" width="17" height="24"/>
+ <SubTexture name="Graphic/shape 595" x="974" y="413" width="17" height="16"/>
+ <SubTexture name="Graphic/shape 596" x="955" y="393" width="17" height="24"/>
+ <SubTexture name="Graphic/shape 597" x="456" y="262" width="16" height="36"/>
+ <SubTexture name="Graphic/shape 598" x="578" y="380" width="26" height="23"/>
+ <SubTexture name="Graphic/shape 599" x="887" y="268" width="13" height="32"/>
+ <SubTexture name="Graphic/shape 600" x="795" y="117" width="13" height="54"/>
+ <SubTexture name="Graphic/shape 601" x="470" y="335" width="14" height="28"/>
+ <SubTexture name="Graphic/shape 602" x="487" y="229" width="11" height="44"/>
+ <SubTexture name="Graphic/shape 603" x="504" y="833" width="38" height="17"/>
+ <SubTexture name="Graphic/shape 604" x="268" y="115" width="20" height="58"/>
+ <SubTexture name="Graphic/shape 605" x="958" y="201" width="21" height="40"/>
+ <SubTexture name="Graphic/shape 606" x="566" y="139" width="24" height="49"/>
+ <SubTexture name="Graphic/shape 607" x="797" y="59" width="12" height="57"/>
+ <SubTexture name="Graphic/shape 608" x="262" y="569" width="22" height="15"/>
+ <SubTexture name="Graphic/shape 609" x="998" y="58" width="21" height="59"/>
+ <SubTexture name="Graphic/shape 610" x="478" y="118" width="15" height="58"/>
+ <SubTexture name="Graphic/shape 611" x="762" y="570" width="30" height="16"/>
+ <SubTexture name="Graphic/shape 612" x="396" y="122" width="15" height="57"/>
+ <SubTexture name="Graphic/shape 613" x="955" y="445" width="18" height="10"/>
+ <SubTexture name="Graphic/shape 614" x="949" y="145" width="9" height="55"/>
+ <SubTexture name="Graphic/shape 615" x="395" y="271" width="13" height="32"/>
+ <SubTexture name="Graphic/shape 616" x="819" y="819" width="42" height="16"/>
+ <SubTexture name="Graphic/shape 617" x="396" y="180" width="12" height="49"/>
+ <SubTexture name="Graphic/shape 618" x="471" y="302" width="14" height="32"/>
+ <SubTexture name="Graphic/shape 619" x="697" y="853" width="28" height="18"/>
+ <SubTexture name="Graphic/shape 620" x="993" y="378" width="25" height="25"/>
+ <SubTexture name="Graphic/shape 621" x="393" y="338" width="14" height="24"/>
+ <SubTexture name="Graphic/shape 622" x="988" y="191" width="7" height="44"/>
+ <SubTexture name="Graphic/shape 623" x="294" y="335" width="14" height="29"/>
+ <SubTexture name="Graphic/shape 624" x="265" y="555" width="21" height="13"/>
+ <SubTexture name="Graphic/shape 625" x="291" y="444" width="13" height="15"/>
+ <SubTexture name="MovieClip/sprite 629" x="289" y="799" width="42" height="19"/>
+ <SubTexture name="Graphic/shape 630" x="293" y="61" width="18" height="61"/>
+ <SubTexture name="Graphic/shape 631" x="993" y="349" width="23" height="28"/>
+ <SubTexture name="Graphic/shape 632" x="762" y="551" width="30" height="18"/>
+ <SubTexture name="Graphic/shape 633" x="543" y="840" width="37" height="15"/>
+ <SubTexture name="Graphic/shape 634" x="462" y="827" width="41" height="16"/>
+ <SubTexture name="Graphic/shape 635" x="862" y="824" width="41" height="17"/>
+ <SubTexture name="Graphic/shape 636" x="261" y="761" width="28" height="19"/>
+ <SubTexture name="MovieClip/sprite 638" x="996" y="170" width="23" height="49"/>
+ <SubTexture name="Graphic/shape 639" x="944" y="307" width="12" height="19"/>
+ <SubTexture name="Graphic/shape 640" x="474" y="230" width="12" height="40"/>
+ <SubTexture name="Graphic/shape 641" x="453" y="393" width="16" height="19"/>
+ <SubTexture name="Graphic/shape 642" x="591" y="175" width="19" height="47"/>
+ <SubTexture name="Graphic/shape 643" x="291" y="365" width="17" height="27"/>
+ <SubTexture name="Graphic/shape 644" x="298" y="231" width="11" height="35"/>
+ <SubTexture name="Graphic/shape 645" x="955" y="339" width="20" height="28"/>
+ <SubTexture name="Graphic/shape 646" x="564" y="275" width="14" height="38"/>
+ <SubTexture name="Graphic/shape 647" x="780" y="365" width="15" height="21"/>
+ <SubTexture name="Graphic/shape 648" x="455" y="334" width="14" height="29"/>
+ <SubTexture name="Graphic/shape 649" x="658" y="301" width="10" height="26"/>
+ <SubTexture name="Graphic/shape 650" x="470" y="384" width="14" height="17"/>
+ <SubTexture name="Graphic/shape 651" x="788" y="224" width="16" height="42"/>
+ <SubTexture name="Graphic/shape 652" x="268" y="220" width="11" height="48"/>
+ <SubTexture name="Graphic/shape 653" x="145" y="847" width="32" height="18"/>
+ <SubTexture name="Graphic/shape 654" x="266" y="365" width="24" height="24"/>
+ <SubTexture name="Graphic/shape 655" x="958" y="242" width="21" height="33"/>
+ <SubTexture name="Graphic/shape 656" x="891" y="231" width="9" height="36"/>
+ <SubTexture name="Graphic/shape 657" x="574" y="540" width="22" height="18"/>
+ <SubTexture name="Graphic/shape 658" x="470" y="797" width="34" height="29"/>
+ <SubTexture name="Graphic/shape 659" x="945" y="831" width="38" height="18"/>
+ <SubTexture name="Graphic/shape 660" x="266" y="440" width="24" height="20"/>
+ <SubTexture name="Graphic/shape 661" x="582" y="263" width="23" height="33"/>
+ <SubTexture name="Graphic/shape 662" x="885" y="301" width="15" height="33"/>
+ <SubTexture name="MovieClip/sprite 664" x="291" y="415" width="17" height="14"/>
+ <SubTexture name="Graphic/shape 665" x="769" y="534" width="23" height="16"/>
+ <SubTexture name="Graphic/shape 666" x="955" y="431" width="18" height="13"/>
+ <SubTexture name="Graphic/shape 667" x="203" y="87" width="5" height="33"/>
+ <SubTexture name="Graphic/shape 668" x="578" y="351" width="23" height="28"/>
+ <SubTexture name="Graphic/shape 669" x="980" y="236" width="13" height="40"/>
+ <SubTexture name="Graphic/shape 670" x="364" y="213" width="31" height="35"/>
+ <SubTexture name="Graphic/shape 671" x="287" y="846" width="35" height="17"/>
+ <SubTexture name="MovieClip/sprite 673" x="980" y="305" width="12" height="19"/>
+ <SubTexture name="Graphic/shape 674" x="761" y="265" width="20" height="33"/>
+ <SubTexture name="Graphic/shape 675" x="396" y="61" width="15" height="60"/>
+ <SubTexture name="Graphic/shape 676" x="248" y="859" width="28" height="16"/>
+ <SubTexture name="Graphic/shape 677" x="587" y="223" width="20" height="39"/>
+ <SubTexture name="Graphic/shape 678" x="145" y="824" width="34" height="22"/>
+ <SubTexture name="Graphic/shape 679" x="622" y="826" width="36" height="21"/>
+ <SubTexture name="Graphic/shape 680" x="548" y="558" width="22" height="15"/>
+ <SubTexture name="Graphic/shape 681" x="765" y="190" width="22" height="39"/>
+ <SubTexture name="Graphic/shape 682" x="456" y="217" width="17" height="44"/>
+ <SubTexture name="Graphic/shape 683" x="885" y="335" width="15" height="23"/>
+ <SubTexture name="Graphic/shape 684" x="494" y="118" width="6" height="27"/>
+ <SubTexture name="Graphic/shape 685" x="988" y="143" width="7" height="47"/>
+ <SubTexture name="Graphic/shape 686" x="958" y="276" width="21" height="29"/>
+ <SubTexture name="Graphic/shape 687" x="456" y="299" width="14" height="34"/>
+ <SubTexture name="MovieClip/sprite 521" x="507" y="59" width="2" height="37"/>
+ <SubTexture name="MovieClip/sprite 549" x="1020" y="58" width="2" height="37"/>
+ <SubTexture name="__dbTextures/cat2.foot.wool_cl/wool_cl_0" x="749" y="637" width="9" height="13"/>
+ <SubTexture name="__dbTextures/cat2.foot.wool_cl/wool_cl_1" x="276" y="628" width="9" height="13"/>
+ <SubTexture name="__dbTextures/cat2.foot.wool_cl/wool_cl_2" x="570" y="667" width="9" height="13"/>
+ <SubTexture name="__dbTextures/cat2.foot.wool_cl/wool_cl_3" x="387" y="688" width="9" height="13"/>
+ <SubTexture name="__dbTextures/cat2.foot.wool_cl/wool_cl_4" x="873" y="658" width="9" height="13"/>
+ <SubTexture name="__dbTextures/cat2.foot.wool_cl/wool_cl_5" x="1014" y="695" width="9" height="13"/>
+ <SubTexture name="__dbTextures/cat2.foot.wool_cl/wool_cl_6" x="1011" y="653" width="9" height="13"/>
+ <SubTexture name="__dbTextures/cat2.foot.wool_cl/wool_cl_7" x="279" y="614" width="9" height="13"/>
+ <SubTexture name="__dbTextures/cat2.foot.wool_cl/wool_cl_8" x="633" y="599" width="9" height="13"/>
+ <SubTexture name="__dbTextures/cat2.foot.wool_cl/wool_cl_9" x="338" y="608" width="9" height="13"/>
+ <SubTexture name="__dbTextures/cat2.foot.wool_cl/wool_cl_10" x="871" y="700" width="9" height="13"/>
+ <SubTexture name="__dbTextures/cat2.foot.wool_cl/wool_cl_11" x="582" y="600" width="9" height="13"/>
+ <SubTexture name="__dbTextures/cat2.foot.wool_cl/wool_cl_18" x="265" y="648" width="9" height="13"/>
+ <SubTexture name="__dbTextures/cat2.foot.wool_cl/wool_cl_19" x="740" y="651" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_1" x="934" y="704" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_3" x="580" y="656" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_4" x="580" y="742" width="9" height="6"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_5" x="280" y="743" width="9" height="6"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_6" x="255" y="662" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_7" x="919" y="749" width="10" height="10"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_8" x="871" y="743" width="9" height="6"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_9" x="256" y="620" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_10" x="929" y="648" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_11" x="381" y="749" width="10" height="9"/>
+ <SubTexture name="Symbol 715" x="570" y="653" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_14" x="1004" y="695" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_18" x="125" y="628" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_19" x="871" y="736" width="9" height="6"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_20" x="280" y="684" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_21" x="934" y="718" width="9" height="10"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_22" x="250" y="718" width="9" height="10"/>
+ <SubTexture name="Symbol 722" x="471" y="684" width="9" height="13"/>
+ <SubTexture name="Symbol 723" x="871" y="714" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_26" x="924" y="676" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_27" x="435" y="745" width="9" height="6"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_28" x="260" y="745" width="9" height="6"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_29" x="465" y="744" width="9" height="6"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_30" x="1004" y="748" width="9" height="6"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_34" x="280" y="698" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_36" x="580" y="684" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_37" x="445" y="705" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_38" x="521" y="691" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_39" x="638" y="699" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_40" x="959" y="635" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_41" x="949" y="648" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_42" x="338" y="650" width="9" height="13"/>
+ <SubTexture name="Symbol 737" x="473" y="656" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_46" x="451" y="663" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_48" x="235" y="621" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_50" x="929" y="634" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_51" x="473" y="642" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_52" x="463" y="656" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_53" x="740" y="665" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_54" x="451" y="677" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_55" x="250" y="690" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_56" x="445" y="691" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_57" x="260" y="704" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_58" x="743" y="705" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_59" x="435" y="678" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_60" x="743" y="743" width="9" height="6"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_62" x="230" y="705" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_63" x="643" y="577" width="10" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_65" x="455" y="743" width="9" height="6"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_67" x="643" y="671" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_68" x="275" y="656" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_69" x="240" y="714" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_70" x="939" y="634" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_71" x="876" y="630" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_72" x="435" y="692" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_73" x="455" y="712" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_74" x="230" y="691" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_75" x="124" y="670" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_76" x="1014" y="740" width="9" height="6"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_77" x="733" y="691" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_78" x="1004" y="741" width="9" height="6"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_80" x="246" y="616" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_81" x="474" y="576" width="10" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_82" x="443" y="636" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_83" x="266" y="620" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_84" x="465" y="698" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_85" x="949" y="662" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_86" x="225" y="748" width="11" height="9"/>
+ <SubTexture name="Symbol 773" x="580" y="642" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_88" x="392" y="468" width="15" height="10"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_89" x="954" y="743" width="9" height="5"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_90" x="731" y="751" width="9" height="10"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_91" x="949" y="634" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_92" x="643" y="615" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_93" x="285" y="656" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_94" x="270" y="735" width="9" height="7"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_95" x="628" y="734" width="9" height="7"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_96" x="1014" y="747" width="9" height="6"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_97" x="280" y="735" width="9" height="7"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_98" x="125" y="642" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_99" x="876" y="616" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_100" x="524" y="663" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_101" x="242" y="454" width="10" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_102" x="943" y="462" width="11" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_103" x="238" y="728" width="11" height="10"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_104" x="943" y="448" width="11" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_105" x="270" y="698" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_106" x="633" y="669" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_107" x="455" y="726" width="9" height="8"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_108" x="943" y="489" width="11" height="12"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_109" x="628" y="697" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_110" x="338" y="636" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_111" x="338" y="594" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_112" x="242" y="468" width="10" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_113" x="445" y="745" width="9" height="6"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_114" x="115" y="712" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_115" x="953" y="561" width="12" height="11"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_116" x="633" y="641" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_117" x="449" y="587" width="11" height="10"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_118" x="471" y="670" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_119" x="285" y="576" width="10" height="13"/>
+ <SubTexture name="Symbol 806" x="581" y="614" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_121" x="954" y="705" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_122" x="270" y="712" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_123" x="638" y="743" width="9" height="6"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_124" x="255" y="648" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_125" x="643" y="643" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_126" x="940" y="620" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_127" x="749" y="623" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_128" x="733" y="705" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_129" x="643" y="657" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_130" x="524" y="649" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_131" x="628" y="742" width="9" height="6"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_132" x="638" y="713" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_134" x="237" y="748" width="11" height="9"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_135" x="580" y="749" width="9" height="5"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_136" x="240" y="672" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_141" x="570" y="681" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_142" x="441" y="664" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_143" x="125" y="614" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_144" x="461" y="583" width="10" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_145" x="633" y="627" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_146" x="934" y="729" width="9" height="8"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_147" x="633" y="613" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_148" x="570" y="709" width="9" height="12"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_149" x="638" y="685" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_150" x="628" y="711" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_151" x="453" y="635" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_152" x="235" y="649" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_153" x="930" y="620" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_154" x="524" y="635" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_155" x="464" y="628" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_156" x="934" y="676" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_157" x="944" y="690" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_158" x="521" y="705" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_159" x="580" y="698" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_160" x="877" y="578" width="10" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_161" x="939" y="582" width="10" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_162" x="391" y="580" width="10" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_165" x="954" y="677" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_166" x="873" y="672" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_167" x="338" y="664" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_168" x="245" y="658" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_169" x="580" y="726" width="9" height="8"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_170" x="638" y="737" width="9" height="5"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_171" x="485" y="413" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_172" x="952" y="760" width="10" height="7"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_173" x="338" y="622" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_174" x="260" y="690" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_175" x="240" y="686" width="9" height="13"/>
+ <SubTexture name="Symbol 855" x="471" y="614" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_178" x="270" y="684" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_179" x="250" y="704" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_180" x="453" y="649" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_181" x="245" y="644" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_182" x="333" y="692" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_183" x="963" y="583" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_184" x="389" y="632" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_186" x="280" y="712" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_187" x="1014" y="709" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_188" x="643" y="629" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_189" x="286" y="628" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_190" x="580" y="628" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_191" x="265" y="634" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_192" x="235" y="635" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_193" x="532" y="583" width="10" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_194" x="275" y="642" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_195" x="570" y="695" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_196" x="124" y="656" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_197" x="461" y="684" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_198" x="924" y="704" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_199" x="445" y="738" width="9" height="6"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_200" x="950" y="620" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_201" x="524" y="621" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_203" x="943" y="434" width="11" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_205" x="390" y="618" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_206" x="876" y="644" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_207" x="441" y="650" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_208" x="230" y="663" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_209" x="387" y="660" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_210" x="1011" y="667" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_211" x="285" y="670" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_212" x="1004" y="709" width="9" height="12"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_213" x="1011" y="681" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_214" x="124" y="684" width="9" height="13"/>
+ <SubTexture name="Symbol 890" x="873" y="686" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_216" x="249" y="578" width="10" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_217" x="924" y="690" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_218" x="139" y="450" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_219" x="954" y="691" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_220" x="240" y="700" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_221" x="749" y="585" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_222" x="385" y="702" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_224" x="939" y="648" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_225" x="465" y="712" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_226" x="230" y="677" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_227" x="255" y="634" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_228" x="443" y="622" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_229" x="580" y="670" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_230" x="939" y="662" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_231" x="580" y="712" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_232" x="944" y="704" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_233" x="934" y="690" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_234" x="628" y="683" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_236" x="389" y="646" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_237" x="455" y="698" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_238" x="1004" y="723" width="9" height="8"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_239" x="249" y="755" width="11" height="8"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_240" x="285" y="642" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_241" x="260" y="718" width="9" height="10"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_242" x="333" y="678" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_243" x="463" y="642" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_244" x="435" y="706" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_245" x="929" y="662" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_246" x="250" y="676" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_247" x="944" y="676" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_248" x="944" y="729" width="9" height="8"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_249" x="245" y="630" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_250" x="465" y="726" width="9" height="9"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_251" x="242" y="440" width="10" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_252" x="943" y="738" width="10" height="10"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_253" x="638" y="727" width="9" height="9"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_254" x="1014" y="732" width="9" height="7"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_255" x="270" y="743" width="9" height="6"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_256" x="1004" y="732" width="9" height="8"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_257" x="265" y="662" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_258" x="570" y="639" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_259" x="114" y="726" width="10" height="10"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_260" x="959" y="663" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_261" x="330" y="706" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_262" x="959" y="649" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_263" x="524" y="677" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_264" x="743" y="691" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_265" x="250" y="737" width="9" height="7"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_266" x="944" y="718" width="9" height="10"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_267" x="952" y="608" width="10" height="11"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_268" x="633" y="655" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_269" x="732" y="719" width="10" height="10"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_270" x="275" y="670" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_271" x="520" y="730" width="10" height="10"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_272" x="243" y="426" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_273" x="569" y="734" width="10" height="10"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_274" x="570" y="625" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_275" x="454" y="621" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_276" x="138" y="464" width="10" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_277" x="960" y="621" width="9" height="13"/>
+ <SubTexture name="Symbol 951" x="461" y="670" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_280" x="385" y="728" width="9" height="9"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_281" x="445" y="728" width="9" height="9"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_282" x="387" y="674" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_283" x="260" y="676" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_284" x="237" y="739" width="11" height="8"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_285" x="464" y="761" width="10" height="7"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_286" x="114" y="737" width="10" height="10"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_287" x="237" y="583" width="10" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_288" x="139" y="436" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_289" x="115" y="698" width="9" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_290" x="138" y="478" width="10" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_291" x="138" y="492" width="10" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_292" x="131" y="576" width="10" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_293" x="247" y="764" width="11" height="6"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_294" x="1003" y="764" width="11" height="6"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_295" x="113" y="767" width="11" height="6"/>
+ <SubTexture name="__dbTextures/Symbol 969/p2_296" x="568" y="764" width="11" height="6"/>
+ <SubTexture name="__dbTextures/Symbol 985/wool_cl_0" x="772" y="490" width="21" height="21"/>
+ <SubTexture name="__dbTextures/Symbol 985/wool_cl_1" x="555" y="474" width="21" height="21"/>
+ <SubTexture name="__dbTextures/Symbol 985/wool_cl_2" x="554" y="518" width="21" height="21"/>
+ <SubTexture name="__dbTextures/Symbol 985/wool_cl_3" x="577" y="475" width="21" height="21"/>
+ <SubTexture name="__dbTextures/Symbol 985/wool_cl_4" x="750" y="480" width="21" height="21"/>
+ <SubTexture name="__dbTextures/Symbol 985/wool_cl_5" x="555" y="452" width="21" height="21"/>
+ <SubTexture name="__dbTextures/Symbol 985/wool_cl_6" x="772" y="468" width="21" height="21"/>
+ <SubTexture name="__dbTextures/Symbol 985/wool_cl_7" x="774" y="446" width="21" height="21"/>
+ <SubTexture name="__dbTextures/Symbol 985/wool_cl_8" x="771" y="512" width="21" height="21"/>
+ <SubTexture name="__dbTextures/Symbol 985/wool_cl_9" x="576" y="497" width="21" height="21"/>
+ <SubTexture name="__dbTextures/Symbol 985/wool_cl_10" x="750" y="458" width="21" height="21"/>
+ <SubTexture name="__dbTextures/Symbol 985/wool_cl_11" x="749" y="502" width="21" height="21"/>
+ <SubTexture name="__dbTextures/Symbol 985/wool_cl_18" x="554" y="496" width="21" height="21"/>
+ <SubTexture name="__dbTextures/Symbol 985/wool_cl_19" x="266" y="498" width="21" height="21"/>
+ <SubTexture name="__dbTextures/cat2.wool_cl/wool_cl_0" x="290" y="739" width="37" height="35"/>
+ <SubTexture name="__dbTextures/cat2.wool_cl/wool_cl_1" x="791" y="735" width="37" height="35"/>
+ <SubTexture name="__dbTextures/cat2.wool_cl/wool_cl_2" x="833" y="729" width="37" height="35"/>
+ <SubTexture name="__dbTextures/cat2.wool_cl/wool_cl_3" x="187" y="727" width="37" height="35"/>
+ <SubTexture name="__dbTextures/cat2.wool_cl/wool_cl_4" x="881" y="738" width="37" height="35"/>
+ <SubTexture name="__dbTextures/cat2.wool_cl/wool_cl_5" x="0" y="736" width="37" height="35"/>
+ <SubTexture name="__dbTextures/cat2.wool_cl/wool_cl_6" x="531" y="719" width="37" height="35"/>
+ <SubTexture name="__dbTextures/cat2.wool_cl/wool_cl_7" x="475" y="744" width="37" height="35"/>
+ <SubTexture name="__dbTextures/cat2.wool_cl/wool_cl_8" x="77" y="688" width="37" height="36"/>
+ <SubTexture name="__dbTextures/cat2.wool_cl/wool_cl_9" x="38" y="724" width="37" height="35"/>
+ <SubTexture name="__dbTextures/cat2.wool_cl/wool_cl_10" x="0" y="700" width="37" height="34"/>
+ <SubTexture name="__dbTextures/cat2.wool_cl/wool_cl_11" x="39" y="687" width="37" height="36"/>
+ <SubTexture name="__dbTextures/cat2.wool_cl/wool_cl_18" x="42" y="616" width="41" height="35"/>
+ <SubTexture name="__dbTextures/cat2.wool_cl/wool_cl_19" x="833" y="692" width="37" height="36"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_1" x="660" y="535" width="44" height="37"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_2" x="794" y="479" width="45" height="39"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_3" x="496" y="296" width="64" height="31"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_4" x="291" y="430" width="17" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_5" x="360" y="294" width="32" height="34"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_6" x="405" y="525" width="45" height="37"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_7" x="490" y="530" width="44" height="38"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_9" x="969" y="653" width="41" height="35"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_10" x="697" y="834" width="36" height="18"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_12" x="910" y="68" width="49" height="76"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_13" x="0" y="510" width="41" height="38"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_14" x="524" y="755" width="43" height="26"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_15" x="590" y="710" width="37" height="34"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_16" x="770" y="854" width="35" height="11"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_17" x="72" y="795" width="35" height="30"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_18" x="348" y="545" width="42" height="38"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_20" x="964" y="689" width="39" height="33"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_22" x="740" y="808" width="43" height="17"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_23" x="708" y="489" width="40" height="41"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_24" x="496" y="367" width="44" height="44"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_27" x="379" y="797" width="49" height="16"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_28" x="827" y="790" width="49" height="16"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_29" x="470" y="780" width="49" height="16"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_30" x="379" y="780" width="49" height="16"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_31" x="993" y="292" width="30" height="35"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_33" x="606" y="301" width="51" height="40"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_34" x="883" y="669" width="40" height="34"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_35" x="711" y="219" width="49" height="46"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_36" x="985" y="467" width="38" height="42"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_37" x="213" y="832" width="36" height="19"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_38" x="379" y="814" width="36" height="23"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_39" x="688" y="746" width="42" height="28"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_40" x="84" y="651" width="39" height="36"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_41" x="992" y="404" width="31" height="28"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_42" x="901" y="261" width="42" height="47"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_43" x="841" y="445" width="40" height="45"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_46" x="734" y="827" width="41" height="15"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_47" x="669" y="407" width="38" height="45"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_48" x="836" y="615" width="39" height="38"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_49" x="903" y="204" width="41" height="56"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_50" x="161" y="162" width="42" height="57"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_51" x="810" y="103" width="64" height="45"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_52" x="692" y="713" width="39" height="32"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_53" x="648" y="718" width="39" height="32"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_54" x="584" y="815" width="37" height="22"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_55" x="193" y="469" width="46" height="38"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_56" x="659" y="852" width="37" height="10"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_57" x="623" y="799" width="36" height="25"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_58" x="408" y="311" width="46" height="43"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_59" x="547" y="815" width="36" height="24"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_60" x="70" y="850" width="35" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_61" x="287" y="551" width="12" height="12"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_62" x="653" y="682" width="38" height="35"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_63" x="877" y="774" width="40" height="26"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_64" x="605" y="384" width="47" height="40"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_65" x="393" y="304" width="14" height="33"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_67" x="393" y="746" width="37" height="33"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_68" x="889" y="596" width="40" height="37"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_70" x="796" y="438" width="44" height="40"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_71" x="793" y="667" width="39" height="35"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_72" x="753" y="749" width="37" height="31"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_73" x="877" y="802" width="39" height="21"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_74" x="590" y="672" width="37" height="37"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_75" x="0" y="549" width="41" height="37"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_76" x="300" y="525" width="47" height="35"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_77" x="108" y="824" width="36" height="23"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_78" x="361" y="249" width="33" height="44"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_80" x="841" y="400" width="41" height="44"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_81" x="838" y="574" width="38" height="40"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_82" x="881" y="705" width="39" height="32"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_83" x="104" y="87" width="57" height="57"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_84" x="901" y="309" width="41" height="47"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_85" x="711" y="266" width="47" height="47"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_86" x="290" y="775" width="47" height="23"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_87" x="0" y="196" width="52" height="45"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_88" x="541" y="375" width="16" height="27"/>
+ <SubTexture name="Symbol 1389" x="687" y="775" width="58" height="20"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_90" x="805" y="234" width="55" height="41"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_91" x="41" y="652" width="41" height="34"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_92" x="711" y="314" width="45" height="44"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_93" x="605" y="342" width="48" height="41"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_94" x="53" y="159" width="50" height="51"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_95" x="590" y="637" width="42" height="34"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_96" x="53" y="211" width="48" height="49"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_97" x="796" y="311" width="52" height="38"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_98" x="412" y="118" width="65" height="43"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_99" x="201" y="301" width="52" height="39"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_100" x="495" y="453" width="45" height="39"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_101" x="597" y="534" width="49" height="31"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_102" x="809" y="149" width="61" height="40"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_103" x="42" y="505" width="48" height="33"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_104" x="125" y="760" width="58" height="23"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_105" x="309" y="355" width="45" height="42"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_106" x="970" y="624" width="53" height="28"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_107" x="0" y="587" width="41" height="36"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_108" x="963" y="757" width="39" height="30"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_109" x="895" y="489" width="47" height="36"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_110" x="0" y="291" width="47" height="44"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_111" x="594" y="566" width="48" height="32"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_112" x="203" y="258" width="51" height="42"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_113" x="409" y="266" width="46" height="44"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_114" x="104" y="145" width="56" height="48"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_115" x="412" y="162" width="49" height="51"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_116" x="499" y="253" width="55" height="42"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_117" x="892" y="562" width="46" height="33"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_118" x="475" y="716" width="44" height="27"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_119" x="408" y="442" width="42" height="42"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_120" x="500" y="217" width="65" height="35"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_121" x="343" y="698" width="41" height="30"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_122" x="102" y="288" width="47" height="45"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_123" x="669" y="307" width="41" height="48"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_124" x="297" y="594" width="40" height="37"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_125" x="592" y="599" width="40" height="37"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_126" x="402" y="600" width="40" height="37"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_127" x="483" y="607" width="40" height="37"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_128" x="654" y="608" width="40" height="37"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_129" x="38" y="760" width="37" height="31"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_130" x="343" y="729" width="37" height="35"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_131" x="250" y="818" width="37" height="22"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_132" x="190" y="694" width="39" height="32"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_133" x="775" y="423" width="20" height="22"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_134" x="348" y="584" width="41" height="38"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_135" x="48" y="345" width="46" height="42"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_136" x="310" y="215" width="50" height="45"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_137" x="392" y="439" width="15" height="12"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_138" x="35" y="823" width="36" height="22"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_139" x="796" y="394" width="44" height="43"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_140" x="43" y="388" width="49" height="38"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_141" x="964" y="723" width="39" height="33"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_142" x="712" y="115" width="52" height="56"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_143" x="431" y="770" width="38" height="31"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_144" x="734" y="843" width="35" height="18"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_145" x="296" y="632" width="41" height="34"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_146" x="733" y="679" width="24" height="11"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_147" x="849" y="313" width="35" height="37"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_148" x="149" y="516" width="43" height="38"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_149" x="193" y="584" width="41" height="38"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_150" x="310" y="261" width="49" height="45"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_152" x="708" y="445" width="41" height="43"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_153" x="979" y="549" width="41" height="39"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_154" x="348" y="623" width="40" height="36"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_155" x="695" y="674" width="37" height="38"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_156" x="0" y="624" width="40" height="36"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_157" x="483" y="645" width="40" height="35"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_158" x="311" y="166" width="52" height="47"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_159" x="608" y="260" width="55" height="40"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_160" x="796" y="350" width="46" height="43"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_161" x="695" y="641" width="44" height="32"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_162" x="190" y="623" width="44" height="32"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_163" x="904" y="831" width="40" height="17"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_164" x="338" y="820" width="40" height="18"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_165" x="708" y="531" width="40" height="39"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_166" x="534" y="621" width="35" height="35"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_167" x="981" y="510" width="42" height="38"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_168" x="290" y="706" width="39" height="32"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_169" x="705" y="571" width="43" height="36"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_170" x="87" y="541" width="43" height="38"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_171" x="102" y="240" width="47" height="47"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_172" x="364" y="173" width="31" height="39"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_173" x="193" y="545" width="43" height="38"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_174" x="753" y="713" width="37" height="35"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_175" x="0" y="661" width="38" height="38"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_176" x="584" y="838" width="37" height="16"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_177" x="919" y="770" width="38" height="30"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_178" x="339" y="765" width="39" height="30"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_179" x="534" y="657" width="35" height="30"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_180" x="295" y="667" width="37" height="38"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_181" x="903" y="145" width="45" height="58"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_182" x="184" y="763" width="38" height="32"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_183" x="312" y="115" width="58" height="50"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_184" x="91" y="463" width="46" height="38"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_185" x="95" y="376" width="43" height="44"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_186" x="543" y="605" width="26" height="15"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_187" x="351" y="465" width="40" height="40"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_188" x="901" y="357" width="41" height="46"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_189" x="405" y="485" width="45" height="39"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_190" x="666" y="453" width="41" height="42"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_191" x="0" y="424" width="42" height="42"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_192" x="829" y="765" width="47" height="23"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_193" x="0" y="242" width="47" height="48"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_194" x="892" y="526" width="46" height="35"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_195" x="833" y="654" width="39" height="37"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_196" x="600" y="465" width="50" height="36"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_197" x="84" y="580" width="46" height="32"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_198" x="190" y="656" width="39" height="37"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_199" x="669" y="356" width="38" height="50"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_200" x="500" y="182" width="65" height="34"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_201" x="0" y="378" width="42" height="45"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_202" x="639" y="751" width="47" height="25"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_203" x="712" y="173" width="52" height="45"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_204" x="104" y="194" width="52" height="45"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_205" x="481" y="681" width="39" height="34"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_206" x="150" y="267" width="50" height="42"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_207" x="544" y="574" width="26" height="15"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_208" x="708" y="399" width="42" height="45"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_209" x="397" y="674" width="37" height="38"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_210" x="0" y="146" width="52" height="49"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_211" x="501" y="139" width="64" height="42"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_212" x="664" y="496" width="43" height="38"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_213" x="200" y="381" width="42" height="46"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_214" x="76" y="725" width="37" height="35"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_215" x="896" y="449" width="46" height="39"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_216" x="793" y="592" width="42" height="36"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_217" x="987" y="433" width="36" height="33"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_218" x="144" y="555" width="48" height="32"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_219" x="353" y="422" width="38" height="42"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_220" x="659" y="573" width="44" height="34"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_221" x="209" y="115" width="58" height="50"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_222" x="577" y="404" width="26" height="23"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_223" x="839" y="533" width="39" height="40"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_224" x="42" y="539" width="44" height="36"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_226" x="309" y="443" width="41" height="44"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_227" x="157" y="220" width="45" height="46"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_228" x="309" y="399" width="43" height="43"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_229" x="780" y="387" width="15" height="17"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_230" x="590" y="746" width="37" height="32"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_231" x="797" y="276" width="59" height="34"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_232" x="195" y="428" width="46" height="40"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_233" x="338" y="796" width="40" height="23"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_234" x="91" y="502" width="44" height="38"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_235" x="611" y="220" width="58" height="39"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_236" x="348" y="660" width="38" height="37"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_237" x="42" y="577" width="41" height="38"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_238" x="135" y="622" width="54" height="33"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_239" x="149" y="351" width="50" height="38"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_240" x="300" y="561" width="47" height="32"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_241" x="409" y="215" width="46" height="49"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_242" x="670" y="254" width="40" height="51"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_243" x="901" y="404" width="41" height="44"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_244" x="204" y="210" width="50" height="47"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_245" x="408" y="355" width="44" height="44"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_246" x="695" y="608" width="53" height="32"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_247" x="843" y="351" width="40" height="48"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_248" x="48" y="303" width="50" height="41"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_249" x="861" y="256" width="25" height="30"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_250" x="792" y="703" width="40" height="31"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_251" x="611" y="182" width="61" height="37"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_252" x="746" y="781" width="39" height="26"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_253" x="840" y="491" width="38" height="41"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_254" x="809" y="190" width="55" height="43"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_255" x="0" y="85" width="58" height="60"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_256" x="204" y="166" width="56" height="43"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_257" x="408" y="400" width="44" height="41"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_258" x="355" y="378" width="37" height="43"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_259" x="886" y="634" width="42" height="34"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_260" x="604" y="425" width="47" height="39"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_261" x="149" y="433" width="42" height="43"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_262" x="76" y="761" width="36" height="33"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_263" x="149" y="477" width="43" height="38"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_264" x="304" y="488" width="46" height="36"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_265" x="201" y="341" width="51" height="39"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_266" x="351" y="506" width="40" height="38"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_267" x="793" y="629" width="39" height="37"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_268" x="759" y="299" width="21" height="29"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_269" x="43" y="427" width="47" height="39"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_270" x="42" y="467" width="48" height="37"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_271" x="598" y="502" width="51" height="31"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_272" x="489" y="569" width="42" height="37"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_273" x="395" y="713" width="39" height="32"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_274" x="142" y="588" width="45" height="33"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_275" x="149" y="390" width="45" height="42"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_276" x="612" y="138" width="60" height="43"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_277" x="708" y="359" width="49" height="39"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_278" x="93" y="421" width="45" height="40"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_279" x="495" y="412" width="45" height="40"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_280" x="0" y="467" width="41" height="42"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_281" x="84" y="613" width="40" height="37"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_282" x="99" y="334" width="49" height="41"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_283" x="310" y="307" width="44" height="46"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_284" x="496" y="328" width="52" height="38"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_285" x="612" y="59" width="63" height="78"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_286" x="491" y="493" width="49" height="36"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_287" x="150" y="310" width="50" height="40"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_288" x="48" y="261" width="53" height="40"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_289" x="181" y="796" width="35" height="30"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_290" x="793" y="556" width="44" height="35"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_291" x="974" y="589" width="43" height="34"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_292" x="0" y="336" width="47" height="41"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_293" x="558" y="856" width="35" height="10"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_294" x="323" y="857" width="35" height="10"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_295" x="806" y="854" width="35" height="10"/>
+ <SubTexture name="__dbTextures/Symbol 1595/h2_296" x="522" y="856" width="35" height="10"/>
+ <SubTexture name="Graphic/shape 1597" x="578" y="324" width="26" height="26"/>
+ <SubTexture name="Graphic/shape 1598" x="252" y="552" width="12" height="12"/>
+ <SubTexture name="Graphic/shape 1599" x="254" y="324" width="11" height="20"/>
+ <SubTexture name="Graphic/shape 1600" x="780" y="341" width="15" height="22"/>
+ <SubTexture name="Graphic/shape 1601" x="435" y="737" width="9" height="7"/>
+ <SubTexture name="Graphic/shape 1602" x="260" y="737" width="9" height="7"/>
+ <SubTexture name="Graphic/shape 1603" x="250" y="841" width="36" height="17"/>
+ <SubTexture name="Graphic/shape 1604" x="819" y="807" width="49" height="11"/>
+ <SubTexture name="Graphic/shape 1605" x="268" y="312" width="25" height="25"/>
+ <SubTexture name="Graphic/shape 1606" x="178" y="853" width="33" height="14"/>
+ <SubTexture name="Graphic/shape 1607" x="266" y="415" width="24" height="24"/>
+ <SubTexture name="Graphic/shape 1608" x="254" y="302" width="13" height="21"/>
+ <SubTexture name="Graphic/shape 1609" x="213" y="852" width="34" height="14"/>
+ <SubTexture name="Graphic/shape 1610" x="108" y="811" width="49" height="11"/>
+ <SubTexture name="Graphic/shape 1611" x="684" y="797" width="55" height="12"/>
+ <SubTexture name="Graphic/shape 1612" x="994" y="255" width="22" height="36"/>
+ <SubTexture name="Graphic/shape 1613" x="976" y="325" width="16" height="30"/>
+ <SubTexture name="Graphic/shape 1614" x="958" y="788" width="57" height="11"/>
+ <SubTexture name="Graphic/shape 1615" x="554" y="540" width="19" height="16"/>
+ <SubTexture name="Graphic/shape 1616" x="577" y="428" width="23" height="23"/>
+ <SubTexture name="Graphic/shape 1617" x="260" y="585" width="24" height="10"/>
+ <SubTexture name="Graphic/shape 1618" x="872" y="862" width="33" height="5"/>
+ <SubTexture name="Graphic/shape 1619" x="453" y="364" width="16" height="28"/>
+ <SubTexture name="Graphic/shape 1620" x="577" y="452" width="22" height="22"/>
 </TextureAtlas>

@@ -9,6 +9,6 @@ class paper_new_mc extends std.MovieClip {
         this.paper_cl = this.createMovieClipSub("paper_cl");
         this.paper_clData_tx = this.paper_cl.createLabel("data_tx");
         this.pic_cl = this.createMovieClipSub("pic_cl");
-
+        this.pic_cl.mcMask = this.pic_cl.createMask(dragonBones.EventObject.START, "mask", "l3", "l4", "l5", "l6", "l7", "l8", "l9", "l10", "l11");
     }
 }
