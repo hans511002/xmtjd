@@ -30,7 +30,7 @@ module com.code {
                 Main.sav.data.tuto1 = 2;
                 this.tuto_battle = true;
                 this.pause_cl.home_bt.gotoAndStop(2);
-                this.down_panel_cl.hero_tx.text = "小猫突击队";
+                this.down_panel_cl.hero_tx.label.text = "小猫突击队";
                 Main.sav.data.playoff = 1;
                 Main.sav.data.playoff_round = 3;
                 Main.sav.data.cat_aby_1 = 66;
@@ -60,7 +60,7 @@ module com.code {
                 this.addEventListener(egret.Event.ENTER_FRAME, this.tuto1_f, this);
             }
             else {
-                this.down_panel_cl.hero_tx.text = Main.sav.data.team_name_1;
+                this.down_panel_cl.hero_tx.label.text = Main.sav.data.team_name_1;
             }
             if (this._app.train_mode == false) {
                 this.pause_cl.home_bt.gotoAndStop(1);
@@ -136,12 +136,12 @@ module com.code {
                 this.location_cl.kings_cl.gotoAndStop(this._app.team_enemy);
                 this.location_cl.flag_cl.gotoAndStop(1);
                 this.location_cl.flag2_cl.gotoAndStop(this._app.team_enemy + 1);
-                this.down_panel_cl.enemy_tx.text = this._info_enemy.got_title(this._app.team_enemy_id);
+                this.down_panel_cl.enemy_tx.label.text = this._info_enemy.got_title(this._app.team_enemy_id);
             }
             else {
                 this.pause_cl.home_bt.gotoAndStop(2);
                 this.location_cl.gotoAndStop(1);
-                this.location_cl.kings_cl.cups_cl.$setVisible(false);
+                this.location_cl.kings_clCups_cl.$setVisible(false);
                 this.down_panel_cl.gotoAndStop(2);
                 this.status_began = 3;
                 this.time_began = 0;
@@ -166,7 +166,7 @@ module com.code {
                     this.zone_panel.addChild(this._aby);
                     this.arr_aby.push(this._aby);
                     this._aby.init();
-                    this._aby.dress_up(this._aby.skin.cat2, Main.sav.data["cat_dress_" + this.i]);
+                    this._aby.dress_up(this._aby.skin, Main.sav.data["cat_dress_" + this.i]);
                     this.i++;
                 }
                 this.i = 1;
@@ -192,7 +192,7 @@ module com.code {
                     this.zone_panel.addChild(this._aby);
                     this.arr_aby.push(this._aby);
                     this._aby.init();
-                    this._aby.dress_up(this._aby.skin.cat2, Main.sav.data["cat_dress_" + this.i]);
+                    this._aby.dress_up(this._aby.skin, Main.sav.data["cat_dress_" + this.i]);
                     this.i++;
                 }
                 this.i = 1;
@@ -234,7 +234,7 @@ module com.code {
                 this.i++;
             }
             Main.sav.data.tuto1 = 3;
-            this.stage.focus = this.stage;
+            // this.stage.focus = this.stage;
         }
         public init_layers(): any {
             this.zone_bg = new egret.Sprite();
@@ -267,7 +267,7 @@ module com.code {
                         }
                         if (++this.over_time > 12) {
                             this.info_aby_cl.$setVisible(true);
-                            this.info_aby_cl.des_tx.text = this.got_des_skill(this.arr_aby[this.i].type_aby);
+                            this.info_aby_cl.des_tx.label.text = this.got_des_skill(this.arr_aby[this.i].type_aby);
                             break;
                         }
                         break;
@@ -310,7 +310,7 @@ module com.code {
                                 }
                             }
                             else {
-                                this.arr_cat[this.i].speed = this.arr_cat[this.i].speed + 1 * aura_fox_slow_koff;
+                                this.arr_cat[this.i].speed = this.arr_cat[this.i].speed + 1 * this.aura_fox_slow_koff;
                             }
                         }
                         if (this.arr_cat[this.i].back_mode) {
@@ -612,7 +612,7 @@ module com.code {
                                 }
                             }
                             else {
-                                this.arr_fox[this.i].speed = this.arr_fox[this.i].speed + 1 * aura_cat_slow_koff;
+                                this.arr_fox[this.i].speed = this.arr_fox[this.i].speed + 1 * this.aura_cat_slow_koff;
                             }
                         }
                         if (this.arr_fox[this.i].back_mode) {
@@ -1152,8 +1152,8 @@ module com.code {
                     this.zone_tuto.removeChild(this.xray_cl);
                 }
                 if (this.xray_time == 26) {
-                    this.xray_cl.ray2.cat_cl.alpha = 0.4;
-                    this.xray_cl.ray2.skeleton_cl.nextFrame();
+                    this.xray_cl.ray2Cat_cl.alpha = 0.4;
+                    this.xray_cl.ray2Skeleton_cl.nextFrame();
                     this._app._so.load_by_name(injury_so);
                 }
             }
@@ -2143,7 +2143,7 @@ module com.code {
             this.rnd_for4 = 1;
             while (this.rnd_for4 < 3) {
                 if (this.arr_temp.length > 0) {
-                    this.rnd_for3 = _rnd(this.arr_temp.length);
+                    this.rnd_for3 = std._rnd(this.arr_temp.length);
                     Main.sav.data["shop_" + this.rnd_for4] = this.arr_temp[this.rnd_for3];
                     this.arr_temp.splice(this.rnd_for3, 1);
                     this.rnd_for4++;
@@ -2153,7 +2153,7 @@ module com.code {
             }
             while (this.rnd_for4 < 5) {
                 if (this.arr_temp2.length > 0) {
-                    this.rnd_for3 = _rnd(this.arr_temp2.length);
+                    this.rnd_for3 = std._rnd(this.arr_temp2.length);
                     Main.sav.data["shop_" + this.rnd_for4] = this.arr_temp2[this.rnd_for3];
                     this.arr_temp2.splice(this.rnd_for3, 1);
                     this.rnd_for4++;
@@ -2163,7 +2163,7 @@ module com.code {
             }
             while (this.rnd_for4 < 6) {
                 if (this.arr_temp3.length > 0) {
-                    this.rnd_for3 = _rnd(this.arr_temp3.length);
+                    this.rnd_for3 = std._rnd(this.arr_temp3.length);
                     Main.sav.data["shop_" + this.rnd_for4] = this.arr_temp3[this.rnd_for3];
                     this.arr_temp3.splice(this.rnd_for3, 1);
                     this.rnd_for4++;
@@ -2308,8 +2308,8 @@ module com.code {
                             this._app._music.mute();
                             this.xray_cl = this._sp(xray_mc, this.zone_tuto, 72, 61);
                             this.xray_ex = true;
-                            this.dress_up(this.xray_cl.ray2.cat_cl, param1, Main.sav.data["cat_dress_" + param1]);
-                            this.dress_up(this.xray_cl.ray2.ene_cl, this.arr_fox[param2].type, this.arr_fox[param2].set_id);
+                            this.dress_up(this.xray_cl.ray2Cat_cl, param1, Main.sav.data["cat_dress_" + param1]);
+                            this.dress_up(this.xray_cl.ray2Ene_cl, this.arr_fox[param2].type, this.arr_fox[param2].set_id);
                             this._app._so.load_by_name(x_ray_so);
                             this.xray_cl.ray2Cat_cl.gotoAndStop(this.xray_type);
                             if (this.xray_type == 1) {
@@ -2331,8 +2331,8 @@ module com.code {
             }
         }
         set_tablo(): any {
-            this.location_cl.tablo_cl.p1.n_tx.text = this.dead_fox.toString();
-            this.location_cl.tablo_cl.p2.n_tx.text = this.dead_cat.toString();
+            this.location_cl.tablo_clP1N_tx.label.text = this.dead_fox.toString();
+            this.location_cl.tablo_clP2N_tx.label.text = this.dead_cat.toString();
         }
         add_super_shot(param1: any, param2: any): any {
             this.sprite_var = this._sp(super_shot_ani_mc, this.zone_up_all, param2.x, param2.y);
@@ -2348,8 +2348,9 @@ module com.code {
         }
         public add_damage_text(param1: any, param2: any, param3: any): any {
             this.sprite_var = this._sp(damage_mc, this.zone_up_all, param2.x, param2.y);
-            this.sprite_var.d2.gotoAndStop(param1);
-            this.sprite_var.d2.d_tx.text = param3.toString();
+            let sprite_var: damage_mc = <damage_mc>this.sprite_var;
+            sprite_var.d2.gotoAndStop(param1);
+            sprite_var.d2D_tx.label.text = param3.toString();
             if (param1 == 1) {
                 this.sprite_var.$setX(this.sprite_var.x - 30);
             }

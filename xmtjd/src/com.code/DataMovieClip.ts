@@ -11,11 +11,11 @@ module com.code {
         j3: number = 0;
         j4: number = 0;
         j5: number = 0;
-        i_in: String = null;
-        i_in2: String = null;
-        i_in3: String = null;
-        i_in4: String = null;
-        i_in5: String = null;
+        i_in: string = null;
+        i_in2: string = null;
+        i_in3: string = null;
+        i_in4: string = null;
+        i_in5: string = null;
         rnd_for: number = 0;
         rnd_for1: number = 0;
         rnd_for2: number = 0;
@@ -36,7 +36,7 @@ module com.code {
         temp_type: number = 0;
         temp_x: number = 0;
         temp_y: number = 0;
-        sprite_var: std.MovieClip = null;
+        sprite_var: damage_mc | super_shot_ani_mc | fireball_mc | hit_mc | icon_train_mc = null;
         public constructor() {
             super();
         }

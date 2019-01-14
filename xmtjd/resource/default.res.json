@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "bg_jpg,egret_icon_png,description_json,texture_json,texture_png,test_tex_json,test_tex_png,test_ske_json,texture2_png,aby_mc_tex_json,aby_mc_tex_png,aby_mc_ske_json,texture3_png,texture4_png,card_game_mc_tex_json,card_game_mc_tex_png,card_game_mc_ske_json,texture5_png,cat_drag_mc_tex_json,cat_drag_mc_tex_png,cat_drag_mc_ske_json,texture6_png,damage_mc_tex_json,damage_mc_tex_png,damage_mc_ske_json,texture7_png,down_panel_mc_tex_json,down_panel_mc_tex_png,down_panel_mc_ske_json,texture8_png,fireball_mc_tex_json,fireball_mc_tex_png,fireball_mc_ske_json,texture9_png,got_cup_mc_tex_json,got_cup_mc_tex_png,got_cup_mc_ske_json,texture10_png,grand_mc_tex_json,grand_mc_tex_png,grand_mc_ske_json,texture11_png,texture12_png,hit_mc_tex_json,hit_mc_tex_png,hit_mc_ske_json,texture13_png,icon_train_mc_tex_json,icon_train_mc_tex_png,icon_train_mc_ske_json,texture14_png,info_aby_mc_tex_json,info_aby_mc_tex_png,info_aby_mc_ske_json,texture15_png,location_mc_tex_json,location_mc_tex_png,location_mc_ske_json,texture16_png,menu_bt_mc_tex_json,menu_bt_mc_tex_png,menu_bt_mc_ske_json,texture17_png,panel_view_hit_mc_tex_json,panel_view_hit_mc_tex_png,panel_view_hit_mc_ske_json,texture18_png,panel_view_not_hit_mc_tex_json,panel_view_not_hit_mc_tex_png,panel_view_not_hit_mc_ske_json,texture19_png,paper_mc_tex_json,paper_mc_tex_png,paper_mc_ske_json",
+			"keys": "bg_jpg,egret_icon_png,description_json,texture_json,texture_png,test_tex_json,test_tex_png,test_ske_json,texture2_png,aby_mc_tex_json,aby_mc_tex_png,aby_mc_ske_json,texture3_png,texture4_png,card_game_mc_tex_json,card_game_mc_tex_png,card_game_mc_ske_json,texture5_png,cat_drag_mc_tex_json,cat_drag_mc_tex_png,cat_drag_mc_ske_json,texture6_png,damage_mc_tex_json,damage_mc_tex_png,damage_mc_ske_json,texture7_png,down_panel_mc_tex_json,down_panel_mc_tex_png,down_panel_mc_ske_json,texture8_png,fireball_mc_tex_json,fireball_mc_tex_png,fireball_mc_ske_json,texture9_png,got_cup_mc_tex_json,got_cup_mc_tex_png,got_cup_mc_ske_json,texture10_png,grand_mc_tex_json,grand_mc_tex_png,grand_mc_ske_json,texture11_png,texture12_png,hit_mc_tex_json,hit_mc_tex_png,hit_mc_ske_json,texture13_png,icon_train_mc_tex_json,icon_train_mc_tex_png,icon_train_mc_ske_json,texture14_png,info_aby_mc_tex_json,info_aby_mc_tex_png,info_aby_mc_ske_json,texture15_png,location_mc_tex_json,location_mc_tex_png,location_mc_ske_json,texture16_png,menu_bt_mc_tex_json,menu_bt_mc_tex_png,menu_bt_mc_ske_json,texture17_png,panel_view_hit_mc_tex_json,panel_view_hit_mc_tex_png,panel_view_hit_mc_ske_json,texture18_png,panel_view_not_hit_mc_tex_json,panel_view_not_hit_mc_tex_png,panel_view_not_hit_mc_ske_json,texture19_png,paper_mc_tex_json,paper_mc_tex_png,paper_mc_ske_json,1701_mp3,1702_mp3,1706_mp3,1707_mp3,1708_mp3,1710_mp3,1714_mp3,1715_mp3,applo_so_mp3,armor_all_so_mp3,armor_so_mp3,aura_dead_so_mp3,aura_power_so_mp3,aura_speed_so_mp3,buy_so_mp3,cat_dead_so_mp3,click_so_mp3,comics_so_mp3,com_music_zvuk_mp3,dance_music_zvuk_mp3,dead_b_so_mp3,defeat_so_mp3,deqaf_zvuk_mp3,elf_music_zvuk_mp3,enemy_dead_so_mp3,fireball_hit_so_mp3,fireball_so_mp3,gong_so_mp3,go_so_mp3,grand_so_mp3,heal_so_mp3,injury_so_mp3,kick2_so_mp3,kick_so_mp3,league_so_mp3,light_so_mp3,next_day_so_mp3,paper_so_mp3,power_kick_so_mp3,reload_all_so_mp3,StartBattle_so_mp3,stun_so_mp3,take_ball_so_mp3,take_cat2_so_mp3,take_cat_so_mp3,to_bed_so_mp3,to_bubble_so_mp3,to_table_so_mp3,train1_so_mp3,train2_so_mp3,train3_so_mp3,up_wear_so_mp3,water_music_zvuk_mp3,wear_so_mp3,won_so_mp3,x_ray_so_mp3",
 			"name": "preload"
 		}
 	],
@@ -375,6 +375,286 @@
 			"name": "paper_mc_ske_json",
 			"type": "json",
 			"url": "assets/paper_mc/paper_mc_ske.json"
+		},
+		{
+			"name": "1701_mp3",
+			"type": "sound",
+			"url": "sounds/1701.mp3"
+		},
+		{
+			"name": "1702_mp3",
+			"type": "sound",
+			"url": "sounds/1702.mp3"
+		},
+		{
+			"name": "1706_mp3",
+			"type": "sound",
+			"url": "sounds/1706.mp3"
+		},
+		{
+			"name": "1707_mp3",
+			"type": "sound",
+			"url": "sounds/1707.mp3"
+		},
+		{
+			"name": "1708_mp3",
+			"type": "sound",
+			"url": "sounds/1708.mp3"
+		},
+		{
+			"name": "1710_mp3",
+			"type": "sound",
+			"url": "sounds/1710.mp3"
+		},
+		{
+			"name": "1714_mp3",
+			"type": "sound",
+			"url": "sounds/1714.mp3"
+		},
+		{
+			"name": "1715_mp3",
+			"type": "sound",
+			"url": "sounds/1715.mp3"
+		},
+		{
+			"name": "applo_so_mp3",
+			"type": "sound",
+			"url": "sounds/applo_so.mp3"
+		},
+		{
+			"name": "armor_all_so_mp3",
+			"type": "sound",
+			"url": "sounds/armor_all_so.mp3"
+		},
+		{
+			"name": "armor_so_mp3",
+			"type": "sound",
+			"url": "sounds/armor_so.mp3"
+		},
+		{
+			"name": "aura_dead_so_mp3",
+			"type": "sound",
+			"url": "sounds/aura_dead_so.mp3"
+		},
+		{
+			"name": "aura_power_so_mp3",
+			"type": "sound",
+			"url": "sounds/aura_power_so.mp3"
+		},
+		{
+			"name": "aura_speed_so_mp3",
+			"type": "sound",
+			"url": "sounds/aura_speed_so.mp3"
+		},
+		{
+			"name": "buy_so_mp3",
+			"type": "sound",
+			"url": "sounds/buy_so.mp3"
+		},
+		{
+			"name": "cat_dead_so_mp3",
+			"type": "sound",
+			"url": "sounds/cat_dead_so.mp3"
+		},
+		{
+			"name": "click_so_mp3",
+			"type": "sound",
+			"url": "sounds/click_so.mp3"
+		},
+		{
+			"name": "comics_so_mp3",
+			"type": "sound",
+			"url": "sounds/comics_so.mp3"
+		},
+		{
+			"name": "com_music_zvuk_mp3",
+			"type": "sound",
+			"url": "sounds/com_music_zvuk.mp3"
+		},
+		{
+			"name": "dance_music_zvuk_mp3",
+			"type": "sound",
+			"url": "sounds/dance_music_zvuk.mp3"
+		},
+		{
+			"name": "dead_b_so_mp3",
+			"type": "sound",
+			"url": "sounds/dead_b_so.mp3"
+		},
+		{
+			"name": "defeat_so_mp3",
+			"type": "sound",
+			"url": "sounds/defeat_so.mp3"
+		},
+		{
+			"name": "deqaf_zvuk_mp3",
+			"type": "sound",
+			"url": "sounds/deqaf_zvuk.mp3"
+		},
+		{
+			"name": "elf_music_zvuk_mp3",
+			"type": "sound",
+			"url": "sounds/elf_music_zvuk.mp3"
+		},
+		{
+			"name": "enemy_dead_so_mp3",
+			"type": "sound",
+			"url": "sounds/enemy_dead_so.mp3"
+		},
+		{
+			"name": "fireball_hit_so_mp3",
+			"type": "sound",
+			"url": "sounds/fireball_hit_so.mp3"
+		},
+		{
+			"name": "fireball_so_mp3",
+			"type": "sound",
+			"url": "sounds/fireball_so.mp3"
+		},
+		{
+			"name": "gong_so_mp3",
+			"type": "sound",
+			"url": "sounds/gong_so.mp3"
+		},
+		{
+			"name": "go_so_mp3",
+			"type": "sound",
+			"url": "sounds/go_so.mp3"
+		},
+		{
+			"name": "grand_so_mp3",
+			"type": "sound",
+			"url": "sounds/grand_so.mp3"
+		},
+		{
+			"name": "heal_so_mp3",
+			"type": "sound",
+			"url": "sounds/heal_so.mp3"
+		},
+		{
+			"name": "injury_so_mp3",
+			"type": "sound",
+			"url": "sounds/injury_so.mp3"
+		},
+		{
+			"name": "kick2_so_mp3",
+			"type": "sound",
+			"url": "sounds/kick2_so.mp3"
+		},
+		{
+			"name": "kick_so_mp3",
+			"type": "sound",
+			"url": "sounds/kick_so.mp3"
+		},
+		{
+			"name": "league_so_mp3",
+			"type": "sound",
+			"url": "sounds/league_so.mp3"
+		},
+		{
+			"name": "light_so_mp3",
+			"type": "sound",
+			"url": "sounds/light_so.mp3"
+		},
+		{
+			"name": "next_day_so_mp3",
+			"type": "sound",
+			"url": "sounds/next_day_so.mp3"
+		},
+		{
+			"name": "paper_so_mp3",
+			"type": "sound",
+			"url": "sounds/paper_so.mp3"
+		},
+		{
+			"name": "power_kick_so_mp3",
+			"type": "sound",
+			"url": "sounds/power_kick_so.mp3"
+		},
+		{
+			"name": "reload_all_so_mp3",
+			"type": "sound",
+			"url": "sounds/reload_all_so.mp3"
+		},
+		{
+			"name": "StartBattle_so_mp3",
+			"type": "sound",
+			"url": "sounds/StartBattle_so.mp3"
+		},
+		{
+			"name": "stun_so_mp3",
+			"type": "sound",
+			"url": "sounds/stun_so.mp3"
+		},
+		{
+			"name": "take_ball_so_mp3",
+			"type": "sound",
+			"url": "sounds/take_ball_so.mp3"
+		},
+		{
+			"name": "take_cat2_so_mp3",
+			"type": "sound",
+			"url": "sounds/take_cat2_so.mp3"
+		},
+		{
+			"name": "take_cat_so_mp3",
+			"type": "sound",
+			"url": "sounds/take_cat_so.mp3"
+		},
+		{
+			"name": "to_bed_so_mp3",
+			"type": "sound",
+			"url": "sounds/to_bed_so.mp3"
+		},
+		{
+			"name": "to_bubble_so_mp3",
+			"type": "sound",
+			"url": "sounds/to_bubble_so.mp3"
+		},
+		{
+			"name": "to_table_so_mp3",
+			"type": "sound",
+			"url": "sounds/to_table_so.mp3"
+		},
+		{
+			"name": "train1_so_mp3",
+			"type": "sound",
+			"url": "sounds/train1_so.mp3"
+		},
+		{
+			"name": "train2_so_mp3",
+			"type": "sound",
+			"url": "sounds/train2_so.mp3"
+		},
+		{
+			"name": "train3_so_mp3",
+			"type": "sound",
+			"url": "sounds/train3_so.mp3"
+		},
+		{
+			"name": "up_wear_so_mp3",
+			"type": "sound",
+			"url": "sounds/up_wear_so.mp3"
+		},
+		{
+			"name": "water_music_zvuk_mp3",
+			"type": "sound",
+			"url": "sounds/water_music_zvuk.mp3"
+		},
+		{
+			"name": "wear_so_mp3",
+			"type": "sound",
+			"url": "sounds/wear_so.mp3"
+		},
+		{
+			"name": "won_so_mp3",
+			"type": "sound",
+			"url": "sounds/won_so.mp3"
+		},
+		{
+			"name": "x_ray_so_mp3",
+			"type": "sound",
+			"url": "sounds/x_ray_so.mp3"
 		}
 	]
 }
