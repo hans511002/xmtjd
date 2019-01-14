@@ -2,7 +2,7 @@ module com.code {
     export class Aby_enemy extends DataMovieClip {
         _game: Game = null;
         _app: App = null;
-        skin: std.MovieClip = null;
+        skin: std.MovieClipSub = null;
         type: number = 0;
         id: number = 0;
         reload_time: number = 0;
@@ -13,7 +13,8 @@ module com.code {
         type_aby: number = 0;
         qe: number = 0;
         public constructor() {
-            super();
+            super("Sponsor_button");
+            this.skin = this.createMovieClipSub("skin");
             this._game = Game.getInstance();
             this._app = App.getInstance();
         }

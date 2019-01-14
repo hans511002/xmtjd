@@ -37,8 +37,8 @@ module com.code {
         temp_x: number = 0;
         temp_y: number = 0;
         sprite_var: damage_mc | super_shot_ani_mc | fireball_mc | hit_mc | icon_train_mc = null;
-        public constructor() {
-            super();
+        public constructor(dbName?: string, armName?: string, ) {
+            super(Config.mcRoot, armName ? armName : dbName, dbName);
         }
         public _hit(param1: any, param2: any): any {
             if (param1.hitTestObject(param2)) {

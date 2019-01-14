@@ -2,12 +2,39 @@ module com.code {
     export class Playoff extends DataMovieClip {
         public sc_cl: std.MovieClip = null;
         public table_cl: std.MovieClip = null;
+        sc_clSlot_1: std.MovieClipSub = null;
+        sc_clSlot_2: std.MovieClipSub = null;
+        sc_clSlot_1Title1_tx: std.MCLabel = null;
+        sc_clSlot_1Title2_tx: std.MCLabel = null;
+        sc_clSlot_1Line_1: std.MovieClipSub = null;
+        sc_clSlot_1Line_2: std.MovieClipSub = null;
+        sc_clSlot_2Title1_tx: std.MCLabel = null;
+        sc_clSlot_2Title2_tx: std.MCLabel = null;
+        sc_clSlot_2Line_1: std.MovieClipSub = null;
+        sc_clSlot_2Line_2: std.MovieClipSub = null;
+
+        table_clAss_1H2: std.MovieClipSub = null;
+        table_clAss_2H2: std.MovieClipSub = null;
+        table_clAss_1: std.MovieClipSub = null;
+        table_clAss_2: std.MovieClipSub = null;
+
         _app: App = null;
         time: number = 0;
         _info_enemy: Enemy = null;
         public constructor() {
             super();
             this._app = App.getInstance();
+            this.sc_clSlot_1 = this.sc_cl.createMovieClipSub("slot_1");
+            this.sc_clSlot_2 = this.sc_cl.createMovieClipSub("slot_2");
+            this.sc_clSlot_1Title1_tx = this.sc_clSlot_1.createLabel("title1_tx");
+            this.sc_clSlot_1Title2_tx = this.sc_clSlot_1.createLabel("title2_tx");
+            this.sc_clSlot_1Line_1 = this.sc_clSlot_1.createMovieClipSub("line_1");
+            this.sc_clSlot_1Line_2 = this.sc_clSlot_1.createMovieClipSub("line_2");
+            this.sc_clSlot_2Title1_tx = this.sc_clSlot_2.createLabel("title1_tx");
+            this.sc_clSlot_2Title2_tx = this.sc_clSlot_2.createLabel("title2_tx");
+            this.sc_clSlot_2Line_1 = this.sc_clSlot_2.createMovieClipSub("line_1");
+            this.sc_clSlot_2Line_2 = this.sc_clSlot_2.createMovieClipSub("line_2");
+
             this.addFrameScript(86, this.frame87);
         }
         public init(): void {
@@ -48,7 +75,7 @@ module com.code {
             }
             if (this.time == 480) {
                 this._app._so.load_by_name(applo_so);
-                this.sc_clSlot_2.title2_tx.text = this._info_enemy.got_title(Main.sav.data.off_team_4);
+                this.sc_clSlot_2Title2_tx.label.text = this._info_enemy.got_title(Main.sav.data.off_team_4);
             }
             if (this.time >= 600) {
                 this._app.open_new_screen("upg");

@@ -1,15 +1,27 @@
 module com.code {
     export class Dress extends DataMovieClip {
-        public about_cl: std.MovieClip = null;
+        public about_cl: std.MovieClipSub = null;
         public back_bt: std.MCButton = null;
         public cat1: cat_drag_mc = null;
         public cat2: cat_drag_mc = null;
         public cat3: cat_drag_mc = null;
         public cat4: cat_drag_mc = null;
         public menu_bt_cl: std.MCButton = null;
-        public panel_cl: std.MovieClip = null;
+        public panel_cl: std.MovieClipSub = null;
+        panel_clRadio_1: std.MovieClipSub = null;
+        panel_clRadio_2: std.MovieClipSub = null;
+        panel_clRadio_3: std.MovieClipSub = null;
+        panel_clRadio_1None_page_cl: std.MovieClipSub = null;
+        panel_clRadio_2None_page_cl: std.MovieClipSub = null;
+        panel_clRadio_3None_page_cl: std.MovieClipSub = null;
+
         public shop_bt: std.MCButton = null;
         public shop_cl: std.MovieClip = null;
+        shop_clDes_tx: std.MCLabel = null;
+        shop_clZoom_bt: std.MovieClipSub = null;
+        shop_clMoney_tx: std.MCLabel = null;
+        shop_clClose_bt: std.MCButton = null;
+
         public train_bt: std.MCButton = null;
         public zone_cards_about: std.MovieClip = null;
         public zone_drag: std.MovieClip = null;
@@ -51,6 +63,9 @@ module com.code {
             this.arr_temp = [];
             this.arr_temp2 = [];
             this.arr_temp3 = [];
+
+            this.about_cl = this.createMovieClipSub("about_cl");
+            this.back_bt = this.createMCButton("back_bt");
         }
         public init(): void {
             if (Main.sav.data.tuto5 == 1) {
@@ -423,14 +438,14 @@ module com.code {
             return 0;
         }
         public set_sort(param1: any): any {
-            this.panel_cl.radio_1.none_page_cl.$setVisible(false);
-            this.panel_cl.radio_2.none_page_cl.$setVisible(false);
+            this.panel_clRadio_1None_page_cl.$setVisible(false);
+            this.panel_clRadio_2None_page_cl.$setVisible(false);
             this.sort = param1;
             if (this.sort == 3) {
-                this.panel_cl.radio_3.none_page_cl.$setVisible(true);
+                this.panel_clRadio_3None_page_cl.$setVisible(true);
             }
             else {
-                this.panel_cl.radio_3.none_page_cl.$setVisible(false);
+                this.panel_clRadio_3None_page_cl.$setVisible(false);
             }
             this.set_page(this.page);
         }
@@ -469,25 +484,25 @@ module com.code {
                 break;
             }
         }
-        public dress_up(param1: any, param2: any, param3: any): any {
-            param1.head_clWool_cl.gotoAndStop(param2);
-            param1.hand_l_clWool_cl.gotoAndStop(param2);
-            param1.hand_r_clWool_cl.gotoAndStop(param2);
-            param1.body_clWool_cl.gotoAndStop(param2);
-            param1.foot1_clWool_cl.gotoAndStop(param2);
-            param1.foot2_clWool_cl.gotoAndStop(param2);
-            param1.tail_cl.gotoAndStop(param2);
+        public dress_up(param1: cat_drag_mc, param2: any, param3: any): any {
+            param1.cat1Cat2Head_clWool_cl.gotoAndStop(param2);
+            param1.cat1Cat2Hand_l_clWool_cl.gotoAndStop(param2);
+            param1.cat1Cat2Hand_r_clWool_cl.gotoAndStop(param2);
+            param1.cat1Cat2Body_clWool_cl.gotoAndStop(param2);
+            param1.cat1Cat2Foot1_clWool_cl.gotoAndStop(param2);
+            param1.cat1Cat2Foot2_clWool_cl.gotoAndStop(param2);
+            param1.cat1Cat2Tail_cl.gotoAndStop(param2);
             param3++;
-            param1.head_clH2.gotoAndStop(param3);
-            param1.hand_l_clSleeve_cl.gotoAndStop(param3);
-            param1.hand_l_clW2.gotoAndStop(param3);
-            param1.hand_r_clSleeve_cl.gotoAndStop(param3);
-            param1.hand_r_clS2.gotoAndStop(param3);
-            param1.body_clB2.gotoAndStop(param3);
-            param1.foot1_clP2.gotoAndStop(param3);
-            param1.foot2_clP2.gotoAndStop(param3);
-            param1.skirt_cl.gotoAndStop(param3);
-            param1.cloak_cl.gotoAndStop(param3);
+            param1.cat1Cat2Head_clH2.gotoAndStop(param3);
+            param1.cat1Cat2Hand_l_clSleeve_cl.gotoAndStop(param3);
+            param1.cat1Cat2Hand_l_clW2.gotoAndStop(param3);
+            param1.cat1Cat2Hand_r_clSleeve_cl.gotoAndStop(param3);
+            param1.cat1Cat2Hand_r_clS2.gotoAndStop(param3);
+            param1.cat1Cat2Body_clB2.gotoAndStop(param3);
+            param1.cat1Cat2Foot1_clP2.gotoAndStop(param3);
+            param1.cat1Cat2Foot2_clP2.gotoAndStop(param3);
+            param1.cat1Cat2Skirt_cl.gotoAndStop(param3);
+            param1.cat1Cat2Cloak_cl.gotoAndStop(param3);
             param3--;
         }
         public got_des_skill(param1: any): any {
@@ -528,12 +543,12 @@ module com.code {
         }
         public load_shop(): any {
             this.remove_gold(0);
-            this.shop_cl.des_tx.text = this.load_des_hi();
+            this.shop_clDes_tx.label.text = this.load_des_hi();
             if (this.zoom) {
-                this.shop_cl.zoom_bt.gotoAndStop(2);
+                this.shop_clZoom_bt.gotoAndStop(2);
             }
             else {
-                this.shop_cl.zoom_bt.gotoAndStop(1);
+                this.shop_clZoom_bt.gotoAndStop(1);
             }
             this.i4 = 1;
             while (this.i4 <= 5) {
@@ -593,7 +608,7 @@ module com.code {
         }
         public remove_gold(param1: any): any {
             Main.sav.data.gold = Main.sav.data.gold - param1;
-            this.shop_cl.money_tx.text = Main.sav.data.gold;
+            this.shop_clMoney_tx.label.text = Main.sav.data.gold;
         }
         public tuto21_click_f(param1: egret.TouchEvent): any {
             if (this._mo(this.shop_bt)) {
@@ -634,7 +649,7 @@ module com.code {
             }
         }
         public tuto23_click_f(param1: egret.TouchEvent): any {
-            if (this._mo(this.shop_cl.close_bt)) {
+            if (this._mo(this.shop_clClose_bt)) {
                 this.shop_cl.$setVisible(false);
                 this._app._so.load_by_name(click_so);
                 this.zone_tuto.removeChild(this.tuto_cl);
@@ -644,7 +659,8 @@ module com.code {
             }
         }
         public tuto15_click_f(param1: egret.TouchEvent): any {
-            if (this._mo(this.tuto_cl.ok_bt)) {
+            let tuto_cl = <tuto15_mc>this.tuto_cl;
+            if (tuto_cl && this._mo(tuto_cl.ok_bt)) {
                 this._app._so.load_by_name(click_so);
                 this.stage.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.tuto15_click_f, this);
                 this.zone_tuto.removeChild(this.tuto_cl);

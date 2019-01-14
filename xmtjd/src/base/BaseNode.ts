@@ -1504,19 +1504,39 @@ module std {
 			return false;
 		}
 	}
-	export class Button extends MovieClip {
+	interface SimButton {
+		label: std.MCLabel;
+
+	}
+	function buttonTouchHandler(e: egret.TouchEvent) {
+		if (e.type == egret.TouchEvent.TOUCH_BEGIN) {
+			this.gotoAndStop(3);
+		} else if (e.type == egret.TouchEvent.TOUCH_END) {
+			this.gotoAndStop(4);
+		} else if (e.type == egret.TouchEvent.TOUCH_MOVE) {
+			this.gotoAndStop(2);
+		}
+	}
+	export class Button extends MovieClip implements SimButton {
 		label: std.MCLabel;
 		public constructor(rootPath: string, armName: string, dbName: string, defAniName: string = "") {
 			super(rootPath, armName, dbName, defAniName);
 			this.label = this.createLabel("label");
+			this.addEventListener(egret.TouchEvent.TOUCH_BEGIN, buttonTouchHandler, this);
+			this.addEventListener(egret.TouchEvent.TOUCH_END, buttonTouchHandler, this);
+			this.addEventListener(egret.TouchEvent.TOUCH_MOVE, buttonTouchHandler, this);
 		}
 	}
-	export class MCButton extends MovieClipSub {
+	export class MCButton extends MovieClipSub implements SimButton {
 		label: std.MCLabel;
 		public constructor(mc?: MC, slotName?: string, defAniName?: string, reinitType: number = 0) {
 			super(mc, slotName, defAniName, reinitType);
 			this.label = this.createLabel("label");
+			this.addEventListener(egret.TouchEvent.TOUCH_BEGIN, buttonTouchHandler, this);
+			this.addEventListener(egret.TouchEvent.TOUCH_END, buttonTouchHandler, this);
+			this.addEventListener(egret.TouchEvent.TOUCH_MOVE, buttonTouchHandler, this);
 		}
+
 	}
 	// class MCUI;
 	// class MCCase;

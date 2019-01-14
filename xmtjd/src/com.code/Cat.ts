@@ -3,7 +3,7 @@ module com.code {
         _game: Game = null;
         _app: App = null;
         skin: cat_mc = null;
-        scale: std.MovieClip = null;
+        scale: std.MovieClipSub = null;
         hp: number = 0;
         hp2: number = 0;
         attack: number = 0;
@@ -45,6 +45,7 @@ module com.code {
             super();
             this._game = Game.getInstance();
             this._app = App.getInstance();
+            this.scale = this.createMovieClipSub("scale");
         }
         public init(param1: any, param2: any): void {
             this.side = param1;

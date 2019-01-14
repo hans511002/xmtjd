@@ -38,11 +38,11 @@ module com.code {
                 });
             };
             var abs_url: String = "./ABS.swf";
-            Security.allowDomain(abs_url);
-            var urlRequest: URLRequest = new URLRequest(abs_url);
-            var loader: Loader = new Loader();
-            loader.contentLoaderInfo.addEventListener(egret.Event.COMPLETE, loadComplete, this);
-            loader.load(urlRequest);
+            // Security.allowDomain(abs_url);
+            // var urlRequest: URLRequest = new URLRequest(abs_url);
+            // var loader: Loader = new Loader();
+            // loader.contentLoaderInfo.addEventListener(egret.Event.COMPLETE, loadComplete, this);
+            // loader.load(urlRequest);
         }
         public init_cpm(): any {
             var _loc1_: number = NaN;

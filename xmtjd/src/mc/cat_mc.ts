@@ -33,6 +33,9 @@ class cat_mc extends std.MovieClip {
 
     public constructor() {
         super(Config.mcRoot, "cat_mc", "cat_mc");
+        this.armor_cl = this.createMovieClipSub("armor_cl");
+        this.cat1 = this.createMovieClipSub("cat1");
+        this.cat1Cat2 = this.cat1.createMovieClipSub("cat2", 1);
         //  cat1.cat2.head_cl.wool_cl.face_cl.gotoAndStop(3);
         // cat1 cat1 addFrameScript(9, this.frame10, 20, this.frame21, 31, this.frame32, 42, this.frame43, 53, this.frame54);
     }// end function
@@ -42,9 +45,6 @@ class cat_mc extends std.MovieClip {
         this.subInit();
     }
     subInit(): void {
-        this.armor_cl = this.createMovieClipSub("armor_cl");
-        this.cat1 = this.createMovieClipSub("cat1");
-        this.cat1Cat2 = this.cat1.createMovieClipSub("cat2", 1);
         this.cat1Cat2Head_cl = this.cat1Cat2.createMovieClipSub("head_cl");
         this.cat1Cat2Hand_r_cl = this.cat1Cat2.createMovieClipSub("hand_r_cl");
         this.cat1Cat2Hand_l_cl = this.cat1Cat2.createMovieClipSub("hand_l_cl");

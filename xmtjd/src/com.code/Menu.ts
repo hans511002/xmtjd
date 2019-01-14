@@ -3,22 +3,24 @@ module com.code {
         public cat1: cat_mc = null;
         public cat2: cat_mc = null;
         public clear_cl: std.MCButton = null;
-        public credits_cl: std.MovieClip = null;
+        public credits_cl: std.MovieClipSub = null;
+        credits_clDe2: std.MovieClipSub = null;
+        credits_clClose_bt: std.MCButton = null;
         public cup_1: std.MovieClip = null;
         public cup_2: std.MovieClip = null;
         public cup_3: std.MovieClip = null;
         public cup_4: std.MovieClip = null;
         public cup_5: std.MovieClip = null;
         public deqaf_bt: std.MCButton = null;
-        public face_bt: std.MovieClip = null;
-        public go_sfk1: std.MovieClip = null;
-        public go_sfk2: std.MovieClip = null;
-        public go_sfk3: std.MovieClip = null;
+        public face_bt: std.MovieClipSub = null;
+        public go_sfk1: std.MovieClipSub = null;
+        public go_sfk2: std.MovieClipSub = null;
+        public go_sfk3: std.MovieClipSub = null;
         public play_cl: std.MCButton = null;
         public sounds_control_cl: Buttons_sounds2 = null;
-        public zone_panel: std.MovieClip = null;
+        public zone_panel: std.MovieClipSub = null;
         _app: App = null;
-        sure_cl: std.MovieClip = null;
+        sure_cl: sure_mc = null;
         sure_ex: boolean = false;
         time_reload: number = 0;
         status: number = 0;
@@ -28,6 +30,16 @@ module com.code {
         public constructor() {
             super();
             this._app = App.getInstance();
+            this.credits_cl = this.createMovieClipSub("credits_cl");
+            this.clear_cl = this.createMCButton("clear_cl");
+            this.deqaf_bt = this.createMCButton("deqaf_bt");
+            this.face_bt = this.createMovieClipSub("face_bt");
+            this.go_sfk1 = this.createMovieClipSub("go_sfk1");
+            this.go_sfk2 = this.createMovieClipSub("go_sfk2");
+            this.go_sfk3 = this.createMovieClipSub("go_sfk3");
+            this.play_cl = this.createMCButton("play_cl");
+            this.zone_panel = this.createMovieClipSub("zone_panel");
+
         }
         public init(): void {
             this._app._music.load_music("menu");
@@ -38,7 +50,7 @@ module com.code {
             this.cup_3.$setVisible(false);
             this.cup_4.$setVisible(false);
             this.cup_5.$setVisible(false);
-            this.credits_cl.de2.gotoAndStop(3);
+            this.credits_clDe2.gotoAndStop(3);
             this.credits_cl.$setVisible(false);
             if (Main.sav.data.game_end == 1) {
                 this.cup_1.$setVisible(true);
@@ -61,8 +73,8 @@ module com.code {
             this.cat2.gotoAndStop(2);
             this.cat1.cat1.gotoAndStop(4);
             this.cat2.cat1.gotoAndStop(4);
-            this.dress_up(this.cat1.cat1.cat2, 1, this.dress1);
-            this.dress_up(this.cat2.cat1.cat2, 5, this.dress2);
+            this.dress_up(this.cat1, 1, this.dress1);
+            this.dress_up(this.cat2, 5, this.dress2);
             this.cat1.armor_cl.$setVisible(false);
             this.cat2.armor_cl.$setVisible(false);
             this.time_reload = 80;
@@ -73,8 +85,8 @@ module com.code {
                 if (++this.time_reload >= 120) {
                     this.cat1.cat1.gotoAndStop(2);
                     this.cat2.cat1.gotoAndStop(2);
-                    this.dress_up(this.cat1.cat1.cat2, 1, this.dress1);
-                    this.dress_up(this.cat2.cat1.cat2, 5, this.dress2);
+                    this.dress_up(this.cat1, 1, this.dress1);
+                    this.dress_up(this.cat2, 5, this.dress2);
                     this.status = 1;
                     this.acp = 1;
                 }
@@ -105,8 +117,8 @@ module com.code {
                     else {
                         this.cat2.cat1.gotoAndStop(6);
                     }
-                    this.dress_up(this.cat1.cat1.cat2, 1, this.dress1);
-                    this.dress_up(this.cat2.cat1.cat2, 5, this.dress2);
+                    this.dress_up(this.cat1, 1, this.dress1);
+                    this.dress_up(this.cat2, 5, this.dress2);
                 }
             }
             else if (this.status == 2) {
@@ -118,8 +130,8 @@ module com.code {
                     this.time_reload = -100 + std._rnd(100);
                     this.cat1.cat1.gotoAndStop(4);
                     this.cat2.cat1.gotoAndStop(4);
-                    this.dress_up(this.cat1.cat1.cat2, 1, this.dress1);
-                    this.dress_up(this.cat2.cat1.cat2, 5, this.dress2);
+                    this.dress_up(this.cat1, 1, this.dress1);
+                    this.dress_up(this.cat2, 5, this.dress2);
                     this.cat1.$setX(205);
                     this.cat2.$setX(435);
                 }
@@ -134,7 +146,7 @@ module com.code {
                     this.sure_ex = false;
                 }
             }
-            if (this._mo(this.credits_cl.close_bt)) {
+            if (this._mo(this.credits_clClose_bt)) {
                 this.credits_cl.$setVisible(false);
                 this._app._so.load_by_name(click_so);
             }
@@ -185,25 +197,25 @@ module com.code {
                 }
             }
         }
-        public dress_up(param1: any, param2: any, param3: any): any {
-            param1.head_clWool_cl.gotoAndStop(param2);
-            param1.hand_l_clWool_cl.gotoAndStop(param2);
-            param1.hand_r_clWool_cl.gotoAndStop(param2);
-            param1.body_clWool_cl.gotoAndStop(param2);
-            param1.foot1_clWool_cl.gotoAndStop(param2);
-            param1.foot2_clWool_cl.gotoAndStop(param2);
-            param1.tail_cl.gotoAndStop(param2);
+        public dress_up(param1: cat_mc, param2: any, param3: any): any {
+            param1.cat1Cat2Head_clWool_cl.gotoAndStop(param2);
+            param1.cat1Cat2Hand_l_clWool_cl.gotoAndStop(param2);
+            param1.cat1Cat2Hand_r_clWool_cl.gotoAndStop(param2);
+            param1.cat1Cat2Body_clWool_cl.gotoAndStop(param2);
+            param1.cat1Cat2Foot1_clWool_cl.gotoAndStop(param2);
+            param1.cat1Cat2Foot2_clWool_cl.gotoAndStop(param2);
+            param1.cat1Cat2Tail_cl.gotoAndStop(param2);
             param3++;
-            param1.head_clH2.gotoAndStop(param3);
-            param1.hand_l_clSleeve_cl.gotoAndStop(param3);
-            param1.hand_l_clW2.gotoAndStop(param3);
-            param1.hand_r_clSleeve_cl.gotoAndStop(param3);
-            param1.hand_r_clS2.gotoAndStop(param3);
-            param1.body_clB2.gotoAndStop(param3);
-            param1.foot1_clP2.gotoAndStop(param3);
-            param1.foot2_clP2.gotoAndStop(param3);
-            param1.skirt_cl.gotoAndStop(param3);
-            param1.cloak_cl.gotoAndStop(param3);
+            param1.cat1Cat2Head_clH2.gotoAndStop(param3);
+            param1.cat1Cat2Hand_l_clSleeve_cl.gotoAndStop(param3);
+            param1.cat1Cat2Hand_l_clW2.gotoAndStop(param3);
+            param1.cat1Cat2Hand_r_clSleeve_cl.gotoAndStop(param3);
+            param1.cat1Cat2Hand_r_clS2.gotoAndStop(param3);
+            param1.cat1Cat2Body_clB2.gotoAndStop(param3);
+            param1.cat1Cat2Foot1_clP2.gotoAndStop(param3);
+            param1.cat1Cat2Foot2_clP2.gotoAndStop(param3);
+            param1.cat1Cat2Skirt_cl.gotoAndStop(param3);
+            param1.cat1Cat2Cloak_cl.gotoAndStop(param3);
             param3--;
         }
         public delete_f(): any {
