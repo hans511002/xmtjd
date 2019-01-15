@@ -13,7 +13,7 @@ module com.code {
         type_aby: number = 0;
         qe: number = 0;
         public constructor() {
-            super("Sponsor_button");
+            super("Aby_enemy");
             this.skin = this.createMovieClipSub("skin");
             this._game = Game.getInstance();
             this._app = App.getInstance();
