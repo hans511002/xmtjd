@@ -3,11 +3,11 @@ module SFKLeague_fla {
 
         public constructor() {
             super();
-            this.addFrameScript(0,this.frame1);
+            this.addFrameScript(0, this.frame1);
         }
 
         public frame1(): any {
-            gotoAndStop(1 + Math.floor(Math.random() * totalFrames));
+            this.gotoAndStop(1 + Math.floor(Math.random() * this.totalFrames));
         }
     }
 }
