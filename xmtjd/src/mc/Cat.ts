@@ -1,4 +1,4 @@
-class Cat extends std.MovieClipSub {
+class SubCat extends std.MovieClipSub {
 	public hand_r_cl: std.MovieClip;
 	public hand_r_clS2: std.MovieClipSub;
 	public hand_r_clSleeve_cl: std.MovieClipSub;

@@ -12,8 +12,8 @@ class location_mc extends std.MovieClip {
     public kitty_fans_clFans: std.MovieClipSub = null;
     public tablo_clP1: std.MovieClipSub = null;
     public tablo_clP2: std.MovieClipSub = null;
-    public tablo_clP1N_tx: std.MCLabel = null;
-    public tablo_clP2N_tx: std.MCLabel = null;
+    public tablo_clP1N_tx: eui.Label = null;
+    public tablo_clP2N_tx: eui.Label = null;
 
     kings_clCups_cl: std.MovieClipSub = null;
     public constructor() {
@@ -24,9 +24,9 @@ class location_mc extends std.MovieClip {
         this.enemy_fans_cl = this.createMovieClipSub("enemy_fans_cl");
         this.kitty_fans_cl = this.createMovieClipSub("kitty_fans_cl");
         this.enemy_fans_clFans = this.enemy_fans_cl.createMovieClipSub("fans", 1);
-        this.enemy_fans_clFans.addFrameScript(0, this.frame1);
+        this.enemy_fans_clFans.addFrameScript(0, std.rondFrame);
         this.kitty_fans_clFans = this.kitty_fans_cl.createMovieClipSub("fans", 1);
-        this.kitty_fans_clFans.addFrameScript(0, this.frame1);
+        this.kitty_fans_clFans.addFrameScript(0, std.rondFrame);
         this.tablo_cl = this.createMovieClipSub("tablo_cl");
         this.tablo_clP1 = this.tablo_cl.createMovieClipSub("p1");
         this.tablo_clP1N_tx = this.tablo_clP1.createLabel("n_tx");
@@ -36,9 +36,5 @@ class location_mc extends std.MovieClip {
 
     }
 
-    frame1() {
-        this.gotoAndStop(1 + Math.floor(Math.random() * this.totalFrames));
-        return;
-    }
 
 }

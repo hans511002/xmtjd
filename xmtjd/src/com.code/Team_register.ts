@@ -1,10 +1,10 @@
 module com.code {
     export class Team_register extends DataMovieClip {
-        public n1_tx: std.MCLabel = null;
-        public n2_tx: std.MCLabel = null;
-        public n3_tx: std.MCLabel = null;
-        public n4_tx: std.MCLabel = null;
-        public name_tx: std.MCLabel = null;
+        public n1_tx: eui.Label = null;
+        public n2_tx: eui.Label = null;
+        public n3_tx: eui.Label = null;
+        public n4_tx: eui.Label = null;
+        public name_tx: eui.Label = null;
         public play_bt: std.MCButton = null;
         public please_full_cl: std.MovieClipSub = null;
         please_full_clAuto_bt: std.MovieClipSub = null;
@@ -12,8 +12,17 @@ module com.code {
         _app: App = null;
         ple: boolean = false;
         public constructor() {
-            super();
+            super("Team_register");
             this._app = App.getInstance();
+            this.please_full_cl = this.createMovieClipSub("please_full_cl");
+            this.please_full_clAuto_bt = this.please_full_cl.createMovieClipSub("auto_bt");
+            this.play_bt = this.createMCButton("play_bt");
+            this.name_tx = this.createLabel("name_tx");
+            this.n1_tx = this.createLabel("n1_tx");
+            this.n2_tx = this.createLabel("n2_tx");
+            this.n3_tx = this.createLabel("n3_tx");
+            this.n4_tx = this.createLabel("n4_tx");
+
         }
         public init(): void {
             this.addEventListener(egret.Event.ENTER_FRAME, this.game_f, this);
@@ -25,23 +34,23 @@ module com.code {
         }
         public click_f(param1: egret.TouchEvent): any {
             if (this._mo(this.please_full_clAuto_bt)) {
-                this.name_tx.label.text = "猫咪队伍";
-                this.n1_tx.label.text = "菲力克斯";
-                this.n2_tx.label.text = "加菲";
-                this.n3_tx.label.text = "汤姆";
-                this.n4_tx.label.text = "辛巴";
+                this.name_tx.text = "猫咪队伍";
+                this.n1_tx.text = "菲力克斯";
+                this.n2_tx.text = "加菲";
+                this.n3_tx.text = "汤姆";
+                this.n4_tx.text = "辛巴";
                 this._app._so.load_by_name(click_so);
             }
             if (this._mo(this.play_bt)) {
                 this._app._so.load_by_name(click_so);
                 this.ple = true;
-                if (this.name_tx.label.text != "" && this.name_tx.label.text != null) {
-                    if (this.n1_tx.label.text != "" && this.n1_tx.label.text != null) {
-                        if (this.n2_tx.label.text != "" && this.n2_tx.label.text != null) {
-                            if (this.n3_tx.label.text != "" && this.n3_tx.label.text != null) {
-                                if (this.n4_tx.label.text != "" && this.n4_tx.label.text != null) {
+                if (this.name_tx.text != "" && this.name_tx.text != null) {
+                    if (this.n1_tx.text != "" && this.n1_tx.text != null) {
+                        if (this.n2_tx.text != "" && this.n2_tx.text != null) {
+                            if (this.n3_tx.text != "" && this.n3_tx.text != null) {
+                                if (this.n4_tx.text != "" && this.n4_tx.text != null) {
                                     this.ple = false;
-                                    Main.sav.data.team_name_1 = this.name_tx.label.text;
+                                    Main.sav.data.team_name_1 = this.name_tx.text;
                                     this._app.open_new_screen("upg");
                                     return;
                                 }

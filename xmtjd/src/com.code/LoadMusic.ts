@@ -36,7 +36,7 @@ module com.code {
                 case "menu":
                     {
                         if (Main.load_map_zvuk == 1) {
-                            Main.muz_map_zvuk_zv = new egret.Sound();
+                            // Main.muz_map_zvuk_zv = new egret.Sound();
                             Main.muz_map_zvuk_zv = new com_music_zvuk();
                             Main.muz_map_zvuk_can = Main.muz_map_zvuk_zv.play();
                             Main.muz_map_zvuk_can.addEventListener(egret.Event.SOUND_COMPLETE, this.sound_map_again, this);
@@ -47,7 +47,7 @@ module com.code {
                 case "game":
                     {
                         if (Main.load_elf_zvuk == 1) {
-                            Main.muz_elf_zvuk_zv = new egret.Sound();
+                            // Main.muz_elf_zvuk_zv = new egret.Sound();
                             Main.muz_elf_zvuk_zv = new elf_music_zvuk();
                             Main.muz_elf_zvuk_can = Main.muz_elf_zvuk_zv.play();
                             Main.muz_elf_zvuk_can.addEventListener(egret.Event.SOUND_COMPLETE, this.sound_elf_again, this);
@@ -58,7 +58,7 @@ module com.code {
                 case "upg":
                     {
                         if (Main.load_water_zvuk == 1) {
-                            Main.muz_water_zvuk_zv = new egret.Sound();
+                            // Main.muz_water_zvuk_zv = new egret.Sound();
                             Main.muz_water_zvuk_zv = new water_music_zvuk();
                             Main.muz_water_zvuk_can = Main.muz_water_zvuk_zv.play();
                             Main.muz_water_zvuk_can.addEventListener(egret.Event.SOUND_COMPLETE, this.sound_water_again, this);
@@ -69,7 +69,7 @@ module com.code {
                 case "dance":
                     {
                         if (Main.load_dance_zvuk == 1) {
-                            Main.muz_dance_zvuk_zv = new egret.Sound();
+                            // Main.muz_dance_zvuk_zv = new egret.Sound();
                             Main.muz_dance_zvuk_zv = new dance_music_zvuk();
                             Main.muz_dance_zvuk_can = Main.muz_dance_zvuk_zv.play();
                             Main.muz_dance_zvuk_can.addEventListener(egret.Event.SOUND_COMPLETE, this.sound_dance_again, this);

@@ -21,7 +21,7 @@
             this._app = App.getInstance();
         }
 
-        public init(): boolean {
+        public init(): void {
             this.skin = this._sp(aby_mc, this, 285 - (this._game.arr_cat.length - 1) * 78, 387);
             this.id = this._game.arr_cat.length;
             this.type = Main.sav.data["cat_aby_" + this.id];
@@ -61,27 +61,27 @@
             return;
         }// end function
 
-        public dress_up(cat: aby_mc, param2: number) {
-            cat.cat2Head_clWool_cl.gotoAndStop(this.id);
-            cat.cat2Hand_l_clWool_cl.gotoAndStop(this.id);
-            cat.cat2Hand_r_clWool_cl.gotoAndStop(this.id);
-            cat.cat2Body_clWool_cl.gotoAndStop(this.id);
-            cat.cat2Foot1_clWool_cl.gotoAndStop(this.id);
-            cat.cat2Foot2_clWool_cl.gotoAndStop(this.id);
-            cat.cat2Tail_cl.gotoAndStop(this.id);
+        public dress_up(cat: SubCat, param2: number): number {
+            cat.head_clWool_cl.gotoAndStop(this.id);
+            cat.hand_l_clWool_cl.gotoAndStop(this.id);
+            cat.hand_r_clWool_cl.gotoAndStop(this.id);
+            cat.body_clWool_cl.gotoAndStop(this.id);
+            cat.foot1_clWool_cl.gotoAndStop(this.id);
+            cat.foot2_clWool_cl.gotoAndStop(this.id);
+            cat.tail_cl.gotoAndStop(this.id);
             param2 = param2 + 1;
-            cat.cat2Head_clH2.gotoAndStop(param2);
-            cat.cat2Hand_l_clSleeve_cl.gotoAndStop(param2);
-            cat.cat2Hand_l_clW2.gotoAndStop(param2);
-            cat.cat2Hand_r_clSleeve_cl.gotoAndStop(param2);
-            cat.cat2Hand_r_clS2.gotoAndStop(param2);
-            cat.cat2Body_clB2.gotoAndStop(param2);
-            cat.cat2Foot1_clP2.gotoAndStop(param2);
-            cat.cat2Foot2_clP2.gotoAndStop(param2);
-            cat.cat2Skirt_cl.gotoAndStop(param2);
-            cat.cat2Cloak_cl.gotoAndStop(param2);
+            cat.head_clH2.gotoAndStop(param2);
+            cat.hand_l_clSleeve_cl.gotoAndStop(param2);
+            cat.hand_l_clW2.gotoAndStop(param2);
+            cat.hand_r_clSleeve_cl.gotoAndStop(param2);
+            cat.hand_r_clS2.gotoAndStop(param2);
+            cat.body_clB2.gotoAndStop(param2);
+            cat.foot1_clP2.gotoAndStop(param2);
+            cat.foot2_clP2.gotoAndStop(param2);
+            cat.skirt_cl.gotoAndStop(param2);
+            cat.cloak_cl.gotoAndStop(param2);
             param2 = param2 - 1;
-            return;
+            return param2;
         }// end function
 
         public set_scale(param1: any): any {

@@ -1,11 +1,12 @@
 module com.code {
     export class Deqaf extends std.MovieClip {
-        public splash_deqaf_cl: std.MovieClip = null;
+        public splash_deqaf_cl: std.MovieClipSub = null;
         _app: App = null;
         _sounds: LoadSounds = null;
         public constructor() {
-            super();
+            super("Deqaf");
             this._app = App.getInstance();
+            this.splash_deqaf_cl = this.createMovieClipSub("splash_deqaf_cl");
         }
         public init(): void {
             this.addEventListener(egret.Event.ENTER_FRAME, this.sp_f, this);

@@ -1,11 +1,13 @@
 module com.code {
     export class Buttons_sounds extends std.MovieClip {
-        public music_bt: std.MovieClip = null;
-        public sfx_bt: std.MovieClip = null;
+        public music_bt: std.MCButton = null;
+        public sfx_bt: std.MCButton = null;
         _app: App = null;
         public constructor() {
-            super();
+            super("Buttons_sounds");
             this._app = App.getInstance();
+            this.music_bt = this.createMCButton("music_bt");
+            this.sfx_bt = this.createMCButton("sfx_bt");
             if (this.stage) {
                 this.init();
             }
@@ -15,8 +17,8 @@ module com.code {
         }
         public init(param1: egret.Event = null): boolean {
             this.removeEventListener(egret.Event.ADDED_TO_STAGE, this.init, this);
-            this.sfx_bt.addEventListener(egret.TouchEvent.TOUCH_TAP, this.click_sfx_f, this);
-            this.music_bt.addEventListener(egret.TouchEvent.TOUCH_TAP, this.click_music_f, this);
+            this.sfx_bt.onclick = this.click_sfx_f;//.container.addEventListener(egret.TouchEvent.TOUCH_TAP, this.click_sfx_f, this);
+            this.music_bt.onclick = this.click_music_f;//.container.addEventListener(egret.TouchEvent.TOUCH_TAP, this.click_music_f, this);
             this.check_mute();
             return;
         }
@@ -54,8 +56,8 @@ module com.code {
             this._app._music.mute();
         }
         public delete_f(): any {
-            this.sfx_bt.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.click_sfx_f, this);
-            this.music_bt.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.click_music_f, this);
+            this.sfx_bt.removeListener();//.container.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.click_sfx_f, this);
+            this.music_bt.removeListener();//.container.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.click_music_f, this);
         }
     }
 }

@@ -1,12 +1,12 @@
 ﻿class card_mc extends std.MovieClip {
     bg_cl: std.MovieClipSub;
     cat_cl: std.MovieClipSub;
-    des_tx: std.MCLabel;
+    des_tx: eui.Label;
     icon_cl: std.MovieClipSub;
-    n_tx: std.MCLabel;
+    n_tx: eui.Label;
     over_cl: std.MovieClipSub;
     telo: std.MovieClipSub;
-    title_tx: std.MCLabel;
+    title_tx: eui.Label;
     wear_cl: std.MovieClipSub;
 
     public constructor() {

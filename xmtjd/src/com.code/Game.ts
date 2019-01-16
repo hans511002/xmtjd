@@ -3,7 +3,7 @@ module com.code {
         private static _instance: Game = null;
         _app: App = null;
         public constructor() {
-            super();
+            super("Game");
             this._app = App.getInstance();
             Game._instance = this;
         }
@@ -30,7 +30,7 @@ module com.code {
                 Main.sav.data.tuto1 = 2;
                 this.tuto_battle = true;
                 this.pause_cl.home_bt.gotoAndStop(2);
-                this.down_panel_cl.hero_tx.label.text = "小猫突击队";
+                this.down_panel_cl.hero_tx.text = "小猫突击队";
                 Main.sav.data.playoff = 1;
                 Main.sav.data.playoff_round = 3;
                 Main.sav.data.cat_aby_1 = 66;
@@ -60,7 +60,7 @@ module com.code {
                 this.addEventListener(egret.Event.ENTER_FRAME, this.tuto1_f, this);
             }
             else {
-                this.down_panel_cl.hero_tx.label.text = Main.sav.data.team_name_1;
+                this.down_panel_cl.hero_tx.text = Main.sav.data.team_name_1;
             }
             if (this._app.train_mode == false) {
                 this.pause_cl.home_bt.gotoAndStop(1);
@@ -136,7 +136,7 @@ module com.code {
                 this.location_cl.kings_cl.gotoAndStop(this._app.team_enemy);
                 this.location_cl.flag_cl.gotoAndStop(1);
                 this.location_cl.flag2_cl.gotoAndStop(this._app.team_enemy + 1);
-                this.down_panel_cl.enemy_tx.label.text = this._info_enemy.got_title(this._app.team_enemy_id);
+                this.down_panel_cl.enemy_tx.text = this._info_enemy.got_title(this._app.team_enemy_id);
             }
             else {
                 this.pause_cl.home_bt.gotoAndStop(2);
@@ -166,7 +166,7 @@ module com.code {
                     this.zone_panel.addChild(this._aby);
                     this.arr_aby.push(this._aby);
                     this._aby.init();
-                    this._aby.dress_up(this._aby.skin, Main.sav.data["cat_dress_" + this.i]);
+                    this._aby.dress_up(this._aby.skin.cat2, Main.sav.data["cat_dress_" + this.i]);
                     this.i++;
                 }
                 this.i = 1;
@@ -192,7 +192,7 @@ module com.code {
                     this.zone_panel.addChild(this._aby);
                     this.arr_aby.push(this._aby);
                     this._aby.init();
-                    this._aby.dress_up(this._aby.skin, Main.sav.data["cat_dress_" + this.i]);
+                    this._aby.dress_up(this._aby.skin.cat2, Main.sav.data["cat_dress_" + this.i]);
                     this.i++;
                 }
                 this.i = 1;
@@ -215,7 +215,7 @@ module com.code {
             this.i = 0;
             while (this.i < this.arr_aby_enemy.length) {
                 this.arr_fox[this.i].scale_cl.icon_clIcon2Icon_cl.gotoAndStop(this.arr_aby_enemy[this.i].type_aby);
-                this.arr_fox[this.i].scale_cl.icon_cl.icon2.scale_cl.$setVisible(true);
+                this.arr_fox[this.i].scale_cl.icon_clIcon2Scale_cl.$setVisible(true);
                 this.arr_fox[this.i].scale_cl.icon_clIcon2Scale_cl.gotoAndStop(1);
                 this.arr_fox[this.i].scale_cl.icon_clIcon2Bg_cl.gotoAndStop(2);
                 this.arr_fox[this.i].scale_cl.icon_clIcon2Scale_cl.gotoAndStop(Math.floor(this.arr_aby_enemy[this.i].reload_time / this.arr_aby_enemy[this.i].reload_time2 * 100));
@@ -267,7 +267,7 @@ module com.code {
                         }
                         if (++this.over_time > 12) {
                             this.info_aby_cl.$setVisible(true);
-                            this.info_aby_cl.des_tx.label.text = this.got_des_skill(this.arr_aby[this.i].type_aby);
+                            this.info_aby_cl.des_tx.text = this.got_des_skill(this.arr_aby[this.i].type_aby);
                             break;
                         }
                         break;
@@ -321,7 +321,7 @@ module com.code {
                             }
                         }
                         if (this.arr_cat[this.i].got_damage_mode) {
-                            if (this._frame(this.arr_cat[this.i].skin.cat1.cat2)) {
+                            if (this._frame(this.arr_cat[this.i].skin.cat1Cat2)) {
                                 this.arr_cat[this.i].got_damage_mode = false;
                                 if (this.arr_cat[this.i].reload_mode) {
                                     this.arr_cat[this.i].go_frame(4);
@@ -329,7 +329,7 @@ module com.code {
                             }
                         }
                         if (this.arr_cat[this.i].after_attack_mode) {
-                            if (this._frame(this.arr_cat[this.i].skin.cat1.cat2)) {
+                            if (this._frame(this.arr_cat[this.i].skin.cat1Cat2)) {
                                 this.arr_cat[this.i].after_attack_mode = false;
                                 if (this.arr_cat[this.i].reload_mode) {
                                     this.arr_cat[this.i].go_frame(4);
@@ -344,7 +344,7 @@ module com.code {
                                     this.arr_cat[this.i].set_mode(4);
                                     this.arr_cat[this.i].go_frame(4);
                                     if (this.lock_mode == false) {
-                                        this.arr_aby[this.i].skin.icon_cl.lock_cl.$setVisible(false);
+                                        this.arr_aby[this.i].skin.icon_clLock_cl.$setVisible(false);
                                     }
                                 }
                             }
@@ -414,7 +414,7 @@ module com.code {
                             if (this.arr_aby[this.i].type_aby == 3) {
                                 this._app._so.load_by_name(fireball_so);
                                 this.sprite_var = this._sp(fireball_mc, this.zone_up_all, this.arr_cat[this.i].skin.x + 40, this.arr_cat[this.i].skin.y + 10);
-                                this.arr_fireball_skin.push(this.sprite_var);
+                                this.arr_fireball_skin.push(<fireball_mc>this.sprite_var);
                                 this.arr_fireball_side.push(1);
                                 this.arr_fireball_power.push(this.arr_aby[this.i].power);
                             }
@@ -479,7 +479,7 @@ module com.code {
                                     if (this.arr_fox[this.i2].life) {
                                         if (this.arr_fox[this.i2].bubble_mode == false) {
                                             this.arr_fox[this.i2].to_bubble(this.arr_aby[this.i].power);
-                                            this.arr_fox[this.i2].scale_cl.icon_cl.lock_cl.$setVisible(true);
+                                            this.arr_fox[this.i2].scale_cl.icon_clLock_cl.$setVisible(true);
                                             break;
                                         }
                                     }
@@ -539,7 +539,7 @@ module com.code {
                                 }
                             }
                         }
-                        if (this._frame(this.arr_cat[this.i].skin.cat1.cat2)) {
+                        if (this._frame(this.arr_cat[this.i].skin.cat1Cat2)) {
                             this.arr_cat[this.i].aby_mode = false;
                             this.arr_cat[this.i].go_frame(4);
                             this.arr_cat[this.i].set_mode(4);
@@ -561,17 +561,17 @@ module com.code {
                                 this.arr_cat[this.i].go_frame(28);
                             }
                         }
-                        else if (this._frame(this.arr_cat[this.i].skin.cat1.cat2)) {
+                        else if (this._frame(this.arr_cat[this.i].skin.cat1Cat2)) {
                             this.arr_cat[this.i].bubble_mode = false;
                             if (this.lock_mode == false) {
-                                this.arr_aby[this.i].skin.icon_cl.lock_cl.$setVisible(false);
+                                this.arr_aby[this.i].skin.icon_clLock_cl.$setVisible(false);
                             }
                             this.arr_cat[this.i].go_frame(4);
                         }
                     }
                 }
                 else if (this.arr_cat[this.i].dead) {
-                    if (this._frame(this.arr_cat[this.i].skin.cat1.cat2)) {
+                    if (this._frame(this.arr_cat[this.i].skin.cat1Cat2)) {
                         this.arr_cat[this.i].dead = false;
                     }
                 }
@@ -623,7 +623,7 @@ module com.code {
                             }
                         }
                         if (this.arr_fox[this.i].got_damage_mode) {
-                            if (this._frame(this.arr_fox[this.i].skin.cat1.cat2)) {
+                            if (this._frame(this.arr_fox[this.i].skin.cat1Cat2)) {
                                 this.arr_fox[this.i].got_damage_mode = false;
                                 if (this.arr_fox[this.i].reload_mode) {
                                     this.arr_fox[this.i].go_frame(4);
@@ -631,7 +631,7 @@ module com.code {
                             }
                         }
                         if (this.arr_fox[this.i].after_attack_mode) {
-                            if (this._frame(this.arr_fox[this.i].skin.cat1.cat2)) {
+                            if (this._frame(this.arr_fox[this.i].skin.cat1Cat2)) {
                                 this.arr_fox[this.i].after_attack_mode = false;
                                 if (this.arr_fox[this.i].reload_mode) {
                                     this.arr_fox[this.i].go_frame(4);
@@ -646,7 +646,7 @@ module com.code {
                                     this.arr_fox[this.i].set_mode(4);
                                     this.arr_fox[this.i].go_frame(4);
                                     if (this.lock_mode_fox == false) {
-                                        this.arr_fox[this.i].scale_cl.icon_cl.lock_cl.$setVisible(false);
+                                        this.arr_fox[this.i].scale_cl.icon_clLock_cl.$setVisible(false);
                                     }
                                 }
                             }
@@ -718,7 +718,7 @@ module com.code {
                                 this._app._so.load_by_name(fireball_so);
                                 this.sprite_var = this._sp(fireball_mc, this.zone_up_all, this.arr_fox[this.i].skin.x - 30, this.arr_fox[this.i].skin.y + 10);
                                 this.sprite_var.scaleX = -Math.abs(this.sprite_var.scaleX);
-                                this.arr_fireball_skin.push(this.sprite_var);
+                                this.arr_fireball_skin.push(<fireball_mc>this.sprite_var);
                                 this.arr_fireball_side.push(2);
                                 this.arr_fireball_power.push(this.arr_aby_enemy[this.i].power);
                             }
@@ -784,7 +784,7 @@ module com.code {
                                     if (this.arr_cat[this.i2].life) {
                                         if (this.arr_cat[this.i2].bubble_mode == false) {
                                             this.arr_cat[this.i2].to_bubble(this.arr_aby_enemy[this.i].power);
-                                            this.arr_aby[this.i2].skin.icon_cl.lock_cl.$setVisible(true);
+                                            this.arr_aby[this.i2].skin.icon_clLock_cl.$setVisible(true);
                                             break;
                                         }
                                     }
@@ -843,7 +843,7 @@ module com.code {
                                 }
                             }
                         }
-                        if (this._frame(this.arr_fox[this.i].skin.cat1.cat2)) {
+                        if (this._frame(this.arr_fox[this.i].skin.cat1Cat2)) {
                             this.arr_fox[this.i].aby_mode = false;
                             this.arr_fox[this.i].go_frame(4);
                             this.arr_fox[this.i].set_mode(4);
@@ -865,10 +865,10 @@ module com.code {
                                 this.arr_fox[this.i].go_frame(28);
                             }
                         }
-                        else if (this._frame(this.arr_fox[this.i].skin.cat1.cat2)) {
+                        else if (this._frame(this.arr_fox[this.i].skin.cat1Cat2)) {
                             this.arr_fox[this.i].bubble_mode = false;
                             if (this.lock_mode_fox == false) {
-                                this.arr_fox[this.i].scale_cl.icon_cl.lock_cl.$setVisible(false);
+                                this.arr_fox[this.i].scale_cl.icon_clLock_cl.$setVisible(false);
                             }
                             this.arr_fox[this.i].go_frame(4);
                             this.arr_fox[this.i].go_frame(4);
@@ -876,7 +876,7 @@ module com.code {
                     }
                 }
                 else if (this.arr_fox[this.i].dead) {
-                    if (this._frame(this.arr_fox[this.i].skin.cat1.cat2)) {
+                    if (this._frame(this.arr_fox[this.i].skin.cat1Cat2)) {
                         this.arr_fox[this.i].dead = false;
                     }
                 }
@@ -897,7 +897,7 @@ module com.code {
                         this.lock_mode_fox = false;
                         this.i5 = 0;
                         while (this.i5 < this.arr_fox.length) {
-                            this.arr_fox[this.i5].scale_cl.icon_cl.lock_cl.$setVisible(false);
+                            this.arr_fox[this.i5].scale_cl.icon_clLock_cl.$setVisible(false);
                             this.i5++;
                         }
                     }
@@ -930,7 +930,7 @@ module com.code {
                         this.lock_mode = false;
                         this.i5 = 0;
                         while (this.i5 < this.arr_aby.length) {
-                            this.arr_aby[this.i5].skin.icon_cl.lock_cl.$setVisible(false);
+                            this.arr_aby[this.i5].skin.icon_clLock_cl.$setVisible(false);
                             this.i5++;
                         }
                     }
@@ -1067,7 +1067,7 @@ module com.code {
                         if (this.arr_aby[this.i].reload_time >= this.arr_aby[this.i].reload_time2) {
                             this.arr_aby[this.i].ex_aby = true;
                             this.arr_aby[this.i].skin.icon_clIcon2Bg_cl.gotoAndStop(1);
-                            this.arr_aby[this.i].skin.icon_cl.icon2.scale_cl.$setVisible(false);
+                            this.arr_aby[this.i].skin.icon_clIcon2Scale_cl.$setVisible(false);
                             this.arr_aby[this.i].skin.icon_clIcon2Scale_cl.gotoAndStop(1);
                             break;
                         }
@@ -1081,7 +1081,7 @@ module com.code {
                     if (this.arr_fox[this.i].life) {
                         if (this.arr_aby_enemy[this.i].reload_time >= this.arr_aby_enemy[this.i].reload_time2) {
                             this.arr_fox[this.i].scale_cl.icon_clIcon2Bg_cl.gotoAndStop(1);
-                            this.arr_fox[this.i].scale_cl.icon_cl.icon2.scale_cl.$setVisible(false);
+                            this.arr_fox[this.i].scale_cl.icon_clIcon2Scale_cl.$setVisible(false);
                             this.arr_fox[this.i].scale_cl.icon_clIcon2Scale_cl.gotoAndStop(1);
                             if (this.arr_fox[this.i].stun_mode == false && this.arr_fox[this.i].aby_mode == false && this.arr_fox[this.i].bubble_mode == false) {
                                 if (this.arr_aby_enemy[this.i].type_aby == 1 || this.arr_aby_enemy[this.i].type_aby == 2 || this.arr_aby_enemy[this.i].type_aby == 10) {
@@ -1117,7 +1117,7 @@ module com.code {
                                     else if (this.arr_aby_enemy[this.i].frame_action == 21) {
                                         this._app._so.load_by_name(reload_all_so);
                                     }
-                                    this.arr_fox[this.i].scale_cl.icon_cl.icon2.scale_cl.$setVisible(true);
+                                    this.arr_fox[this.i].scale_cl.icon_clIcon2Scale_cl.$setVisible(true);
                                     this.arr_fox[this.i].scale_cl.icon_clIcon2Scale_cl.gotoAndStop(1);
                                     this.arr_fox[this.i].scale_cl.icon_clIcon2Bg_cl.gotoAndStop(2);
                                 }
@@ -1296,7 +1296,7 @@ module com.code {
                 this.i4 = 0;
                 while (this.i4 < this.arr_cat.length) {
                     if (this.arr_cat[this.i4].life) {
-                        if (this._frame(this.arr_cat[this.i4].skin.cat1.cat2) || this.arr_cat[this.i4].reload_mode || this.arr_cat[this.i4].run_mode) {
+                        if (this._frame(this.arr_cat[this.i4].skin.cat1Cat2) || this.arr_cat[this.i4].reload_mode || this.arr_cat[this.i4].run_mode) {
                             this.arr_cat[this.i4].go_frame(23);
                             this.arr_cat[this.i4].life = false;
                             if (this.i4 == 0) {
@@ -1342,7 +1342,7 @@ module com.code {
                 this.i4 = 0;
                 while (this.i4 < this.arr_fox.length) {
                     if (this.arr_fox[this.i4].life) {
-                        if (this._frame(this.arr_fox[this.i4].skin.cat1.cat2) || this.arr_fox[this.i4].reload_mode || this.arr_fox[this.i4].run_mode) {
+                        if (this._frame(this.arr_fox[this.i4].skin.cat1Cat2) || this.arr_fox[this.i4].reload_mode || this.arr_fox[this.i4].run_mode) {
                             this.arr_fox[this.i4].go_frame(23);
                             this.arr_fox[this.i4].life = false;
                             if (this.i4 == 0) {
@@ -1474,7 +1474,7 @@ module com.code {
                             this._app._so.load_by_name(stun_so);
                             this.add_super_shot(1, this.arr_cat[param1].skin);
                             this.arr_fox[param2].to_stun(this.arr_aby[param1].power);
-                            this.arr_fox[param2].scale_cl.icon_cl.lock_cl.$setVisible(true);
+                            this.arr_fox[param2].scale_cl.icon_clLock_cl.$setVisible(true);
                         }
                     }
                     this.arr_cat[param1].after_attack_mode = true;
@@ -1487,7 +1487,7 @@ module com.code {
                     this.arr_cat[param1].aby_shot_mode = false;
                     this.arr_cat[param1].go_frame(this.arr_aby[param1].frame_action);
                     this.arr_aby[param1].skin.icon_clIcon2Bg_cl.gotoAndStop(2);
-                    this.arr_aby[param1].skin.icon_cl.icon2.scale_cl.$setVisible(true);
+                    this.arr_aby[param1].skin.icon_clIcon2Scale_cl.$setVisible(true);
                     this.arr_aby[param1].skin.icon_clIcon2Scale_cl.gotoAndStop(1);
                     this.arr_aby[param1].reload_time = 0;
                 }
@@ -1557,7 +1557,7 @@ module com.code {
                             this._app._so.load_by_name(stun_so);
                             this.add_super_shot(2, this.arr_fox[param2].skin);
                             this.arr_cat[param1].to_stun(this.arr_aby_enemy[param2].power);
-                            this.arr_aby[param1].skin.icon_cl.lock_cl.$setVisible(true);
+                            this.arr_aby[param1].skin.icon_clLock_cl.$setVisible(true);
                         }
                     }
                     this.arr_fox[param2].after_attack_mode = true;
@@ -1570,7 +1570,7 @@ module com.code {
                     this.arr_fox[param2].aby_shot_mode = false;
                     this.arr_fox[param2].go_frame(this.arr_aby_enemy[param2].frame_action);
                     this.arr_fox[param2].scale_cl.icon_clIcon2Bg_cl.gotoAndStop(2);
-                    this.arr_fox[param2].scale_cl.icon_cl.icon2.scale_cl.$setVisible(true);
+                    this.arr_fox[param2].scale_cl.icon_clIcon2Scale_cl.$setVisible(true);
                     this.arr_fox[param2].scale_cl.icon_clIcon2Scale_cl.gotoAndStop(1);
                     this.arr_aby_enemy[param2].reload_time = 0;
                 }
@@ -1595,7 +1595,7 @@ module com.code {
                     else {
                         this.arr_aby[param1].ex_aby = false;
                         this.arr_aby[param1].skin.icon_clIcon2Bg_cl.gotoAndStop(2);
-                        this.arr_aby[param1].skin.icon_cl.icon2.scale_cl.$setVisible(true);
+                        this.arr_aby[param1].skin.icon_clIcon2Scale_cl.$setVisible(true);
                         this.arr_aby[param1].skin.icon_clIcon2Scale_cl.gotoAndStop(1);
                         this.arr_aby[param1].reload_time = 0;
                         this.arr_cat[param1].set_mode(0);
@@ -1909,7 +1909,7 @@ module com.code {
             }
             Main.sav.flush();
         }
-        public go_end(): any {
+        go_end(): any {
             if (this.tuto_battle) {
                 this._app.init_save_kitty();
                 Main.sav.data.game_ex = 1;
@@ -1952,7 +1952,104 @@ module com.code {
                 this._app.open_new_screen("upg");
             }
         }
-        public set_result_enemy_games(): any {
+        new_step(): any {
+            this.arr_temp.splice(0, this.arr_temp.length);
+            this.arr_temp2.splice(0, this.arr_temp2.length);
+            if (this.numbef_of_m == 0) {
+                if (Main.sav.data.league == 4) {
+                    this.arr_temp.push(2, 3, 4, 5, 6);
+                    this.arr_temp2.push(2, 3, 4, 5, 6);
+                }
+                else if (Main.sav.data.league == 3) {
+                    this.arr_temp.push(7, 8, 9, 10, 11);
+                    this.arr_temp2.push(7, 8, 9, 10, 11);
+                }
+                else if (Main.sav.data.league == 2) {
+                    this.arr_temp.push(12, 13, 14, 15, 16);
+                    this.arr_temp2.push(12, 13, 14, 15, 16);
+                }
+                else if (Main.sav.data.league == 1) {
+                    this.arr_temp.push(17, 18, 19, 20, 21);
+                    this.arr_temp2.push(17, 18, 19, 20, 21);
+                }
+            }
+            else {
+                this.i3 = 1 + this.numbef_of_m + Main.sav.data.season_koff;
+                while (this.arr_temp.length < 5) {
+                    this.arr_temp.push(this.i3);
+                    this.i3++;
+                    if (this.i3 > 6 + Main.sav.data.season_koff) {
+                        this.i3 = 2 + Main.sav.data.season_koff;
+                    }
+                }
+                if (this.numbef_of_two) {
+                    this.i3 = 1 + this.numbef_of_m2 + Main.sav.data.season_koff;
+                    while (this.arr_temp2.length < 5) {
+                        this.arr_temp2.push(this.i3);
+                        this.i3++;
+                        if (this.i3 > 6 + Main.sav.data.season_koff) {
+                            this.i3 = 2 + Main.sav.data.season_koff;
+                        }
+                    }
+                }
+            }
+            this.arr_op.splice(0, this.arr_op.length);
+            this.arr_op2.splice(0, this.arr_op2.length);
+            this.numbef_of_m++;
+            if (this.numbef_of_m == 4 + Main.sav.data.season_koff) {
+                this.numbef_of_two = true;
+                this.numbef_of_m = 0;
+                this.numbef_of_m2++;
+                if (this.numbef_of_m2 == 4 + Main.sav.data.season_koff) {
+                    this.numbef_of_m2 = 0;
+                }
+            }
+            this.numbef_of_m3++;
+        }
+        set_match(): any {
+            this.new_step();
+            this.i3 = 0;
+            while (this.i3 < this.arr_temp.length) {
+                this.i5 = 0;
+                while (this.i5 < this.arr_temp2.length) {
+                    if (this.arr_temp[this.i3] != this._app.team_enemy_id && this.arr_temp2[this.i5] != this._app.team_enemy_id && this.arr_temp[this.i3] != this.arr_temp2[this.i5]) {
+                        if (Main.sav.data["match_" + this.arr_temp[this.i3] + "_vs_" + this.arr_temp2[this.i5]] == 0 && Main.sav.data["match_" + this.arr_temp2[this.i5] + "_vs_" + this.arr_temp[this.i3]] == 0) {
+                            this.arr_op.push(this.arr_temp[this.i3]);
+                            this.arr_op2.push(this.arr_temp2[this.i5]);
+                            this.rnd_for = this.arr_temp[this.i3];
+                            this.rnd_for2 = this.arr_temp2[this.i5];
+                            this.arr_temp.splice(this.i3, 1);
+                            this.arr_temp2.splice(this.i5, 1);
+                            this.i6 = 0;
+                            while (this.i6 < this.arr_temp.length) {
+                                if (this.arr_temp[this.i6] == this.rnd_for2) {
+                                    this.arr_temp.splice(this.i6, 1);
+                                    break;
+                                }
+                                this.i6++;
+                            }
+                            this.i6 = 0;
+                            while (this.i6 < this.arr_temp2.length) {
+                                if (this.arr_temp2[this.i6] == this.rnd_for) {
+                                    this.arr_temp2.splice(this.i6, 1);
+                                    break;
+                                }
+                                this.i6++;
+                            }
+                            this.i5--;
+                            this.i3--;
+                        }
+                    }
+                    this.i5++;
+                }
+                this.i3++;
+            }
+            if (this.arr_op.length == 2 || this.numbef_of_m3 == 9000) {
+                return 1;
+            }
+            return 0;
+        };
+        set_result_enemy_games(): any {
             if (Main.sav.data.playoff == 1) {
                 if (Main.sav.data.playoff_round == 1) {
                     if (Main.sav.data.league == 4) {
@@ -1978,108 +2075,11 @@ module com.code {
                 }
             }
             else {
-                var new_step: Function = function (): any {
-                    this.arr_temp.splice(0, this.arr_temp.length);
-                    this.arr_temp2.splice(0, this.arr_temp2.length);
-                    if (this.numbef_of_m == 0) {
-                        if (Main.sav.data.league == 4) {
-                            this.arr_temp.push(2, 3, 4, 5, 6);
-                            this.arr_temp2.push(2, 3, 4, 5, 6);
-                        }
-                        else if (Main.sav.data.league == 3) {
-                            this.arr_temp.push(7, 8, 9, 10, 11);
-                            this.arr_temp2.push(7, 8, 9, 10, 11);
-                        }
-                        else if (Main.sav.data.league == 2) {
-                            this.arr_temp.push(12, 13, 14, 15, 16);
-                            this.arr_temp2.push(12, 13, 14, 15, 16);
-                        }
-                        else if (Main.sav.data.league == 1) {
-                            this.arr_temp.push(17, 18, 19, 20, 21);
-                            this.arr_temp2.push(17, 18, 19, 20, 21);
-                        }
-                    }
-                    else {
-                        this.i3 = 1 + this.numbef_of_m + Main.sav.data.season_koff;
-                        while (this.arr_temp.length < 5) {
-                            this.arr_temp.push(this.i3);
-                            this.i3++;
-                            if (this.i3 > 6 + Main.sav.data.season_koff) {
-                                this.i3 = 2 + Main.sav.data.season_koff;
-                            }
-                        }
-                        if (this.numbef_of_two) {
-                            this.i3 = 1 + this.numbef_of_m2 + Main.sav.data.season_koff;
-                            while (this.arr_temp2.length < 5) {
-                                this.arr_temp2.push(this.i3);
-                                this.i3++;
-                                if (this.i3 > 6 + Main.sav.data.season_koff) {
-                                    this.i3 = 2 + Main.sav.data.season_koff;
-                                }
-                            }
-                        }
-                    }
-                    this.arr_op.splice(0, this.arr_op.length);
-                    this.arr_op2.splice(0, this.arr_op2.length);
-                    this.numbef_of_m++;
-                    if (this.numbef_of_m == 4 + Main.sav.data.season_koff) {
-                        this.numbef_of_two = true;
-                        this.numbef_of_m = 0;
-                        this.numbef_of_m2++;
-                        if (this.numbef_of_m2 == 4 + Main.sav.data.season_koff) {
-                            this.numbef_of_m2 = 0;
-                        }
-                    }
-                    this.numbef_of_m3++;
-                };
-                var set_match: Function = function (): any {
-                    new_step();
-                    this.i3 = 0;
-                    while (this.i3 < this.arr_temp.length) {
-                        this.i5 = 0;
-                        while (this.i5 < this.arr_temp2.length) {
-                            if (this.arr_temp[this.i3] != this._app.team_enemy_id && this.arr_temp2[this.i5] != this._app.team_enemy_id && this.arr_temp[this.i3] != this.arr_temp2[this.i5]) {
-                                if (Main.sav.data["match_" + this.arr_temp[this.i3] + "_vs_" + this.arr_temp2[this.i5]] == 0 && Main.sav.data["match_" + this.arr_temp2[this.i5] + "_vs_" + this.arr_temp[this.i3]] == 0) {
-                                    this.arr_op.push(this.arr_temp[this.i3]);
-                                    this.arr_op2.push(this.arr_temp2[this.i5]);
-                                    this.rnd_for = this.arr_temp[this.i3];
-                                    this.rnd_for2 = this.arr_temp2[this.i5];
-                                    this.arr_temp.splice(this.i3, 1);
-                                    this.arr_temp2.splice(this.i5, 1);
-                                    this.i6 = 0;
-                                    while (this.i6 < this.arr_temp.length) {
-                                        if (this.arr_temp[this.i6] == this.rnd_for2) {
-                                            this.arr_temp.splice(this.i6, 1);
-                                            break;
-                                        }
-                                        this.i6++;
-                                    }
-                                    this.i6 = 0;
-                                    while (this.i6 < this.arr_temp2.length) {
-                                        if (this.arr_temp2[this.i6] == this.rnd_for) {
-                                            this.arr_temp2.splice(this.i6, 1);
-                                            break;
-                                        }
-                                        this.i6++;
-                                    }
-                                    this.i5--;
-                                    this.i3--;
-                                }
-                            }
-                            this.i5++;
-                        }
-                        this.i3++;
-                    }
-                    if (this.arr_op.length == 2 || this.numbef_of_m3 == 9000) {
-                        return 1;
-                    }
-                    return 0;
-                };
                 this.numbef_of_m = 1;
                 this.numbef_of_m2 = 2;
                 this.numbef_of_two = false;
                 this.numbef_of_m3 = 0;
-                while (set_match() == 0) {
+                while (this.set_match() == 0) {
                 }
                 this.i3 = 0;
                 while (this.i3 < this.arr_op.length) {
@@ -2115,7 +2115,7 @@ module com.code {
                 }
             }
         }
-        public set_new_shop(): any {
+        set_new_shop(): any {
             Main.sav.data.shop_buy_1 = 0;
             Main.sav.data.shop_buy_2 = 0;
             Main.sav.data.shop_buy_3 = 0;
@@ -2176,11 +2176,11 @@ module com.code {
                 this.rnd_for4++;
             }
         }
-        public stop_game(): any {
+        stop_game(): any {
             this.removeEventListener(egret.Event.ENTER_FRAME, this.game_f, this);
             this.stage.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.click_f, this);
         }
-        public ch_cat(): any {
+        ch_cat(): any {
             this.i3 = 0;
             while (this.i3 < this.arr_cat.length) {
                 if (this.arr_cat[this.i3].life) {
@@ -2190,7 +2190,7 @@ module com.code {
             }
             return 1;
         }
-        public ch_fox(): any {
+        ch_fox(): any {
             this.i3 = 0;
             while (this.i3 < this.arr_fox.length) {
                 if (this.arr_fox[this.i3].life) {
@@ -2200,7 +2200,7 @@ module com.code {
             }
             return 1;
         }
-        public add_aura(param1: any, param2: any, param3: any): any {
+        add_aura(param1: any, param2: any, param3: any): any {
             if (this.aura_ex(param1, param2) == 0) {
                 this._aura = new Aura();
                 this._aura.init(param1, param2, param3);
@@ -2217,7 +2217,7 @@ module com.code {
                         this.lock_mode_fox = true;
                         this.i5 = 0;
                         while (this.i5 < this.arr_fox.length) {
-                            this.arr_fox[this.i5].scale_cl.icon_cl.lock_cl.$setVisible(true);
+                            this.arr_fox[this.i5].scale_cl.icon_clLock_cl.$setVisible(true);
                             this.i5++;
                         }
                     }
@@ -2237,7 +2237,7 @@ module com.code {
                         this.lock_mode = true;
                         this.i5 = 0;
                         while (this.i5 < this.arr_aby.length) {
-                            this.arr_aby[this.i5].skin.icon_cl.lock_cl.$setVisible(true);
+                            this.arr_aby[this.i5].skin.icon_clLock_cl.$setVisible(true);
                             this.i5++;
                         }
                     }
@@ -2331,8 +2331,8 @@ module com.code {
             }
         }
         set_tablo(): any {
-            this.location_cl.tablo_clP1N_tx.label.text = this.dead_fox.toString();
-            this.location_cl.tablo_clP2N_tx.label.text = this.dead_cat.toString();
+            this.location_cl.tablo_clP1N_tx.text = this.dead_fox.toString();
+            this.location_cl.tablo_clP2N_tx.text = this.dead_cat.toString();
         }
         add_super_shot(param1: any, param2: any): any {
             this.sprite_var = this._sp(super_shot_ani_mc, this.zone_up_all, param2.x, param2.y);
@@ -2350,7 +2350,7 @@ module com.code {
             this.sprite_var = this._sp(damage_mc, this.zone_up_all, param2.x, param2.y);
             let sprite_var: damage_mc = <damage_mc>this.sprite_var;
             sprite_var.d2.gotoAndStop(param1);
-            sprite_var.d2D_tx.label.text = param3.toString();
+            sprite_var.d2D_tx.text = param3.toString();
             if (param1 == 1) {
                 this.sprite_var.$setX(this.sprite_var.x - 30);
             }

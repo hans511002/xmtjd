@@ -1,14 +1,16 @@
 module com.code {
     export class Splash extends std.MovieClip {
-        public splash_deqaf_cl: std.MovieClip = null;
+        public splash_deqaf_cl: std.MovieClipSub = null;
         _app: App = null;
         public constructor() {
-            super();
+            super("Splash");
             this._app = App.getInstance();
+            this.splash_deqaf_cl = this.createMovieClipSub("splash_deqaf_cl");
         }
         public init(): void {
             this.stage.addEventListener(egret.TouchEvent.TOUCH_TAP, this.click_f, this);
             this.addEventListener(egret.Event.ENTER_FRAME, this.sp_f, this);
+            this["oldFrameRate"] = this.stage.frameRate;
             this.stage.frameRate = 60;
         }
         public click_f(param1: egret.TouchEvent): any {
@@ -23,6 +25,7 @@ module com.code {
         }
         public delete_f(): any {
             this.removeEventListener(egret.Event.ENTER_FRAME, this.sp_f, this);
+            this.stage.frameRate = this["oldFrameRate"];
         }
     }
 }

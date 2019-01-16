@@ -6,11 +6,11 @@ module com.code {
         public credits_cl: std.MovieClipSub = null;
         credits_clDe2: std.MovieClipSub = null;
         credits_clClose_bt: std.MCButton = null;
-        public cup_1: std.MovieClip = null;
-        public cup_2: std.MovieClip = null;
-        public cup_3: std.MovieClip = null;
-        public cup_4: std.MovieClip = null;
-        public cup_5: std.MovieClip = null;
+        public cup_1: std.MovieClipSub = null;
+        public cup_2: std.MovieClipSub = null;
+        public cup_3: std.MovieClipSub = null;
+        public cup_4: std.MovieClipSub = null;
+        public cup_5: std.MovieClipSub = null;
         public deqaf_bt: std.MCButton = null;
         public face_bt: std.MovieClipSub = null;
         public go_sfk1: std.MovieClipSub = null;
@@ -28,7 +28,7 @@ module com.code {
         dress2: number = 0;
         acp: number = 0;
         public constructor() {
-            super();
+            super("Menu");
             this._app = App.getInstance();
             this.credits_cl = this.createMovieClipSub("credits_cl");
             this.clear_cl = this.createMCButton("clear_cl");
@@ -39,6 +39,11 @@ module com.code {
             this.go_sfk3 = this.createMovieClipSub("go_sfk3");
             this.play_cl = this.createMCButton("play_cl");
             this.zone_panel = this.createMovieClipSub("zone_panel");
+            this.cup_1 = this.createMovieClipSub("cup_1");
+            this.cup_2 = this.createMovieClipSub("cup_2");
+            this.cup_3 = this.createMovieClipSub("cup_3");
+            this.cup_4 = this.createMovieClipSub("cup_4");
+            this.cup_5 = this.createMovieClipSub("cup_5");
 
         }
         public init(): void {
@@ -197,25 +202,25 @@ module com.code {
                 }
             }
         }
-        public dress_up(param1: cat_mc, param2: any, param3: any): any {
-            param1.cat1Cat2Head_clWool_cl.gotoAndStop(param2);
-            param1.cat1Cat2Hand_l_clWool_cl.gotoAndStop(param2);
-            param1.cat1Cat2Hand_r_clWool_cl.gotoAndStop(param2);
-            param1.cat1Cat2Body_clWool_cl.gotoAndStop(param2);
-            param1.cat1Cat2Foot1_clWool_cl.gotoAndStop(param2);
-            param1.cat1Cat2Foot2_clWool_cl.gotoAndStop(param2);
-            param1.cat1Cat2Tail_cl.gotoAndStop(param2);
+        public dress_up(cat: cat_mc, param2: any, param3: any): any {
+            cat.cat1Cat2.head_clWool_cl.gotoAndStop(param2);
+            cat.cat1Cat2.hand_l_clWool_cl.gotoAndStop(param2);
+            cat.cat1Cat2.hand_r_clWool_cl.gotoAndStop(param2);
+            cat.cat1Cat2.body_clWool_cl.gotoAndStop(param2);
+            cat.cat1Cat2.foot1_clWool_cl.gotoAndStop(param2);
+            cat.cat1Cat2.foot2_clWool_cl.gotoAndStop(param2);
+            cat.cat1Cat2.tail_cl.gotoAndStop(param2);
             param3++;
-            param1.cat1Cat2Head_clH2.gotoAndStop(param3);
-            param1.cat1Cat2Hand_l_clSleeve_cl.gotoAndStop(param3);
-            param1.cat1Cat2Hand_l_clW2.gotoAndStop(param3);
-            param1.cat1Cat2Hand_r_clSleeve_cl.gotoAndStop(param3);
-            param1.cat1Cat2Hand_r_clS2.gotoAndStop(param3);
-            param1.cat1Cat2Body_clB2.gotoAndStop(param3);
-            param1.cat1Cat2Foot1_clP2.gotoAndStop(param3);
-            param1.cat1Cat2Foot2_clP2.gotoAndStop(param3);
-            param1.cat1Cat2Skirt_cl.gotoAndStop(param3);
-            param1.cat1Cat2Cloak_cl.gotoAndStop(param3);
+            cat.cat1Cat2.head_clH2.gotoAndStop(param3);
+            cat.cat1Cat2.hand_l_clSleeve_cl.gotoAndStop(param3);
+            cat.cat1Cat2.hand_l_clW2.gotoAndStop(param3);
+            cat.cat1Cat2.hand_r_clSleeve_cl.gotoAndStop(param3);
+            cat.cat1Cat2.hand_r_clS2.gotoAndStop(param3);
+            cat.cat1Cat2.body_clB2.gotoAndStop(param3);
+            cat.cat1Cat2.foot1_clP2.gotoAndStop(param3);
+            cat.cat1Cat2.foot2_clP2.gotoAndStop(param3);
+            cat.cat1Cat2.skirt_cl.gotoAndStop(param3);
+            cat.cat1Cat2.cloak_cl.gotoAndStop(param3);
             param3--;
         }
         public delete_f(): any {

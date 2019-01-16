@@ -1,7 +1,7 @@
 class down_panel_mc extends std.MovieClip {
 
-    hero_tx: std.MCLabel;
-    enemy_tx: std.MCLabel;
+    hero_tx: eui.Label;
+    enemy_tx: eui.Label;
     refresh_bt: std.MCButton;// eui.Button;
     train_bt: std.MCButton;//eui.Button;
 

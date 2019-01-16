@@ -1,20 +1,20 @@
 class got_cup_mc extends std.MovieClip {
 
 
-    cat1: std.MovieClipSub;
-    cat2: std.MovieClipSub;
-    cat3: std.MovieClipSub;
-    cat4: std.MovieClipSub;
+    cat1: SubCat;
+    cat2: SubCat;
+    cat3: SubCat;
+    cat4: SubCat;
     cups_cl: std.MovieClipSub;
     play_cl: std.MovieClipSub;//eui.Button;//SimpleButton;
     play_bg: std.MovieClipSub;//eui.Button;//SimpleButton;
 
     public constructor() {
         super(Config.mcRoot, "got_cup_mc", "got_cup_mc");
-        this.cat1 = this.createMovieClipSub("cat1");
-        this.cat2 = this.createMovieClipSub("cat2");
-        this.cat3 = this.createMovieClipSub("cat3");
-        this.cat4 = this.createMovieClipSub("cat4");
+        this.cat1 = new SubCat(this, "cat1", "", 0);
+        this.cat2 = new SubCat(this, "cat2", "", 0);
+        this.cat3 = new SubCat(this, "cat3", "", 0);
+        this.cat4 = new SubCat(this, "cat4", "", 0);
         this.mcMask = this.createMask(dragonBones.EventObject.START, "mask", "cat1", "cat2", "cat3", "cat4");
         this.cups_cl = this.createMovieClipSub("cups_cl");
         this.play_cl = this.createMovieClipSub("play_cl");

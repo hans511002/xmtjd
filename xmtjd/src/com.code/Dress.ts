@@ -1,6 +1,54 @@
 module com.code {
     export class Dress extends DataMovieClip {
         public about_cl: std.MovieClipSub = null;
+        about_clClose_bt: std.MCButton;
+        about_clSslot_1: std.MovieClipSub = null;
+        about_clSslot_2: std.MovieClipSub = null;
+        about_clSslot_3: std.MovieClipSub = null;
+        about_clSslot_4: std.MovieClipSub = null;
+        about_clSslot_5: std.MovieClipSub = null;
+        about_clSslot_6: std.MovieClipSub = null;
+        about_clSslot_7: std.MovieClipSub = null;
+        about_clSslot_8: std.MovieClipSub = null;
+        about_clSslot_9: std.MovieClipSub = null;
+        about_clSslot_10: std.MovieClipSub = null;
+        about_clSslot_11: std.MovieClipSub = null;
+        about_clSslot_12: std.MovieClipSub = null;
+        about_clSslot_13: std.MovieClipSub = null;
+        about_clSslot_14: std.MovieClipSub = null;
+        about_clSslot_15: std.MovieClipSub = null;
+        about_clSslot_1Des_tx: eui.Label = null;
+        about_clSslot_2Des_tx: eui.Label = null;
+        about_clSslot_3Des_tx: eui.Label = null;
+        about_clSslot_4Des_tx: eui.Label = null;
+        about_clSslot_5Des_tx: eui.Label = null;
+        about_clSslot_6Des_tx: eui.Label = null;
+        about_clSslot_7Des_tx: eui.Label = null;
+        about_clSslot_8Des_tx: eui.Label = null;
+        about_clSslot_9Des_tx: eui.Label = null;
+        about_clSslot_10Des_tx: eui.Label = null;
+        about_clSslot_11Des_tx: eui.Label = null;
+        about_clSslot_12Des_tx: eui.Label = null;
+        about_clSslot_13Des_tx: eui.Label = null;
+        about_clSslot_14Des_tx: eui.Label = null;
+        about_clSslot_15Des_tx: eui.Label = null;
+        about_clSslot_1Icon_cl: std.MovieClipSub = null;
+        about_clSslot_2Icon_cl: std.MovieClipSub = null;
+        about_clSslot_3Icon_cl: std.MovieClipSub = null;
+        about_clSslot_4Icon_cl: std.MovieClipSub = null;
+        about_clSslot_5Icon_cl: std.MovieClipSub = null;
+        about_clSslot_6Icon_cl: std.MovieClipSub = null;
+        about_clSslot_7Icon_cl: std.MovieClipSub = null;
+        about_clSslot_8Icon_cl: std.MovieClipSub = null;
+        about_clSslot_9Icon_cl: std.MovieClipSub = null;
+        about_clSslot_10Icon_cl: std.MovieClipSub = null;
+        about_clSslot_11Icon_cl: std.MovieClipSub = null;
+        about_clSslot_12Icon_cl: std.MovieClipSub = null;
+        about_clSslot_13Icon_cl: std.MovieClipSub = null;
+        about_clSslot_14Icon_cl: std.MovieClipSub = null;
+        about_clSslot_15Icon_cl: std.MovieClipSub = null;
+
+
         public back_bt: std.MCButton = null;
         public cat1: cat_drag_mc = null;
         public cat2: cat_drag_mc = null;
@@ -14,13 +62,27 @@ module com.code {
         panel_clRadio_1None_page_cl: std.MovieClipSub = null;
         panel_clRadio_2None_page_cl: std.MovieClipSub = null;
         panel_clRadio_3None_page_cl: std.MovieClipSub = null;
+        panel_clRadio_1N_tx: eui.Label = null;
+        panel_clRadio_2N_tx: eui.Label = null;
+        panel_clRadio_3N_tx: eui.Label = null;
+        panel_clAbout_bt: std.MCButton;
+        panel_clZoom_bt: std.MCButton;
+        panel_clSort_1: std.MovieClipSub = null;
+        panel_clSort_2: std.MovieClipSub = null;
+        panel_clSort_3: std.MovieClipSub = null;
 
         public shop_bt: std.MCButton = null;
         public shop_cl: std.MovieClip = null;
-        shop_clDes_tx: std.MCLabel = null;
+        shop_clDes_tx: eui.Label = null;
         shop_clZoom_bt: std.MovieClipSub = null;
-        shop_clMoney_tx: std.MCLabel = null;
+        shop_clMoney_tx: eui.Label = null;
         shop_clClose_bt: std.MCButton = null;
+        shop_clSlot_1: std.MovieClipSub;
+        shop_clSlot_2: std.MovieClipSub;
+        shop_clSlot_3: std.MovieClipSub;
+        shop_clSlot_4: std.MovieClipSub;
+        shop_clSlot_5: std.MovieClipSub;
+
 
         public train_bt: std.MCButton = null;
         public zone_cards_about: std.MovieClip = null;
@@ -38,10 +100,10 @@ module com.code {
         arr_sort_3: any = [];
         next_card: number = 0;
         card_cl: std.MovieClip = null;
-        card1_about: std.MovieClip = null;
-        card2_about: std.MovieClip = null;
-        card3_about: std.MovieClip = null;
-        card4_about: std.MovieClip = null;
+        card1_about: card_mc = null;
+        card2_about: card_mc = null;
+        card3_about: card_mc = null;
+        card4_about: card_mc = null;
         drag_mode: boolean = false;
         drag_type: number = 0;
         drag_card_type: number = 0;
@@ -55,7 +117,7 @@ module com.code {
         arr_temp3: any = [];
         tuto_cl: std.MovieClip = null;
         public constructor() {
-            super();
+            super("Dress");
             this._app = App.getInstance();
             this.arr_sort_1 = [];
             this.arr_sort_2 = [];
@@ -66,7 +128,48 @@ module com.code {
 
             this.about_cl = this.createMovieClipSub("about_cl");
             this.back_bt = this.createMCButton("back_bt");
+            this.panel_cl = this.createMovieClipSub("panel_cl");
+            this.panel_clRadio_1 = this.panel_cl.createMovieClipSub("radio_1");
+            this.panel_clRadio_2 = this.panel_cl.createMovieClipSub("radio_2");
+            this.panel_clRadio_3 = this.panel_cl.createMovieClipSub("radio_3");
+            this.panel_clRadio_1None_page_cl = this.panel_clRadio_1.createMovieClipSub("none_page_cl");
+            this.panel_clRadio_2None_page_cl = this.panel_clRadio_2.createMovieClipSub("none_page_cl");
+            this.panel_clRadio_3None_page_cl = this.panel_clRadio_3.createMovieClipSub("none_page_cl");
+
+            this.panel_clRadio_1N_tx = this.panel_clRadio_1.createLabel("n_tx");
+            this.panel_clRadio_2N_tx = this.panel_clRadio_2.createLabel("n_tx");
+            this.panel_clRadio_3N_tx = this.panel_clRadio_3.createLabel("n_tx");
+            this.panel_clAbout_bt = this.panel_cl.createMCButton("about_bt");
+            this.panel_clZoom_bt = this.panel_cl.createMCButton("zoom_bt");
+            this.panel_clSort_1 = this.panel_cl.createMovieClipSub("sort_1");
+            this.panel_clSort_2 = this.panel_cl.createMovieClipSub("sort_2");
+            this.panel_clSort_3 = this.panel_cl.createMovieClipSub("sort_3");
+
+
+            this.about_cl = this.createMovieClipSub("about_cl");
+            this.about_clClose_bt = this.about_cl.createMCButton("close_bt");
+            this.i2 = 0;
+            while (this.i2 <= 15) {
+                this["about_clSlot_" + this.i2] = this.createMovieClipSub("slot_" + this.i2);
+                this["about_clSlot_" + this.i2 + "Icon_cl"] = this["about_clSlot_" + this.i2].createMovieClipSub("icon_cl");
+                this["about_clSlot_" + this.i2 + "Des_tx"] = this["about_clSlot_" + this.i2].createLabel("des_tx");
+                // this.about_cl["slot_" + this.i2] = this["about_clSlot_" + this.i2];
+                // this.about_cl["slot_" + this.i2].icon_cl = this["about_clSlot_" + this.i2 + "Icon_cl"];
+                // this.about_cl["slot_" + this.i2].des_tx = this["about_clSlot_" + this.i2 + "Des_tx"];
+                this.i2++;
+            }
+
+            this.shop_clZoom_bt = this.shop_cl.createMCButton("zoom_bt");
+            this.shop_clDes_tx = this.shop_cl.createLabel("des_tx");
+            this.shop_clMoney_tx = this.shop_cl.createLabel("money_tx");
+            this.shop_clClose_bt = this.shop_cl.createMCButton("close_bt");
+            this.shop_clSlot_1 = this.shop_cl.createMovieClipSub("slot_1");
+            this.shop_clSlot_2 = this.shop_cl.createMovieClipSub("slot_2");
+            this.shop_clSlot_3 = this.shop_cl.createMovieClipSub("slot_3");
+            this.shop_clSlot_4 = this.shop_cl.createMovieClipSub("slot_4");
+            this.shop_clSlot_5 = this.shop_cl.createMovieClipSub("slot_5");
         }
+
         public init(): void {
             if (Main.sav.data.tuto5 == 1) {
                 Main.sav.data.shop_1 = 1;
@@ -82,15 +185,18 @@ module com.code {
             this.pause_cl.$setVisible(false);
             this.about_cl.$setVisible(false);
             this._info = new Aby_info();
-            this.i = 1;
-            while (this.i <= 3) {
-                this.panel_cl["radio_" + this.i].n_tx.text = this.i.toString();
-                this.i++;
-            }
+            this.panel_clRadio_1N_tx.text = "1";
+            this.panel_clRadio_2N_tx.text = "2";
+            this.panel_clRadio_3N_tx.text = "3";
+            // this.i = 1;
+            // while (this.i <= 3) {
+            //     this["panel_clRadio_" + this.i + "N_tx"].label.text = this.i.toString();
+            //     this.i++;
+            // } 
             this.i = 1;
             while (this.i <= 4) {
                 this["cat" + this.i].cat1.gotoAndStop(8);
-                this["cat" + this.i].cat1.cat2.gotoAndPlay(std._rnd(250) + 2);
+                this["cat" + this.i].cat1Cat2.gotoAndPlay(std._rnd(250) + 2);
                 this.i++;
             }
             this.dress_up(this.cat1.cat1Cat2, 1, Main.sav.data.cat_dress_1);
@@ -205,25 +311,25 @@ module com.code {
             }
         }
         public click_f(param1: egret.TouchEvent): any {
-            if (this.about_cl.visible) {
-                if (this._mo(this.about_cl.close_bt)) {
+            if (this.about_cl.isVisible()) {
+                if (this._mo(this.about_clClose_bt)) {
                     this.about_cl.$setVisible(false);
                     this._app._so.load_by_name(click_so);
                 }
             }
             else if (this.shop_cl.visible) {
-                if (this._mo(this.shop_cl.close_bt)) {
+                if (this._mo(this.shop_clClose_bt)) {
                     this.shop_cl.$setVisible(false);
                     this._app._so.load_by_name(click_so);
                 }
-                if (this._mo(this.shop_cl.zoom_bt)) {
+                if (this._mo(this.shop_clZoom_bt)) {
                     this.zoom = !this.zoom;
                     this._app._so.load_by_name(click_so);
                     if (this.zoom) {
-                        this.shop_cl.zoom_bt.gotoAndStop(2);
+                        this.shop_clZoom_bt.gotoAndStop(2);
                     }
                     else {
-                        this.shop_cl.zoom_bt.gotoAndStop(1);
+                        this.shop_clZoom_bt.gotoAndStop(1);
                     }
                     this.load_shop();
                 }
@@ -256,7 +362,7 @@ module com.code {
                         Main.sav.data["cat_dress_" + this.i] = 0;
                         Main.sav.data["cat_aby_" + this.i] = 0;
                         Main.sav.data["cat_id_" + this.i] = 0;
-                        this.dress_up(this["cat" + this.i].cat1.cat2, this.i, Main.sav.data["cat_dress_" + this.i]);
+                        this.dress_up(this["cat" + this.i].cat1Cat2, this.i, Main.sav.data["cat_dress_" + this.i]);
                         this.set_page(this.page);
                         this._app._so.load_by_name(up_wear_so);
                         this.refresh_about_cats_cards();
@@ -266,7 +372,7 @@ module com.code {
                 }
                 this.i = 1;
                 while (this.i <= 3) {
-                    if (this._mo(this.panel_cl["radio_" + this.i])) {
+                    if (this._mo(this["panel_clRadio_" + this.i])) {
                         this.set_page(this.i);
                         this._app._so.load_by_name(click_so);
                         break;
@@ -275,7 +381,7 @@ module com.code {
                 }
                 this.i = 1;
                 while (this.i <= 3) {
-                    if (this._mo(this.panel_cl["sort_" + this.i])) {
+                    if (this._mo(this["panel_clSort_" + this.i])) {
                         this.page = 1;
                         this._app._so.load_by_name(click_so);
                         this.set_sort(this.i);
@@ -283,14 +389,14 @@ module com.code {
                     }
                     this.i++;
                 }
-                if (this._mo(this.panel_cl.about_bt)) {
+                if (this._mo(this.panel_clAbout_bt)) {
                     this.about_cl.$setVisible(true);
                 }
-                if (this._mo(this.panel_cl.zoom_bt)) {
+                if (this._mo(this.panel_clZoom_bt)) {
                     this.zoom = !this.zoom;
                     this.set_page(this.page);
                     if (this.zoom) {
-                        this.panel_cl.zoom_bt.gotoAndStop(2);
+                        this.panel_clZoom_bt.gotoAndStop(2);
                         this.i = 1;
                         while (this.i <= 4) {
                             if (Main.sav.data["cat_dress_" + this.i] > 0) {
@@ -301,7 +407,7 @@ module com.code {
                         }
                     }
                     else {
-                        this.panel_cl.zoom_bt.gotoAndStop(1);
+                        this.panel_clZoom_bt.gotoAndStop(1);
                     }
                 }
                 if (this._mo(this.shop_bt)) {
@@ -484,26 +590,27 @@ module com.code {
                 break;
             }
         }
-        public dress_up(param1: cat_drag_mc, param2: any, param3: any): any {
-            param1.cat1Cat2Head_clWool_cl.gotoAndStop(param2);
-            param1.cat1Cat2Hand_l_clWool_cl.gotoAndStop(param2);
-            param1.cat1Cat2Hand_r_clWool_cl.gotoAndStop(param2);
-            param1.cat1Cat2Body_clWool_cl.gotoAndStop(param2);
-            param1.cat1Cat2Foot1_clWool_cl.gotoAndStop(param2);
-            param1.cat1Cat2Foot2_clWool_cl.gotoAndStop(param2);
-            param1.cat1Cat2Tail_cl.gotoAndStop(param2);
+        public dress_up(param1: SubCat, param2: number, param3: number): number {
+            param1.head_clWool_cl.gotoAndStop(param2);
+            param1.hand_l_clWool_cl.gotoAndStop(param2);
+            param1.hand_r_clWool_cl.gotoAndStop(param2);
+            param1.body_clWool_cl.gotoAndStop(param2);
+            param1.foot1_clWool_cl.gotoAndStop(param2);
+            param1.foot2_clWool_cl.gotoAndStop(param2);
+            param1.tail_cl.gotoAndStop(param2);
             param3++;
-            param1.cat1Cat2Head_clH2.gotoAndStop(param3);
-            param1.cat1Cat2Hand_l_clSleeve_cl.gotoAndStop(param3);
-            param1.cat1Cat2Hand_l_clW2.gotoAndStop(param3);
-            param1.cat1Cat2Hand_r_clSleeve_cl.gotoAndStop(param3);
-            param1.cat1Cat2Hand_r_clS2.gotoAndStop(param3);
-            param1.cat1Cat2Body_clB2.gotoAndStop(param3);
-            param1.cat1Cat2Foot1_clP2.gotoAndStop(param3);
-            param1.cat1Cat2Foot2_clP2.gotoAndStop(param3);
-            param1.cat1Cat2Skirt_cl.gotoAndStop(param3);
-            param1.cat1Cat2Cloak_cl.gotoAndStop(param3);
+            param1.head_clH2.gotoAndStop(param3);
+            param1.hand_l_clSleeve_cl.gotoAndStop(param3);
+            param1.hand_l_clW2.gotoAndStop(param3);
+            param1.hand_r_clSleeve_cl.gotoAndStop(param3);
+            param1.hand_r_clS2.gotoAndStop(param3);
+            param1.body_clB2.gotoAndStop(param3);
+            param1.foot1_clP2.gotoAndStop(param3);
+            param1.foot2_clP2.gotoAndStop(param3);
+            param1.skirt_cl.gotoAndStop(param3);
+            param1.cloak_cl.gotoAndStop(param3);
             param3--;
+            return param3;
         }
         public got_des_skill(param1: any): any {
             switch (param1) {
@@ -543,7 +650,7 @@ module com.code {
         }
         public load_shop(): any {
             this.remove_gold(0);
-            this.shop_clDes_tx.label.text = this.load_des_hi();
+            this.shop_clDes_tx.text = this.load_des_hi();
             if (this.zoom) {
                 this.shop_clZoom_bt.gotoAndStop(2);
             }
@@ -608,7 +715,7 @@ module com.code {
         }
         public remove_gold(param1: any): any {
             Main.sav.data.gold = Main.sav.data.gold - param1;
-            this.shop_clMoney_tx.label.text = Main.sav.data.gold;
+            this.shop_clMoney_tx.text = Main.sav.data.gold;
         }
         public tuto21_click_f(param1: egret.TouchEvent): any {
             if (this._mo(this.shop_bt)) {

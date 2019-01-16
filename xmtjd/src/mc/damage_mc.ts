@@ -1,7 +1,7 @@
 class damage_mc extends std.MovieClip {
 
     d2: std.MovieClipSub;
-    d2D_tx: std.MCLabel;
+    d2D_tx: eui.Label;
     public constructor() {
         super(Config.mcRoot, "damage_mc", "damage_mc");
         this.d2 = this.createMovieClipSub("d2");

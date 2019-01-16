@@ -1,8 +1,8 @@
 module com.code {
-    export class Preloader extends egret.Sprite {
-        public name_in_cl: std.MovieClip = null;
-        public play_cl: std.MovieClip = null;
-        public skala: std.MovieClip = null;
+    export class Preloader extends std.MovieClip {
+        public name_in_cl: std.MovieClipSub = null;
+        public play_cl: std.MovieClipSub = null;
+        public skala: std.MovieClipSub = null;
         loaded: number = 0;
         total: number = 0;
         rnd_for: number = 0;
@@ -10,7 +10,7 @@ module com.code {
         site_good: number = 0;
         _app: App = null;
         public constructor() {
-            super();
+            super("Preloader");
             this._app = App.getInstance();
             if (this.stage) {
                 this.init();

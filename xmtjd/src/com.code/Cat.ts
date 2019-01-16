@@ -3,7 +3,7 @@ module com.code {
         _game: Game = null;
         _app: App = null;
         skin: cat_mc = null;
-        scale: std.MovieClipSub = null;
+        // scale: std.MovieClipSub = null;
         hp: number = 0;
         hp2: number = 0;
         attack: number = 0;
@@ -45,7 +45,6 @@ module com.code {
             super();
             this._game = Game.getInstance();
             this._app = App.getInstance();
-            this.scale = this.createMovieClipSub("scale");
         }
         public init(param1: any, param2: any): void {
             this.side = param1;
@@ -125,7 +124,7 @@ module com.code {
             }
             this.go_frame(2);
         }
-        public dress_up(param1: any): any {
+        public dress_up(param1: SubCat): any {
             param1.head_clWool_cl.gotoAndStop(this.type);
             param1.hand_l_clWool_cl.gotoAndStop(this.type);
             param1.hand_r_clWool_cl.gotoAndStop(this.type);
@@ -169,7 +168,7 @@ module com.code {
                     if (this._app.train_mode == false) {
                         if (this.side == 1) {
                             this.go_frame(3);
-                            this.skin.cat1Cat2Head_clWool_clFace_cl.gotoAndStop(3);
+                            this.skin.cat1Cat2.head_clWool_clFace_cl.gotoAndStop(3);
                             this._game.arr_aby[this.type - 1].skin.cat2.$setVisible(false);
                             this._game.arr_aby[this.type - 1].skin.icon_cl.$setVisible(false);
                             this._game.arr_aby[this.type - 1].ex_aby = false;
@@ -182,7 +181,7 @@ module com.code {
                         }
                         else {
                             this.go_frame(3);
-                            this.skin.cat1Cat2Head_clWool_clFace_cl.gotoAndStop(3);
+                            this.skin.cat1Cat2.head_clWool_clFace_cl.gotoAndStop(3);
                             this.scale_cl.cat2.$setVisible(false);
                             this.scale_cl.icon_cl.$setVisible(false);
                             this.scale_cl.defeat_card.$setVisible(true);

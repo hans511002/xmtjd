@@ -2,8 +2,8 @@ module com.code {
     export class Upg extends DataMovieClip {
         public calendar_cl: std.MovieClipSub = null;
         calendar_clBg_cl: std.MovieClipSub = null;
-        calendar_clLeft_tx: std.MCLabel = null;
-        calendar_clTitle_tx: std.MCLabel = null;
+        calendar_clLeft_tx: eui.Label = null;
+        calendar_clTitle_tx: eui.Label = null;
         public coach_stay_cl: std.MovieClip = null;
         public doctor_cl: std.MovieClip = null;
         public dress_bt: std.MCButton = null;
@@ -11,7 +11,7 @@ module com.code {
         public grass_cl: std.MovieClipSub = null;
         grass_clSpy_cl: std.MovieClipSub = null;
         public menu_bt_cl: std.MCButton = null;
-        public money_tx: std.MCLabel = null;
+        public money_tx: eui.Label = null;
         public next_bt: std.MovieClip = null;
         public pointer1: std.MovieClip = null;
         public pointer2: std.MovieClip = null;
@@ -51,7 +51,7 @@ module com.code {
 
         public upg_bt: std.MCButton = null;
         public upg_cl: std.MovieClip = null;
-        upg_clMoney_tx: std.MCLabel = null;
+        upg_clMoney_tx: eui.Label = null;
         upg_clClose_bt: std.MCButton = null;
         public zone_1: std.MovieClip = null;
         public zone_2: std.MovieClip = null;
@@ -94,8 +94,8 @@ module com.code {
         type_zone: number = 0;
         injury2: number = 200;
         cat_drag_type: number = 0;
-        arr_temp: any = [];
-        arr_temp2: any = [];
+        arr_temp: Array<number> = [];
+        arr_temp2: Array<number> = [];
         i7: number = 0;
         numbef_of_m: number = 0;
         numbef_of_m2: number = 0;
@@ -125,7 +125,7 @@ module com.code {
         n_of_treat: number = 0;
         n_of_treat2: number = 0;
         public constructor() {
-            super();
+            super("Upg");
             this._app = App.getInstance();
             this.my_date = new Date();
             this.arr_le = [];
@@ -163,7 +163,7 @@ module com.code {
             this.stat_cl.$setVisible(false);
             this.load_slots();
             this.init_stat_slot();
-            this.calendar_clLeft_tx.label.text = (7 - Main.sav.data.week).toString();
+            this.calendar_clLeft_tx.text = (7 - Main.sav.data.week).toString();
             this.calendar_cl.$setVisible(false);
             this.set_next_bt_frame();
             this.train_9Table_cl.gotoAndStop(1);
@@ -191,14 +191,14 @@ module com.code {
                     this.result_season_cl = this._sp(paper_new_mc, this.zone_tuto, 91, 40);
                     let result_season_cl = <paper_new_mc>this.result_season_cl;
                     result_season_cl.pic_cl.gotoAndStop(1);
-                    result_season_cl.news_tx.label.text = "联盟半决赛即将开战!";
-                    result_season_cl.paper_clData_tx.label.text = this.date_all;
+                    result_season_cl.news_tx.text = "联盟半决赛即将开战!";
+                    result_season_cl.paper_clData_tx.text = this.date_all;
                     this._app._so.load_by_name(paper_so);
                 }
                 else {
                     this.result_season_cl = this._sp(panel_view_not_hit_mc, this.zone_tuto, 325, 170);
                     let result_season_cl = <panel_view_not_hit_mc>this.result_season_cl;
-                    result_season_cl.des_tx.label.text = "您得到了" + Main.sav.data.place_won_kitty + "名.多多训练";
+                    result_season_cl.des_tx.text = "您得到了" + Main.sav.data.place_won_kitty + "名.多多训练";
                 }
                 this._app._so.load_by_name(paper_so);
                 this.paper_ex = true;
@@ -210,34 +210,34 @@ module com.code {
                 this.paper_ex = true;
                 this.result_season_cl = this._sp(paper_new_mc, this.zone_tuto, 91, 40);
                 let result_season_cl = <paper_new_mc>this.result_season_cl;
-                result_season_cl.paper_clData_tx.label.text = this.date_all;
+                result_season_cl.paper_clData_tx.text = this.date_all;
                 this._app._so.load_by_name(paper_so);
                 if (Main.sav.data.new_league == 1) {
                     result_season_cl.pic_cl.gotoAndStop(2);
                     if (Main.sav.data.league == 3) {
-                        result_season_cl.news_tx.label.text = "猫咪队伍晋级比目鱼级!";
+                        result_season_cl.news_tx.text = "猫咪队伍晋级比目鱼级!";
                     }
                     else if (Main.sav.data.league == 2) {
-                        result_season_cl.news_tx.label.text = "猫咪队伍晋级鲑鳟鱼级!";
+                        result_season_cl.news_tx.text = "猫咪队伍晋级鲑鳟鱼级!";
                     }
                     else if (Main.sav.data.league == 1) {
-                        result_season_cl.news_tx.label.text = "猫咪队伍晋级大鲨鱼级!";
+                        result_season_cl.news_tx.text = "猫咪队伍晋级大鲨鱼级!";
                     }
                     Main.sav.data.new_league = 0;
                 }
                 else {
                     result_season_cl.pic_cl.gotoAndStop(1);
                     if (Main.sav.data.league == 4) {
-                        result_season_cl.news_tx.label.text = "凤尾鱼级新赛季开启!";
+                        result_season_cl.news_tx.text = "凤尾鱼级新赛季开启!";
                     }
                     else if (Main.sav.data.league == 3) {
-                        result_season_cl.news_tx.label.text = "比目鱼级凤尾鱼级新赛季开启!";
+                        result_season_cl.news_tx.text = "比目鱼级凤尾鱼级新赛季开启!";
                     }
                     else if (Main.sav.data.league == 2) {
-                        result_season_cl.news_tx.label.text = "鲑鳟鱼级新赛季开启!";
+                        result_season_cl.news_tx.text = "鲑鳟鱼级新赛季开启!";
                     }
                     else if (Main.sav.data.league == 1) {
-                        result_season_cl.news_tx.label.text = "大鲨鱼级新赛季开启!";
+                        result_season_cl.news_tx.text = "大鲨鱼级新赛季开启!";
                     }
                 }
                 this.delete2_f();
@@ -248,7 +248,7 @@ module com.code {
                 Main.sav.data.end_of_playoff = 0;
                 this.result_season_cl = this._sp(panel_view_not_hit_mc, this.zone_tuto, 325, 170);
                 let result_season_cl = <panel_view_not_hit_mc>this.result_season_cl;
-                result_season_cl.des_tx.label.text = "您没有赢得超级杯! \n 多多训练";
+                result_season_cl.des_tx.text = "您没有赢得超级杯! \n 多多训练";
                 this.delete2_f();
                 this.stage.addEventListener(egret.TouchEvent.TOUCH_TAP, this.click_result_f, this);
             }
@@ -259,41 +259,41 @@ module com.code {
                     this.paper_cl = this._sp(paper_mc, this.zone_tuto, 300, 180);
                     let paper_cl = <paper_mc>this.paper_cl;
                     paper_cl.news_cl.gotoAndStop(std._rnd(4) + 1);
-                    paper_cl.data_tx.label.text = this.date_all;
+                    paper_cl.data_tx.text = this.date_all;
                     this._app._so.load_by_name(paper_so);
                     if (Main.sav.data.result == 1) {
                         paper_cl.news_cl.scaleX = -Math.abs(paper_cl.news_cl.scaleX);
                         if (Main.sav.data.last_enemy == 2) {
-                            paper_cl.r_tx.label.text = "猫咪战胜了狐狸!";
+                            paper_cl.r_tx.text = "猫咪战胜了狐狸!";
                             this.load_to_news(1, 3);
                         }
                         else {
-                            paper_cl.r_tx.label.text = "猫咪战胜了浣熊!";
+                            paper_cl.r_tx.text = "猫咪战胜了浣熊!";
                             this.load_to_news(1, 2);
                         }
                     }
                     else if (Main.sav.data.last_enemy == 2) {
-                        paper_cl.r_tx.label.text = "狐狸战胜了猫咪!";
+                        paper_cl.r_tx.text = "狐狸战胜了猫咪!";
                         this.load_to_news(3, 1);
                     }
                     else {
-                        paper_cl.r_tx.label.text = "浣熊战胜了猫咪!";
+                        paper_cl.r_tx.text = "浣熊战胜了猫咪!";
                         this.load_to_news(2, 1);
                     }
-                    paper_cl.fish_tx.label.text = "+" + Main.sav.data.earn_fish;
-                    paper_cl.pts_tx.label.text = "+" + Main.sav.data.earn_pts;
+                    paper_cl.fish_tx.text = "+" + Main.sav.data.earn_fish;
+                    paper_cl.pts_tx.text = "+" + Main.sav.data.earn_pts;
                 }
                 else {
                     this.paper_cl = this._sp(paper_new_mc, this.zone_tuto, 91, 40);
                     let paper_cl = <paper_new_mc>this.paper_cl;
                     paper_cl.pic_cl.gotoAndStop(1);
-                    paper_cl.paper_clData_tx.label.text = this.date_all;
+                    paper_cl.paper_clData_tx.text = this.date_all;
                     this._app._so.load_by_name(paper_so);
                     if (Main.sav.data.playoff_round == 2) {
-                        paper_cl.news_tx.label.text = "联盟决赛即将开战!";
+                        paper_cl.news_tx.text = "联盟决赛即将开战!";
                     }
                     else if (Main.sav.data.playoff_round == 3) {
-                        paper_cl.news_tx.label.text = "下周即将举行冠军联盟总决赛!";
+                        paper_cl.news_tx.text = "下周即将举行冠军联盟总决赛!";
                     }
                 }
                 this.delete2_f();
@@ -845,7 +845,7 @@ module com.code {
                             else {
                                 this.calendar_clBg_cl.gotoAndStop(3);
                             }
-                            this.calendar_clTitle_tx.label.text = this.i_in;
+                            this.calendar_clTitle_tx.text = this.i_in;
                         }
                         else {
                             this.calendar_cl.gotoAndStop(3);
@@ -1080,7 +1080,7 @@ module com.code {
                         }
                         else {
                             Main.sav.data.week++;
-                            this.calendar_clLeft_tx.label.text = (7 - Main.sav.data.week).toString();
+                            this.calendar_clLeft_tx.text = (7 - Main.sav.data.week).toString();
                             this.set_next_bt_frame();
                             this.train_cats();
                             this.load_slots();
@@ -1481,8 +1481,8 @@ module com.code {
         }
         public remove_gold(param1: any): any {
             Main.sav.data.gold = Main.sav.data.gold - param1;
-            this.upg_clMoney_tx.label.text = Main.sav.data.gold;
-            this.money_tx.label.text = Main.sav.data.gold;
+            this.upg_clMoney_tx.text = Main.sav.data.gold;
+            this.money_tx.text = Main.sav.data.gold;
         }
         public to_table(param1: any): any {
             if (Main.sav.data["cat_place_" + param1] < 9) {
@@ -1782,7 +1782,7 @@ module com.code {
             if (this._mo(this.next_bt)) {
                 this._app._so.load_by_name(next_day_so);
                 Main.sav.data.week++;
-                this.calendar_clLeft_tx.label.text = (7 - Main.sav.data.week).toString();
+                this.calendar_clLeft_tx.text = (7 - Main.sav.data.week).toString();
                 this.set_next_bt_frame();
                 this.train_cats();
                 this.load_slots();
@@ -1807,7 +1807,7 @@ module com.code {
             if (tuto_cl && this._mo(this.next_bt)) {
                 this._app._so.load_by_name(next_day_so);
                 Main.sav.data.week++;
-                this.calendar_clLeft_tx.label.text = (7 - Main.sav.data.week).toString();
+                this.calendar_clLeft_tx.text = (7 - Main.sav.data.week).toString();
                 this.set_next_bt_frame();
                 this.train_cats();
                 this.load_slots();
@@ -1896,7 +1896,7 @@ module com.code {
             if (this._mo(this.next_bt)) {
                 this._app._so.load_by_name(next_day_so);
                 Main.sav.data.week++;
-                this.calendar_clLeft_tx.label.text = (7 - Main.sav.data.week).toString();
+                this.calendar_clLeft_tx.text = (7 - Main.sav.data.week).toString();
                 this.set_next_bt_frame();
                 this.train_cats();
                 this.load_slots();
@@ -1924,7 +1924,7 @@ module com.code {
             if (this._mo(this.next_bt)) {
                 this._app._so.load_by_name(next_day_so);
                 Main.sav.data.week++;
-                this.calendar_clLeft_tx.label.text = (7 - Main.sav.data.week).toString();
+                this.calendar_clLeft_tx.text = (7 - Main.sav.data.week).toString();
                 this.set_next_bt_frame();
                 this.train_cats();
                 this.load_slots();
@@ -1939,7 +1939,7 @@ module com.code {
                 this._app._so.load_by_name(next_day_so);
                 if (Main.sav.data.week != 8) {
                     Main.sav.data.week = 7;
-                    this.calendar_clLeft_tx.label.text = (7 - Main.sav.data.week).toString();
+                    this.calendar_clLeft_tx.text = (7 - Main.sav.data.week).toString();
                     this.set_next_bt_frame();
                     this.train_cats();
                     this.load_slots();

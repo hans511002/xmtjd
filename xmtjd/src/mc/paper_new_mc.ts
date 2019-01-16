@@ -1,7 +1,7 @@
 class paper_new_mc extends std.MovieClip {
-    public news_tx: std.MCLabel = null;
+    public news_tx: eui.Label = null;
     public paper_cl: std.MovieClipSub = null;
-    public paper_clData_tx: std.MCLabel = null;
+    public paper_clData_tx: eui.Label = null;
     public pic_cl: std.MovieClipSub = null;
     public constructor() {
         super(Config.mcRoot, "paper_new_mc", "paper_new_mc");

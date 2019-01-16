@@ -2,7 +2,7 @@ module com.code {
     export class Aby_enemy extends DataMovieClip {
         _game: Game = null;
         _app: App = null;
-        skin: std.MovieClipSub = null;
+        // skin: std.MovieClipSub = null;
         type: number = 0;
         id: number = 0;
         reload_time: number = 0;
@@ -13,12 +13,11 @@ module com.code {
         type_aby: number = 0;
         qe: number = 0;
         public constructor() {
-            super("Aby_enemy");
-            this.skin = this.createMovieClipSub("skin");
+            super();
             this._game = Game.getInstance();
             this._app = App.getInstance();
         }
-        public init(): boolean {
+        public init(): void {
             this.id = this._app.team_enemy_id * 4 - 8 + this._game.arr_fox.length;
             this.type = this.id;
             this.type_aby = this._game._info.got_type(this.type);
@@ -34,7 +33,7 @@ module com.code {
             }
             this.reload_time2 = this.reload_time2 * this.qe;
             this.reload_time = Math.floor(this.reload_time2 * 0.5);
-            return true;
+            return;
         }
     }
 }

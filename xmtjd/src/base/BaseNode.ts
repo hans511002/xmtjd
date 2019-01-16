@@ -597,25 +597,41 @@ module std {
 				return aniData.frameCount + 1;
 			return 0;
 		}
-		gotoAndStop(cf: number, _aniName: string = ""): void {
+		gotoAndStop(cf: number | string, _aniName: string = ""): void {
 			if (!this.getArmature() || !this.getAnimation()) return;
-			if (cf == 0) cf = 1;
-			var aniName: string = _aniName ? _aniName : "";
-			if (aniName == "") aniName = this.defAniName;
-			this.currentFrame = (cf - 1) % this.totalFrames + 1;
-			this.inPlay = false;
-			this.getAnimation().gotoAndStopByFrame(aniName, this.currentFrame - 1);
+			if (typeof (cf) == "string") {
+				var aniName: string = cf ? cf : "";
+				if (aniName == "") aniName = this.defAniName;
+				this.currentFrame = (1 - 1) % this.totalFrames + 1;
+				this.inPlay = false;
+				this.getAnimation().gotoAndStopByFrame(aniName, this.currentFrame - 1);
+			} else {
+				if (cf == 0) cf = 1;
+				var aniName: string = _aniName ? _aniName : "";
+				if (aniName == "") aniName = this.defAniName;
+				this.currentFrame = (cf - 1) % this.totalFrames + 1;
+				this.inPlay = false;
+				this.getAnimation().gotoAndStopByFrame(aniName, this.currentFrame - 1);
+			}
 		}
-		gotoAndPlay(cf: number, _aniName: string = "") {
+		gotoAndPlay(cf: number | string, _aniName: string = "") {
 			if (!this.getArmature() || !this.getAnimation()) return;
-			if (cf == 0) cf = 1;
-			var aniName: string = _aniName ? _aniName : "";
-			if (aniName == "") aniName = this.defAniName;
-			this.currentFrame = (cf - 1) % this.totalFrames + 1;
-			this.inPlay = false;
-			this.getAnimation().gotoAndPlayByFrame(aniName, this.currentFrame - 1, 1);
+			if (typeof (cf) == "string") {
+				var aniName: string = cf ? cf : "";
+				if (aniName == "") aniName = this.defAniName;
+				this.currentFrame = (1 - 1) % this.totalFrames + 1;
+				this.inPlay = false;
+				this.getAnimation().gotoAndPlayByFrame(aniName, this.currentFrame - 1, 1);
+			} else {
+				if (cf == 0) cf = 1;
+				var aniName: string = _aniName ? _aniName : "";
+				if (aniName == "") aniName = this.defAniName;
+				this.currentFrame = (cf - 1) % this.totalFrames + 1;
+				this.inPlay = false;
+				this.getAnimation().gotoAndPlayByFrame(aniName, this.currentFrame - 1, 1);
+			}
 		}
-		nextFram(): void {
+		nextFrame(): void {
 			if (this.getArmature() == null || this.getAnimation() == null) return;
 			this.currentFrame++;
 			this.gotoAndStop(this.currentFrame);
@@ -837,60 +853,81 @@ module std {
 		}
 
 		//////////////create ///////////////
-		createText(slot: string, reinit: number = 0): MCUI {
-			var mt: MCUI = new MCUI(new eui.TextInput(), this, slot, reinit);
+		createText(slotName: string, reinit: number = 0): eui.TextInput {
+			let mc: MCText = new MCText(this, slotName, reinit);
 			// mt.reinitType = reinit;
 			// this.addMCbs(mt, reinit);
-			return mt;
+			if (slotName != "mask") this[slotName] = mc;
+			return mc.input;
 		}
-		createLabel(slot: string, reinit: number = 0): MCLabel {
-			var mt: MCLabel = new MCLabel(this, slot, reinit);
+		createMCText(slotName: string, reinit: number = 0): MCUI {
+			let mc: MCText = new MCText(this, slotName, reinit);
+			// mt.reinitType = reinit;
+			if (slotName != "mask") this[slotName] = mc;
+			// this.addMCbs(mt, reinit);
+			return mc;
+		}
+		createLabel(slotName: string, reinit: number = 0): eui.Label {
+			let mc: MCLabel = new MCLabel(this, slotName, reinit);
 			// mt.reinitType = reinit;
 			// this.addMCbs(mt, reinit);
+			if (slotName != "mask") this[slotName] = mc;
+			return mc.label;
+		}
+		createMCLabel(slotName: string, reinit: number = 0): MCLabel {
+			let mt: MCLabel = new MCLabel(this, slotName, reinit);
+			// mt.reinitType = reinit;
+			// this.addMCbs(mt, reinit);
+			if (slotName != "mask") this[slotName] = mt;
 			return mt;
 		}
 		// MovieClipSub * createMovieClipSub(const string &  slot,bool reinit=false);
 		createMovieClipSub(slotName: string, reinitType: number = 0): MovieClipSub {
-			var mcs: MovieClipSub = new MovieClipSub(this, slotName, "", reinitType);
+			let mcs: MovieClipSub = new MovieClipSub(this, slotName, "", reinitType);
 			// mcs.reinitType = reinitType;
 			// this.addMCbs(mcs, reinitType);
+			if (slotName != "mask") this[slotName] = mcs;
 			return mcs;
 		};
 
 		createMCButton(slotName: string, reinitType: number = 0): MCButton {
-			var mcs: MCButton = new MCButton(this, slotName, "", reinitType);
+			let mcs: MCButton = new MCButton(this, slotName, "", reinitType);
 			// mcs.reinitType = reinitType;
 			// this.addMCbs(mcs, reinitType);
+			if (slotName != "mask") this[slotName] = mcs;
 			return mcs;
 		};
 		// MovieClip * createMovieClip(const string &  slot, const string &  rootPath, const string &  armName, const string &  dbName, bool reinit = false,bool delay=false);
 		// MovieClip * createMovieClip(const string &  slot, const string &  rootPath, const string &  dbName);
 		// MovieClip * createMovieClip(const string &  slot, MovieClip * mc, bool reinit = false);
-		createMovieClip(slot: string, rootPath: string, armName: string, dbName: string, reinit: number, delay: boolean = false): MovieClip {
+		createMovieClip(slotName: string, rootPath: string, armName: string, dbName: string, reinit: number, delay: boolean = false): MovieClip {
 			// public constructor(rootPath?:string,armName?:string,dbName?:string,defAniName:string="" ) {
 			//var mc:MovieClip = new MovieClip( rootPath, armName, dbName, "");
-			var mc: MovieClip = new MovieClip();
+			let mc: MovieClip = new MovieClip();
 			if (armName.length == 0) {
 				reinit |= 1;
 			}
-			mc.setMcInit(this, slot, rootPath, dbName, armName, "", delay, reinit);
+			mc.setMcInit(this, slotName, rootPath, dbName, armName, "", delay, reinit);
+			if (slotName != "mask") this[slotName] = mc;
 			return mc;
 		}
-		addMovieClip(slot: string, mc: MovieClip, reinit: number = 0): MovieClip {
+		addMovieClip(slotName: string, mc: MovieClip, reinit: number = 0): MovieClip {
 			mc.reinitType = reinit;
 			mc.mc = this;
 			mc.display = null;
-			mc.slotName = slot;
+			mc.slotName = slotName;
 			mc.reinit();
 			this.addMCbs(mc, reinit);
+			if (slotName != "mask") this[slotName] = mc;
 			return mc;
 		}
 		// MCCase * createCase(const string &  slot, bool reinit = false, bool draw = false);
 		createCase(slotName: string, reinit: number = 0, draw: boolean = false): MCCase {
 			// constructor(pmc?:MC, slotName?:string,mouseEnabled:boolean=true,draw:boolean=false){
-			var mc: MCCase = new MCCase(this, slotName, true, draw, reinit);
+			let mc: MCCase = new MCCase(this, slotName, true, draw, reinit);
 			// mc.reinitType = reinit;
 			// this.addMCbs(mc, reinit);
+			if (slotName != "mask") this[slotName] = mc;
 			return mc;
 		}
 		// MCSprite * createSprite(const string &  slot, const string &  file, bool reinit = false);
@@ -899,6 +936,7 @@ module std {
 			var mc: MCSprite = new MCSprite(this, slotName, file, reinit);
 			// mc.reinitType = reinit;
 			// this.addMCbs(mc, reinit);
+			if (slotName != "mask") this[slotName] = mc;
 			return mc;
 		};
 		// MCMask * createMask(const string &  slot, bool reinit = false);
@@ -1220,7 +1258,7 @@ module std {
 			}
 		}
 		//         virtual void gotoAndStop(int cf, const string &  aniName = "");
-		gotoAndStop(cf: number, aniName: string = ""): void {
+		gotoAndStop(cf: number | string, aniName: string = ""): void {
 			if (this.mc && !this.isReady) {
 				this.reinit();
 			}
@@ -1228,10 +1266,17 @@ module std {
 			super.gotoAndStop(cf, aniName);
 			this.reinitSubMcbs();
 		}
-
+		gotoAndPlay(cf: number | string, aniName: string = ""): void {
+			if (this.mc && !this.isReady) {
+				this.reinit();
+			}
+			if (this.mc && !this.isReady) return;
+			super.gotoAndPlay(cf, aniName);
+			this.reinitSubMcbs();
+		}
 		//         virtual void update(float dt = 0);
 		update(dt: number): void {
-			this.nextFram();
+			this.nextFrame();
 		}
 		// 		virtual const dragonBones::Rectangle & getRectangle();
 		getRectangle(): dragonBones.Rectangle {
@@ -1289,7 +1334,7 @@ module std {
 		}
 		// virtual bool isVisible();
 		isVisible(): boolean {
-			return this.visible && std.getNodeVisible(this.display);
+			return this.container && this.visible && this.container.visible && std.getNodeVisible(this.display);
 		}
 		// virtual cocos2d::Point getPosition();
 		getPosition(): egret.Point {
@@ -1402,12 +1447,20 @@ module std {
 		}
 
 		// virtual void gotoAndStop(int cf, const string &  aniName = "");
-		gotoAndStop(cf: number, aniName: string = ""): void {
+		gotoAndStop(cf: number | string, aniName: string = ""): void {
 			if (!this.isReady && this.reinitType) {
 				this.reinit();
 			}
 			if (!this.isReady) return;
 			super.gotoAndStop(cf, aniName);
+			this.reinitSubMcbs();
+		};
+		gotoAndPlay(cf: number | string, aniName: string = ""): void {
+			if (!this.isReady && this.reinitType) {
+				this.reinit();
+			}
+			if (!this.isReady) return;
+			super.gotoAndPlay(cf, aniName);
 			this.reinitSubMcbs();
 		};
 
@@ -1446,7 +1499,7 @@ module std {
 		getUserData(name: string): any { return this.userData[name]; };
 		// virtual void update(float dt = 0);
 		update(dt: number): void {
-			this.nextFram();
+			this.nextFrame();
 		};
 		// virtual void setName(const string & name) { this.name = name; };
 		setName(name: string) { this.name = name; if (this.display) this.display.name = name; };
@@ -1505,38 +1558,67 @@ module std {
 		}
 	}
 	interface SimButton {
-		label: std.MCLabel;
-
+		label: eui.Label;
+		onclick: (this: SimButton, e: egret.TouchEvent) => void;
+		// onclick: Function;
 	}
 	function buttonTouchHandler(e: egret.TouchEvent) {
 		if (e.type == egret.TouchEvent.TOUCH_BEGIN) {
 			this.gotoAndStop(3);
 		} else if (e.type == egret.TouchEvent.TOUCH_END) {
 			this.gotoAndStop(4);
+			if (this.onclick) {
+				this.onclick.call(this, e);
+			}
 		} else if (e.type == egret.TouchEvent.TOUCH_MOVE) {
 			this.gotoAndStop(2);
 		}
 	}
 	export class Button extends MovieClip implements SimButton {
-		label: std.MCLabel;
+		label: eui.Label;
+		onclick: (this: SimButton, e: egret.TouchEvent) => void;
 		public constructor(rootPath: string, armName: string, dbName: string, defAniName: string = "") {
 			super(rootPath, armName, dbName, defAniName);
 			this.label = this.createLabel("label");
-			this.addEventListener(egret.TouchEvent.TOUCH_BEGIN, buttonTouchHandler, this);
-			this.addEventListener(egret.TouchEvent.TOUCH_END, buttonTouchHandler, this);
-			this.addEventListener(egret.TouchEvent.TOUCH_MOVE, buttonTouchHandler, this);
+			this.container.addEventListener(egret.TouchEvent.TOUCH_BEGIN, buttonTouchHandler, this);
+			this.container.addEventListener(egret.TouchEvent.TOUCH_END, buttonTouchHandler, this);
+			this.container.addEventListener(egret.TouchEvent.TOUCH_MOVE, buttonTouchHandler, this);
+		}
+		reinit(): boolean {
+			if (super.reinit() && this.isReady) {
+				this.container.addEventListener(egret.TouchEvent.TOUCH_BEGIN, buttonTouchHandler, this);
+				this.container.addEventListener(egret.TouchEvent.TOUCH_END, buttonTouchHandler, this);
+				this.container.addEventListener(egret.TouchEvent.TOUCH_MOVE, buttonTouchHandler, this);
+			}
+			return this.isReady;
+		}
+		removeListener() {
+			this.container.removeEventListener(egret.TouchEvent.TOUCH_BEGIN, buttonTouchHandler, this);
+			this.container.removeEventListener(egret.TouchEvent.TOUCH_END, buttonTouchHandler, this);
+			this.container.removeEventListener(egret.TouchEvent.TOUCH_MOVE, buttonTouchHandler, this);
 		}
 	}
 	export class MCButton extends MovieClipSub implements SimButton {
-		label: std.MCLabel;
+		label: eui.Label;
+		onclick: (this: SimButton, e: egret.TouchEvent) => void;
+		// onclick: Function;
 		public constructor(mc?: MC, slotName?: string, defAniName?: string, reinitType: number = 0) {
 			super(mc, slotName, defAniName, reinitType);
 			this.label = this.createLabel("label");
-			this.addEventListener(egret.TouchEvent.TOUCH_BEGIN, buttonTouchHandler, this);
-			this.addEventListener(egret.TouchEvent.TOUCH_END, buttonTouchHandler, this);
-			this.addEventListener(egret.TouchEvent.TOUCH_MOVE, buttonTouchHandler, this);
 		}
-
+		reinit(): boolean {
+			if (super.reinit() && this.isReady) {
+				this.container.addEventListener(egret.TouchEvent.TOUCH_BEGIN, buttonTouchHandler, this);
+				this.container.addEventListener(egret.TouchEvent.TOUCH_END, buttonTouchHandler, this);
+				this.container.addEventListener(egret.TouchEvent.TOUCH_MOVE, buttonTouchHandler, this);
+			}
+			return this.isReady;
+		}
+		removeListener() {
+			this.container.removeEventListener(egret.TouchEvent.TOUCH_BEGIN, buttonTouchHandler, this);
+			this.container.removeEventListener(egret.TouchEvent.TOUCH_END, buttonTouchHandler, this);
+			this.container.removeEventListener(egret.TouchEvent.TOUCH_MOVE, buttonTouchHandler, this);
+		}
 	}
 	// class MCUI;
 	// class MCCase;
@@ -1667,11 +1749,19 @@ module std {
 	}
 
 	export class MCText extends MCUI {
+		input: eui.TextInput;
 		constructor(pmc?: MC, slotName?: string, reinit: number = 0) {
 			super(new eui.TextInput(), pmc, slotName, reinit);
+			this.input = this.getContainer();
 		}
 		getContainer(): eui.TextInput {
 			return <eui.TextInput>this.container;
+		}
+		setText(v: string) {
+			this.input.text = v;
+		}
+		getText() {
+			return this.input.text;
 		}
 	}
 	export class MCLabel extends MCUI {
@@ -1679,6 +1769,12 @@ module std {
 		constructor(pmc?: MC, slotName?: string, reinit: number = 0) {
 			super(new eui.Label(), pmc, slotName, reinit);
 			this.label = this.getContainer();
+		}
+		setText(v: string) {
+			this.label.text = v;
+		}
+		getText() {
+			return this.label.text;
 		}
 		getContainer(): eui.Label {
 			return <eui.Label>this.container;
@@ -1912,7 +2008,9 @@ module std {
 		else if (params.length == 20) return fun.call(obj, params[0], params[1], params[2], params[3], params[4], params[5], params[6], params[7], params[8], params[9], params[10], params[11], params[12], params[13], params[14], params[15], params[16], params[17], params[18], params[19]);
 	}
 
-
+	export function rondFrame() {
+		this.gotoAndStop(1 + Math.floor(Math.random() * this.totalFrames));
+	}
 	//db混合 mask
 	function maskDB(mc: MC, aniNames: string[], slot: string) {
 		// gotoAndPlay(animationName: string, fadeInTime?: number, duration?: number, playTimes?: number, layer?: number, group?: string | null, fadeOutMode?: AnimationFadeOutMode, pauseFadeOut?: boolean, pauseFadeIn?: boolean): AnimationState | null;
