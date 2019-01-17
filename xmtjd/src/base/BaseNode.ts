@@ -1102,6 +1102,7 @@ module std {
 					_armName = this.display.name;
 				//必需先初始化db 再加入节点
 				this.initCnt(this.rootPath, _armName, this.dbName, this.defAniName);//display=_armName
+				// this.defAniName = this.getArmature()._armatureData.defaultAnimation.name;
 				this.reinitSubMcbs(true);
 				this.display.addChild(this);
 				// std.changeAnchorPoint(this, 0.5,0.5);
