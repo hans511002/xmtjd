@@ -47,7 +47,9 @@ module com.code {
             }
             return 0;
         }
-        public _mo(param1: any): any {
+        public _mo(param1: egret.DisplayObject): any {
+            if (param1 instanceof std.MovieClipSub)
+                param1 = param1.getDisplayNode();
             if (param1.hitTestPoint(Main.mouseX, Main.mouseY)) {
                 return 1;
             }

@@ -4,45 +4,47 @@ module com.code {
         calendar_clBg_cl: std.MovieClipSub = null;
         calendar_clLeft_tx: eui.Label = null;
         calendar_clTitle_tx: eui.Label = null;
-        public coach_stay_cl: std.MovieClip = null;
-        public doctor_cl: std.MovieClip = null;
+        public coach_stay_cl: std.MovieClipSub = null;
+        public doctor_cl: std.MovieClipSub = null;
         public dress_bt: std.MCButton = null;
-        public gong_cl: std.MovieClip = null;
+        public gong_cl: std.MovieClipSub = null;
         public grass_cl: std.MovieClipSub = null;
         grass_clSpy_cl: std.MovieClipSub = null;
         public menu_bt_cl: std.MCButton = null;
         public money_tx: eui.Label = null;
-        public next_bt: std.MovieClip = null;
-        public pointer1: std.MovieClip = null;
-        public pointer2: std.MovieClip = null;
-        public pointer3: std.MovieClip = null;
-        public sign_cl: std.MovieClip = null;
-        public slot_1: std.MovieClip = null;
-        public slot_2: std.MovieClip = null;
-        public slot_3: std.MovieClip = null;
-        public slot_4: std.MovieClip = null;
+        public next_bt: std.MovieClipSub = null;
+        public pointer1: std.MovieClipSub = null;
+        public pointer2: std.MovieClipSub = null;
+        public pointer3: std.MovieClipSub = null;
+        public sign_cl: std.MovieClipSub = null;
+        public slot_1: std.MovieClipSub = null;
+        public slot_2: std.MovieClipSub = null;
+        public slot_3: std.MovieClipSub = null;
+        public slot_4: std.MovieClipSub = null;
         public stat_bt: std.MCButton = null;
         public stat_cl: std.MovieClipSub = null;
         stat_clPlayoff_bt: std.MCButton = null;
         stat_clClose_bt: std.MCButton = null;
         stat_clPlayoff_cl: std.MovieClipSub = null;
         stat_clTitle_cl: std.MovieClipSub = null;
-        public talk_9: std.MovieClip = null;
-        public talk_10: std.MovieClip = null;
-        public talk_11: std.MovieClip = null;
-        public talk_12: std.MovieClip = null;
-        public train_1: std.MovieClip = null;
-        public train_2: std.MovieClip = null;
-        public train_3: std.MovieClip = null;
-        public train_4: std.MovieClip = null;
-        public train_5: std.MovieClip = null;
-        public train_6: std.MovieClip = null;
-        public train_7: std.MovieClip = null;
-        public train_8: std.MovieClip = null;
-        public train_9: std.MovieClip = null;
-        public train_10: std.MovieClip = null;
-        public train_11: std.MovieClip = null;
-        public train_12: std.MovieClip = null;
+        stat_clSlots_cl: std.MovieClipSub = null;
+        stat_clLine_about_cl: std.MovieClipSub = null;
+        public talk_9: std.MovieClipSub = null;
+        public talk_10: std.MovieClipSub = null;
+        public talk_11: std.MovieClipSub = null;
+        public talk_12: std.MovieClipSub = null;
+        public train_1: std.MovieClipSub = null;
+        public train_2: std.MovieClipSub = null;
+        public train_3: std.MovieClipSub = null;
+        public train_4: std.MovieClipSub = null;
+        public train_5: std.MovieClipSub = null;
+        public train_6: std.MovieClipSub = null;
+        public train_7: std.MovieClipSub = null;
+        public train_8: std.MovieClipSub = null;
+        public train_9: std.MovieClipSub = null;
+        public train_10: std.MovieClipSub = null;
+        public train_11: std.MovieClipSub = null;
+        public train_12: std.MovieClipSub = null;
 
         train_9Table_cl: std.MovieClipSub = null;
         train_10Table_cl: std.MovieClipSub = null;
@@ -50,24 +52,24 @@ module com.code {
         train_12Table_cl: std.MovieClipSub = null;
 
         public upg_bt: std.MCButton = null;
-        public upg_cl: std.MovieClip = null;
+        public upg_cl: std.MovieClipSub = null;
         upg_clMoney_tx: eui.Label = null;
         upg_clClose_bt: std.MCButton = null;
-        public zone_1: std.MovieClip = null;
-        public zone_2: std.MovieClip = null;
-        public zone_3: std.MovieClip = null;
-        public zone_4: std.MovieClip = null;
-        public zone_5: std.MovieClip = null;
-        public zone_6: std.MovieClip = null;
-        public zone_7: std.MovieClip = null;
-        public zone_8: std.MovieClip = null;
-        public zone_9: std.MovieClip = null;
-        public zone_10: std.MovieClip = null;
-        public zone_11: std.MovieClip = null;
-        public zone_12: std.MovieClip = null;
-        public zone_drag: std.MovieClip = null;
-        public zone_tuto: std.MovieClip = null;
-        public zone_up_all: std.MovieClip = null;
+        public zone_1: std.MCButton = null;
+        public zone_2: std.MCButton = null;
+        public zone_3: std.MCButton = null;
+        public zone_4: std.MCButton = null;
+        public zone_5: std.MCButton = null;
+        public zone_6: std.MCButton = null;
+        public zone_7: std.MCButton = null;
+        public zone_8: std.MCButton = null;
+        public zone_9: std.MCButton = null;
+        public zone_10: std.MCButton = null;
+        public zone_11: std.MCButton = null;
+        public zone_12: std.MCButton = null;
+        public zone_drag: std.MovieClipSub = null;
+        public zone_tuto: std.MovieClipSub = null;
+        public zone_up_all: std.MovieClipSub = null;
         _app: App = null;
         _Buttons_sounds: Buttons_sounds = null;
         pause_cl: pause_mc = null;
@@ -81,8 +83,8 @@ module com.code {
         date_all: string = null;
         my_date: Date = new Date();
         drag_scroll: boolean = false;
-        arr_le: any = [];
-        arr_sort: any = [];
+        arr_le: Array<number> = [];
+        arr_sort: Array<number> = [];
         arr_sort_type: any = [];
         spy_time: number = 0;
         mouse_dx: number = 0;
@@ -138,6 +140,142 @@ module com.code {
             this.arr_last_frame_skin = [];
             this.arr_last_frame_zone = [];
             this.arr_temp3 = [];
+
+            this.calendar_cl = this.createMovieClipSub("calendar_cl");
+            this.calendar_clBg_cl = this.createMovieClipSub("bg_cl");
+            this.calendar_clLeft_tx = this.calendar_cl.createLabel("left_tx");
+            this.calendar_clTitle_tx = this.calendar_cl.createLabel("title_tx");
+            this.coach_stay_cl = this.createMovieClipSub("coach_stay_cl");
+            this.doctor_cl = this.createMovieClipSub("doctor_cl");
+
+            this.dress_bt = this.createMCButton("dress_bt");
+            this.gong_cl = this.createMovieClipSub("gong_cl");
+            this.grass_cl = this.createMovieClipSub("grass_cl");
+            this.grass_clSpy_cl = this.grass_cl.createMovieClipSub("spy_cl");
+            this.menu_bt_cl = this.createMCButton("menu_bt_cl");
+            this.money_tx = this.createLabel("money_tx");
+            this.next_bt = this.createMCButton("next_bt");
+
+            this.pointer1 = this.createMovieClipSub("pointer1");
+            this.pointer2 = this.createMovieClipSub("pointer2");
+            this.pointer3 = this.createMovieClipSub("pointer3");
+            this.sign_cl = this.createMovieClipSub("sign_cl");
+            // this.slot_1 = this.createMovieClipSub("slot_1");
+            // this.slot_2 = this.createMovieClipSub("slot_2");
+            // this.slot_3 = this.createMovieClipSub("slot_3");
+            // this.slot_4 = this.createMovieClipSub("slot_4");
+            this.i = 1;
+            while (this.i <= 4) {
+                this["slot_" + this.i] = this.createMovieClipSub("slot_" + this.i);
+                // this["slot_" + this.i + "P2"] = this["slot_" + this.i].createMovieClipSub("p2");
+                // this["slot_" + this.i + "P2Hp_tx"] = this["slot_" + this.i + "P2"].createLabel("hp_tx");
+                // this["slot_" + this.i + "P2Scale_cl"] = this["slot_" + this.i + "P2"].createMovieClipSub("scale_cl");
+                // this["slot_" + this.i + "P2Stat_1"] = this["slot_" + this.i + "P2"].createMovieClipSub("stat_1");
+                // this["slot_" + this.i + "P2Stat_2"] = this["slot_" + this.i + "P2"].createMovieClipSub("stat_2");
+                // this["slot_" + this.i + "P2Stat_3"] = this["slot_" + this.i + "P2"].createMovieClipSub("stat_3");
+                // this["slot_" + this.i + "P2Stat_hp_tx"] = this["slot_" + this.i + "P2"].createLabel("stat_hp_tx");
+                // this["slot_" + this.i + "P2Stat_attack_tx"] = this["slot_" + this.i + "P2"].createLabel("stat_attack_tx");
+                // this["slot_" + this.i + "P2Stat_speed_tx"] = this["slot_" + this.i + "P2"].createLabel("stat_speed_tx");
+                // this["slot_" + this.i + "P2Injury_1"] = this["slot_" + this.i + "P2"].createMovieClipSub("injury_1");
+                // this["slot_" + this.i + "P2Injury_2"] = this["slot_" + this.i + "P2"].createMovieClipSub("injury_2");
+                // this["slot_" + this.i + "P2Injury_3"] = this["slot_" + this.i + "P2"].createMovieClipSub("injury_3");
+                // this["slot_" + this.i + "P2Lock_hp"] = this["slot_" + this.i + "P2"].createMovieClipSub("lock_hp");
+
+                this["slot_" + this.i].p2 = this["slot_" + this.i].createMovieClipSub("p2");
+                this["slot_" + this.i].p2.hp_tx = this["slot_" + this.i].p2.createLabel("hp_tx");
+                this["slot_" + this.i].p2.scale_cl = this["slot_" + this.i].p2.createMovieClipSub("scale_cl");
+                this["slot_" + this.i].p2.stat_1 = this["slot_" + this.i].p2.createMovieClipSub("stat_1");
+                this["slot_" + this.i].p2.stat_2 = this["slot_" + this.i].p2.createMovieClipSub("stat_2");
+                this["slot_" + this.i].p2.stat_3 = this["slot_" + this.i].p2.createMovieClipSub("stat_3");
+                this["slot_" + this.i].p2.stat_hp_tx = this["slot_" + this.i].p2.createLabel("stat_hp_tx");
+                this["slot_" + this.i].p2.stat_attack_tx = this["slot_" + this.i].p2.createLabel("stat_attack_tx");
+                this["slot_" + this.i].p2.stat_speed_tx = this["slot_" + this.i].p2.createLabel("stat_speed_tx");
+                this["slot_" + this.i].p2.injury_1 = this["slot_" + this.i].p2.createMovieClipSub("injury_1");
+                this["slot_" + this.i].p2.injury_2 = this["slot_" + this.i].p2.createMovieClipSub("injury_2");
+                this["slot_" + this.i].p2.injury_3 = this["slot_" + this.i].p2.createMovieClipSub("injury_3");
+                this["slot_" + this.i].p2.lock_hp = this["slot_" + this.i].p2.createMovieClipSub("lock_hp");
+
+                this.i++;
+            }
+
+            this.stat_bt = this.createMCButton("stat_bt");
+            this.stat_cl = this.createMovieClipSub("stat_cl");
+            this.stat_clPlayoff_bt = this.stat_cl.createMCButton("playoff_bt");
+            this.stat_clClose_bt = this.stat_cl.createMCButton("close_bt");
+            this.stat_clPlayoff_cl = this.stat_cl.createMovieClipSub("playoff_cl");
+            this.stat_clTitle_cl = this.stat_cl.createMovieClipSub("title_cl");
+            this.stat_clSlots_cl = this.stat_cl.createMovieClipSub("slots_cl");
+            this.stat_clLine_about_cl = this.createMovieClipSub("stat_clLine_about_cl");
+            this.i = 1;
+            while (this.i <= 6) {
+                // this["stat_clSlots_clSlot_" + this.i] = this.stat_clSlots_cl.createMovieClipSub("slot_" + this.i);
+                this.stat_clSlots_cl["slot_" + this.i] = this.stat_clSlots_cl.createMovieClipSub("slot_" + this.i);
+                // this["stat_clSlots_clSlot_" + this.i + "Id_tx"] = this["stat_clSlots_clSlot_" + this.i].createLabel("id_tx");
+                this.stat_clSlots_cl["slot_" + this.i].id_tx = this.stat_clSlots_cl["slot_" + this.i].createLabel("id_tx");
+                // this["stat_clSlots_clSlot_" + this.i + "Bg_cl"] = this["stat_clSlots_clSlot_" + this.i].createMovieClipSub("bg_cl");
+                this.stat_clSlots_cl["slot_" + this.i].bg_cl = this.stat_clSlots_cl["slot_" + this.i].createMovieClipSub("bg_cl");
+                this.stat_clSlots_cl["slot_" + this.i].title_tx = this.stat_clSlots_cl["slot_" + this.i].createLabel("title_tx");
+                this.stat_clSlots_cl["slot_" + this.i].w_tx = this.stat_clSlots_cl["slot_" + this.i].createLabel("w_tx");
+                this.stat_clSlots_cl["slot_" + this.i].d_tx = this.stat_clSlots_cl["slot_" + this.i].createLabel("d_tx");
+                this.stat_clSlots_cl["slot_" + this.i].pts_tx = this.stat_clSlots_cl["slot_" + this.i].createLabel("pts_tx");
+                this.i++;
+            }
+            this.i = 1;
+            while (this.i <= 4) {
+                this.stat_clPlayoff_cl["slot_" + this.i] = this.stat_clPlayoff_cl.createMovieClipSub("slot_" + this.i);
+                this.stat_clPlayoff_cl["slot_" + this.i].title1_tx = this.stat_clPlayoff_cl["slot_" + this.i].createLabel("title1_tx");
+                this.stat_clPlayoff_cl["slot_" + this.i].title2_tx = this.stat_clPlayoff_cl["slot_" + this.i].createLabel("title2_tx");
+                this.stat_clPlayoff_cl["slot_" + this.i].score1_tx = this.stat_clPlayoff_cl["slot_" + this.i].createLabel("score1_tx");
+                this.stat_clPlayoff_cl["slot_" + this.i].score2_tx = this.stat_clPlayoff_cl["slot_" + this.i].createLabel("score2_tx");
+                this.i++;
+            }
+            this.talk_9 = this.createMovieClipSub("talk_9");
+            this.talk_10 = this.createMovieClipSub("talk_10");
+            this.talk_11 = this.createMovieClipSub("talk_11");
+            this.talk_12 = this.createMovieClipSub("talk_12");
+            this.i = 1;
+            while (this.i <= 12) {
+                this["train_" + this.i] = this.createMovieClipSub("train_" + this.i);
+                this["train_" + this.i].cat_cl = this["train_" + this.i].createMovieClipSub("cat_cl");
+                this["train_" + this.i].coach_cl = this["train_" + this.i].createMovieClipSub("coach_cl");
+                this["train_" + this.i].tr_cl = this["train_" + this.i].createMovieClipSub("tr_cl");
+                this["train_" + this.i].cat_cl.cat1 = this["train_" + this.i].cat_cl.createMovieClipSub("cat1");
+                this["train_" + this.i].cat_cl.cat1.cat2 = new SubCat(this["train_" + this.i].cat_cl.cat1, "cat2");// this["train_" + this.i].cat_cl.cat1.createMovieClipSub("cat2");
+                this["train_" + this.i].cat_cl.cat1.cat2.tr_cl = this["train_" + this.i].cat_cl.cat1.cat2.createMovieClipSub("tr_cl");
+                this["train_" + this.i].cat_cl.cat1.cat2.tr_cl.line_of_cl = this["train_" + this.i].cat_cl.cat1.cat2.tr_cl.createMovieClipSub("line_of_cl");
+                this["train_" + this.i].cat_cl.cat1Cat2 = this["train_" + this.i].cat_cl.cat1.cat2;
+                this["train_" + this.i].cat_cl.cat1Cat2Tr_cl = this["train_" + this.i].cat_cl.cat1.cat2.tr_cl;
+                this.i++;
+            }
+            this.train_9Table_cl = this.train_9.createMovieClipSub("table_cl");
+            this.train_10Table_cl = this.train_10.createMovieClipSub("table_cl");
+            this.train_11Table_cl = this.train_11.createMovieClipSub("table_cl");
+            this.train_12Table_cl = this.train_12.createMovieClipSub("table_cl");
+
+            this.upg_bt = this.createMCButton("upg_bt");
+            this.upg_cl = this.createMovieClipSub("upg_cl");
+            this.i3 = 1;
+            while (this.i3 <= 5) {
+                this.upg_cl["slot_" + this.i3] = this.upg_cl.createMovieClipSub("upg_cl");
+                this.upg_cl["slot_" + this.i3].icon_cl = this.upg_cl["slot_" + this.i3].createMovieClipSub("icon_cl");
+                this.upg_cl["slot_" + this.i3].icon_cl.icon2 = this.upg_cl["slot_" + this.i3].icon_cl.createMovieClipSub("icon_cl");
+                this.upg_cl["slot_" + this.i3].title_tx = this.upg_cl["slot_" + this.i3].createLabel("title_tx");
+                this.upg_cl["slot_" + this.i3].des_tx = this.upg_cl["slot_" + this.i3].createLabel("des_tx");
+                this.upg_cl["slot_" + this.i3].price_tx = this.upg_cl["slot_" + this.i3].createLabel("price_tx");
+                this.upg_cl["slot_" + this.i3].buy_cl = this.upg_cl["slot_" + this.i3].createMovieClipSub("buy_cl");
+                this.i3++;
+            }
+            this.upg_clMoney_tx = this.upg_cl.createLabel("money_tx");
+            this.upg_clClose_bt = this.createMCButton("close_bt");
+            this.i = 1;
+            while (this.i <= 12) {
+                this["zone_" + this.i] = this.createMCButton("zone_" + this.i);
+            }
+            this.zone_drag = this.createMovieClipSub("zone_drag");
+            this.zone_tuto = this.createMovieClipSub("zone_tuto");
+            this.zone_up_all = this.createMovieClipSub("zone_up_all");
+            // this.getSprite
+
         }
         public init(): void {
             if (Main.sav.data.week >= 8) {
@@ -587,70 +725,70 @@ module com.code {
             this.arr_sort.reverse();
             this.i = 0;
             while (this.i < this.arr_sort.length) {
-                this.stat_cl.slots_cl["slot_" + (1 + this.i)].id_tx.text = (1 + this.i).toString();
-                this.stat_cl.slots_cl["slot_" + (1 + this.i)].$setY(-268 + 28 * this.i);
+                this.stat_clSlots_cl["slot_" + (1 + this.i)].id_tx.text = (1 + this.i).toString();
+                this.stat_clSlots_cl["slot_" + (1 + this.i)].$setY(-268 + 28 * this.i);
                 if (this.arr_sort[this.i] != 1) {
-                    this.stat_cl.slots_cl["slot_" + (1 + this.i)].bg_cl.gotoAndStop(2);
+                    this.stat_clSlots_cl["slot_" + (1 + this.i)].bg_cl.gotoAndStop(2);
                 }
                 else {
-                    this.stat_cl.slots_cl["slot_" + (1 + this.i)].bg_cl.gotoAndStop(1);
+                    this.stat_clSlots_cl["slot_" + (1 + this.i)].bg_cl.gotoAndStop(1);
                     this.place_dy = this.i;
                 }
                 if (this.arr_sort[this.i] != 1) {
-                    this.stat_cl.slots_cl["slot_" + (1 + this.i)].title_tx.text = this._info_enemy.got_title(Main.sav.data.season_koff + this.arr_sort[this.i]);
-                    this.stat_cl.slots_cl["slot_" + (1 + this.i)].w_tx.text = Main.sav.data["team_w_" + (Main.sav.data.season_koff + this.arr_sort[this.i])];
-                    this.stat_cl.slots_cl["slot_" + (1 + this.i)].d_tx.text = Main.sav.data["team_d_" + (Main.sav.data.season_koff + this.arr_sort[this.i])];
-                    this.stat_cl.slots_cl["slot_" + (1 + this.i)].pts_tx.text = Main.sav.data["team_pts_" + (Main.sav.data.season_koff + this.arr_sort[this.i])];
+                    this.stat_clSlots_cl["slot_" + (1 + this.i)].title_tx.text = this._info_enemy.got_title(Main.sav.data.season_koff + this.arr_sort[this.i]);
+                    this.stat_clSlots_cl["slot_" + (1 + this.i)].w_tx.text = Main.sav.data["team_w_" + (Main.sav.data.season_koff + this.arr_sort[this.i])];
+                    this.stat_clSlots_cl["slot_" + (1 + this.i)].d_tx.text = Main.sav.data["team_d_" + (Main.sav.data.season_koff + this.arr_sort[this.i])];
+                    this.stat_clSlots_cl["slot_" + (1 + this.i)].pts_tx.text = Main.sav.data["team_pts_" + (Main.sav.data.season_koff + this.arr_sort[this.i])];
                 }
                 else {
-                    this.stat_cl.slots_cl["slot_" + (1 + this.i)].title_tx.text = Main.sav.data.team_name_1;
-                    this.stat_cl.slots_cl["slot_" + (1 + this.i)].w_tx.text = Main.sav.data["team_w_1"];
-                    this.stat_cl.slots_cl["slot_" + (1 + this.i)].d_tx.text = Main.sav.data["team_d_1"];
-                    this.stat_cl.slots_cl["slot_" + (1 + this.i)].pts_tx.text = Main.sav.data["team_pts_1"];
+                    this.stat_clSlots_cl["slot_" + (1 + this.i)].title_tx.text = Main.sav.data.team_name_1;
+                    this.stat_clSlots_cl["slot_" + (1 + this.i)].w_tx.text = Main.sav.data["team_w_1"];
+                    this.stat_clSlots_cl["slot_" + (1 + this.i)].d_tx.text = Main.sav.data["team_d_1"];
+                    this.stat_clSlots_cl["slot_" + (1 + this.i)].pts_tx.text = Main.sav.data["team_pts_1"];
                 }
                 this.i++;
             }
             this.i = 1;
             while (this.i <= 4) {
                 if (Main.sav.data.playoff == 0) {
-                    this.stat_cl.playoff_cl["slot_" + this.i].title1_tx.text = "unknown";
-                    this.stat_cl.playoff_cl["slot_" + this.i].title2_tx.text = "unknown";
-                    this.stat_cl.playoff_cl["slot_" + this.i].score1_tx.text = "0";
-                    this.stat_cl.playoff_cl["slot_" + this.i].score2_tx.text = "0";
+                    this.stat_clPlayoff_cl["slot_" + this.i].title1_tx.text = "unknown";
+                    this.stat_clPlayoff_cl["slot_" + this.i].title2_tx.text = "unknown";
+                    this.stat_clPlayoff_cl["slot_" + this.i].score1_tx.text = "0";
+                    this.stat_clPlayoff_cl["slot_" + this.i].score2_tx.text = "0";
                 }
                 else if (Main.sav.data.playoff == 1) {
                     if (Main.sav.data.playoff_round >= 1) {
                         if (this.i == 1) {
-                            this.stat_cl.playoff_cl["slot_" + this.i].title1_tx.text = Main.sav.data.team_name_1;
-                            this.stat_cl.playoff_cl["slot_" + this.i].title2_tx.text = this._info_enemy.got_title(Main.sav.data.off_team_2);
-                            this.stat_cl.playoff_cl["slot_" + this.i].score1_tx.text = Main.sav.data.count_semi_1_1;
-                            this.stat_cl.playoff_cl["slot_" + this.i].score2_tx.text = Main.sav.data.count_semi_1_2;
+                            this.stat_clPlayoff_cl["slot_" + this.i].title1_tx.text = Main.sav.data.team_name_1;
+                            this.stat_clPlayoff_cl["slot_" + this.i].title2_tx.text = this._info_enemy.got_title(Main.sav.data.off_team_2);
+                            this.stat_clPlayoff_cl["slot_" + this.i].score1_tx.text = Main.sav.data.count_semi_1_1;
+                            this.stat_clPlayoff_cl["slot_" + this.i].score2_tx.text = Main.sav.data.count_semi_1_2;
                         }
                         else if (this.i == 2) {
-                            this.stat_cl.playoff_cl["slot_" + this.i].title1_tx.text = this._info_enemy.got_title(Main.sav.data.off_team_3);
-                            this.stat_cl.playoff_cl["slot_" + this.i].title2_tx.text = this._info_enemy.got_title(Main.sav.data.off_team_4);
-                            this.stat_cl.playoff_cl["slot_" + this.i].score1_tx.text = Main.sav.data.count_semi_2_1;
-                            this.stat_cl.playoff_cl["slot_" + this.i].score2_tx.text = Main.sav.data.count_semi_2_2;
+                            this.stat_clPlayoff_cl["slot_" + this.i].title1_tx.text = this._info_enemy.got_title(Main.sav.data.off_team_3);
+                            this.stat_clPlayoff_cl["slot_" + this.i].title2_tx.text = this._info_enemy.got_title(Main.sav.data.off_team_4);
+                            this.stat_clPlayoff_cl["slot_" + this.i].score1_tx.text = Main.sav.data.count_semi_2_1;
+                            this.stat_clPlayoff_cl["slot_" + this.i].score2_tx.text = Main.sav.data.count_semi_2_2;
                         }
                     }
                     if (Main.sav.data.playoff_round >= 2) {
                         if (this.i == 3) {
-                            this.stat_cl.playoff_cl["slot_" + this.i].title1_tx.text = Main.sav.data.team_name_1;
-                            this.stat_cl.playoff_cl["slot_" + this.i].title2_tx.text = this._info_enemy.got_title(Main.sav.data.off_team_5);
-                            this.stat_cl.playoff_cl["slot_" + this.i].score1_tx.text = Main.sav.data.count_final_1;
-                            this.stat_cl.playoff_cl["slot_" + this.i].score2_tx.text = Main.sav.data.count_final_2;
+                            this.stat_clPlayoff_cl["slot_" + this.i].title1_tx.text = Main.sav.data.team_name_1;
+                            this.stat_clPlayoff_cl["slot_" + this.i].title2_tx.text = this._info_enemy.got_title(Main.sav.data.off_team_5);
+                            this.stat_clPlayoff_cl["slot_" + this.i].score1_tx.text = Main.sav.data.count_final_1;
+                            this.stat_clPlayoff_cl["slot_" + this.i].score2_tx.text = Main.sav.data.count_final_2;
                         }
                     }
                     if (Main.sav.data.playoff_round >= 3) {
                         if (this.i == 4) {
-                            this.stat_cl.playoff_cl["slot_" + this.i].title2_tx.text = Main.sav.data.team_name_1;
-                            this.stat_cl.playoff_cl["slot_" + this.i].score1_tx.text = "0";
-                            this.stat_cl.playoff_cl["slot_" + this.i].score2_tx.text = "0";
+                            this.stat_clPlayoff_cl["slot_" + this.i].title2_tx.text = Main.sav.data.team_name_1;
+                            this.stat_clPlayoff_cl["slot_" + this.i].score1_tx.text = "0";
+                            this.stat_clPlayoff_cl["slot_" + this.i].score2_tx.text = "0";
                         }
                     }
                 }
                 if (this.i == 4) {
-                    this.stat_cl.playoff_cl["slot_" + this.i].title1_tx.text = this._info_enemy.got_title(22);
+                    this.stat_clPlayoff_cl["slot_" + this.i].title1_tx.text = this._info_enemy.got_title(22);
                 }
                 this.i++;
             }
@@ -954,15 +1092,15 @@ module com.code {
                     }
                     if (this._mo(this.stat_clPlayoff_bt)) {
                         if (this.stat_clPlayoff_cl.visible == false) {
-                            this.stat_cl.line_about_cl.$setVisible(false);
-                            this.stat_cl.slots_cl.$setVisible(false);
+                            this.stat_clLine_about_cl.$setVisible(false);
+                            this.stat_clSlots_cl.$setVisible(false);
                             this.stat_clPlayoff_cl.$setVisible(true);
                             this.stat_clTitle_cl.gotoAndStop(5);
                             this.stat_clPlayoff_bt.gotoAndStop(2);
                         }
                         else {
-                            this.stat_cl.line_about_cl.$setVisible(true);
-                            this.stat_cl.slots_cl.$setVisible(true);
+                            this.stat_clLine_about_cl.$setVisible(true);
+                            this.stat_clSlots_cl.$setVisible(true);
                             this.stat_clPlayoff_cl.$setVisible(false);
                             this.stat_clTitle_cl.gotoAndStop(Main.sav.data.league);
                             this.stat_clPlayoff_bt.gotoAndStop(1);
@@ -1090,15 +1228,15 @@ module com.code {
                         this._app._so.load_by_name(click_so);
                         this.stat_cl.$setVisible(true);
                         if (Main.sav.data.playoff == 0) {
-                            this.stat_cl.line_about_cl.$setVisible(true);
-                            this.stat_cl.slots_cl.$setVisible(true);
+                            this.stat_clLine_about_cl.$setVisible(true);
+                            this.stat_clSlots_cl.$setVisible(true);
                             this.stat_clPlayoff_cl.$setVisible(false);
                             this.stat_clTitle_cl.gotoAndStop(Main.sav.data.league);
                             this.stat_clPlayoff_bt.gotoAndStop(1);
                         }
                         else {
-                            this.stat_cl.line_about_cl.$setVisible(false);
-                            this.stat_cl.slots_cl.$setVisible(false);
+                            this.stat_clLine_about_cl.$setVisible(false);
+                            this.stat_clSlots_cl.$setVisible(false);
                             this.stat_clPlayoff_cl.$setVisible(true);
                             this.stat_clTitle_cl.gotoAndStop(5);
                             this.stat_clPlayoff_bt.gotoAndStop(2);
@@ -1500,7 +1638,7 @@ module com.code {
                 }
             }
         }
-        public dress_up(param1: any, param2: any): any {
+        public dress_up(param1: number, param2: SubCat): any {
             param2.head_clWool_cl.gotoAndStop(param1);
             param2.hand_l_clWool_cl.gotoAndStop(param1);
             param2.hand_r_clWool_cl.gotoAndStop(param1);
@@ -1520,25 +1658,25 @@ module com.code {
             param2.skirt_cl.gotoAndStop(this.set_id);
             param2.cloak_cl.gotoAndStop(this.set_id);
         }
-        public dress_up2(param1: number, param2: paper_cat, param3: number): any {
-            param2.catHead_clWool_cl.gotoAndStop(param1);
-            param2.catHand_l_clWool_cl.gotoAndStop(param1);
-            param2.catHand_r_clWool_cl.gotoAndStop(param1);
-            param2.catBody_clWool_cl.gotoAndStop(param1);
-            param2.catFoot1_clWool_cl.gotoAndStop(param1);
-            param2.catFoot2_clWool_cl.gotoAndStop(param1);
-            param2.catTail_cl.gotoAndStop(param1);
+        public dress_up2(param1: number, param2: SubCat, param3: number): any {
+            param2.head_clWool_cl.gotoAndStop(param1);
+            param2.hand_l_clWool_cl.gotoAndStop(param1);
+            param2.hand_r_clWool_cl.gotoAndStop(param1);
+            param2.body_clWool_cl.gotoAndStop(param1);
+            param2.foot1_clWool_cl.gotoAndStop(param1);
+            param2.foot2_clWool_cl.gotoAndStop(param1);
+            param2.tail_cl.gotoAndStop(param1);
             param3++;
-            param2.catHead_clH2.gotoAndStop(param3);
-            param2.catHand_l_clSleeve_cl.gotoAndStop(param3);
-            param2.catHand_l_clW2.gotoAndStop(param3);
-            param2.catHand_r_clSleeve_cl.gotoAndStop(param3);
-            param2.catHand_r_clS2.gotoAndStop(param3);
-            param2.catBody_clB2.gotoAndStop(param3);
-            param2.catFoot1_clP2.gotoAndStop(param3);
-            param2.catFoot2_clP2.gotoAndStop(param3);
-            param2.catSkirt_cl.gotoAndStop(param3);
-            param2.catCloak_cl.gotoAndStop(param3);
+            param2.head_clH2.gotoAndStop(param3);
+            param2.hand_l_clSleeve_cl.gotoAndStop(param3);
+            param2.hand_l_clW2.gotoAndStop(param3);
+            param2.hand_r_clSleeve_cl.gotoAndStop(param3);
+            param2.hand_r_clS2.gotoAndStop(param3);
+            param2.body_clB2.gotoAndStop(param3);
+            param2.foot1_clP2.gotoAndStop(param3);
+            param2.foot2_clP2.gotoAndStop(param3);
+            param2.skirt_cl.gotoAndStop(param3);
+            param2.cloak_cl.gotoAndStop(param3);
             param3--;
         }
         public simulate_day(): any {
@@ -1964,8 +2102,8 @@ module com.code {
             if (this._mo(this.stat_bt)) {
                 this._app._so.load_by_name(click_so);
                 this.stat_cl.$setVisible(true);
-                this.stat_cl.line_about_cl.$setVisible(true);
-                this.stat_cl.slots_cl.$setVisible(true);
+                this.stat_clLine_about_cl.$setVisible(true);
+                this.stat_clSlots_cl.$setVisible(true);
                 this.stat_clPlayoff_cl.$setVisible(false);
                 this.stat_clTitle_cl.gotoAndStop(Main.sav.data.league);
                 this.stat_clPlayoff_bt.gotoAndStop(1);

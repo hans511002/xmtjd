@@ -456,7 +456,7 @@ module std {
 		// 	this.display.$setRotation(r);
 		// }
 		// initPos():void{};
-		reinit(): boolean {
+		reinit(): boolean {      //MovieClipSubBase
 			if (!this.slot) {
 				if (this.mc.getArmature()) {
 					this.slot = this.mc.getArmature().getSlot(this.slotName);
@@ -1093,7 +1093,7 @@ module std {
 			super.setVisible(v);
 		};
 		// 		virtual bool reinit();
-		reinit(): boolean {
+		reinit(): boolean {       //MovieClip
 			var isReinit: boolean = this.display != null;
 			this.isReady = false;
 			if (this.mc && super.reinit()) {
@@ -1503,6 +1503,8 @@ module std {
 		};
 		// virtual void setName(const string & name) { this.name = name; };
 		setName(name: string) { this.name = name; if (this.display) this.display.name = name; };
+		parentNode: egret.DisplayObjectContainer = null;
+		//MovieClipSub
 		reinit(): boolean {
 			if (!this.slot) {
 				if (this.mc.getArmature()) {
@@ -1519,6 +1521,7 @@ module std {
 				return false;
 			this.arm = this.slot.childArmature;
 			if (this.arm) {
+				// 
 				var oldDis: egret.DisplayObjectContainer = this.display;
 				this.display = <egret.DisplayObjectContainer>this.slot.display;
 				if (this.display) {
@@ -1537,7 +1540,10 @@ module std {
 					if (oldDis) {
 						this.display.$setX(oldDis.x);
 						this.display.$setX(oldDis.y);
+						oldDis.removeChild(this);
 					}
+					this.display.parent.addChild(this);
+					this.parentNode = this.parent;
 					this.isReady = true;
 					this.defAniName = this.arm._armatureData.defaultAnimation.name;
 					this.totalFrames = this.arm._armatureData.animations[this.defAniName].frameCount + 1;//;
@@ -1557,9 +1563,9 @@ module std {
 			return false;
 		}
 	}
-	interface SimButton {
+	interface Button {
 		label: eui.Label;
-		onclick: (this: SimButton, e: egret.TouchEvent) => void;
+		onclick: (this: Button, e: egret.TouchEvent) => void;
 		// onclick: Function;
 	}
 	function buttonTouchHandler(e: egret.TouchEvent) {
@@ -1574,9 +1580,9 @@ module std {
 			this.gotoAndStop(2);
 		}
 	}
-	export class Button extends MovieClip implements SimButton {
+	export class MButton extends MovieClip implements Button {
 		label: eui.Label;
-		onclick: (this: SimButton, e: egret.TouchEvent) => void;
+		onclick: (this: Button, e: egret.TouchEvent) => void;
 		public constructor(rootPath: string, armName: string, dbName: string, defAniName: string = "") {
 			super(rootPath, armName, dbName, defAniName);
 			this.label = this.createLabel("label");
@@ -1584,7 +1590,7 @@ module std {
 			this.container.addEventListener(egret.TouchEvent.TOUCH_END, buttonTouchHandler, this);
 			this.container.addEventListener(egret.TouchEvent.TOUCH_MOVE, buttonTouchHandler, this);
 		}
-		reinit(): boolean {
+		reinit(): boolean {//Button
 			if (super.reinit() && this.isReady) {
 				this.container.addEventListener(egret.TouchEvent.TOUCH_BEGIN, buttonTouchHandler, this);
 				this.container.addEventListener(egret.TouchEvent.TOUCH_END, buttonTouchHandler, this);
@@ -1598,14 +1604,15 @@ module std {
 			this.container.removeEventListener(egret.TouchEvent.TOUCH_MOVE, buttonTouchHandler, this);
 		}
 	}
-	export class MCButton extends MovieClipSub implements SimButton {
+	export class MCButton extends MovieClipSub implements Button {
 		label: eui.Label;
-		onclick: (this: SimButton, e: egret.TouchEvent) => void;
+		onclick: (this: Button, e: egret.TouchEvent) => void;
 		// onclick: Function;
 		public constructor(mc?: MC, slotName?: string, defAniName?: string, reinitType: number = 0) {
 			super(mc, slotName, defAniName, reinitType);
 			this.label = this.createLabel("label");
 		}
+		//MCButton
 		reinit(): boolean {
 			if (super.reinit() && this.isReady) {
 				this.container.addEventListener(egret.TouchEvent.TOUCH_BEGIN, buttonTouchHandler, this);
