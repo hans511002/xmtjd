@@ -1,0 +1,27 @@
+<TextureAtlas name="Team_register" imagePath="texture.png">
+ <SubTexture name="Symbol 3240" x="0" y="0" width="652" height="450"/>
+ <SubTexture name="Buttons_sounds2" x="583" y="485" width="39" height="39"/>
+ <SubTexture name="__dbTextures/Team_register/Layer 22_0" x="654" y="0" width="365" height="419"/>
+ <SubTexture name="位图 1" x="958" y="420" width="54" height="53"/>
+ <SubTexture name="Symbol 3244" x="958" y="475" width="48" height="40"/>
+ <SubTexture name="Symbol 3246" x="623" y="485" width="18" height="17"/>
+ <SubTexture name="__dbTextures/Team_register/Layer 16_0" x="654" y="420" width="303" height="184"/>
+ <SubTexture name="位图 53" x="234" y="628" width="206" height="33"/>
+ <SubTexture name="位图 52" x="522" y="525" width="104" height="30"/>
+ <SubTexture name="位图 51" x="489" y="557" width="112" height="21"/>
+ <SubTexture name="位图 50" x="489" y="580" width="112" height="21"/>
+ <SubTexture name="位图 49" x="820" y="605" width="112" height="21"/>
+ <SubTexture name="位图 48" x="471" y="603" width="112" height="21"/>
+ <SubTexture name="Symbol 2632" x="0" y="452" width="488" height="148"/>
+ <SubTexture name="__dbTextures/Team_register/Layer 8_0" x="0" y="663" width="673" height="354"/>
+ <SubTexture name="位图 12" x="585" y="605" width="233" height="25"/>
+ <SubTexture name="位图 11" x="0" y="628" width="232" height="25"/>
+ <SubTexture name="位图 10" x="236" y="601" width="233" height="25"/>
+ <SubTexture name="位图 9" x="0" y="601" width="234" height="25"/>
+ <SubTexture name="位图 13" x="570" y="632" width="208" height="29"/>
+ <SubTexture name="Symbol 3263" x="471" y="626" width="98" height="31"/>
+ <SubTexture name="位图 46" x="489" y="452" width="92" height="64"/>
+ <SubTexture name="位图 45" x="958" y="516" width="37" height="40"/>
+ <SubTexture name="Symbol 3270" x="583" y="452" width="70" height="32"/>
+ <SubTexture name="Symbol 1965" x="489" y="518" width="32" height="35"/>
+</TextureAtlas>

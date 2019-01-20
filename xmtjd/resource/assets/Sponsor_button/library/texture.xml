@@ -1,0 +1,5 @@
+<TextureAtlas name="Sponsor_button" imagePath="texture.png">
+ <SubTexture name="Symbol 1842" x="0" y="202" width="394" height="164"/>
+ <SubTexture name="Symbol 1951" x="0" y="0" width="432" height="201"/>
+ <SubTexture name="Symbol 1877" x="0" y="367" width="322" height="41"/>
+</TextureAtlas>

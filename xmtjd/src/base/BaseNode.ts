@@ -958,7 +958,18 @@ module std {
 			else if (imgSlots.length == 14) return new MCMask(this, listenType, maskSlot, slotName, imgSlots[0], imgSlots[1], imgSlots[2], imgSlots[3], imgSlots[4], imgSlots[5], imgSlots[6], imgSlots[7], imgSlots[8], imgSlots[9], imgSlots[10], imgSlots[11], imgSlots[12], imgSlots[13]);
 			else if (imgSlots.length == 15) return new MCMask(this, listenType, maskSlot, slotName, imgSlots[0], imgSlots[1], imgSlots[2], imgSlots[3], imgSlots[4], imgSlots[5], imgSlots[6], imgSlots[7], imgSlots[8], imgSlots[9], imgSlots[10], imgSlots[11], imgSlots[12], imgSlots[13], imgSlots[14]);
 		};
-		getSprite(slotName: string): egret.Bitmap {
+		getSprite(slotName: string): egret.DisplayObjectContainer {
+			if (this.getArmature() == null || this.getArmature().getSlot(slotName) == null)
+				return null;
+			let dis = this.getArmature().getSlot(slotName).getDisplay();
+			if (dis instanceof egret.DisplayObjectContainer)
+				return dis;
+			let sp = new egret.Sprite();
+			this.getArmature().getSlot(slotName).display = sp;
+			sp.addChild(dis);
+			return sp;
+		}
+		getBitmap(slotName: string): egret.Bitmap {
 			if (this.getArmature() == null || this.getArmature().getSlot(slotName) == null)
 				return null;
 			return <egret.Bitmap>(this.getArmature().getSlot(slotName).getDisplay());
@@ -1801,6 +1812,16 @@ module std {
 module std {
 
 	export class MCMask {
+		static START: string = dragonBones.EventObject.START;
+		static FADE_IN: string = dragonBones.EventObject.FADE_IN;
+		static FADE_IN_COMPLETE: string = dragonBones.EventObject.FADE_IN_COMPLETE;
+		static FRAME_EVENT: string = dragonBones.EventObject.FRAME_EVENT;
+		static ADDED: string = egret.Event.ADDED;
+		static ADDED_TO_STAGE: string = egret.Event.ADDED_TO_STAGE;
+		static RENDER: string = egret.Event.RENDER;
+		static CHANGE: string = egret.Event.CHANGE;
+		static ENTER_FRAME: string = egret.Event.ENTER_FRAME;
+
 		maskSlotName: string = "";
 		bitMapSlotNames: Array<string> = [];
 		maskSlot: dragonBones.Slot = null;

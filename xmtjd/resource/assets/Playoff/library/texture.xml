@@ -1,0 +1,35 @@
+<TextureAtlas name="Playoff" imagePath="texture.png">
+ <SubTexture name="Symbol 3164" x="0" y="0" width="915" height="511"/>
+ <SubTexture name="Symbol 3204" x="1204" y="929" width="650" height="34"/>
+ <SubTexture name="Symbol 2077" x="0" y="512" width="650" height="450"/>
+ <SubTexture name="Symbol 3207" x="652" y="929" width="550" height="550"/>
+ <SubTexture name="__dbTextures/Symbol 3177/Layer 9_0" x="1595" y="0" width="337" height="278"/>
+ <SubTexture name="Symbol 1926" x="916" y="477" width="650" height="450"/>
+ <SubTexture name="Symbol 47" x="916" y="0" width="678" height="475"/>
+ <SubTexture name="Symbol 3020" x="1894" y="545" width="147" height="37"/>
+ <SubTexture name="位图 1" x="652" y="577" width="184" height="27"/>
+ <SubTexture name="__dbTextures/Symbol 3177/mask_0" x="1568" y="545" width="325" height="234"/>
+ <SubTexture name="Symbol 3176" x="1595" y="279" width="337" height="265"/>
+ <SubTexture name="Symbol 3178" x="1894" y="583" width="132" height="31"/>
+ <SubTexture name="Symbol 3194" x="1965" y="112" width="65" height="22"/>
+ <SubTexture name="Symbol 3196" x="2032" y="40" width="15" height="15"/>
+ <SubTexture name="__dbTextures/s634/Layer 1_0" x="1959" y="158" width="38" height="22"/>
+ <SubTexture name="位图 3" x="652" y="545" width="191" height="30"/>
+ <SubTexture name="位图 4" x="1985" y="80" width="40" height="30"/>
+ <SubTexture name="位图 2" x="652" y="512" width="194" height="31"/>
+ <SubTexture name="位图 5" x="1933" y="46" width="40" height="31"/>
+ <SubTexture name="Symbol 1825" x="1933" y="79" width="31" height="41"/>
+ <SubTexture name="Symbol 1827" x="1975" y="62" width="11" height="12"/>
+ <SubTexture name="Symbol 1829" x="2032" y="56" width="12" height="15"/>
+ <SubTexture name="Symbol 1831" x="1933" y="121" width="29" height="28"/>
+ <SubTexture name="Symbol 1833" x="1987" y="40" width="44" height="39"/>
+ <SubTexture name="Symbol 3199" x="1963" y="135" width="65" height="22"/>
+ <SubTexture name="Symbol 3181" x="1975" y="75" width="9" height="13"/>
+ <SubTexture name="Symbol 3183" x="1933" y="150" width="25" height="20"/>
+ <SubTexture name="Symbol 3185" x="1975" y="46" width="11" height="15"/>
+ <SubTexture name="Symbol 3187" x="1999" y="158" width="33" height="22"/>
+ <SubTexture name="Symbol 3192" x="2032" y="73" width="12" height="14"/>
+ <SubTexture name="MovieClip/sprite 3168" x="1568" y="780" width="271" height="26"/>
+ <SubTexture name="__dbTextures/Symbol 3190/Layer 1_0" x="1933" y="0" width="53" height="45"/>
+ <SubTexture name="__dbTextures/Symbol 3190/Layer 1_1" x="1987" y="0" width="51" height="39"/>
+</TextureAtlas>

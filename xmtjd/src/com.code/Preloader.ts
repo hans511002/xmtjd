@@ -2,6 +2,7 @@ module com.code {
     export class Preloader extends std.MovieClip {
         public name_in_cl: std.MovieClipSub = null;
         public play_cl: std.MovieClipSub = null;
+        public play_clPlay_cl: std.MCButton = null;
         public skala: std.MovieClipSub = null;
         loaded: number = 0;
         total: number = 0;
@@ -9,9 +10,23 @@ module com.code {
         i_in: String = null;
         site_good: number = 0;
         _app: App = null;
+
+        sponsor_button: Sponsor_button;
+        deqaf_button: buttons.Deqaf_button;
+        name_in_clLol: egret.DisplayObjectContainer;
         public constructor() {
             super("Preloader");
             this._app = App.getInstance();
+            this.play_cl = this.createMovieClipSub("play_cl");
+            this.skala = this.createMovieClipSub("skala");
+            this.name_in_cl = this.createMovieClipSub("name_in_cl");
+            this.play_clPlay_cl = this.play_cl.createMCButton("play_cl");
+            this.name_in_clLol = this.name_in_cl.getSprite("lol");
+            this.skala.mcMask = this.createMask(std.MCMask.START, "mask", "bg");
+
+            this.sponsor_button = <Sponsor_button>this.addMovieClip("sponsor_button", new Sponsor_button());
+            this.deqaf_button = <buttons.Deqaf_button>this.addMovieClip("deqaf_button", new buttons.Deqaf_button());
+
             if (this.stage) {
                 this.init();
             }

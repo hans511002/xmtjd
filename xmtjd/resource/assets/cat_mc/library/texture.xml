@@ -1,0 +1,112 @@
+<TextureAtlas name="cat_mc" imagePath="texture.png">
+ <SubTexture name="Symbol 2507" x="573" y="170" width="83" height="77"/>
+ <SubTexture name="cat_mc.tail_cl" x="653" y="248" width="39" height="39"/>
+ <SubTexture name="cat_mc.cloak_cl" x="234" y="288" width="39" height="39"/>
+ <SubTexture name="cat_mc.hand_l_cl" x="358" y="383" width="39" height="39"/>
+ <SubTexture name="cat_mc.foot1_cl" x="650" y="368" width="39" height="39"/>
+ <SubTexture name="cat_mc.body_cl" x="234" y="328" width="39" height="39"/>
+ <SubTexture name="cat_mc.skirt_cl" x="657" y="208" width="39" height="39"/>
+ <SubTexture name="head_cl" x="976" y="403" width="39" height="39"/>
+ <SubTexture name="hand_r_cl" x="664" y="168" width="39" height="39"/>
+ <SubTexture name="cat2.tail_cl" x="653" y="288" width="39" height="39"/>
+ <SubTexture name="cat2.cloak_cl" x="234" y="368" width="39" height="39"/>
+ <SubTexture name="cat2.hand_l_cl" x="358" y="423" width="39" height="39"/>
+ <SubTexture name="cat2.foot1_cl" x="664" y="128" width="39" height="39"/>
+ <SubTexture name="cat2.body_cl" x="854" y="401" width="39" height="39"/>
+ <SubTexture name="cat2.skirt_cl" x="664" y="88" width="39" height="39"/>
+ <SubTexture name="cat2.head_cl" x="480" y="386" width="39" height="39"/>
+ <SubTexture name="cat_drag_mc.cat.hand_r_cl" x="650" y="328" width="39" height="39"/>
+ <SubTexture name="__dbTextures/cat_mc.cat.cat19/armor_cl_8" x="616" y="408" width="63" height="19"/>
+ <SubTexture name="__dbTextures/cat_mc.cat.cat19/armor_cl_10" x="371" y="492" width="79" height="23"/>
+ <SubTexture name="__dbTextures/cat_mc.cat.cat19/armor_cl_12" x="559" y="491" width="81" height="27"/>
+ <SubTexture name="__dbTextures/cat_mc.cat.cat19/armor_cl_14" x="287" y="491" width="83" height="32"/>
+ <SubTexture name="__dbTextures/cat_mc.cat.cat19/armor_cl_16" x="883" y="456" width="83" height="41"/>
+ <SubTexture name="__dbTextures/cat_mc.cat.cat19/armor_cl_18" x="755" y="454" width="83" height="47"/>
+ <SubTexture name="__dbTextures/cat_mc.cat.cat19/armor_cl_20" x="274" y="383" width="83" height="54"/>
+ <SubTexture name="__dbTextures/cat_mc.cat.cat19/armor_cl_22" x="690" y="334" width="83" height="62"/>
+ <SubTexture name="__dbTextures/cat_mc.cat.cat19/armor_cl_24" x="693" y="264" width="83" height="69"/>
+ <SubTexture name="__dbTextures/cat_mc.cat.cat19/armor_cl_26" x="569" y="248" width="83" height="74"/>
+ <SubTexture name="Symbol 2550" x="935" y="159" width="84" height="82"/>
+ <SubTexture name="Symbol 2399" x="922" y="212" width="12" height="11"/>
+ <SubTexture name="Symbol 2405" x="545" y="192" width="22" height="22"/>
+ <SubTexture name="Symbol 2409" x="257" y="209" width="21" height="21"/>
+ <SubTexture name="__dbTextures/Symbol 2436/bg_0" x="203" y="491" width="83" height="35"/>
+ <SubTexture name="Symbol 2419" x="616" y="451" width="44" height="18"/>
+ <SubTexture name="__dbTextures/Symbol 2436/mask_3" x="480" y="446" width="50" height="20"/>
+ <SubTexture name="__dbTextures/Symbol 2436/mask_4" x="616" y="428" width="56" height="22"/>
+ <SubTexture name="__dbTextures/Symbol 2436/mask_5" x="704" y="150" width="67" height="27"/>
+ <SubTexture name="__dbTextures/Symbol 2436/mask_6" x="704" y="120" width="73" height="29"/>
+ <SubTexture name="__dbTextures/Symbol 2436/mask_7" x="480" y="491" width="78" height="31"/>
+ <SubTexture name="__dbTextures/Symbol 2436/mask_8" x="122" y="491" width="80" height="32"/>
+ <SubTexture name="__dbTextures/Symbol 2436/mask_9" x="697" y="231" width="80" height="32"/>
+ <SubTexture name="__dbTextures/Symbol 2436/Layer 1_0" x="545" y="215" width="26" height="11"/>
+ <SubTexture name="__dbTextures/Symbol 2436/Layer 1_1" x="854" y="441" width="37" height="13"/>
+ <SubTexture name="__dbTextures/Symbol 2436/Layer 1_2" x="839" y="455" width="43" height="14"/>
+ <SubTexture name="__dbTextures/Symbol 2436/Layer 1_3" x="976" y="443" width="46" height="16"/>
+ <SubTexture name="__dbTextures/Symbol 2436/Layer 1_4" x="480" y="426" width="53" height="19"/>
+ <SubTexture name="__dbTextures/Symbol 2436/Layer 1_5" x="204" y="408" width="61" height="24"/>
+ <SubTexture name="__dbTextures/Symbol 2436/Layer 1_6" x="704" y="205" width="66" height="24"/>
+ <SubTexture name="__dbTextures/Symbol 2436/Layer 1_7" x="704" y="178" width="67" height="26"/>
+ <SubTexture name="Symbol 2413" x="922" y="188" width="12" height="12"/>
+ <SubTexture name="Symbol 2414" x="922" y="144" width="12" height="21"/>
+ <SubTexture name="Symbol 2415" x="710" y="68" width="5" height="24"/>
+ <SubTexture name="Symbol 2416" x="713" y="43" width="7" height="24"/>
+ <SubTexture name="Symbol 2417" x="922" y="166" width="12" height="21"/>
+ <SubTexture name="__dbTextures/Symbol 2460/Layer 2_0" x="204" y="434" width="41" height="32"/>
+ <SubTexture name="__dbTextures/Symbol 2460/Layer 2_6" x="122" y="209" width="134" height="77"/>
+ <SubTexture name="__dbTextures/Symbol 2460/Layer 2_8" x="279" y="205" width="140" height="85"/>
+ <SubTexture name="__dbTextures/Symbol 2460/Layer 2_14" x="778" y="126" width="142" height="116"/>
+ <SubTexture name="Symbol 2447" x="721" y="26" width="56" height="43"/>
+ <SubTexture name="Symbol 2448" x="563" y="323" width="86" height="61"/>
+ <SubTexture name="Symbol 2449" x="777" y="330" width="100" height="70"/>
+ <SubTexture name="Symbol 2450" x="419" y="305" width="114" height="80"/>
+ <SubTexture name="Symbol 2451" x="778" y="243" width="120" height="86"/>
+ <SubTexture name="__dbTextures/Symbol 2460/Layer 1_6" x="922" y="242" width="98" height="76"/>
+ <SubTexture name="__dbTextures/Symbol 2460/Layer 1_7" x="899" y="319" width="110" height="83"/>
+ <SubTexture name="__dbTextures/Symbol 2460/Layer 1_8" x="274" y="291" width="110" height="91"/>
+ <SubTexture name="Symbol 2457" x="424" y="78" width="148" height="113"/>
+ <SubTexture name="Symbol 2458" x="778" y="0" width="162" height="125"/>
+ <SubTexture name="Symbol 2441" x="545" y="255" width="15" height="16"/>
+ <SubTexture name="__dbTextures/Symbol 2494/Layer 1_2" x="246" y="438" width="80" height="51"/>
+ <SubTexture name="__dbTextures/Symbol 2494/Layer 1_4" x="941" y="106" width="80" height="51"/>
+ <SubTexture name="__dbTextures/Symbol 2494/Layer 1_6" x="941" y="0" width="80" height="51"/>
+ <SubTexture name="__dbTextures/Symbol 2494/Layer 1_8" x="673" y="450" width="80" height="51"/>
+ <SubTexture name="__dbTextures/Symbol 2494/Layer 1_10" x="772" y="401" width="80" height="51"/>
+ <SubTexture name="__dbTextures/Symbol 2494/Layer 1_12" x="941" y="53" width="80" height="51"/>
+ <SubTexture name="__dbTextures/Symbol 2494/Layer 1_14" x="398" y="386" width="80" height="51"/>
+ <SubTexture name="__dbTextures/Symbol 2494/Layer 1_16" x="122" y="385" width="80" height="51"/>
+ <SubTexture name="__dbTextures/Symbol 2494/Layer 1_18" x="398" y="439" width="80" height="51"/>
+ <SubTexture name="__dbTextures/Symbol 2494/Layer 1_20" x="690" y="397" width="80" height="51"/>
+ <SubTexture name="__dbTextures/Symbol 2494/Layer 1_22" x="534" y="385" width="80" height="51"/>
+ <SubTexture name="__dbTextures/Symbol 2494/Layer 1_24" x="894" y="403" width="80" height="51"/>
+ <SubTexture name="__dbTextures/Symbol 2494/Layer 1_26" x="122" y="438" width="80" height="51"/>
+ <SubTexture name="__dbTextures/Symbol 2494/Layer 1_28" x="534" y="438" width="80" height="51"/>
+ <SubTexture name="__dbTextures/Symbol 2521/bg_0" x="122" y="0" width="655" height="25"/>
+ <SubTexture name="__dbTextures/Symbol 2546/Layer 3_0" x="922" y="201" width="12" height="10"/>
+ <SubTexture name="__dbTextures/Symbol 2546/Layer 3_2" x="899" y="243" width="17" height="15"/>
+ <SubTexture name="__dbTextures/Symbol 2546/Layer 3_4" x="257" y="248" width="16" height="16"/>
+ <SubTexture name="__dbTextures/Symbol 2546/Layer 3_6" x="257" y="231" width="19" height="16"/>
+ <SubTexture name="__dbTextures/Symbol 2546/Layer 3_8" x="922" y="126" width="16" height="17"/>
+ <SubTexture name="Symbol 2528" x="257" y="266" width="14" height="10"/>
+ <SubTexture name="Symbol 2532" x="545" y="227" width="20" height="16"/>
+ <SubTexture name="Symbol 2536" x="534" y="305" width="28" height="21"/>
+ <SubTexture name="Symbol 2540" x="385" y="291" width="33" height="25"/>
+ <SubTexture name="Symbol 2544" x="674" y="60" width="35" height="27"/>
+ <SubTexture name="__dbTextures/Symbol 2546/Layer 1_0" x="545" y="272" width="13" height="11"/>
+ <SubTexture name="__dbTextures/Symbol 2546/Layer 1_2" x="899" y="270" width="16" height="7"/>
+ <SubTexture name="__dbTextures/Symbol 2546/Layer 1_4" x="899" y="259" width="21" height="10"/>
+ <SubTexture name="__dbTextures/Symbol 2546/Layer 1_6" x="545" y="244" width="23" height="10"/>
+ <SubTexture name="__dbTextures/Symbol 2546/Layer 1_8" x="710" y="60" width="2" height="2"/>
+ <SubTexture name="__dbTextures/Symbol 2557/Layer 1_1" x="716" y="70" width="59" height="49"/>
+ <SubTexture name="__dbTextures/Symbol 2557/Layer 1_2" x="122" y="288" width="110" height="96"/>
+ <SubTexture name="__dbTextures/Symbol 2557/Layer 1_3" x="424" y="192" width="120" height="112"/>
+ <SubTexture name="__dbTextures/Symbol 2557/Layer 1_4" x="279" y="78" width="143" height="126"/>
+ <SubTexture name="__dbTextures/Symbol 2557/Layer 1_5" x="122" y="78" width="156" height="130"/>
+ <SubTexture name="__dbTextures/Symbol 2445/bg_0" x="573" y="78" width="90" height="90"/>
+ <SubTexture name="__dbTextures/Symbol 2514/Layer 1_3" x="83" y="0" width="38" height="655"/>
+ <SubTexture name="__dbTextures/Symbol 2514/Layer 1_6" x="0" y="0" width="43" height="654"/>
+ <SubTexture name="__dbTextures/Symbol 2514/Layer 1_9" x="44" y="0" width="38" height="655"/>
+ <SubTexture name="__dbTextures/Symbol 2520/Layer 1_1" x="122" y="60" width="551" height="17"/>
+ <SubTexture name="__dbTextures/Symbol 2520/Layer 1_2" x="122" y="26" width="598" height="16"/>
+ <SubTexture name="__dbTextures/Symbol 2520/Layer 1_3" x="122" y="43" width="589" height="16"/>
+</TextureAtlas>

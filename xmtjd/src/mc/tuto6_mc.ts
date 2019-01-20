@@ -1,4 +1,4 @@
-class tuto6_mc extends std.MovieClip {
+class tuto6_mc extends tuto_mc {
     public arrow_1: std.MovieClipSub = null;
     public arrow_2: std.MovieClipSub = null;
     public arrow_3: std.MovieClipSub = null;
@@ -8,7 +8,7 @@ class tuto6_mc extends std.MovieClip {
     public over3: std.MovieClipSub = null;
     public over4: std.MovieClipSub = null;
     public constructor() {
-        super(Config.mcRoot, "tuto6_mc", "tuto6_mc");
+        super("tuto6_mc");
         this.arrow_1 = this.createMovieClipSub("arrow_1");
         this.arrow_2 = this.createMovieClipSub("arrow_2");
         this.arrow_3 = this.createMovieClipSub("arrow_3");

@@ -1,0 +1,3 @@
+<TextureAtlas name="FPS" imagePath="texture.png">
+ <SubTexture name="位图 42" x="0" y="0" width="66" height="286"/>
+</TextureAtlas>

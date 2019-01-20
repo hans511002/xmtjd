@@ -37,15 +37,15 @@ class cat_mc extends std.MovieClip {
         this.cat1 = this.createMovieClipSub("cat1");
         // this.cat1Cat2 = this.cat1.createMovieClipSub("cat2", 1);
         this.cat1Cat2 = new SubCat(this.cat1, "cat2", "", 1);
-
+        this.cat1Cat2.subInit = this.subInit;
         //  cat1.cat2.head_cl.wool_cl.face_cl.gotoAndStop(3);
         // cat1 cat1 addFrameScript(9, this.frame10, 20, this.frame21, 31, this.frame32, 42, this.frame43, 53, this.frame54);
-    }// end function
-
-    public gotoAndStop(cf: number, aniName: string = ""): void {
-        super.gotoAndStop(cf, aniName);
-        this.subInit();
     }
+
+    // public gotoAndStop(cf: number, aniName: string = ""): void {
+    //     super.gotoAndStop(cf, aniName);
+    //     this.subInit();
+    // }
     subInit(): void {
         // this.cat1Cat2Head_cl = this.cat1Cat2.createMovieClipSub("head_cl");
         // this.cat1Cat2Hand_r_cl = this.cat1Cat2.createMovieClipSub("hand_r_cl");
@@ -97,21 +97,37 @@ class cat_mc extends std.MovieClip {
             this.cat1Cat2Bg = this.cat1Cat2.createMovieClipSub("bg");
             this.cat1Cat2BgBg = this.cat1Cat2Bg.createMovieClipSub("bg");
             this.cat1Cat2BgBg.mcMask = this.cat1Cat2BgBg.createMask(dragonBones.EventObject.START, "mask", "bg");
-        } else if (this.currentFrame == 20 || this.currentFrame == 21) {
+        } else if (this.currentFrame == 20) {
             this.cat1Cat2Bg = this.cat1Cat2.createMovieClipSub("bg");
+        } else if (this.currentFrame == 21) {
+            this.cat1Cat2Bg = this.cat1Cat2.createMovieClipSub("bg");
+            this.cat1Cat2BgB = this.cat1Cat2Bg.createMovieClipSub("b");
+            this.cat1Cat2BgA = this.cat1Cat2Bg.createMovieClipSub("a");
+        } else if (this.currentFrame == 22) {
+            this.cat1Cat2Bold = this.cat1Cat2.createMovieClipSub("bold");
+            this.cat1Cat2Bold.mcMask = this.cat1Cat2Bold.createMask(dragonBones.EventObject.START, "mask", "bg");
+            this.cat1Cat2Bg = this.cat1Cat2.createMovieClipSub("bg");
+            this.cat1Cat2Bg.mcMask = this.cat1Cat2Bg.createMask(dragonBones.EventObject.START, "mask", "bg");
+        } else if (this.currentFrame == 25 || this.currentFrame == 28) {
+            this.cat1Cat2Bold = this.cat1Cat2.createMovieClipSub("bold");
         }
     }
     //7
-    public cat1Cat2Yum: std.MovieClipSub;
+    public cat1Cat2Yum: std.MovieClipSub = null;
     //10
-    public cat1Cat2Bom: std.MovieClipSub;
+    public cat1Cat2Bom: std.MovieClipSub = null;
 
     //12 13
-    public cat1Cat2Bold: std.MovieClipSub;
-    public cat1Cat2Bg: std.MovieClipSub;
+    public cat1Cat2Bold: std.MovieClipSub = null;
+    public cat1Cat2Bg: std.MovieClipSub = null;
     //15 16
-    public cat1Cat2BgBg: std.MovieClipSub;
+    public cat1Cat2BgBg: std.MovieClipSub = null;
 
-    public cat1Cat2BoldBg: std.MovieClipSub;
+    public cat1Cat2BoldBg: std.MovieClipSub = null;
+
+    //21
+    public cat1Cat2BgA: std.MovieClipSub = null;
+    public cat1Cat2BgB: std.MovieClipSub = null;
+
 
 } 

@@ -3,14 +3,14 @@ module com.code {
         public cat1: cat_mc = null;
         public cat2: cat_mc = null;
         public clear_cl: std.MCButton = null;
-        public credits_cl: std.MovieClipSub = null;
-        credits_clDe2: std.MovieClipSub = null;
-        credits_clClose_bt: std.MCButton = null;
-        public cup_1: std.MovieClipSub = null;
-        public cup_2: std.MovieClipSub = null;
-        public cup_3: std.MovieClipSub = null;
-        public cup_4: std.MovieClipSub = null;
-        public cup_5: std.MovieClipSub = null;
+        // public credits_cl: std.MovieClipSub = null;
+        // credits_clDe2: std.MovieClipSub = null;
+        // credits_clClose_bt: std.MCButton = null;
+        public cup_1: egret.Bitmap = null;
+        public cup_2: egret.Bitmap = null;
+        public cup_3: egret.Bitmap = null;
+        public cup_4: egret.Bitmap = null;
+        public cup_5: egret.Bitmap = null;
         public deqaf_bt: std.MCButton = null;
         public face_bt: std.MovieClipSub = null;
         public go_sfk1: std.MovieClipSub = null;
@@ -30,7 +30,7 @@ module com.code {
         public constructor() {
             super("Menu");
             this._app = App.getInstance();
-            this.credits_cl = this.createMovieClipSub("credits_cl");
+            // this.credits_cl = this.createMovieClipSub("credits_cl");
             this.clear_cl = this.createMCButton("clear_cl");
             this.deqaf_bt = this.createMCButton("deqaf_bt");
             this.face_bt = this.createMovieClipSub("face_bt");
@@ -39,12 +39,16 @@ module com.code {
             this.go_sfk3 = this.createMovieClipSub("go_sfk3");
             this.play_cl = this.createMCButton("play_cl");
             this.zone_panel = this.createMovieClipSub("zone_panel");
-            this.cup_1 = this.createMovieClipSub("cup_1");
-            this.cup_2 = this.createMovieClipSub("cup_2");
-            this.cup_3 = this.createMovieClipSub("cup_3");
-            this.cup_4 = this.createMovieClipSub("cup_4");
-            this.cup_5 = this.createMovieClipSub("cup_5");
-
+            this.cup_1 = this.getBitmap("cup_1");
+            this.cup_2 = this.getBitmap("cup_2");
+            this.cup_3 = this.getBitmap("cup_3");
+            this.cup_4 = this.getBitmap("cup_4");
+            this.cup_5 = this.getBitmap("cup_5");
+            this.go_sfk3.mcMask = this.go_sfk3.createMask(std.MCMask.START, "mask", "bg");
+            this.go_sfk2.mcMask = this.go_sfk2.createMask(std.MCMask.START, "mask", "bg");
+            this.cat1 = <cat_mc>this.addMovieClip("cat1", new cat_mc());
+            this.cat2 = <cat_mc>this.addMovieClip("cat2", new cat_mc());
+            this.sounds_control_cl = <Buttons_sounds2>this.addMovieClip("sounds_control_cl", new Buttons_sounds2());
         }
         public init(): void {
             this._app._music.load_music("menu");
@@ -55,8 +59,8 @@ module com.code {
             this.cup_3.$setVisible(false);
             this.cup_4.$setVisible(false);
             this.cup_5.$setVisible(false);
-            this.credits_clDe2.gotoAndStop(3);
-            this.credits_cl.$setVisible(false);
+            // this.credits_clDe2.gotoAndStop(3);
+            // this.credits_cl.$setVisible(false);
             if (Main.sav.data.game_end == 1) {
                 this.cup_1.$setVisible(true);
             }
@@ -145,20 +149,19 @@ module com.code {
         public click_f(param1: egret.TouchEvent): any {
             if (this._mo(this.deqaf_bt)) {
                 this._app._so.load_by_name(click_so);
-                this.credits_cl.$setVisible(true);
+                // this.credits_cl.$setVisible(true);
                 if (this.sure_ex) {
                     this._re(this.sure_cl, this.zone_panel);
                     this.sure_ex = false;
                 }
             }
-            if (this._mo(this.credits_clClose_bt)) {
-                this.credits_cl.$setVisible(false);
-                this._app._so.load_by_name(click_so);
-            }
+            // if (this._mo(this.credits_clClose_bt)) {
+            //     this.credits_cl.$setVisible(false);
+            //     this._app._so.load_by_name(click_so);
+            // }
             if (this._mo(this.face_bt)) {
-                "_blank";
+                // "_blank";
                 // new URLRequest("http://www.facebook.com/ArmorGames");
-
             }
             if (this._mo(this.go_sfk1)) {
                 //  navigateToURL(new URLRequest("http://armorgames.com/play/16008/strikeforce-kitty"), "_blank");
@@ -198,7 +201,7 @@ module com.code {
                     this._app._so.load_by_name(click_so);
                     this.sure_cl = this._sp(sure_mc, this.zone_panel, 115, 253);
                     this.sure_ex = true;
-                    this.credits_cl.$setVisible(false);
+                    // this.credits_cl.$setVisible(false);
                 }
             }
         }

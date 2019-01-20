@@ -3,7 +3,7 @@ module com.code {
         private static _instance: Game = null;
         _app: App = null;
         public constructor() {
-            super("Game");
+            super();
             this._app = App.getInstance();
             Game._instance = this;
         }

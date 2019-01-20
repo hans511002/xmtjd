@@ -16,19 +16,19 @@ module com.code {
         public pointer1: std.MovieClipSub = null;
         public pointer2: std.MovieClipSub = null;
         public pointer3: std.MovieClipSub = null;
-        public sign_cl: std.MovieClipSub = null;
+        public sign_cl: egret.Bitmap = null;
         public slot_1: std.MovieClipSub = null;
         public slot_2: std.MovieClipSub = null;
         public slot_3: std.MovieClipSub = null;
         public slot_4: std.MovieClipSub = null;
         public stat_bt: std.MCButton = null;
         public stat_cl: std.MovieClipSub = null;
-        stat_clPlayoff_bt: std.MCButton = null;
+        stat_clPlayoff_bt: std.MovieClipSub = null;
         stat_clClose_bt: std.MCButton = null;
         stat_clPlayoff_cl: std.MovieClipSub = null;
         stat_clTitle_cl: std.MovieClipSub = null;
         stat_clSlots_cl: std.MovieClipSub = null;
-        stat_clLine_about_cl: std.MovieClipSub = null;
+        stat_clLine_about_cl: egret.Bitmap = null;
         public talk_9: std.MovieClipSub = null;
         public talk_10: std.MovieClipSub = null;
         public talk_11: std.MovieClipSub = null;
@@ -55,21 +55,21 @@ module com.code {
         public upg_cl: std.MovieClipSub = null;
         upg_clMoney_tx: eui.Label = null;
         upg_clClose_bt: std.MCButton = null;
-        public zone_1: std.MCButton = null;
-        public zone_2: std.MCButton = null;
-        public zone_3: std.MCButton = null;
-        public zone_4: std.MCButton = null;
-        public zone_5: std.MCButton = null;
-        public zone_6: std.MCButton = null;
-        public zone_7: std.MCButton = null;
-        public zone_8: std.MCButton = null;
-        public zone_9: std.MCButton = null;
-        public zone_10: std.MCButton = null;
-        public zone_11: std.MCButton = null;
-        public zone_12: std.MCButton = null;
-        public zone_drag: std.MovieClipSub = null;
-        public zone_tuto: std.MovieClipSub = null;
-        public zone_up_all: std.MovieClipSub = null;
+        public zone_1: egret.DisplayObjectContainer = null;
+        public zone_2: egret.DisplayObjectContainer = null;
+        public zone_3: egret.DisplayObjectContainer = null;
+        public zone_4: egret.DisplayObjectContainer = null;
+        public zone_5: egret.DisplayObjectContainer = null;
+        public zone_6: egret.DisplayObjectContainer = null;
+        public zone_7: egret.DisplayObjectContainer = null;
+        public zone_8: egret.DisplayObjectContainer = null;
+        public zone_9: egret.DisplayObjectContainer = null;
+        public zone_10: egret.DisplayObjectContainer = null;
+        public zone_11: egret.DisplayObjectContainer = null;
+        public zone_12: egret.DisplayObjectContainer = null;
+        public zone_drag: egret.DisplayObjectContainer = null;
+        public zone_tuto: egret.DisplayObjectContainer = null;
+        public zone_up_all: egret.DisplayObjectContainer = null;
         _app: App = null;
         _Buttons_sounds: Buttons_sounds = null;
         pause_cl: pause_mc = null;
@@ -140,86 +140,16 @@ module com.code {
             this.arr_last_frame_skin = [];
             this.arr_last_frame_zone = [];
             this.arr_temp3 = [];
-
-            this.calendar_cl = this.createMovieClipSub("calendar_cl");
-            this.calendar_clBg_cl = this.createMovieClipSub("bg_cl");
-            this.calendar_clLeft_tx = this.calendar_cl.createLabel("left_tx");
-            this.calendar_clTitle_tx = this.calendar_cl.createLabel("title_tx");
-            this.coach_stay_cl = this.createMovieClipSub("coach_stay_cl");
-            this.doctor_cl = this.createMovieClipSub("doctor_cl");
-
-            this.dress_bt = this.createMCButton("dress_bt");
-            this.gong_cl = this.createMovieClipSub("gong_cl");
-            this.grass_cl = this.createMovieClipSub("grass_cl");
-            this.grass_clSpy_cl = this.grass_cl.createMovieClipSub("spy_cl");
-            this.menu_bt_cl = this.createMCButton("menu_bt_cl");
-            this.money_tx = this.createLabel("money_tx");
-            this.next_bt = this.createMCButton("next_bt");
-
-            this.pointer1 = this.createMovieClipSub("pointer1");
-            this.pointer2 = this.createMovieClipSub("pointer2");
-            this.pointer3 = this.createMovieClipSub("pointer3");
-            this.sign_cl = this.createMovieClipSub("sign_cl");
-            // this.slot_1 = this.createMovieClipSub("slot_1");
-            // this.slot_2 = this.createMovieClipSub("slot_2");
-            // this.slot_3 = this.createMovieClipSub("slot_3");
-            // this.slot_4 = this.createMovieClipSub("slot_4");
-            this.i = 1;
-            while (this.i <= 4) {
-                this["slot_" + this.i] = this.createMovieClipSub("slot_" + this.i);
-                // this["slot_" + this.i + "P2"] = this["slot_" + this.i].createMovieClipSub("p2");
-                // this["slot_" + this.i + "P2Hp_tx"] = this["slot_" + this.i + "P2"].createLabel("hp_tx");
-                // this["slot_" + this.i + "P2Scale_cl"] = this["slot_" + this.i + "P2"].createMovieClipSub("scale_cl");
-                // this["slot_" + this.i + "P2Stat_1"] = this["slot_" + this.i + "P2"].createMovieClipSub("stat_1");
-                // this["slot_" + this.i + "P2Stat_2"] = this["slot_" + this.i + "P2"].createMovieClipSub("stat_2");
-                // this["slot_" + this.i + "P2Stat_3"] = this["slot_" + this.i + "P2"].createMovieClipSub("stat_3");
-                // this["slot_" + this.i + "P2Stat_hp_tx"] = this["slot_" + this.i + "P2"].createLabel("stat_hp_tx");
-                // this["slot_" + this.i + "P2Stat_attack_tx"] = this["slot_" + this.i + "P2"].createLabel("stat_attack_tx");
-                // this["slot_" + this.i + "P2Stat_speed_tx"] = this["slot_" + this.i + "P2"].createLabel("stat_speed_tx");
-                // this["slot_" + this.i + "P2Injury_1"] = this["slot_" + this.i + "P2"].createMovieClipSub("injury_1");
-                // this["slot_" + this.i + "P2Injury_2"] = this["slot_" + this.i + "P2"].createMovieClipSub("injury_2");
-                // this["slot_" + this.i + "P2Injury_3"] = this["slot_" + this.i + "P2"].createMovieClipSub("injury_3");
-                // this["slot_" + this.i + "P2Lock_hp"] = this["slot_" + this.i + "P2"].createMovieClipSub("lock_hp");
-
-                this["slot_" + this.i].p2 = this["slot_" + this.i].createMovieClipSub("p2");
-                this["slot_" + this.i].p2.hp_tx = this["slot_" + this.i].p2.createLabel("hp_tx");
-                this["slot_" + this.i].p2.scale_cl = this["slot_" + this.i].p2.createMovieClipSub("scale_cl");
-                this["slot_" + this.i].p2.stat_1 = this["slot_" + this.i].p2.createMovieClipSub("stat_1");
-                this["slot_" + this.i].p2.stat_2 = this["slot_" + this.i].p2.createMovieClipSub("stat_2");
-                this["slot_" + this.i].p2.stat_3 = this["slot_" + this.i].p2.createMovieClipSub("stat_3");
-                this["slot_" + this.i].p2.stat_hp_tx = this["slot_" + this.i].p2.createLabel("stat_hp_tx");
-                this["slot_" + this.i].p2.stat_attack_tx = this["slot_" + this.i].p2.createLabel("stat_attack_tx");
-                this["slot_" + this.i].p2.stat_speed_tx = this["slot_" + this.i].p2.createLabel("stat_speed_tx");
-                this["slot_" + this.i].p2.injury_1 = this["slot_" + this.i].p2.createMovieClipSub("injury_1");
-                this["slot_" + this.i].p2.injury_2 = this["slot_" + this.i].p2.createMovieClipSub("injury_2");
-                this["slot_" + this.i].p2.injury_3 = this["slot_" + this.i].p2.createMovieClipSub("injury_3");
-                this["slot_" + this.i].p2.lock_hp = this["slot_" + this.i].p2.createMovieClipSub("lock_hp");
-
-                this.i++;
-            }
-
-            this.stat_bt = this.createMCButton("stat_bt");
+            this.zone_drag = this.getSprite("zone_drag");
+            this.zone_tuto = this.getSprite("zone_tuto");
+            this.zone_up_all = this.getSprite("zone_up_all");
+            // this.getSprite
+            ///stat_cl
             this.stat_cl = this.createMovieClipSub("stat_cl");
-            this.stat_clPlayoff_bt = this.stat_cl.createMCButton("playoff_bt");
+            this.stat_clPlayoff_bt = this.stat_cl.createMovieClipSub("playoff_bt");
+            this.stat_clPlayoff_bt["playoff_bt"] = this.stat_clPlayoff_bt.createMCButton("playoff_bt");
             this.stat_clClose_bt = this.stat_cl.createMCButton("close_bt");
             this.stat_clPlayoff_cl = this.stat_cl.createMovieClipSub("playoff_cl");
-            this.stat_clTitle_cl = this.stat_cl.createMovieClipSub("title_cl");
-            this.stat_clSlots_cl = this.stat_cl.createMovieClipSub("slots_cl");
-            this.stat_clLine_about_cl = this.createMovieClipSub("stat_clLine_about_cl");
-            this.i = 1;
-            while (this.i <= 6) {
-                // this["stat_clSlots_clSlot_" + this.i] = this.stat_clSlots_cl.createMovieClipSub("slot_" + this.i);
-                this.stat_clSlots_cl["slot_" + this.i] = this.stat_clSlots_cl.createMovieClipSub("slot_" + this.i);
-                // this["stat_clSlots_clSlot_" + this.i + "Id_tx"] = this["stat_clSlots_clSlot_" + this.i].createLabel("id_tx");
-                this.stat_clSlots_cl["slot_" + this.i].id_tx = this.stat_clSlots_cl["slot_" + this.i].createLabel("id_tx");
-                // this["stat_clSlots_clSlot_" + this.i + "Bg_cl"] = this["stat_clSlots_clSlot_" + this.i].createMovieClipSub("bg_cl");
-                this.stat_clSlots_cl["slot_" + this.i].bg_cl = this.stat_clSlots_cl["slot_" + this.i].createMovieClipSub("bg_cl");
-                this.stat_clSlots_cl["slot_" + this.i].title_tx = this.stat_clSlots_cl["slot_" + this.i].createLabel("title_tx");
-                this.stat_clSlots_cl["slot_" + this.i].w_tx = this.stat_clSlots_cl["slot_" + this.i].createLabel("w_tx");
-                this.stat_clSlots_cl["slot_" + this.i].d_tx = this.stat_clSlots_cl["slot_" + this.i].createLabel("d_tx");
-                this.stat_clSlots_cl["slot_" + this.i].pts_tx = this.stat_clSlots_cl["slot_" + this.i].createLabel("pts_tx");
-                this.i++;
-            }
             this.i = 1;
             while (this.i <= 4) {
                 this.stat_clPlayoff_cl["slot_" + this.i] = this.stat_clPlayoff_cl.createMovieClipSub("slot_" + this.i);
@@ -229,17 +159,111 @@ module com.code {
                 this.stat_clPlayoff_cl["slot_" + this.i].score2_tx = this.stat_clPlayoff_cl["slot_" + this.i].createLabel("score2_tx");
                 this.i++;
             }
+            this.stat_clTitle_cl = this.stat_cl.createMovieClipSub("title_cl");
+            this.stat_clSlots_cl = this.stat_cl.createMovieClipSub("slots_cl");
+            this.stat_clLine_about_cl = this.stat_cl.getBitmap("line_about_cl");
+
+            this.i = 1;
+            while (this.i <= 6) {
+                this.stat_clSlots_cl["slot_" + this.i] = this.stat_clSlots_cl.createMovieClipSub("slot_" + this.i);
+                this.stat_clSlots_cl["slot_" + this.i].id_tx = this.stat_clSlots_cl["slot_" + this.i].createLabel("id_tx");
+                this.stat_clSlots_cl["slot_" + this.i].bg_cl = this.stat_clSlots_cl["slot_" + this.i].createMovieClipSub("bg_cl");
+                this.stat_clSlots_cl["slot_" + this.i].title_tx = this.stat_clSlots_cl["slot_" + this.i].createLabel("title_tx");
+                this.stat_clSlots_cl["slot_" + this.i].w_tx = this.stat_clSlots_cl["slot_" + this.i].createLabel("w_tx");
+                this.stat_clSlots_cl["slot_" + this.i].d_tx = this.stat_clSlots_cl["slot_" + this.i].createLabel("d_tx");
+                this.stat_clSlots_cl["slot_" + this.i].pts_tx = this.stat_clSlots_cl["slot_" + this.i].createLabel("pts_tx");
+                this.i++;
+            }
+            //upg_cl
+            this.upg_cl = this.createMovieClipSub("upg_cl");
+            this.i3 = 1;
+            while (this.i3 <= 5) {
+                this.upg_cl["slot_" + this.i3] = this.upg_cl.createMovieClipSub("upg_cl");
+                this.upg_cl["slot_" + this.i3].icon_cl = this.upg_cl["slot_" + this.i3].createMovieClipSub("icon_cl");
+                this.upg_cl["slot_" + this.i3].icon_cl.icon2 = this.upg_cl["slot_" + this.i3].icon_cl.createMovieClipSub("icon_cl");
+                this.upg_cl["slot_" + this.i3].title_tx = this.upg_cl["slot_" + this.i3].createLabel("title_tx");
+                this.upg_cl["slot_" + this.i3].des_tx = this.upg_cl["slot_" + this.i3].createLabel("des_tx");
+                this.upg_cl["slot_" + this.i3].price_tx = this.upg_cl["slot_" + this.i3].createLabel("price_tx");
+                this.upg_cl["slot_" + this.i3].buy_cl = this.upg_cl["slot_" + this.i3].createMovieClipSub("buy_cl");
+                this.upg_cl["slot_" + this.i3].buy_cl.buy_bt = this.upg_cl["slot_" + this.i3].buy_cl.createMovieClipSub("buy_bt");
+                this.i3++;
+            }
+            this.upg_clMoney_tx = this.upg_cl.createLabel("money_tx");
+            this.upg_clClose_bt = this.createMCButton("close_bt");
+            // 
+            this.sign_cl = this.getBitmap("sign_cl");
+            this.money_tx = this.createLabel("money_tx");
+            this.stat_bt = this.createMCButton("stat_bt");
+            this.dress_bt = this.createMCButton("dress_bt");
+            this.calendar_cl = this.createMovieClipSub("calendar_cl");
+            this.calendar_clBg_cl = this.createMovieClipSub("bg_cl");
+            this.calendar_clLeft_tx = this.calendar_cl.createLabel("left_tx");
+            this.calendar_clTitle_tx = this.calendar_cl.createLabel("title_tx");
+            this.next_bt = this.createMovieClipSub("next_bt");
+            this.next_bt["next_bt"] = this.next_bt.createMCButton("next_bt", 1);
+            this.upg_bt = this.createMCButton("upg_bt");
+            this.menu_bt_cl = this.createMCButton("menu_bt_cl");
+            this.i = 1;
+            while (this.i <= 4) {
+                this["slot_" + this.i] = this.createMovieClipSub("slot_" + this.i);
+                this["slot_" + this.i].to_speed_bt = this["slot_" + this.i].createMCButton("to_speed_bt");
+                this["slot_" + this.i].to_attack_bt = this["slot_" + this.i].createMCButton("to_attack_bt");
+                this["slot_" + this.i].to_hp_bt = this["slot_" + this.i].createMCButton("to_hp_bt");
+                this["slot_" + this.i].telo = this["slot_" + this.i].getBitmap("telo");
+                this["slot_" + this.i].p2 = this["slot_" + this.i].createMovieClipSub("p2");
+                this["slot_" + this.i].p2.lock_hp = this["slot_" + this.i].p2.createMovieClipSub("lock_hp");
+                this["slot_" + this.i].p2.hp_tx = this["slot_" + this.i].p2.createLabel("hp_tx");
+                this["slot_" + this.i].p2.scale_cl = this["slot_" + this.i].p2.createMovieClipSub("scale_cl");
+                this["slot_" + this.i].p2.scale_cl.mcMask = this["slot_" + this.i].p2.scale_cl.createMask(std.MCMask.START, "mask", "bg");
+                this["slot_" + this.i].p2.stat_hp_tx = this["slot_" + this.i].p2.createLabel("stat_hp_tx");
+                this["slot_" + this.i].p2.stat_attack_tx = this["slot_" + this.i].p2.createLabel("stat_attack_tx");
+                this["slot_" + this.i].p2.stat_speed_tx = this["slot_" + this.i].p2.createLabel("stat_speed_tx");
+                this["slot_" + this.i].p2.stat_1 = this["slot_" + this.i].p2.createMovieClipSub("stat_1");
+                this["slot_" + this.i].p2.stat_2 = this["slot_" + this.i].p2.createMovieClipSub("stat_2");
+                this["slot_" + this.i].p2.stat_3 = this["slot_" + this.i].p2.createMovieClipSub("stat_3");
+                this["slot_" + this.i].p2.stat_1.mcMask = this["slot_" + this.i].p2.stat_1.createMask(std.MCMask.START, "mask", "bg");
+                this["slot_" + this.i].p2.stat_2.mcMask = this["slot_" + this.i].p2.stat_2.createMask(std.MCMask.START, "mask", "bg");
+                this["slot_" + this.i].p2.stat_3.mcMask = this["slot_" + this.i].p2.stat_3.createMask(std.MCMask.START, "mask", "bg");
+                this["slot_" + this.i].p2.injury_1 = this["slot_" + this.i].p2.createMovieClipSub("injury_1");
+                this["slot_" + this.i].p2.injury_2 = this["slot_" + this.i].p2.createMovieClipSub("injury_2");
+                this["slot_" + this.i].p2.injury_3 = this["slot_" + this.i].p2.createMovieClipSub("injury_3");
+                this["slot_" + this.i].p2.injury_1.mcMask = this["slot_" + this.i].p2.injury_1.createMask(std.MCMask.START, "mask", "bg");
+                this["slot_" + this.i].p2.injury_2.mcMask = this["slot_" + this.i].p2.injury_2.createMask(std.MCMask.START, "mask", "bg");
+                this["slot_" + this.i].p2.injury_3.mcMask = this["slot_" + this.i].p2.injury_3.createMask(std.MCMask.START, "mask", "bg");
+                this.i++;
+            }
+            this.i = 1;
+            while (this.i <= 12) {
+                this["zone_" + this.i] = this.getSprite("zone_" + this.i);
+            }
+            this.coach_stay_cl = this.createMovieClipSub("coach_stay_cl");
+            this.doctor_cl = this.createMovieClipSub("doctor_cl");
+
+            this.gong_cl = this.createMovieClipSub("gong_cl");
+            this.grass_cl = this.createMovieClipSub("grass_cl");
+            this.grass_clSpy_cl = this.grass_cl.createMovieClipSub("spy_cl");
+
+            this.pointer1 = this.createMovieClipSub("pointer1");
+            this.pointer2 = this.createMovieClipSub("pointer2");
+            this.pointer3 = this.createMovieClipSub("pointer3");
+            // this.slot_1 = this.createMovieClipSub("slot_1");
+            // this.slot_2 = this.createMovieClipSub("slot_2");
+            // this.slot_3 = this.createMovieClipSub("slot_3");
+            // this.slot_4 = this.createMovieClipSub("slot_4");
+
             this.talk_9 = this.createMovieClipSub("talk_9");
             this.talk_10 = this.createMovieClipSub("talk_10");
             this.talk_11 = this.createMovieClipSub("talk_11");
             this.talk_12 = this.createMovieClipSub("talk_12");
+
             this.i = 1;
             while (this.i <= 12) {
                 this["train_" + this.i] = this.createMovieClipSub("train_" + this.i);
-                this["train_" + this.i].cat_cl = this["train_" + this.i].createMovieClipSub("cat_cl");
-                this["train_" + this.i].coach_cl = this["train_" + this.i].createMovieClipSub("coach_cl");
                 this["train_" + this.i].tr_cl = this["train_" + this.i].createMovieClipSub("tr_cl");
-                this["train_" + this.i].cat_cl.cat1 = this["train_" + this.i].cat_cl.createMovieClipSub("cat1");
+                this["train_" + this.i].cat_cl = this["train_" + this.i].addMovieClip("cat_cl", new cat_drag_mc());
+                this["train_" + this.i].coach_cl = this["train_" + this.i].createMovieClipSub("coach_cl");
+
+                this["train_" + this.i].cat_cl = this["train_" + this.i].createMovieClipSub("cat_cl");
                 this["train_" + this.i].cat_cl.cat1.cat2 = new SubCat(this["train_" + this.i].cat_cl.cat1, "cat2");// this["train_" + this.i].cat_cl.cat1.createMovieClipSub("cat2");
                 this["train_" + this.i].cat_cl.cat1.cat2.tr_cl = this["train_" + this.i].cat_cl.cat1.cat2.createMovieClipSub("tr_cl");
                 this["train_" + this.i].cat_cl.cat1.cat2.tr_cl.line_of_cl = this["train_" + this.i].cat_cl.cat1.cat2.tr_cl.createMovieClipSub("line_of_cl");
@@ -252,30 +276,14 @@ module com.code {
             this.train_11Table_cl = this.train_11.createMovieClipSub("table_cl");
             this.train_12Table_cl = this.train_12.createMovieClipSub("table_cl");
 
-            this.upg_bt = this.createMCButton("upg_bt");
-            this.upg_cl = this.createMovieClipSub("upg_cl");
-            this.i3 = 1;
-            while (this.i3 <= 5) {
-                this.upg_cl["slot_" + this.i3] = this.upg_cl.createMovieClipSub("upg_cl");
-                this.upg_cl["slot_" + this.i3].icon_cl = this.upg_cl["slot_" + this.i3].createMovieClipSub("icon_cl");
-                this.upg_cl["slot_" + this.i3].icon_cl.icon2 = this.upg_cl["slot_" + this.i3].icon_cl.createMovieClipSub("icon_cl");
-                this.upg_cl["slot_" + this.i3].title_tx = this.upg_cl["slot_" + this.i3].createLabel("title_tx");
-                this.upg_cl["slot_" + this.i3].des_tx = this.upg_cl["slot_" + this.i3].createLabel("des_tx");
-                this.upg_cl["slot_" + this.i3].price_tx = this.upg_cl["slot_" + this.i3].createLabel("price_tx");
-                this.upg_cl["slot_" + this.i3].buy_cl = this.upg_cl["slot_" + this.i3].createMovieClipSub("buy_cl");
-                this.i3++;
-            }
-            this.upg_clMoney_tx = this.upg_cl.createLabel("money_tx");
-            this.upg_clClose_bt = this.createMCButton("close_bt");
-            this.i = 1;
-            while (this.i <= 12) {
-                this["zone_" + this.i] = this.createMCButton("zone_" + this.i);
-            }
-            this.zone_drag = this.createMovieClipSub("zone_drag");
-            this.zone_tuto = this.createMovieClipSub("zone_tuto");
-            this.zone_up_all = this.createMovieClipSub("zone_up_all");
-            // this.getSprite
-
+            this.doctor_cl = this.createMovieClipSub("doctor_cl");
+            this.doctor_cl["doctor_cl1"] = this.doctor_cl.createMovieClipSub("doctor_cl1");
+            this.doctor_cl["doctor_cl2"] = this.doctor_cl.createMovieClipSub("doctor_cl2");
+            this.doctor_cl["doctor_cl3"] = this.doctor_cl.createMovieClipSub("doctor_cl3");
+            this.pointer1 = this.createMovieClipSub("pointer1");
+            this.pointer2 = this.createMovieClipSub("pointer2");
+            this.pointer3 = this.createMovieClipSub("pointer3");
+            this.gong_cl = this.createMovieClipSub("gong_cl");
         }
         public init(): void {
             if (Main.sav.data.week >= 8) {
@@ -285,7 +293,7 @@ module com.code {
             this.day_of = this.my_date.getDate();
             this.year_of = this.my_date.getFullYear();
             this.date_all = this.month_of + "." + this.day_of + "." + this.year_of;
-            this.sign_cl.mouseEnabled = false;
+            this.sign_cl.touchEnabled = false;
             this._app._music.load_music("upg");
             this._info_enemy = new Enemy();
             this.spy_time = std._rnd(9000);

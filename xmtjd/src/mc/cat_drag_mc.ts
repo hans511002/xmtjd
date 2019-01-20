@@ -39,13 +39,12 @@ class cat_drag_mc extends std.MovieClip {
         super(Config.mcRoot, "cat_drag_mc", "cat_drag_mc");
         this.cat1 = this.createMovieClipSub("cat1", 1);
         // this.cat1Cat2 = this.cat1.createMovieClipSub("cat2", 1);
-        this.cat1Cat2 = new Cat(this.cat1, "cat2", "", 1);
+        this.cat1Cat2 = new SubCat(this.cat1, "cat2", "", 1);
 
         this.telo = this.createCase("telo");
-        this.subInit();
+        this.cat1Cat2.subInit = this.subInit;
     }
     subInit(): void {
-
         // this.cat1Cat2Head_cl = this.cat1Cat2.createMovieClipSub("head_cl");
         // this.cat1Cat2Hand_r_cl = this.cat1Cat2.createMovieClipSub("hand_r_cl");
         // this.cat1Cat2Hand_l_cl = this.cat1Cat2.createMovieClipSub("hand_l_cl");

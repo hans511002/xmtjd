@@ -1,0 +1,8 @@
+<TextureAtlas name="buttons" imagePath="texture.png">
+ <SubTexture name="Symbol 1902" x="0" y="65" width="40" height="40"/>
+ <SubTexture name="Symbol 1903" x="65" y="41" width="40" height="40"/>
+ <SubTexture name="Symbol 1904" x="65" y="0" width="40" height="40"/>
+ <SubTexture name="Symbol 1884" x="0" y="0" width="63" height="63"/>
+ <SubTexture name="__dbTextures/More_button/Layer 1_0" x="41" y="82" width="69" height="41"/>
+ <SubTexture name="__dbTextures/Sponsor_button/Layer 1_0" x="0" y="125" width="69" height="41"/>
+</TextureAtlas>

@@ -1,0 +1,53 @@
+<TextureAtlas name="Deqaf" imagePath="texture.png">
+ <SubTexture name="__dbTextures/Deqafsplash_707/Layer 4_2" x="0" y="770" width="1024" height="768"/>
+ <SubTexture name="__dbTextures/Deqafsplash_707/Layer 4_174" x="0" y="0" width="1024" height="768"/>
+ <SubTexture name="Symbol 1684" x="1273" y="0" width="236" height="101"/>
+ <SubTexture name="Symbol 1682" x="1026" y="0" width="246" height="102"/>
+ <SubTexture name="__dbTextures/s708/s709_64" x="1819" y="0" width="101" height="101"/>
+ <SubTexture name="__dbTextures/s708/s709_65" x="1510" y="0" width="102" height="101"/>
+ <SubTexture name="__dbTextures/s708/s709_66" x="1714" y="102" width="96" height="101"/>
+ <SubTexture name="__dbTextures/s708/s709_67" x="1026" y="103" width="88" height="101"/>
+ <SubTexture name="__dbTextures/s708/s709_68" x="1612" y="204" width="82" height="101"/>
+ <SubTexture name="__dbTextures/s708/s709_69" x="1180" y="205" width="75" height="101"/>
+ <SubTexture name="__dbTextures/s708/s709_70" x="1204" y="103" width="68" height="101"/>
+ <SubTexture name="__dbTextures/s708/s709_71" x="1450" y="306" width="63" height="101"/>
+ <SubTexture name="__dbTextures/s708/s709_72" x="1990" y="204" width="55" height="101"/>
+ <SubTexture name="__dbTextures/s708/s709_73" x="1858" y="306" width="48" height="101"/>
+ <SubTexture name="__dbTextures/s708/s709_74" x="1999" y="306" width="45" height="101"/>
+ <SubTexture name="__dbTextures/s708/s709_75" x="1859" y="204" width="48" height="101"/>
+ <SubTexture name="__dbTextures/s708/s709_76" x="1756" y="306" width="55" height="101"/>
+ <SubTexture name="__dbTextures/s708/s709_77" x="1514" y="306" width="63" height="101"/>
+ <SubTexture name="__dbTextures/s708/s709_78" x="1477" y="102" width="32" height="44"/>
+ <SubTexture name="__dbTextures/s708/s709_79" x="1104" y="205" width="75" height="101"/>
+ <SubTexture name="__dbTextures/s708/s709_80" x="1451" y="204" width="82" height="101"/>
+ <SubTexture name="__dbTextures/s708/s709_81" x="1115" y="103" width="88" height="101"/>
+ <SubTexture name="__dbTextures/s708/s709_82" x="1811" y="102" width="96" height="101"/>
+ <SubTexture name="__dbTextures/s708/s709_83" x="1613" y="0" width="102" height="101"/>
+ <SubTexture name="__dbTextures/s708/s709_84" x="1716" y="0" width="101" height="101"/>
+ <SubTexture name="__dbTextures/s708/s709_85" x="1375" y="102" width="101" height="101"/>
+ <SubTexture name="__dbTextures/s708/s709_86" x="1510" y="102" width="101" height="101"/>
+ <SubTexture name="__dbTextures/s708/s709_87" x="1908" y="102" width="95" height="101"/>
+ <SubTexture name="__dbTextures/s708/s709_88" x="1273" y="204" width="88" height="101"/>
+ <SubTexture name="__dbTextures/s708/s709_89" x="1695" y="204" width="81" height="101"/>
+ <SubTexture name="__dbTextures/s708/s709_90" x="1534" y="204" width="77" height="101"/>
+ <SubTexture name="__dbTextures/s708/s709_91" x="1256" y="306" width="69" height="101"/>
+ <SubTexture name="__dbTextures/s708/s709_92" x="1578" y="306" width="61" height="101"/>
+ <SubTexture name="__dbTextures/s708/s709_93" x="1396" y="306" width="53" height="101"/>
+ <SubTexture name="__dbTextures/s708/s709_94" x="1907" y="306" width="45" height="101"/>
+ <SubTexture name="__dbTextures/s708/s709_95" x="1953" y="306" width="45" height="101"/>
+ <SubTexture name="__dbTextures/s708/s709_96" x="1812" y="306" width="45" height="101"/>
+ <SubTexture name="__dbTextures/s708/s709_97" x="1640" y="306" width="53" height="101"/>
+ <SubTexture name="__dbTextures/s708/s709_98" x="1694" y="306" width="61" height="101"/>
+ <SubTexture name="__dbTextures/s708/s709_99" x="1326" y="306" width="69" height="101"/>
+ <SubTexture name="__dbTextures/s708/s709_100" x="1026" y="205" width="77" height="101"/>
+ <SubTexture name="__dbTextures/s708/s709_101" x="1777" y="204" width="81" height="101"/>
+ <SubTexture name="__dbTextures/s708/s709_102" x="1362" y="204" width="88" height="101"/>
+ <SubTexture name="__dbTextures/s708/s709_103" x="1908" y="204" width="81" height="101"/>
+ <SubTexture name="__dbTextures/s708/s709_104" x="1612" y="102" width="101" height="101"/>
+ <SubTexture name="__dbTextures/s708/s709_105" x="1273" y="102" width="101" height="101"/>
+ <SubTexture name="Symbol 1628" x="1922" y="0" width="101" height="101"/>
+ <SubTexture name="Symbol 1630" x="1026" y="331" width="101" height="50"/>
+ <SubTexture name="Symbol 1632" x="1026" y="307" width="60" height="23"/>
+ <SubTexture name="Symbol 1634" x="1148" y="307" width="101" height="51"/>
+ <SubTexture name="Symbol 1636" x="1087" y="307" width="60" height="22"/>
+</TextureAtlas>

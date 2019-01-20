@@ -1,0 +1,13 @@
+<TextureAtlas name="Comics" imagePath="texture.png">
+ <SubTexture name="Symbol 1926" x="0" y="0" width="650" height="450"/>
+ <SubTexture name="Symbol 3211" x="245" y="452" width="193" height="211"/>
+ <SubTexture name="Symbol 3228" x="440" y="452" width="149" height="212"/>
+ <SubTexture name="Symbol 3231" x="591" y="466" width="149" height="212"/>
+ <SubTexture name="Symbol 3222" x="0" y="452" width="243" height="228"/>
+ <SubTexture name="Symbol 3219" x="652" y="252" width="276" height="212"/>
+ <SubTexture name="Symbol 3225" x="742" y="466" width="133" height="212"/>
+ <SubTexture name="Symbol 3234" x="652" y="0" width="284" height="250"/>
+ <SubTexture name="Symbol 3237" x="877" y="466" width="105" height="111"/>
+ <SubTexture name="com.code.Buttons_sounds2" x="938" y="0" width="39" height="39"/>
+ <SubTexture name="Symbol 3216" x="978" y="0" width="30" height="38"/>
+</TextureAtlas>

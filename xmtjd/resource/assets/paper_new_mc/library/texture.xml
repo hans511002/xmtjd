@@ -2,14 +2,16 @@
  <SubTexture name="Symbol 2077" x="0" y="0" width="650" height="450"/>
  <SubTexture name="位图 22" x="652" y="0" width="351" height="40"/>
  <SubTexture name="Symbol 2367" x="0" y="814" width="429" height="317"/>
- <SubTexture name="位图 23" x="778" y="98" width="73" height="13"/>
+ <SubTexture name="位图 23" x="871" y="171" width="73" height="13"/>
  <SubTexture name="Symbol 2369" x="430" y="814" width="397" height="292"/>
  <SubTexture name="Symbol 2119" x="0" y="452" width="654" height="361"/>
- <SubTexture name="Symbol 2372" x="721" y="42" width="56" height="63"/>
- <SubTexture name="Symbol 2377" x="652" y="42" width="68" height="64"/>
+ <SubTexture name="Symbol 2372" x="930" y="107" width="56" height="63"/>
+ <SubTexture name="Symbol 2377" x="930" y="42" width="68" height="64"/>
  <SubTexture name="Symbol 2374" x="1005" y="0" width="11" height="27"/>
- <SubTexture name="Symbol 2379" x="778" y="42" width="58" height="51"/>
- <SubTexture name="Symbol 2381" x="837" y="42" width="54" height="55"/>
- <SubTexture name="Symbol 2383" x="892" y="42" width="54" height="53"/>
- <SubTexture name="Symbol 2385" x="947" y="42" width="49" height="56"/>
+ <SubTexture name="Symbol 2379" x="652" y="133" width="58" height="51"/>
+ <SubTexture name="Symbol 2381" x="711" y="133" width="54" height="55"/>
+ <SubTexture name="Symbol 2383" x="766" y="157" width="54" height="53"/>
+ <SubTexture name="Symbol 2385" x="821" y="157" width="49" height="56"/>
+ <SubTexture name="Symbol 2117" x="808" y="42" width="121" height="114"/>
+ <SubTexture name="__dbTextures/Symbol 2386/Layer 1_0" x="652" y="42" width="155" height="90"/>
 </TextureAtlas>

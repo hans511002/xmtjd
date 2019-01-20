@@ -1,0 +1,43 @@
+<TextureAtlas name="tuto_mc" imagePath="texture.png">
+ <SubTexture name="Symbol 2074" x="1229" y="1505" width="209" height="69"/>
+ <SubTexture name="Symbol 2070" x="979" y="1497" width="249" height="69"/>
+ <SubTexture name="Symbol 2040" x="1304" y="452" width="650" height="450"/>
+ <SubTexture name="Symbol 2033" x="1439" y="1505" width="164" height="68"/>
+ <SubTexture name="__dbTextures/tuto4_mc/Layer 3_0" x="652" y="904" width="650" height="450"/>
+ <SubTexture name="Symbol 2065" x="1299" y="1356" width="326" height="148"/>
+ <SubTexture name="Symbol 2060" x="1626" y="1356" width="326" height="91"/>
+ <SubTexture name="Symbol 2051" x="355" y="1356" width="293" height="69"/>
+ <SubTexture name="Symbol 2053" x="1993" y="0" width="35" height="72"/>
+ <SubTexture name="Symbol 2054" x="1993" y="73" width="35" height="72"/>
+ <SubTexture name="Symbol 2055" x="1956" y="0" width="35" height="72"/>
+ <SubTexture name="Symbol 2056" x="1956" y="73" width="35" height="72"/>
+ <SubTexture name="__dbTextures/tuto8_mc/Layer 3_0" x="652" y="452" width="650" height="450"/>
+ <SubTexture name="Symbol 2038" x="0" y="1356" width="354" height="160"/>
+ <SubTexture name="Symbol 2022" x="0" y="0" width="650" height="450"/>
+ <SubTexture name="Symbol 2029" x="1065" y="1567" width="134" height="68"/>
+ <SubTexture name="Symbol 2025" x="193" y="1517" width="153" height="68"/>
+ <SubTexture name="Symbol 2020" x="979" y="1427" width="249" height="69"/>
+ <SubTexture name="Symbol 2015" x="1626" y="1492" width="326" height="70"/>
+ <SubTexture name="Symbol 2012" x="0" y="1517" width="192" height="68"/>
+ <SubTexture name="Symbol 1986" x="0" y="452" width="650" height="450"/>
+ <SubTexture name="Symbol 2008" x="355" y="1426" width="249" height="76"/>
+ <SubTexture name="Symbol 2004" x="355" y="1503" width="213" height="68"/>
+ <SubTexture name="Symbol 1999" x="1604" y="1563" width="162" height="68"/>
+ <SubTexture name="__dbTextures/tuto18_mc/Layer 2_0" x="0" y="904" width="650" height="450"/>
+ <SubTexture name="Symbol 1996" x="1626" y="1448" width="355" height="43"/>
+ <SubTexture name="Symbol 1991" x="649" y="1356" width="329" height="169"/>
+ <SubTexture name="Symbol 1695" x="1989" y="146" width="53" height="40"/>
+ <SubTexture name="位图 9" x="2002" y="187" width="42" height="45"/>
+ <SubTexture name="位图 10" x="1956" y="187" width="44" height="46"/>
+ <SubTexture name="位图 11" x="2002" y="234" width="42" height="45"/>
+ <SubTexture name="位图 12" x="1956" y="235" width="42" height="45"/>
+ <SubTexture name="Symbol 1984" x="979" y="1356" width="319" height="70"/>
+ <SubTexture name="__dbTextures/Symbol 1981/Layer 1_1" x="652" y="0" width="650" height="450"/>
+ <SubTexture name="__dbTextures/Symbol 1981/Layer 1_2" x="1304" y="0" width="650" height="450"/>
+ <SubTexture name="__dbTextures/Symbol 1981/Layer 1_3" x="1304" y="904" width="650" height="450"/>
+ <SubTexture name="Symbol 1975" x="758" y="1526" width="162" height="68"/>
+ <SubTexture name="Symbol 1971" x="569" y="1526" width="188" height="68"/>
+ <SubTexture name="Symbol 1963" x="1768" y="1563" width="162" height="68"/>
+ <SubTexture name="Symbol 1965" x="1956" y="146" width="32" height="35"/>
+ <SubTexture name="Symbol 1958" x="922" y="1567" width="142" height="68"/>
+</TextureAtlas>

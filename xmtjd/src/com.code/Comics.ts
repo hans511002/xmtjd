@@ -8,6 +8,7 @@ module com.code {
             this._app = App.getInstance();
             this.play_bt = this.createMCButton("play_bt");
             // this.addFrameScript(608, this.frame609);
+            this.sounds_control_cl = <Buttons_sounds2>this.addMovieClip("sounds_control_cl", new Buttons_sounds2());
         }
         public init(): void {
             this._app._music.delete_music("all");

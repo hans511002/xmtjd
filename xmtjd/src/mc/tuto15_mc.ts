@@ -1,7 +1,8 @@
-class tuto15_mc extends std.MovieClip {
+class tuto15_mc extends tuto_mc {
     public ok_bt: std.MCButton = null;
     public constructor() {
-        super(Config.mcRoot, "tuto15_mc", "tuto15_mc");
+        super("tuto15_mc");
+        this.ok_bt = this.createMCButton("ok_bt");
 
     }
 }

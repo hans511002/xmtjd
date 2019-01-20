@@ -26,8 +26,12 @@ class SubCat extends std.MovieClipSub {
 	public cloak_cl: std.MovieClip;
 	public tail_cl: std.MovieClip;
 
+	subInit: Function = null;
+
 	public constructor(mc?: std.MC, slotName?: string, defAniName?: string, reinitType: number = 0) {
 		super(mc, slotName, defAniName, reinitType);
+	}
+	mcInit() {
 		this.hand_r_cl = this.createMovieClip("hand_r_cl", Config.catRoot, "hand_r_cl", "hand_r_cl", 0);
 		this.hand_r_clS2 = this.hand_r_cl.createMovieClipSub("s2");
 		this.hand_r_clSleeve_cl = this.hand_r_cl.createMovieClipSub("sleeve_cl");
@@ -58,7 +62,12 @@ class SubCat extends std.MovieClipSub {
 
 		this.cloak_cl = this.createMovieClip("cloak_cl", Config.catRoot, "cloak_cl", "cloak_cl", 0);
 		this.tail_cl = this.createMovieClip("tail_cl", Config.catRoot, "tail_cl", "tail_cl", 0);
-
 	}
-
+	gotoAndStop(cf: number | string, aniName: string = ""): void {
+		super.gotoAndStop(cf, aniName);
+		this.mcInit();
+		if (this.subInit) {
+			this.subInit.call(this.mc.mc);
+		}
+	}
 }

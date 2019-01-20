@@ -2,53 +2,6 @@ module com.code {
     export class Dress extends DataMovieClip {
         public about_cl: std.MovieClipSub = null;
         about_clClose_bt: std.MCButton;
-        about_clSslot_1: std.MovieClipSub = null;
-        about_clSslot_2: std.MovieClipSub = null;
-        about_clSslot_3: std.MovieClipSub = null;
-        about_clSslot_4: std.MovieClipSub = null;
-        about_clSslot_5: std.MovieClipSub = null;
-        about_clSslot_6: std.MovieClipSub = null;
-        about_clSslot_7: std.MovieClipSub = null;
-        about_clSslot_8: std.MovieClipSub = null;
-        about_clSslot_9: std.MovieClipSub = null;
-        about_clSslot_10: std.MovieClipSub = null;
-        about_clSslot_11: std.MovieClipSub = null;
-        about_clSslot_12: std.MovieClipSub = null;
-        about_clSslot_13: std.MovieClipSub = null;
-        about_clSslot_14: std.MovieClipSub = null;
-        about_clSslot_15: std.MovieClipSub = null;
-        about_clSslot_1Des_tx: eui.Label = null;
-        about_clSslot_2Des_tx: eui.Label = null;
-        about_clSslot_3Des_tx: eui.Label = null;
-        about_clSslot_4Des_tx: eui.Label = null;
-        about_clSslot_5Des_tx: eui.Label = null;
-        about_clSslot_6Des_tx: eui.Label = null;
-        about_clSslot_7Des_tx: eui.Label = null;
-        about_clSslot_8Des_tx: eui.Label = null;
-        about_clSslot_9Des_tx: eui.Label = null;
-        about_clSslot_10Des_tx: eui.Label = null;
-        about_clSslot_11Des_tx: eui.Label = null;
-        about_clSslot_12Des_tx: eui.Label = null;
-        about_clSslot_13Des_tx: eui.Label = null;
-        about_clSslot_14Des_tx: eui.Label = null;
-        about_clSslot_15Des_tx: eui.Label = null;
-        about_clSslot_1Icon_cl: std.MovieClipSub = null;
-        about_clSslot_2Icon_cl: std.MovieClipSub = null;
-        about_clSslot_3Icon_cl: std.MovieClipSub = null;
-        about_clSslot_4Icon_cl: std.MovieClipSub = null;
-        about_clSslot_5Icon_cl: std.MovieClipSub = null;
-        about_clSslot_6Icon_cl: std.MovieClipSub = null;
-        about_clSslot_7Icon_cl: std.MovieClipSub = null;
-        about_clSslot_8Icon_cl: std.MovieClipSub = null;
-        about_clSslot_9Icon_cl: std.MovieClipSub = null;
-        about_clSslot_10Icon_cl: std.MovieClipSub = null;
-        about_clSslot_11Icon_cl: std.MovieClipSub = null;
-        about_clSslot_12Icon_cl: std.MovieClipSub = null;
-        about_clSslot_13Icon_cl: std.MovieClipSub = null;
-        about_clSslot_14Icon_cl: std.MovieClipSub = null;
-        about_clSslot_15Icon_cl: std.MovieClipSub = null;
-
-
         public back_bt: std.MCButton = null;
         public cat1: cat_drag_mc = null;
         public cat2: cat_drag_mc = null;
@@ -66,13 +19,13 @@ module com.code {
         panel_clRadio_2N_tx: eui.Label = null;
         panel_clRadio_3N_tx: eui.Label = null;
         panel_clAbout_bt: std.MCButton;
-        panel_clZoom_bt: std.MCButton;
-        panel_clSort_1: std.MovieClipSub = null;
-        panel_clSort_2: std.MovieClipSub = null;
-        panel_clSort_3: std.MovieClipSub = null;
+        panel_clZoom_bt: std.MovieClipSub;
+        panel_clSort_1: std.MCButton = null;
+        panel_clSort_2: std.MCButton = null;
+        panel_clSort_3: std.MCButton = null;
 
         public shop_bt: std.MCButton = null;
-        public shop_cl: std.MovieClip = null;
+        public shop_cl: std.MovieClipSub = null;
         shop_clDes_tx: eui.Label = null;
         shop_clZoom_bt: std.MovieClipSub = null;
         shop_clMoney_tx: eui.Label = null;
@@ -85,9 +38,9 @@ module com.code {
 
 
         public train_bt: std.MCButton = null;
-        public zone_cards_about: std.MovieClip = null;
-        public zone_drag: std.MovieClip = null;
-        public zone_tuto: std.MovieClip = null;
+        public zone_cards_about: egret.Bitmap = null;
+        public zone_drag: egret.Bitmap = null;
+        public zone_tuto: egret.Bitmap = null;
         _app: App = null;
         _Buttons_sounds: Buttons_sounds = null;
         pause_cl: pause_mc = null;
@@ -99,7 +52,7 @@ module com.code {
         arr_sort_2: any = [];
         arr_sort_3: any = [];
         next_card: number = 0;
-        card_cl: std.MovieClip = null;
+        card_cl: card_mc = null;
         card1_about: card_mc = null;
         card2_about: card_mc = null;
         card3_about: card_mc = null;
@@ -116,6 +69,8 @@ module com.code {
         arr_temp2: any = [];
         arr_temp3: any = [];
         tuto_cl: std.MovieClip = null;
+
+        scat: std.MovieClipSub = null;
         public constructor() {
             super("Dress");
             this._app = App.getInstance();
@@ -126,9 +81,55 @@ module com.code {
             this.arr_temp2 = [];
             this.arr_temp3 = [];
 
+            this.zone_drag = this.getSprite("zone_drag");
+            this.zone_tuto = this.getSprite("zone_tuto");
+            this.zone_cards_about = this.getSprite("zone_cards_about");
+
             this.about_cl = this.createMovieClipSub("about_cl");
             this.back_bt = this.createMCButton("back_bt");
+            this.shop_bt = this.createMCButton("shop_bt");
+            this.train_bt = this.createMCButton("train_bt");
+            this.menu_bt_cl = this.createMCButton("menu_bt_cl");
+            this.shop_cl = this.createMovieClipSub("shop_cl");
             this.panel_cl = this.createMovieClipSub("panel_cl");
+            this.about_cl = this.createMovieClipSub("about_cl");
+            this.scat = this.createMovieClipSub("scat");
+
+            this.cat1 = <cat_drag_mc>this.addMovieClip("cat1", new cat_drag_mc());
+            this.cat2 = <cat_drag_mc>this.addMovieClip("cat2", new cat_drag_mc());
+            this.cat3 = <cat_drag_mc>this.addMovieClip("cat3", new cat_drag_mc());
+            this.cat4 = <cat_drag_mc>this.addMovieClip("cat4", new cat_drag_mc());
+
+            this.shop_clZoom_bt = this.shop_cl.createMovieClipSub("zoom_bt");
+            this.shop_clZoom_bt["zoom_bt"] = this.shop_clZoom_bt.createMCButton("zoom_bt", 1);
+            this.shop_clDes_tx = this.shop_cl.createLabel("des_tx");
+            this.shop_clMoney_tx = this.shop_cl.createLabel("money_tx");
+            this.shop_clClose_bt = this.shop_cl.createMCButton("close_bt");
+
+            // this.shop_clSlot_1 = this.shop_cl.createMovieClipSub("slot_1");
+            // this.shop_clSlot_2 = this.shop_cl.createMovieClipSub("slot_2");
+            // this.shop_clSlot_3 = this.shop_cl.createMovieClipSub("slot_3");
+            // this.shop_clSlot_4 = this.shop_cl.createMovieClipSub("slot_4");
+            // this.shop_clSlot_5 = this.shop_cl.createMovieClipSub("slot_5");
+            this.i = 1;
+            while (this.i <= 5) {
+                this["shop_clSlot_" + this.i] = this.shop_cl.createMovieClipSub("slot_" + this.i);
+                this["shop_clSlot_" + this.i].price_tx = this["shop_clSlot_" + this.i].createMovieClipSub("price_tx");
+                this["shop_clSlot_" + this.i].buy_bt = this["shop_clSlot_" + this.i].createMovieClipSub("buy_bt");
+                this["shop_clSlot_" + this.i].sold_cl = this["shop_clSlot_" + this.i].getSprite("sold_cl");
+                this["shop_clSlot_" + this.i].card_cl = this["shop_clSlot_" + this.i].addMovieClip("card_cl", new card_mc());
+                this.i++;
+            }
+
+            this.about_clClose_bt = this.about_cl.createMCButton("close_bt");
+            this.i2 = 1;
+            while (this.i2 <= 15) {
+                this.about_cl["slot_" + this.i2] = this.about_cl.createMovieClipSub("slot_" + this.i2);
+                this.about_cl["slot_" + this.i2].icon_cl = this.about_cl["slot_" + this.i2].createMovieClipSub("icon_cl");
+                this.about_cl["slot_" + this.i2].des_tx = this.about_cl["slot_" + this.i2].createLabel("des_tx");
+                this.i2++;
+            }
+
             this.panel_clRadio_1 = this.panel_cl.createMovieClipSub("radio_1");
             this.panel_clRadio_2 = this.panel_cl.createMovieClipSub("radio_2");
             this.panel_clRadio_3 = this.panel_cl.createMovieClipSub("radio_3");
@@ -140,34 +141,16 @@ module com.code {
             this.panel_clRadio_2N_tx = this.panel_clRadio_2.createLabel("n_tx");
             this.panel_clRadio_3N_tx = this.panel_clRadio_3.createLabel("n_tx");
             this.panel_clAbout_bt = this.panel_cl.createMCButton("about_bt");
-            this.panel_clZoom_bt = this.panel_cl.createMCButton("zoom_bt");
-            this.panel_clSort_1 = this.panel_cl.createMovieClipSub("sort_1");
-            this.panel_clSort_2 = this.panel_cl.createMovieClipSub("sort_2");
-            this.panel_clSort_3 = this.panel_cl.createMovieClipSub("sort_3");
-
-
-            this.about_cl = this.createMovieClipSub("about_cl");
-            this.about_clClose_bt = this.about_cl.createMCButton("close_bt");
-            this.i2 = 0;
-            while (this.i2 <= 15) {
-                this["about_clSlot_" + this.i2] = this.createMovieClipSub("slot_" + this.i2);
-                this["about_clSlot_" + this.i2 + "Icon_cl"] = this["about_clSlot_" + this.i2].createMovieClipSub("icon_cl");
-                this["about_clSlot_" + this.i2 + "Des_tx"] = this["about_clSlot_" + this.i2].createLabel("des_tx");
-                // this.about_cl["slot_" + this.i2] = this["about_clSlot_" + this.i2];
-                // this.about_cl["slot_" + this.i2].icon_cl = this["about_clSlot_" + this.i2 + "Icon_cl"];
-                // this.about_cl["slot_" + this.i2].des_tx = this["about_clSlot_" + this.i2 + "Des_tx"];
-                this.i2++;
+            this.panel_clZoom_bt = this.panel_cl.createMovieClipSub("zoom_bt");
+            this.panel_clZoom_bt["zoom_bt"] = this.panel_clZoom_bt.createMCButton("zoom_bt");
+            this.panel_clSort_1 = this.panel_cl.createMCButton("sort_1");
+            this.panel_clSort_2 = this.panel_cl.createMCButton("sort_2");
+            this.panel_clSort_3 = this.panel_cl.createMCButton("sort_3");
+            this.i = 1;
+            while (this.i <= 14) {
+                this.panel_cl["card_" + this.i] = this.panel_cl.addMovieClip("card_" + this.i, new card_mc());
+                this.i++;
             }
-
-            this.shop_clZoom_bt = this.shop_cl.createMCButton("zoom_bt");
-            this.shop_clDes_tx = this.shop_cl.createLabel("des_tx");
-            this.shop_clMoney_tx = this.shop_cl.createLabel("money_tx");
-            this.shop_clClose_bt = this.shop_cl.createMCButton("close_bt");
-            this.shop_clSlot_1 = this.shop_cl.createMovieClipSub("slot_1");
-            this.shop_clSlot_2 = this.shop_cl.createMovieClipSub("slot_2");
-            this.shop_clSlot_3 = this.shop_cl.createMovieClipSub("slot_3");
-            this.shop_clSlot_4 = this.shop_cl.createMovieClipSub("slot_4");
-            this.shop_clSlot_5 = this.shop_cl.createMovieClipSub("slot_5");
         }
 
         public init(): void {

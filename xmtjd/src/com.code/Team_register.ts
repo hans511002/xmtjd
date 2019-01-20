@@ -1,13 +1,13 @@
 module com.code {
     export class Team_register extends DataMovieClip {
-        public n1_tx: eui.Label = null;
-        public n2_tx: eui.Label = null;
-        public n3_tx: eui.Label = null;
-        public n4_tx: eui.Label = null;
-        public name_tx: eui.Label = null;
+        public n1_tx: eui.TextInput = null;
+        public n2_tx: eui.TextInput = null;
+        public n3_tx: eui.TextInput = null;
+        public n4_tx: eui.TextInput = null;
+        public name_tx: eui.TextInput = null;
         public play_bt: std.MCButton = null;
         public please_full_cl: std.MovieClipSub = null;
-        please_full_clAuto_bt: std.MovieClipSub = null;
+        please_full_clAuto_bt: std.MCButton = null;
         public sounds_control_cl: Buttons_sounds2 = null;
         _app: App = null;
         ple: boolean = false;
@@ -15,14 +15,18 @@ module com.code {
             super("Team_register");
             this._app = App.getInstance();
             this.please_full_cl = this.createMovieClipSub("please_full_cl");
-            this.please_full_clAuto_bt = this.please_full_cl.createMovieClipSub("auto_bt");
+            this.please_full_clAuto_bt = this.please_full_cl.createMCButton("auto_bt");
+            this.sounds_control_cl = <Buttons_sounds2>this.addMovieClip("sounds_control_cl", new Buttons_sounds2());
             this.play_bt = this.createMCButton("play_bt");
-            this.name_tx = this.createLabel("name_tx");
-            this.n1_tx = this.createLabel("n1_tx");
-            this.n2_tx = this.createLabel("n2_tx");
-            this.n3_tx = this.createLabel("n3_tx");
-            this.n4_tx = this.createLabel("n4_tx");
-
+            this.name_tx = this.createText("name_tx");
+            this.n1_tx = this.createText("n1_tx");
+            this.n2_tx = this.createText("n2_tx");
+            this.n3_tx = this.createText("n3_tx");
+            this.n4_tx = this.createText("n4_tx");
+            this.i = 1;
+            while (this.i <= 5) {
+                this.please_full_cl["arr" + this.i] = this.please_full_cl.createMovieClipSub("arr" + this.i);
+            }
         }
         public init(): void {
             this.addEventListener(egret.Event.ENTER_FRAME, this.game_f, this);

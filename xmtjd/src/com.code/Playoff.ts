@@ -1,7 +1,7 @@
 module com.code {
     export class Playoff extends DataMovieClip {
-        public sc_cl: std.MovieClip = null;
-        public table_cl: std.MovieClip = null;
+        public sc_cl: std.MovieClipSub = null;
+        public table_cl: std.MovieClipSub = null;
         sc_clSlot_1: std.MovieClipSub = null;
         sc_clSlot_2: std.MovieClipSub = null;
         sc_clSlot_1Title1_tx: eui.Label = null;
@@ -17,6 +17,8 @@ module com.code {
         table_clAss_2H2: std.MovieClipSub = null;
         table_clAss_1: std.MovieClipSub = null;
         table_clAss_2: std.MovieClipSub = null;
+        table_clReferee_cl: std.MovieClipSub = null;
+
 
         _app: App = null;
         time: number = 0;
@@ -24,6 +26,7 @@ module com.code {
         public constructor() {
             super("Playoff");
             this._app = App.getInstance();
+            this.sc_cl = this.createMovieClipSub("sc_cl");
             this.sc_clSlot_1 = this.sc_cl.createMovieClipSub("slot_1");
             this.sc_clSlot_2 = this.sc_cl.createMovieClipSub("slot_2");
             this.sc_clSlot_1Title1_tx = this.sc_clSlot_1.createLabel("title1_tx");
@@ -34,7 +37,14 @@ module com.code {
             this.sc_clSlot_2Title2_tx = this.sc_clSlot_2.createLabel("title2_tx");
             this.sc_clSlot_2Line_1 = this.sc_clSlot_2.createMovieClipSub("line_1");
             this.sc_clSlot_2Line_2 = this.sc_clSlot_2.createMovieClipSub("line_2");
+            this.sc_cl.mcMask = this.sc_cl.createMask(std.MCMask.START, "mask", "l3", "l4", "slot_1", "slot_2", "l7", "l8");
 
+            this.table_cl = this.createMovieClipSub("table_cl");
+            this.table_clAss_1 = this.table_cl.createMovieClipSub("ass_1");
+            this.table_clAss_2 = this.table_cl.createMovieClipSub("ass_2");
+            this.table_clReferee_cl = this.table_cl.createMovieClipSub("referee_cl", 1);
+            this.table_clAss_1H2 = this.table_clAss_1.createMovieClipSub("h2");
+            this.table_clAss_2H2 = this.table_clAss_2.createMovieClipSub("h2");
             this.addFrameScript(86, this.frame87);
         }
         public init(): void {

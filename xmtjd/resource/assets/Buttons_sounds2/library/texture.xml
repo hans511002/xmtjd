@@ -1,0 +1,4 @@
+<TextureAtlas name="Buttons_sounds2" imagePath="texture.png">
+ <SubTexture name="Symbol 1890" x="0" y="0" width="23" height="20"/>
+ <SubTexture name="Symbol 1895" x="0" y="21" width="11" height="22"/>
+</TextureAtlas>

@@ -1,0 +1,8 @@
+<TextureAtlas name="Splash" imagePath="texture.png">
+ <SubTexture name="Symbol 1712" x="0" y="0" width="233" height="233"/>
+ <SubTexture name="Symbol 1703" x="235" y="0" width="219" height="219"/>
+ <SubTexture name="Symbol 1700" x="430" y="221" width="66" height="290"/>
+ <SubTexture name="Symbol 1705" x="235" y="221" width="193" height="193"/>
+ <SubTexture name="Symbol 1709" x="0" y="235" width="230" height="29"/>
+ <SubTexture name="Symbol 1713" x="0" y="265" width="71" height="89"/>
+</TextureAtlas>

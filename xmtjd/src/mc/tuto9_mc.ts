@@ -1,6 +1,5 @@
-class tuto9_mc extends std.MovieClip {
+class tuto9_mc extends tuto_mc {
     public constructor() {
-        super(Config.mcRoot, "tuto9_mc", "tuto9_mc");
-
+        super("tuto9_mc");
     }
 }

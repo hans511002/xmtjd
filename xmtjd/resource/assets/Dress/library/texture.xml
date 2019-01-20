@@ -1,0 +1,73 @@
+<TextureAtlas name="Dress" imagePath="texture.png">
+ <SubTexture name="Symbol 3042" x="0" y="0" width="1453" height="696"/>
+ <SubTexture name="Symbol 3044" x="1590" y="611" width="148" height="93"/>
+ <SubTexture name="Symbol 3052" x="1454" y="611" width="135" height="176"/>
+ <SubTexture name="cat_drag_mc" x="2008" y="361" width="39" height="39"/>
+ <SubTexture name="Symbol 2888" x="1953" y="681" width="83" height="27"/>
+ <SubTexture name="Symbol 3084" x="1953" y="653" width="83" height="27"/>
+ <SubTexture name="Symbol 3089" x="1935" y="87" width="98" height="82"/>
+ <SubTexture name="Symbol 3092" x="1935" y="170" width="105" height="53"/>
+ <SubTexture name="Symbol 206" x="2005" y="539" width="41" height="34"/>
+ <SubTexture name="Symbol 3046" x="2004" y="622" width="39" height="12"/>
+ <SubTexture name="Symbol 3047" x="1799" y="607" width="68" height="44"/>
+ <SubTexture name="Symbol 3049" x="1739" y="640" width="55" height="46"/>
+ <SubTexture name="Symbol 3053" x="1267" y="815" width="612" height="288"/>
+ <SubTexture name="Symbol 3056" x="2007" y="475" width="40" height="31"/>
+ <SubTexture name="Symbol 3059" x="2007" y="507" width="40" height="31"/>
+ <SubTexture name="Symbol 3062" x="1927" y="544" width="39" height="31"/>
+ <SubTexture name="Symbol 3071" x="2013" y="289" width="31" height="31"/>
+ <SubTexture name="card_mc" x="2008" y="321" width="39" height="39"/>
+ <SubTexture name="Symbol 2077" x="0" y="697" width="650" height="450"/>
+ <SubTexture name="__dbTextures/Symbol 3103/Layer 19_0" x="652" y="697" width="614" height="389"/>
+ <SubTexture name="Symbol 3095" x="1978" y="347" width="29" height="29"/>
+ <SubTexture name="__dbTextures/Symbol 3103/Layer 2_0" x="1795" y="652" width="99" height="30"/>
+ <SubTexture name="位图 6" x="1739" y="687" width="51" height="34"/>
+ <SubTexture name="__dbTextures/Symbol 3125/Layer 22_0" x="1454" y="288" width="472" height="243"/>
+ <SubTexture name="Symbol 2937" x="1955" y="591" width="48" height="46"/>
+ <SubTexture name="Symbol 2939" x="1927" y="403" width="47" height="57"/>
+ <SubTexture name="Symbol 2941" x="1900" y="634" width="52" height="50"/>
+ <SubTexture name="Symbol 2943" x="1927" y="345" width="50" height="57"/>
+ <SubTexture name="Symbol 3105" x="1454" y="0" width="480" height="287"/>
+ <SubTexture name="Symbol 2945" x="1978" y="377" width="29" height="29"/>
+ <SubTexture name="Symbol 2983" x="1267" y="697" width="136" height="31"/>
+ <SubTexture name="位图 5" x="1801" y="569" width="87" height="36"/>
+ <SubTexture name="Symbol 2931" x="2004" y="635" width="31" height="17"/>
+ <SubTexture name="Symbol 3108" x="1801" y="532" width="93" height="36"/>
+ <SubTexture name="Symbol 3109" x="1927" y="288" width="57" height="56"/>
+ <SubTexture name="Symbol 3111" x="1935" y="224" width="77" height="63"/>
+ <SubTexture name="Symbol 3113" x="1454" y="532" width="346" height="40"/>
+ <SubTexture name="位图 4" x="1454" y="573" width="321" height="36"/>
+ <SubTexture name="__dbTextures/radio/Layer 4_0" x="1868" y="607" width="21" height="21"/>
+ <SubTexture name="__dbTextures/radio/Layer 4_1" x="1777" y="595" width="21" height="21"/>
+ <SubTexture name="位图 8" x="1985" y="317" width="21" height="28"/>
+ <SubTexture name="Symbol 2695" x="1935" y="0" width="102" height="85"/>
+ <SubTexture name="Symbol 3066" x="1777" y="573" width="21" height="21"/>
+ <SubTexture name="Symbol 3073" x="1975" y="407" width="31" height="31"/>
+ <SubTexture name="Symbol 3076" x="1975" y="503" width="31" height="31"/>
+ <SubTexture name="__dbTextures/Symbol 3100/Layer 4_0" x="1792" y="720" width="221" height="46"/>
+ <SubTexture name="Symbol 3098" x="1927" y="461" width="47" height="47"/>
+ <SubTexture name="位图 7" x="1590" y="767" width="209" height="46"/>
+ <SubTexture name="Button/button 3073" x="1975" y="471" width="31" height="31"/>
+ <SubTexture name="Button/button 3076" x="1975" y="439" width="31" height="31"/>
+ <SubTexture name="位图 1" x="1927" y="509" width="46" height="33"/>
+ <SubTexture name="位图 3" x="1795" y="683" width="72" height="35"/>
+ <SubTexture name="Symbol 3120" x="1868" y="629" width="31" height="17"/>
+ <SubTexture name="Symbol 3122" x="1667" y="705" width="52" height="22"/>
+ <SubTexture name="Symbol 2208" x="1967" y="564" width="37" height="26"/>
+ <SubTexture name="Symbol 2210" x="2013" y="224" width="33" height="33"/>
+ <SubTexture name="Symbol 2212" x="2013" y="258" width="32" height="30"/>
+ <SubTexture name="Symbol 2217" x="1985" y="288" width="27" height="28"/>
+ <SubTexture name="Symbol 2219" x="1920" y="605" width="29" height="28"/>
+ <SubTexture name="Symbol 2221" x="2007" y="438" width="36" height="36"/>
+ <SubTexture name="Symbol 2223" x="2008" y="401" width="36" height="35"/>
+ <SubTexture name="Symbol 2225" x="1890" y="593" width="29" height="29"/>
+ <SubTexture name="Symbol 2227" x="2004" y="597" width="33" height="24"/>
+ <SubTexture name="Symbol 2229" x="1895" y="564" width="29" height="28"/>
+ <SubTexture name="Symbol 2231" x="1975" y="535" width="29" height="28"/>
+ <SubTexture name="Symbol 2233" x="1925" y="576" width="29" height="28"/>
+ <SubTexture name="Symbol 2235" x="1739" y="611" width="28" height="28"/>
+ <SubTexture name="Symbol 2237" x="1895" y="532" width="31" height="31"/>
+ <SubTexture name="Symbol 3116" x="1869" y="685" width="76" height="30"/>
+ <SubTexture name="__dbTextures/Symbol 3118/buy_bt_1" x="1590" y="705" width="76" height="30"/>
+ <SubTexture name="位图 2" x="2005" y="575" width="36" height="20"/>
+</TextureAtlas>
