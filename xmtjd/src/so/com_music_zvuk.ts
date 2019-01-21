@@ -1,6 +1,5 @@
-class com_music_zvuk extends egret.Sound {
+class com_music_zvuk extends Sound {
     public constructor() {
-        super();
-        this.load(Config.SoundRoot + "com_music_zvuk.mp3");
+        super(Config.SoundRoot + "com_music_zvuk.mp3");
     }
 }

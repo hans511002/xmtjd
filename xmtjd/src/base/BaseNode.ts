@@ -5,16 +5,14 @@ module std {
 	export var useNodeEvent: boolean = true;// false;
 	export var globalEventNodes = [];
 	export var sortGlobalNode: boolean = false;
-}
 
-module std {
-
-	export var urlMap = {};
-	export var urlLen = 0;
 	export var useNodeEvent: boolean = true;// false;
 	export var globalEventNodes = [];
 	export var sortGlobalNode: boolean = false;
 	export var nodes = {};
+}
+
+module std {
 
 	export function _rnd(r: number) {
 		return Math.random() * r;
@@ -88,7 +86,7 @@ module std {
 	}
 	export async function initResMap() {
 		if (!urlLen) {
-			var resJson = RES.getRes("default.res.json");
+			var resJson = RES.getRes("default.res_json");
 			if (resJson) {
 				var resList = resJson["resources"];
 				for (var i = 0; i < resList.length; i++) {
@@ -96,6 +94,7 @@ module std {
 					var url = item["url"];
 					var name = item["name"];
 					urlMap[url] = name;
+					urlLen++;
 				}
 			} else {
 				await RES.getResByUrl("resource/default.res.json", function (data) {
@@ -105,6 +104,7 @@ module std {
 						var url = item["url"];
 						var name = item["name"];
 						urlMap[url] = name;
+						urlLen++;
 					}
 				}, this, RES.ResourceItem.TYPE_JSON);
 			}
@@ -121,7 +121,7 @@ module std {
 		const factory = dragonBones.EgretFactory.factory;
 		if (!urlMap[fileSke] || !urlMap[fileTex] || !urlMap[filePng]) {
 			initResMap();
-			return null;
+			//return null;
 		}
 		return loadDB(urlMap[fileSke], urlMap[fileTex], urlMap[filePng], armatureName, dragonBonesName);
 	}

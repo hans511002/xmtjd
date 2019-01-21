@@ -27,81 +27,81 @@
 //
 //////////////////////////////////////////////////////////////////////////////////////
 
-class Main extends  std.BaseNode {
-    static mouseX:number;
-    static mouseY:number;
+class Main extends std.BaseNode {
+    static mouseX: number;
+    static mouseY: number;
 
-    static sav:any={"data":{}};//=egret.localStorage ;// static sav:SharedObject = SharedObject.getLocal("SharedObject");
-    static zvukReg:Boolean = true;
-    static _app_is_add:Boolean = false;
-    static lev_sound:Number = 1;
-    static mute_music:Boolean = false;
-    static mute_sfx:Boolean = false;
-    static xray_mode:Boolean = false;
-    static go_to_game:Boolean = false;
-    static first_target:Object;
-    static load_map_zvuk:Number = 1;
-    static muz_map_zvuk_zv:egret.Sound = new egret.Sound();
-    static muz_map_zvuk_can:egret.SoundChannel;
-    static load_elf_zvuk:Number = 1;
-    static muz_elf_zvuk_zv:egret.Sound = new egret.Sound();
-    static muz_elf_zvuk_can:egret.SoundChannel;
-    static load_water_zvuk:Number = 1;
-    static muz_water_zvuk_zv:egret.Sound = new egret.Sound();
-    static muz_water_zvuk_can:egret.SoundChannel;
-    static load_dance_zvuk:Number = 1;
-    static muz_dance_zvuk_zv:egret.Sound = new egret.Sound();
-    static muz_dance_zvuk_can:egret.SoundChannel;
+    static sav: any = { "data": {} };//=egret.localStorage ;// static sav:SharedObject = SharedObject.getLocal("SharedObject");
+    static zvukReg: Boolean = true;
+    static _app_is_add: Boolean = false;
+    static lev_sound: Number = 1;
+    static mute_music: Boolean = false;
+    static mute_sfx: Boolean = false;
+    static xray_mode: Boolean = false;
+    static go_to_game: Boolean = false;
+    static first_target: Object;
+    static load_map_zvuk: Number = 1;
+    static muz_map_zvuk_zv: Sound = null;
+    static muz_map_zvuk_can: egret.SoundChannel = null;
+    static load_elf_zvuk: Number = 1;
+    static muz_elf_zvuk_zv: Sound = null;
+    static muz_elf_zvuk_can: egret.SoundChannel = null;
+    static load_water_zvuk: Number = 1;
+    static muz_water_zvuk_zv: Sound = null;
+    static muz_water_zvuk_can: egret.SoundChannel = null;
+    static load_dance_zvuk: Number = 1;
+    static muz_dance_zvuk_zv: Sound = null;
+    static muz_dance_zvuk_can: egret.SoundChannel = null;
 
-    root:std.MovieClip;
+    root: std.MovieClip;
 
 
-    body_cl:std.MovieClip;
-    card_8:card_mc;
-    cloak_cl:std.MovieClip;
-    foot1_cl:std.MovieClip;
-    foot2_cl:std.MovieClip;
-    h2:std.MovieClip;
-    hand_l_cl:std.MovieClip;
-    hand_r_cl:std.MovieClip;
-    head_cl:std.MovieClip;
-    icon_cl:std.MovieClip;
-    skirt_cl:std.MovieClip;
-    tail_cl:std.MovieClip;
-    wool_cl:std.MovieClip;
-    _App:App;
-    _Preloader:Preloader;
-    
+    body_cl: std.MovieClip;
+    card_8: card_mc;
+    cloak_cl: std.MovieClip;
+    foot1_cl: std.MovieClip;
+    foot2_cl: std.MovieClip;
+    h2: std.MovieClip;
+    hand_l_cl: std.MovieClip;
+    hand_r_cl: std.MovieClip;
+    head_cl: std.MovieClip;
+    icon_cl: std.MovieClip;
+    skirt_cl: std.MovieClip;
+    tail_cl: std.MovieClip;
+    wool_cl: std.MovieClip;
+    _App: com.code.App;
+    _Preloader: com.code.Preloader;
+
     public constructor() {
         super();
         this.addEventListener(egret.Event.ADDED_TO_STAGE, this.onAddToStage, this);
-//addFrameScript(0,this.frame1);
+        this.addEventListener(egret.Event.ENTER_FRAME, this.go_to_game_f, this);
+        //addFrameScript(0,this.frame1);
     }
 
-    go_to_game_f(event:Event):void {
-        var _loc_2:any = null;
-        if (Main.go_to_game)
-        {
+    go_to_game_f(event: Event): void {
+        var _loc_2: any = null;
+        if (Main.go_to_game) {
             this.removeChild(this._Preloader);
-            this.root.gotoAndStop(1,"game");
-            _loc_2 = new App();
-            this. addChild(_loc_2);
+            // this.root.gotoAndStop(1, "game");
+            _loc_2 = new com.code.App();
+            this.addChild(_loc_2);
             _loc_2.init();
             _loc_2.open_new_screen(Main.first_target);
-            }
+        }
     }// end function
-    
+
     private onAddToStage(event: egret.Event) {
-    // onEnter() {
+        // onEnter() {
         // super.onEnter();
         // egret.ticker.$startTick
         egret.ticker.$setFrameRate(30);
-        
+
         egret.lifecycle.addLifecycleListener((context) => {
-        // custom lifecycle plugin
-        context.onUpdate = () => {
-            egret.log(egret.getTimer());
-        }
+            // custom lifecycle plugin
+            context.onUpdate = () => {
+                // egret.log(egret.getTimer());
+            }
         })
 
         egret.lifecycle.onPause = () => {
@@ -114,7 +114,7 @@ class Main extends  std.BaseNode {
 
         this.runGame().catch(e => {
             console.log(e);
-        }) 
+        })
     }
 
     private async runGame() {
@@ -146,20 +146,19 @@ class Main extends  std.BaseNode {
      * Create a game scene
      */
     private createGameScene() {
-        let sky = this.createBitmapByName("bg_jpg");
-        this.addChild(sky);
-        let stageW = this.stage.stageWidth;
-        let stageH = this.stage.stageHeight;
-        sky.width = stageW;
-        sky.height = stageH;
+        this._Preloader = new com.code.Preloader();
+        this.addChild(this._Preloader);
 
-
-
-
+        // let sky = Main.createBitmapByName("bg_jpg");
+        // this.addChild(sky);
+        // let stageW = this.stage.stageWidth;
+        // let stageH = this.stage.stageHeight;
+        // sky.width = stageW;
+        // sky.height = stageH;
 
     }
     //默认样例
-    private test(){
+    private test() {
         let stageW = this.stage.stageWidth;
         let stageH = this.stage.stageHeight;
         let topMask = new egret.Shape();
@@ -169,7 +168,7 @@ class Main extends  std.BaseNode {
         topMask.y = 33;
         this.addChild(topMask);
 
-        let icon = this.createBitmapByName("egret_icon_png");
+        let icon = Main.createBitmapByName("egret_icon_png");
         this.addChild(icon);
         icon.x = 26;
         icon.y = 33;
@@ -205,8 +204,8 @@ class Main extends  std.BaseNode {
         textfield.y = 135;
         this.textfield = textfield;
 
-         const result =   RES.getRes("description_json")
-       this.startAnimation(result);
+        const result = RES.getRes("description_json")
+        this.startAnimation(result);
     }
     /**
      * 根据name关键字创建一个Bitmap对象。name属性请参考resources/resource.json配置文件的内容。

@@ -38,9 +38,9 @@ module com.code {
 
 
         public train_bt: std.MCButton = null;
-        public zone_cards_about: egret.Bitmap = null;
-        public zone_drag: egret.Bitmap = null;
-        public zone_tuto: egret.Bitmap = null;
+        public zone_cards_about: egret.DisplayObjectContainer = null;
+        public zone_drag: egret.DisplayObjectContainer = null;
+        public zone_tuto: egret.DisplayObjectContainer = null;
         _app: App = null;
         _Buttons_sounds: Buttons_sounds = null;
         pause_cl: pause_mc = null;

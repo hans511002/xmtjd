@@ -15,14 +15,14 @@ module com.code {
         deqaf_button: buttons.Deqaf_button;
         name_in_clLol: egret.DisplayObjectContainer;
         public constructor() {
-            super("Preloader");
+            super(Config.mcRoot, "Preloader", "Preloader");
             this._app = App.getInstance();
             this.play_cl = this.createMovieClipSub("play_cl");
             this.skala = this.createMovieClipSub("skala");
             this.name_in_cl = this.createMovieClipSub("name_in_cl");
             this.play_clPlay_cl = this.play_cl.createMCButton("play_cl");
             this.name_in_clLol = this.name_in_cl.getSprite("lol");
-            this.skala.mcMask = this.createMask(std.MCMask.START, "mask", "bg");
+            this.skala.mcMask = this.skala.createMask(std.MCMask.START, "mask", "bg");
 
             this.sponsor_button = <Sponsor_button>this.addMovieClip("sponsor_button", new Sponsor_button());
             this.deqaf_button = <buttons.Deqaf_button>this.addMovieClip("deqaf_button", new buttons.Deqaf_button());

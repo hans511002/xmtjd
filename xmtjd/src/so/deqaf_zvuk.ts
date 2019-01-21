@@ -1,6 +1,5 @@
-class deqaf_zvuk extends egret.Sound {
+class deqaf_zvuk extends Sound {
     public constructor() {
-        super();
-        this.load(Config.SoundRoot + "deqaf_zvuk.mp3");
+        super(Config.SoundRoot + "deqaf_zvuk.mp3");
     }
 }

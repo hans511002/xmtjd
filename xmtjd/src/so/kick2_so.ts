@@ -1,6 +1,5 @@
-class kick2_so extends egret.Sound {
+class kick2_so extends Sound {
     public constructor() {
-        super();
-        this.load(Config.SoundRoot + "kick2_so.mp3");
+        super(Config.SoundRoot + "kick2_so.mp3");
     }
 }

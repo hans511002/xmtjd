@@ -1,6 +1,5 @@
-class fireball_hit_so extends egret.Sound {
+class fireball_hit_so extends Sound {
     public constructor() {
-        super();
-        this.load(Config.SoundRoot + "fireball_hit_so.mp3");
+        super(Config.SoundRoot + "fireball_hit_so.mp3");
     }
 }

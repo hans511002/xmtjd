@@ -1,6 +1,5 @@
-class reload_all_so extends egret.Sound {
+class reload_all_so extends Sound {
     public constructor() {
-        super();
-        this.load(Config.SoundRoot + "reload_all_so.mp3");
+        super(Config.SoundRoot + "reload_all_so.mp3");
     }
 }

@@ -1,6 +1,6 @@
-class armor_all_so extends egret.Sound {
+class armor_all_so extends Sound {
     public constructor() {
-        super();
-        this.load(Config.SoundRoot + "armor_all_so.mp3");
+
+        super(Config.SoundRoot + "armor_all_so.mp3");
     }
 }

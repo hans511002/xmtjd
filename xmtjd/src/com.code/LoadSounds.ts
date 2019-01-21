@@ -1,6 +1,6 @@
 module com.code {
     export class LoadSounds extends egret.Sprite {
-        zvuk_z: egret.Sound = null;
+        zvuk_z: Sound = null;
         zvuk_c: egret.SoundChannel = null;
         zvuk_c_won: egret.SoundChannel = null;
         trans_10: number = 0.0;
@@ -15,7 +15,7 @@ module com.code {
 
         public constructor() {
             super();
-            this.zvuk_z = new egret.Sound();
+            this.zvuk_z = null;
             this.trans_10 = 0.1;
             this.trans_20 = 0.2;
             this.trans_30 = 0.3;

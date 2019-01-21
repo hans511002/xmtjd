@@ -1,6 +1,5 @@
-class aura_power_so extends egret.Sound {
+class aura_power_so extends Sound {
     public constructor() {
-        super();
-        this.load(Config.SoundRoot + "aura_power_so.mp3");
+        super(Config.SoundRoot + "aura_power_so.mp3");
     }
 }
