@@ -115,9 +115,7 @@ class Main extends std.BaseNode {
         this.runGame().catch(e => {
             console.log(e);
         });
-        this.loadResMap().catch(e => {
-            console.log(e);
-        });
+
     }
 
     async loadResMap() {
@@ -143,6 +141,9 @@ class Main extends std.BaseNode {
             this.stage.addChild(loadingView);
             await RES.loadConfig("resource/default.res.json", "resource/");
             await RES.loadGroup("loader", 0, loadingView);
+            this.loadResMap().catch(e => {
+                console.log(e);
+            });
             await RES.loadConfig("resource/default.res.json", "resource/");
             await RES.loadGroup("preload", 0, loadingView);
             // await std.sleep(1000);
