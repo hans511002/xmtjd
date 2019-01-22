@@ -1,7 +1,7 @@
 module com.code.buttons {
     export class Face_button extends std.MovieClip {
         public constructor() {
-            super(Config.mcRoot, "Face_button", "Face_button");
+            super(Config.mcRoot, "Face_button", "buttons");
 
             this.addEventListener(egret.TouchEvent.TOUCH_TAP, this.click_f, this);
         }

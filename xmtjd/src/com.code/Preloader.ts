@@ -5,7 +5,7 @@ module com.code {
         public play_clPlay_cl: std.MCButton = null;
         public skala: std.MovieClipSub = null;
         loaded: number = 0;
-        total: number = 0;
+        total: number = 1;
         rnd_for: number = 0;
         i_in: String = null;
         site_good: number = 0;
@@ -34,55 +34,21 @@ module com.code {
                 this.addEventListener(egret.Event.ADDED_TO_STAGE, this.init, this);
             }
         }
+        static isReadyLoad(): boolean {
+            if (std.isReadyDbFile(Config.mcRoot, "Preloader")
+                && Sponsor_button.isReadyLoad() && buttons.Deqaf_button.isReadyLoad()) {
+                return true;
+            }
+            return false;
+        }
         public init(param1: egret.Event = null): void {
             this.play_cl.$setVisible(false);
-            // loaderInfo.addEventListener(ProgressEvent.PROGRESS, this.progressHandler, this);
-            //this.loaderInfo.addEventListener(egret.Event.COMPLETE, this.startGame_f, this);
+            // this.loaderInfo.addEventListener(egret.ProgressEvent.PROGRESS, this.progressHandler, this);
+            // this.loaderInfo.addEventListener(egret.Event.COMPLETE, this.startGame_f, this);
             this.addEventListener(egret.Event.ENTER_FRAME, this.preloader_f, this);
             this.init_cpm();
         }
-        public add_armor_ads(): any {
-            var abs: any = undefined;
-            var loadComplete: Function = null;
-            loadComplete = function (param1: egret.Event): void {
-                abs = param1.currentTarget.content;
-                this.name_in_cl.lol.addChild(abs);
-                abs.show({
-                    "x": -150,
-                    "y": -100
-                });
-            };
-            var abs_url: String = "./ABS.swf";
-            // Security.allowDomain(abs_url);
-            // var urlRequest: URLRequest = new URLRequest(abs_url);
-            // var loader: Loader = new Loader();
-            // loader.contentLoaderInfo.addEventListener(egret.Event.COMPLETE, loadComplete, this);
-            // loader.load(urlRequest);
-        }
         public init_cpm(): any {
-            var _loc1_: number = NaN;
-            var _loc2_: string = "";//this.stage.loaderInfo.loaderURL;
-            var _loc3_: number = _loc2_.indexOf("://") + 3;
-            var _loc4_: number = _loc2_.indexOf("/", _loc3_);
-            var _loc5_: string = _loc2_.substring(_loc3_, _loc4_);
-            var _loc6_: number = _loc5_.lastIndexOf(".") - 1;
-            var _loc7_: number = _loc5_.lastIndexOf(".", _loc6_) + 1;
-            _loc5_ = _loc5_.substring(_loc7_, _loc5_.length);
-            var _loc8_: any = [];
-            _loc8_.push("www.kongregate.com");
-            _loc8_.push("kongregate.com");
-            _loc8_.push("newgrounds.com");
-            _loc8_.push("www.newgrounds.com");
-            _loc8_.push("uploads.ungrounded.net");
-            _loc8_.push("ungrounded.net");
-            _loc8_.push("ngfiles.com");
-
-            while (_loc1_ < _loc8_.length) {
-                if (_loc5_ == _loc8_[_loc1_]) {
-                    this.site_good = 1;
-                }
-                _loc1_++;
-            }
             if (this.site_good == 0) {
                 this.name_in_cl.gotoAndStop(1);
                 this.add_armor_ads();
@@ -92,12 +58,50 @@ module com.code {
                 this.play_cl.$setY(297);
             }
         }
-        public progressHandler(param1: ProgressEvent): void {
-            this.loaded = param1.loaded;//.bytesLoaded;
-            this.total = param1.total;//.bytesTotal;
+        //load ads
+        public add_armor_ads(): any {
+            var abs: any = undefined;
+            // var loadComplete: Function = null;
+            // loadComplete = function (this: Preloader, param1: egret.Event): void {
+            //     abs = param1.currentTarget.content;
+            //     this.name_in_clLol.addChild(abs);
+            //     abs.show({
+            //         "x": -150,
+            //         "y": -100
+            //     });
+            // };
+            var abs_url: string = "./ABS.swf";
+            // egret.Security.allowDomain(abs_url);
+            var urlRequest: egret.URLRequest = new egret.URLRequest(abs_url);
+            var loader: egret.URLLoader = new egret.URLLoader();
+            loader.dataFormat = egret.URLLoaderDataFormat.BINARY;
+            loader.addEventListener(egret.Event.COMPLETE, this.onLoadComplete, this);
+            loader.addEventListener(egret.IOErrorEvent.IO_ERROR, this.onLoadError, this);
+            loader.load(urlRequest);
+        }
+
+        private onLoadComplete(event: egret.Event): void {
+            egret.log("onLoadComplete");
+            var loader: egret.URLLoader = <egret.URLLoader>event.target;
+            var abs = loader.data;
+            this.name_in_clLol.addChild(abs);
+            abs.show({
+                "x": -150,
+                "y": -100
+            });
+        }
+
+        private onLoadError(): void {
+            egret.log("onLoadError");
+        }
+
+        // public progressHandler(param1: ProgressEvent): void {
+        public progressHandler(loaded: number, total: number): void {
+            this.loaded = loaded;//.bytesLoaded;
+            this.total = total;//.bytesTotal;
         }
         public preloader_f(param1: egret.Event): any {
-            this.skala.gotoAndStop(Math.floor((this.total - (this.total - this.loaded)) * 100 / this.total));
+            this.skala.gotoAndStop(Math.floor(this.loaded * 100 / this.total));
             if (Math.floor(this.loaded / this.total * 100) >= 100) {
                 this.load_end();
             }

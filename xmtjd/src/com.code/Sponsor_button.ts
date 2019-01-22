@@ -10,5 +10,11 @@ module com.code {
         public click_f(param1: egret.TouchEvent): any {
             // navigateToURL(new URLRequest("http://armor.ag/MoreGames"),"_blank");
         }
+        static isReadyLoad(): boolean {
+            if (std.isReadyDbFile(Config.mcRoot, "Sponsor_button")) {
+                return true;
+            }
+            return false;
+        }
     }
 }

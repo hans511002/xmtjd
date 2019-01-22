@@ -1,7 +1,7 @@
 module com.code.buttons {
     export class Deqaf_button extends std.MovieClip {
         public constructor() {
-            super(Config.mcRoot, "Deqaf_button", "Deqaf_button");
+            super(Config.mcRoot, "Deqaf_button", "buttons");
             this.addFrameScript(0, this.frame1);
             this.addEventListener(egret.TouchEvent.TOUCH_TAP, this.click_f, this);
         }
@@ -11,6 +11,13 @@ module com.code.buttons {
         }
         public frame1(): any {
             this.stop();
+        }
+
+        static isReadyLoad(): boolean {
+            if (std.isReadyDbFile(Config.mcRoot, "buttons")) {
+                return true;
+            }
+            return false;
         }
     }
 }

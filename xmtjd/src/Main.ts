@@ -118,20 +118,41 @@ class Main extends std.BaseNode {
     }
 
     private async runGame() {
+        console.log(egret.getTimer());
+        await this.sleep(2000);
+        console.log(egret.getTimer());
+
         await this.loadResource()
         await platform.login();
         this.createGameScene();
         const userInfo = await platform.getUserInfo();
         console.log(userInfo);
-
+    }
+    async   sleep(ms) {
+        console.log('Hello')
+        await this._sleep(ms);
+        console.log('world!')
     }
 
+    _sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms))
+    }
     private async loadResource() {
         try {
-            const loadingView = new LoadingUI();
+            console.log(egret.getTimer());
+            await std.sleep(2000);
+            console.log(egret.getTimer());
+
+            const loadingView = new LoadingUI(this);
             this.stage.addChild(loadingView);
             await RES.loadConfig("resource/default.res.json", "resource/");
+            await RES.loadGroup("loader", 0, loadingView);
+
+            await RES.loadConfig("resource/default.res.json", "resource/");
             await RES.loadGroup("preload", 0, loadingView);
+            while (loadingView.getProgress() < 100) {
+                this.sleep(10);
+            }
             this.stage.removeChild(loadingView);
         }
         catch (e) {
@@ -146,8 +167,7 @@ class Main extends std.BaseNode {
      * Create a game scene
      */
     private createGameScene() {
-        this._Preloader = new com.code.Preloader();
-        this.addChild(this._Preloader);
+
 
         // let sky = Main.createBitmapByName("bg_jpg");
         // this.addChild(sky);

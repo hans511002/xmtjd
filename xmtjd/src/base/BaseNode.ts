@@ -17,6 +17,13 @@ module std {
 	export function _rnd(r: number) {
 		return Math.random() * r;
 	}
+	export function _sleep(ms) {
+		return new Promise((resolve) => setTimeout(resolve, ms));
+	}
+	export async function sleep(ms) {
+		await _sleep(ms);
+	}
+
 	export function getNodePath(node: egret.DisplayObject): string {
 		var par: egret.DisplayObject = node.parent;
 		var path: string = node.name;
@@ -114,16 +121,36 @@ module std {
 		var rootPath = _rootPath;
 		if (rootPath.length && rootPath.charAt(rootPath.length - 1) != '/')
 			rootPath += "/";
-		var dbName = dragonBonesName == "" ? armatureName : dragonBonesName;
+		var dbName = dragonBonesName ? dragonBonesName : armatureName;
 		var fileSke = rootPath + dbName + "/" + dbName + "_ske.json";
 		var fileTex = rootPath + dbName + "/" + dbName + "_tex.json";
 		var filePng = rootPath + dbName + "/" + dbName + "_tex.png";
 		const factory = dragonBones.EgretFactory.factory;
 		if (!urlMap[fileSke] || !urlMap[fileTex] || !urlMap[filePng]) {
 			initResMap();
-			//return null;
+			if (!urlMap[fileSke] || !urlMap[fileTex] || !urlMap[filePng]) {
+				return null;
+			}
 		}
 		return loadDB(urlMap[fileSke], urlMap[fileTex], urlMap[filePng], armatureName, dragonBonesName);
+	}
+	export function isReadyDbFile(_rootPath: string, dragonBonesName: string): boolean {
+		var rootPath = _rootPath;
+		var dbName = dragonBonesName;
+		if (rootPath.length && rootPath.charAt(rootPath.length - 1) != '/')
+			rootPath += "/";
+		var fileSke = rootPath + dbName + "/" + dbName + "_ske.json";
+		var fileTex = rootPath + dbName + "/" + dbName + "_tex.json";
+		var filePng = rootPath + dbName + "/" + dbName + "_tex.png";
+		const factory = dragonBones.EgretFactory.factory;
+		if (urlMap[fileSke] && urlMap[fileTex] && urlMap[filePng]) {
+			if (RES.getRes(urlMap[fileSke]) && RES.getRes(urlMap[fileTex]) && RES.getRes(urlMap[filePng])) {
+				return true;
+			}
+		} else {
+			initResMap();
+		}
+		return false;
 	}
 	export function loadDB(fileSke: string, fileTex: string, filePng: string, armatureName: string, dragonBonesName?: string): dragonBones.EgretArmatureDisplay {
 		var dbName = dragonBonesName == "" ? armatureName : dragonBonesName;
@@ -456,6 +483,7 @@ module std {
 		// 	this.display.$setRotation(r);
 		// }
 		// initPos():void{};
+		onBeforInit: Function = null;
 		reinit(): boolean {      //MovieClipSubBase
 			if (!this.slot) {
 				if (this.mc.getArmature()) {
@@ -477,6 +505,9 @@ module std {
 				this.isReady = true;
 				if (dis instanceof egret.Bitmap) {
 					if (!this.display) {
+						if (this.onBeforInit) {
+							this.onBeforInit.call(this, dis);
+						}
 						dis = std.replaceSlotToSprite(this, dis);
 						this.display = <egret.DisplayObjectContainer>dis;
 						if (!(this instanceof MovieClip))
@@ -493,6 +524,9 @@ module std {
 					else {
 						if (this.display != this && !(this instanceof MovieClipSub))
 							this.display.removeChild(thsi);
+						if (this.onBeforInit) {
+							this.onBeforInit.call(this, dis);
+						}
 						dis = std.replaceSlotToSprite(this, dis);
 						this.display = <egret.DisplayObjectContainer>dis;
 						if (!(this instanceof MCCase) && !(this instanceof MCUI))
@@ -546,7 +580,6 @@ module std {
 			this.isReady = false;
 			return false;
 		}
-
 	}
 	function convertToNode(mcbs: MovieClipSubBase): MCUI | MCCase | MovieClip | MovieClipSub | MovieClipSubBase {
 		if (!mcbs) return mcbs;
@@ -994,6 +1027,7 @@ module std {
 		//         MovieClip(const string &  rootPath, const string &  armName, const string &  dbName, const string &  defAniName = "");
 		public constructor(rootPath?: string, armName?: string, dbName?: string, defAniName: string = "") {
 			super();
+			// console.assert(chk, "");
 			this.rootPath = rootPath;
 			this.armName = armName;
 			this.dbName = dbName;
@@ -1103,19 +1137,29 @@ module std {
 			super.$setVisible(v);
 			super.setVisible(v);
 		};
+		beforInit(dis: egret.DisplayObject) {
+			let name = dis.name;
+			var _armName: string = this.armName;
+			if (_armName.length == 0)
+				_armName = this.display.name;
+			//必需先初始化db 再加入节点
+			this.initCnt(this.rootPath, _armName, this.dbName, this.defAniName);//display=_armName
+		}
 		// 		virtual bool reinit();
 		reinit(): boolean {       //MovieClip
 			var isReinit: boolean = this.display != null;
 			this.isReady = false;
+			this.onBeforInit = this.beforInit;
 			if (this.mc && super.reinit()) {
-				var _armName: string = this.armName;
-				if (_armName.length == 0)
-					_armName = this.display.name;
-				//必需先初始化db 再加入节点
-				this.initCnt(this.rootPath, _armName, this.dbName, this.defAniName);//display=_armName
-				// this.defAniName = this.getArmature()._armatureData.defaultAnimation.name;
+				// var _armName: string = this.armName;
+				// if (_armName.length == 0)
+				// 	_armName = this.display.name;
+				// //必需先初始化db 再加入节点
+				// this.initCnt(this.rootPath, _armName, this.dbName, this.defAniName);//display=_armName
+				// // this.defAniName = this.getArmature()._armatureData.defaultAnimation.name;
 				this.reinitSubMcbs(true);
-				this.display.addChild(this);
+				if (this != this.display)
+					this.display.addChild(this);
 				// std.changeAnchorPoint(this, 0.5,0.5);
 				// this.setPosition(this.x+this.disPos.x,this.y+this.disPos.y);
 				if (this.mcMask) {
@@ -1848,7 +1892,7 @@ module std {
 			if (listenType != dragonBones.EventObject.START && listenType != dragonBones.EventObject.FADE_IN && listenType != dragonBones.EventObject.FADE_IN_COMPLETE
 				&& listenType != dragonBones.EventObject.FRAME_EVENT && listenType != egret.Event.ADDED_TO_STAGE && listenType != egret.Event.ADDED
 				&& listenType != egret.Event.RENDER && listenType != egret.Event.CHANGE && listenType != egret.Event.ENTER_FRAME) {
-				listenType = dragonBones.EventObject.START;
+				this.listenType = dragonBones.EventObject.START;
 			}
 			this.resetMask();
 		}

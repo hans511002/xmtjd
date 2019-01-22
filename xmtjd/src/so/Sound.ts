@@ -3,9 +3,9 @@ class Sound {
 	type: string;
 	length: number;
 	public constructor(file: string) {
-		this.so = RES.getRes(file);// new egret.Sound();
+		this.so = new egret.Sound();// RES.getRes(file);// new egret.Sound();
 		if (file) {
-			//	this.load(file);
+			this.load(file);
 		}
 	}
 	load(url: string): void {
