@@ -29,8 +29,7 @@ module com.code {
 
             if (this.stage) {
                 this.init();
-            }
-            else {
+            } else {
                 this.addEventListener(egret.Event.ADDED_TO_STAGE, this.init, this);
             }
         }

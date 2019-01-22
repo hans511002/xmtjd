@@ -4,6 +4,7 @@ module com.code {
         public constructor() {
             super(Config.mcRoot, "Sponsor_button", "Sponsor_button");
             this.armor_bt = this.createMCButton("armor_bt");
+            // this.afterOnEnter
             this.armor_bt.onclick = this.click_f;
             // this.addEventListener(egret.TouchEvent.TOUCH_TAP, this.click_f, this);
         }

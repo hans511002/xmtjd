@@ -7,10 +7,10 @@ module com.code {
         s708S709: std.MovieClipSub = null;
         oldFrameRate: number;
         public constructor() {
-            super("Deqaf");
+            super(Config.mcRoot, "Deqaf");
             this._app = App.getInstance();
             this.splash_deqaf_cl = this.createMovieClipSub("splash_deqaf_cl");
-            this.splash_deqaf_cl.mcMask = this.splash_deqaf_cl.createMask(dragonBones.EventObject.START, "massk", "bg");
+            this.splash_deqaf_cl.mcMask = this.splash_deqaf_cl.createMask(dragonBones.EventObject.START, "mask", "bg");
             this.s708 = this.createMovieClipSub("s708");
             this.s708S709 = this.s708.createMovieClipSub("s709");
         }

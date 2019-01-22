@@ -51,7 +51,7 @@ class LoadingUI extends egret.Sprite implements RES.PromiseTaskReporter {
             if (!this.main._Preloader) {
                 if (com.code.Preloader.isReadyLoad()) {
                     this.main._Preloader = new com.code.Preloader();
-                    this.addChild(this.main._Preloader);
+                    this.main.addChild(this.main._Preloader);
                     this.removeChild(this.textField);
                     this.textField = null;
                 }

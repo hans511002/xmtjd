@@ -7,7 +7,7 @@ module com.code {
         public music_btMusic_bt: std.MCButton = null;
         _app: App = null;
         public constructor() {
-            super("Buttons_sounds");
+            super(Config.mcRoot, "Buttons_sounds", "Buttons_sounds");
             this._app = App.getInstance();
             this.music_bt = this.createMovieClipSub("music_bt");
             this.sfx_bt = this.createMovieClipSub("sfx_bt");

@@ -3,5 +3,5 @@ class Config {
 	}
 	static mcRoot: string = "assets/";
 	static catRoot: string = "assets/cat/";
-	static SoundRoot: string = "sound/";
+	static SoundRoot: string = "sounds/";
 }

@@ -27,6 +27,13 @@ module com.code {
             return;
         }// end function
 
+        public load_by_url(url) {
+            if (!Main.mute_sfx) {
+                this.zvuk_z = std.getRes(url);// new Sound(param1);
+                this.zvuk_c = this.zvuk_z.play();
+            }
+            return;
+        }// end function
         public load_by_name(param1) {
             if (!Main.mute_sfx) {
                 this.zvuk_z = new param1();

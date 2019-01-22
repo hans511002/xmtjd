@@ -82,12 +82,16 @@ class Main extends std.BaseNode {
     go_to_game_f(event: Event): void {
         var _loc_2: any = null;
         if (Main.go_to_game) {
-            this.removeChild(this._Preloader);
+            if (this._Preloader) {
+                this.removeChild(this._Preloader); this._Preloader = null;
+            }
             // this.root.gotoAndStop(1, "game");
             _loc_2 = new com.code.App();
             this.addChild(_loc_2);
             _loc_2.init();
             _loc_2.open_new_screen(Main.first_target);
+            this.removeEventListener(egret.Event.ENTER_FRAME, this.go_to_game_f, this);
+
         }
     }// end function
 
@@ -131,13 +135,15 @@ class Main extends std.BaseNode {
         this.createGameScene();
         const userInfo = await platform.getUserInfo();
         console.log(userInfo);
+        // let so1701 = new com.code.LoadSounds();
+        // so1701.load_by_url(Config.SoundRoot + "1701.mp3");
     }
     private async loadResource() {
         try {
             // console.log(egret.getTimer());
             // await std.sleep(2000);
             // console.log(egret.getTimer());
-            const loadingView = new LoadingUI();
+            const loadingView = new LoadingUI(this);
             this.stage.addChild(loadingView);
             await RES.loadConfig("resource/default.res.json", "resource/");
             await RES.loadGroup("loader", 0, loadingView);
@@ -148,10 +154,10 @@ class Main extends std.BaseNode {
             await RES.loadGroup("preload", 0, loadingView);
             // await std.sleep(1000);
             this.stage.removeChild(loadingView);
-            console.log("load com");
-            this.sponsor_button = new com.code.Sponsor_button();
-            this.addChild(this.sponsor_button);
-            this.sponsor_button.setPosition(100, 100);
+            // console.log("load com");
+            // this.sponsor_button = new com.code.Sponsor_button();
+            // this.addChild(this.sponsor_button);
+            // this.sponsor_button.setPosition(200, 100);
         }
         catch (e) {
             console.error(e);

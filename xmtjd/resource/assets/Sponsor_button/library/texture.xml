@@ -1,0 +1,11 @@
+<TextureAtlas name="Sponsor_button" imagePath="texture.png">
+ <SubTexture name="Symbol 1700" x="419" y="0" width="66" height="290"/>
+ <SubTexture name="Symbol 1950" x="0" y="131" width="418" height="130"/>
+ <SubTexture name="Symbol 1705" x="0" y="393" width="193" height="193"/>
+ <SubTexture name="Symbol 1713" x="407" y="291" width="71" height="89"/>
+ <SubTexture name="Symbol 1949" x="195" y="428" width="261" height="34"/>
+ <SubTexture name="Symbol 1841" x="0" y="0" width="418" height="130"/>
+ <SubTexture name="Symbol 1840" x="0" y="588" width="320" height="34"/>
+ <SubTexture name="Symbol 1875" x="195" y="393" width="262" height="34"/>
+ <SubTexture name="Symbol 1876" x="0" y="262" width="406" height="130"/>
+</TextureAtlas>

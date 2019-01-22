@@ -138,6 +138,12 @@ module std {
 		// });
 		return armatureDisplay;
 	}
+	export function getRes(url: string): any {
+		if (urlMap[url]) {
+			return RES.getRes(urlMap[url]);
+		}
+		return null;
+	}
 	export function isReadyDbFile(_rootPath: string, dragonBonesName: string): boolean {
 		let rootPath = _rootPath;
 		let dbName = dragonBonesName;
@@ -178,7 +184,7 @@ module std {
 		factory.removeDragonBonesData(name, disposeData);
 		factory.removeTextureAtlasData(name, disposeData);
 	}
-	export function drawRange(node: egret.DisplayObject, color: number): void {
+	export function drawRange(node: egret.DisplayObject, color: number = 0xFF0000): void {
 		var w: number = node.width > 0 ? node.width : 30;
 		var h: number = node.height > 0 ? node.height : 30;
 		var x: number = node.x; egret.Sprite
@@ -442,51 +448,6 @@ module std {
 		getParentMC(): MC {
 			return this.mc;
 		}
-		// getDisPosition():egret.Point{
-		// 	var x:number = this.bone.origin.x;
-		// 	var y:number = this.bone.origin.y;
-		// 	var x1:number = this.slot.origin.x;
-		// 	var y1:number = this.slot.origin.y;
-		// 	x += x1;
-		// 	y += y1;
-		// 	var dis:egret.DisplayObjectContainer = <egret.DisplayObjectContainer>this.slot.display;
-		// 	if (this.root){
-		// 		var orgin:dragonBones.Transform = this.root.origin;
-		// 		y = -(orgin.y + y);
-		// 	}
-		// 	else{
-		// 		y = -(y);
-		// 	}
-		// 	this.disPos.x = x;
-		// 	this.disPos.y = y;// = disPar.convertToNodeSpaceAR(Vec2(x, y));
-		// 	return this.disPos;
-		// }
-		// getDisArPos():egret.Point{
-		// 	var thisPos:egret.Point=new egret.Point(0,0);
-		// 	//return  thisPos;
-		// 	if (!(this instanceof MCCase) && !(this instanceof MCUI))//&& !ISTYPE(MovieClip, this)
-		// 	{
-		// 		var dis:egret.DisplayObjectContainer = <egret.DisplayObjectContainer>this.slot.display;
-		// 		std.setAnchorPoint(dis, 0.5, 0.5);
-		// 		thisPos.x=dis.$anchorOffsetX;
-		// 		thisPos.y=dis.$anchorOffsetY;
-		// 	}
-		// 	return  thisPos; 
-		// }
-		// setDisScale():void{
-		// 	var scx:number = this.slot.origin.scaleX * this.bone.origin.scaleX;
-		// 	if (this.root) 
-		// 		scx *= this.root.origin.scaleX;
-		// 	this.display.$setScaleX(scx);
-		// 	var scy:number =this. slot.origin.scaleY * this.bone.origin.scaleY;
-		// 	if (this.root) 
-		// 		scy *= this.root.origin.scaleY;
-		// 	this.display.$setScaleY(scy);
-		// 	var r:number = this.slot.origin.rotation * this.bone.origin.rotation;
-		// 	if (this.root) r *= this.root.origin.rotation;
-		// 	this.display.$setRotation(r);
-		// }
-		// initPos():void{};
 		onBeforInit: Function = null;
 		reinit(): boolean {      //MovieClipSubBase
 			if (!this.slot) {
@@ -1031,13 +992,15 @@ module std {
 		//         MovieClip(const string &  rootPath, const string &  armName, const string &  dbName, const string &  defAniName = "");
 		public constructor(rootPath?: string, armName?: string, dbName?: string, defAniName: string = "") {
 			super();
-			// console.assert(chk, "");
+			let chk1 = rootPath ? true : false && armName ? true : false;
+			let chk2 = rootPath ? false : true && armName ? false : true;
+			console.assert(chk1 || chk2, "");
 			this.rootPath = rootPath;
 			this.armName = armName;
-			this.dbName = dbName;
+			this.dbName = dbName ? dbName : armName;
 			this.defAniName = defAniName;
 			if (this.armName && this.dbName)
-				this.initCnt(rootPath, armName, dbName, defAniName);
+				this.initCnt(rootPath, this.armName, this.dbName, this.defAniName);
 		}
 		setMcInit(mc: MC, slotName: string, rootPath?: string, dbName?: string, armName: string = "", defAniName: string = "", delay: boolean = false, reinit: number = 0) {
 			this.mc = mc;
@@ -1046,8 +1009,8 @@ module std {
 			this.dbName = dbName;
 			this.slotName = slotName;
 			this.setName(slotName);
-			if (mc)
-				this.addMCbs(mc, reinit);
+			if (this.mc)
+				this.addMCbs(this.mc, reinit);
 			if (!delay)
 				this.reinit();
 		}
@@ -1175,7 +1138,7 @@ module std {
 				if (this.mcMask) {
 					this.mcMask.resetMask();
 				}
-				std.drawRange(this.display, 0xffff00);
+				// std.drawRange(this.display, 0xffff00);
 				if (this.bindListenType) {
 					var type: number = this.bindListenType;
 					this.bindListenType = 0;
@@ -1587,7 +1550,6 @@ module std {
 				return false;
 			this.arm = this.slot.childArmature;
 			if (this.arm) {
-				// 
 				var oldDis: egret.DisplayObjectContainer = this.display;
 				this.display = <egret.DisplayObjectContainer>this.slot.display;
 				if (this.display) {
@@ -1638,7 +1600,7 @@ module std {
 		if (e.type == egret.TouchEvent.TOUCH_BEGIN) {
 			this.gotoAndStop(3);
 		} else if (e.type == egret.TouchEvent.TOUCH_END) {
-			this.gotoAndStop(4);
+			this.gotoAndStop(1);
 			if (this.onclick) {
 				this.onclick.call(this, e);
 			}
@@ -1653,6 +1615,7 @@ module std {
 			super(rootPath, armName, dbName, defAniName);
 			if (this.isReady && this.getArmature().getSlot("label"))
 				this.label = this.createLabel("label");
+			this.container.$setTouchEnabled(true);
 			this.container.addEventListener(egret.TouchEvent.TOUCH_BEGIN, buttonTouchHandler, this);
 			this.container.addEventListener(egret.TouchEvent.TOUCH_END, buttonTouchHandler, this);
 			this.container.addEventListener(egret.TouchEvent.TOUCH_MOVE, buttonTouchHandler, this);
@@ -1660,6 +1623,7 @@ module std {
 		}
 		reinit(): boolean {//Button
 			if (super.reinit() && this.isReady) {
+				this.container.$setTouchEnabled(true);
 				this.container.addEventListener(egret.TouchEvent.TOUCH_BEGIN, buttonTouchHandler, this);
 				this.container.addEventListener(egret.TouchEvent.TOUCH_END, buttonTouchHandler, this);
 				this.container.addEventListener(egret.TouchEvent.TOUCH_MOVE, buttonTouchHandler, this);
@@ -1667,6 +1631,7 @@ module std {
 			return this.isReady;
 		}
 		removeListener() {
+			this.container.$setTouchEnabled(false);
 			this.container.removeEventListener(egret.TouchEvent.TOUCH_BEGIN, buttonTouchHandler, this);
 			this.container.removeEventListener(egret.TouchEvent.TOUCH_END, buttonTouchHandler, this);
 			this.container.removeEventListener(egret.TouchEvent.TOUCH_MOVE, buttonTouchHandler, this);
@@ -1684,14 +1649,16 @@ module std {
 		//MCButton
 		reinit(): boolean {
 			if (super.reinit() && this.isReady) {
+				this.container.$setTouchEnabled(true);
 				this.container.addEventListener(egret.TouchEvent.TOUCH_BEGIN, buttonTouchHandler, this);
 				this.container.addEventListener(egret.TouchEvent.TOUCH_END, buttonTouchHandler, this);
 				this.container.addEventListener(egret.TouchEvent.TOUCH_MOVE, buttonTouchHandler, this);
-				this.drawRange();
+				// std.drawRange(this.container);
 			}
 			return this.isReady;
 		}
 		removeListener() {
+			this.container.$setTouchEnabled(false);
 			this.container.removeEventListener(egret.TouchEvent.TOUCH_BEGIN, buttonTouchHandler, this);
 			this.container.removeEventListener(egret.TouchEvent.TOUCH_END, buttonTouchHandler, this);
 			this.container.removeEventListener(egret.TouchEvent.TOUCH_MOVE, buttonTouchHandler, this);
@@ -1923,7 +1890,7 @@ module std {
 			}
 			this.bitMapSlotNames.forEach(element => {
 				let slot: dragonBones.Slot = arm.getSlot(element);
-				if (!this.maskSlot) {
+				if (!slot) {
 					throw "armature " + arm.name + " not exists slot[" + element + "]";
 				}
 				this.bitMapSlots.push(slot);
@@ -1953,11 +1920,13 @@ module std {
 		}
 		maskTicker(timeStamp: number) {
 			let tmask: egret.Bitmap = this.maskImg;
-			if (!this.isImg) {
+			if (!this.isImg) {//非固定图片
 				tmask = this.maskSlot.display;
 			}
+			if (!tmask) return;
 			this.bitMapSlots.forEach(bslot => {
 				let bg: egret.Bitmap | egret.Sprite = bslot.display;
+				if (!bg) return;
 				if (bg instanceof egret.Sprite) {
 					let sprite = <egret.Sprite>bg;
 					if (tmask) {

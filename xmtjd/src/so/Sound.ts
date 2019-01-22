@@ -2,16 +2,26 @@ class Sound {
 	so: egret.Sound;
 	type: string;
 	length: number;
-	public constructor(file: string) {
-		this.so = new egret.Sound();// RES.getRes(file);// new egret.Sound();
-		if (file) {
-			this.load(file);
+	public constructor(file: string, play?: boolean, startTime?: number, loops?: number) {
+		this.so = RES.getRes(file);
+		if (!this.so) {
+			this.so = new egret.Sound();// RES.getRes(file);// new egret.Sound();
+			// this.load(file);
+			RES.getResByUrl("resource/" + file, function (data, url) {
+				this.so = data;
+				if (play) {
+					this.so.play(startTime, loops);
+				}
+			}, this);
+		} else if (play) {
+			this.so.play(startTime, loops);
 		}
 	}
 	load(url: string): void {
 		this.so.load(url);
 	}
 	play(startTime?: number, loops?: number): egret.SoundChannel {
+
 		return this.so.play(startTime, loops);
 	}
 	close(): void {

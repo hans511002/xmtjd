@@ -6,7 +6,7 @@ module com.code {
         age3: number = 0;
         age4: number = 0;
         public constructor() {
-            super("FPS");
+            super(Config.mcRoot, "FPS");
             this.da = this.createLabel("da");
             this.addEventListener(egret.Event.ENTER_FRAME, this.fps_test, this);
         }
