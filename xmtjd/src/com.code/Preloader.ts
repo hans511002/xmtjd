@@ -113,7 +113,8 @@ module com.code {
             this.skala.gotoAndStop(100);
             this.play_cl.$setVisible(true);
             this.play_cl.gotoAndPlay(2);
-            this.play_cl.addEventListener(egret.TouchEvent.TOUCH_TAP, this.bt_play, this);
+            this.play_clPlay_cl.onclick = this.bt_play;
+            this.play_clPlay_cl.container.addEventListener(egret.TouchEvent.TOUCH_TAP, this.bt_play, this);
             this.removeEventListener(egret.Event.ENTER_FRAME, this.preloader_f, this);
             //loaderInfo.removeEventListener(egret.Event.COMPLETE, this.startGame_f, this);
             //loaderInfo.removeEventListener(ProgressEvent.PROGRESS, this.progressHandler, this);

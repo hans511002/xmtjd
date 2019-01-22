@@ -8,6 +8,8 @@ module com.code {
             // this.addEventListener(egret.TouchEvent.TOUCH_TAP, this.click_f, this);
         }
         public click_f(param1: egret.TouchEvent): any {
+            console.log(egret.getTimer());
+            egret.log(param1);
             // navigateToURL(new URLRequest("http://armor.ag/MoreGames"),"_blank");
         }
         static isReadyLoad(): boolean {

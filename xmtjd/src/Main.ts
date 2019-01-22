@@ -97,13 +97,13 @@ class Main extends std.BaseNode {
         // egret.ticker.$startTick
         egret.ticker.$setFrameRate(30);
 
+
         egret.lifecycle.addLifecycleListener((context) => {
             // custom lifecycle plugin
             context.onUpdate = () => {
                 // egret.log(egret.getTimer());
             }
-        })
-
+        });
         egret.lifecycle.onPause = () => {
             egret.ticker.pause();
         }
@@ -114,51 +114,49 @@ class Main extends std.BaseNode {
 
         this.runGame().catch(e => {
             console.log(e);
-        })
+        });
+        this.loadResMap().catch(e => {
+            console.log(e);
+        });
+    }
+
+    async loadResMap() {
+        await std.sleep(2000);
+        console.log("beging load res:" + egret.getTimer());
+        await std.initResMap();
+        console.log("end load res:" + egret.getTimer());
     }
 
     private async runGame() {
-        console.log(egret.getTimer());
-        await this.sleep(2000);
-        console.log(egret.getTimer());
-
         await this.loadResource()
         await platform.login();
         this.createGameScene();
         const userInfo = await platform.getUserInfo();
         console.log(userInfo);
     }
-    async   sleep(ms) {
-        console.log('Hello')
-        await this._sleep(ms);
-        console.log('world!')
-    }
-
-    _sleep(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms))
-    }
     private async loadResource() {
         try {
-            console.log(egret.getTimer());
-            await std.sleep(2000);
-            console.log(egret.getTimer());
-
-            const loadingView = new LoadingUI(this);
+            // console.log(egret.getTimer());
+            // await std.sleep(2000);
+            // console.log(egret.getTimer());
+            const loadingView = new LoadingUI();
             this.stage.addChild(loadingView);
             await RES.loadConfig("resource/default.res.json", "resource/");
             await RES.loadGroup("loader", 0, loadingView);
-
             await RES.loadConfig("resource/default.res.json", "resource/");
             await RES.loadGroup("preload", 0, loadingView);
-            while (loadingView.getProgress() < 100) {
-                this.sleep(10);
-            }
+            // await std.sleep(1000);
             this.stage.removeChild(loadingView);
+            console.log("load com");
+            this.sponsor_button = new com.code.Sponsor_button();
+            this.addChild(this.sponsor_button);
+            this.sponsor_button.setPosition(100, 100);
         }
         catch (e) {
             console.error(e);
         }
     }
+    sponsor_button: com.code.Sponsor_button;
 
     private textfield: egret.TextField;
 

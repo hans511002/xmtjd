@@ -118,13 +118,13 @@ module std {
 		}
 	}
 	export function loadArmature(_rootPath: string, armatureName: string, dragonBonesName?: string): dragonBones.EgretArmatureDisplay {
-		var rootPath = _rootPath;
+		let rootPath = _rootPath;
 		if (rootPath.length && rootPath.charAt(rootPath.length - 1) != '/')
 			rootPath += "/";
-		var dbName = dragonBonesName ? dragonBonesName : armatureName;
-		var fileSke = rootPath + dbName + "/" + dbName + "_ske.json";
-		var fileTex = rootPath + dbName + "/" + dbName + "_tex.json";
-		var filePng = rootPath + dbName + "/" + dbName + "_tex.png";
+		let dbName = dragonBonesName ? dragonBonesName : armatureName;
+		let fileSke = rootPath + dbName + "/" + dbName + "_ske.json";
+		let fileTex = rootPath + dbName + "/" + dbName + "_tex.json";
+		let filePng = rootPath + dbName + "/" + dbName + "_tex.png";
 		const factory = dragonBones.EgretFactory.factory;
 		if (!urlMap[fileSke] || !urlMap[fileTex] || !urlMap[filePng]) {
 			initResMap();
@@ -132,16 +132,20 @@ module std {
 				return null;
 			}
 		}
-		return loadDB(urlMap[fileSke], urlMap[fileTex], urlMap[filePng], armatureName, dragonBonesName);
+		// var promise = new Promise<dragonBones.EgretArmatureDisplay>(resolve => {
+		let armatureDisplay = loadDB(urlMap[fileSke], urlMap[fileTex], urlMap[filePng], armatureName, dragonBonesName);
+		// 	resolve(armatureDisplay);
+		// });
+		return armatureDisplay;
 	}
 	export function isReadyDbFile(_rootPath: string, dragonBonesName: string): boolean {
-		var rootPath = _rootPath;
-		var dbName = dragonBonesName;
+		let rootPath = _rootPath;
+		let dbName = dragonBonesName;
 		if (rootPath.length && rootPath.charAt(rootPath.length - 1) != '/')
 			rootPath += "/";
-		var fileSke = rootPath + dbName + "/" + dbName + "_ske.json";
-		var fileTex = rootPath + dbName + "/" + dbName + "_tex.json";
-		var filePng = rootPath + dbName + "/" + dbName + "_tex.png";
+		let fileSke = rootPath + dbName + "/" + dbName + "_ske.json";
+		let fileTex = rootPath + dbName + "/" + dbName + "_tex.json";
+		let filePng = rootPath + dbName + "/" + dbName + "_tex.png";
 		const factory = dragonBones.EgretFactory.factory;
 		if (urlMap[fileSke] && urlMap[fileTex] && urlMap[filePng]) {
 			if (RES.getRes(urlMap[fileSke]) && RES.getRes(urlMap[fileTex]) && RES.getRes(urlMap[filePng])) {
@@ -156,13 +160,13 @@ module std {
 		var dbName = dragonBonesName == "" ? armatureName : dragonBonesName;
 		const factory = dragonBones.EgretFactory.factory;
 		if (!factory.getDragonBonesData(dbName)) {
-			var skeletonData = RES.getRes(fileSke);
-			var textureData = RES.getRes(fileTex);
-			var texture = RES.getRes(filePng);
+			let skeletonData = RES.getRes(fileSke);
+			let textureData = RES.getRes(fileTex);
+			let texture = RES.getRes(filePng);
 			factory.addDragonBonesData(factory.parseDragonBonesData(skeletonData, dbName), dbName);
 			factory.addTextureAtlasData(factory.parseTextureAtlasData(textureData, texture), dbName);
 		}
-		var armatureDisplay = factory.buildArmatureDisplay(armatureName, dragonBonesName, "", dragonBonesName);
+		let armatureDisplay = factory.buildArmatureDisplay(armatureName, dragonBonesName, "", dragonBonesName);
 		return armatureDisplay;
 	}
 	export function buildArmature(armatureName: string, dragonBonesName: string, textureAtlasName?: string): dragonBones.EgretArmatureDisplay {
@@ -1053,11 +1057,17 @@ module std {
 				return true;
 			}
 			//Common::DateTime dt;
-			if (this.mc)
+			if (this.mc) {
 				this.container = std.loadArmature(rootPath, armName, dbName);
-			else
+				// std.loadArmature(rootPath, armName, dbName).then(function (this: MovieClip, data) {
+				// 	this.container = data;
+				// });
+			} else {
 				this.display = this.container = std.loadArmature(rootPath, armName, dbName);
-			//int time = (Common::DateTime().GetTicks() - dt.GetTicks());
+				// std.loadArmature(rootPath, armName, dbName).then((data) => {
+				// 	this.display = this.container = data;
+				// });
+			}//int time = (Common::DateTime().GetTicks() - dt.GetTicks());
 			//CCLOG("MovieClip %s.%s 1 init time:%i", dbName.c_str(), armName.c_str(), time);
 			//dt = Common::DateTime();
 
@@ -1637,14 +1647,16 @@ module std {
 		}
 	}
 	export class MButton extends MovieClip implements Button {
-		label: eui.Label;
+		label: eui.Label = null;
 		onclick: (this: Button, e: egret.TouchEvent) => void;
 		public constructor(rootPath: string, armName: string, dbName: string, defAniName: string = "") {
 			super(rootPath, armName, dbName, defAniName);
-			this.label = this.createLabel("label");
+			if (this.isReady && this.getArmature().getSlot("label"))
+				this.label = this.createLabel("label");
 			this.container.addEventListener(egret.TouchEvent.TOUCH_BEGIN, buttonTouchHandler, this);
 			this.container.addEventListener(egret.TouchEvent.TOUCH_END, buttonTouchHandler, this);
 			this.container.addEventListener(egret.TouchEvent.TOUCH_MOVE, buttonTouchHandler, this);
+			this.drawRange();
 		}
 		reinit(): boolean {//Button
 			if (super.reinit() && this.isReady) {
@@ -1666,7 +1678,8 @@ module std {
 		// onclick: Function;
 		public constructor(mc?: MC, slotName?: string, defAniName?: string, reinitType: number = 0) {
 			super(mc, slotName, defAniName, reinitType);
-			this.label = this.createLabel("label");
+			if (this.isReady && this.getArmature().getSlot("label"))
+				this.label = this.createLabel("label");
 		}
 		//MCButton
 		reinit(): boolean {
@@ -1674,6 +1687,7 @@ module std {
 				this.container.addEventListener(egret.TouchEvent.TOUCH_BEGIN, buttonTouchHandler, this);
 				this.container.addEventListener(egret.TouchEvent.TOUCH_END, buttonTouchHandler, this);
 				this.container.addEventListener(egret.TouchEvent.TOUCH_MOVE, buttonTouchHandler, this);
+				this.drawRange();
 			}
 			return this.isReady;
 		}
