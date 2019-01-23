@@ -13,13 +13,14 @@ module com.code {
             this.addEventListener(egret.Event.ENTER_FRAME, this.sp_f, this);
             this["oldFrameRate"] = this.stage.frameRate;
             this.stage.frameRate = 60;
-            this.splash_deqaf_cl.tryPlay();
+            // this.splash_deqaf_cl.tryPlay();
         }
         public click_f(param1: egret.TouchEvent): any {
             // navigateToURL(new URLRequest("http://armor.ag/MoreGames"), "_blank");
         }
         public sp_f(param1: egret.Event): any {
-            this.splash_deqaf_cl.currentFrame++;
+            this.splash_deqaf_cl.nextFrame();
+            // this.splash_deqaf_cl.currentFrame++;
             if (this.splash_deqaf_cl.currentFrame == this.splash_deqaf_cl.totalFrames) {
                 this.removeEventListener(egret.Event.ENTER_FRAME, this.sp_f, this);
                 this.stage.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.click_f, this);

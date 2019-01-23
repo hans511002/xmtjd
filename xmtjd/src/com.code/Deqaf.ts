@@ -21,6 +21,7 @@ module com.code {
             this.stage.frameRate = 60;
         }
         public sp_f(param1: egret.Event): any {
+            this.splash_deqaf_cl.nextFrame();
             if (this.splash_deqaf_cl.currentFrame == 3) {
                 this._sounds.load_by_name(deqaf_zvuk);
             }
