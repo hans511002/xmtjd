@@ -5,7 +5,7 @@
 			"name": "loader"
 		},
 		{
-			"keys": "default.res_json,Preloader_tex_json,Preloader_tex_png,Preloader_ske_json,bg_jpg,egret_icon_png,description_json,texture_json,texture_png,test_tex_json,test_tex_png,test_ske_json,texture2_png,aby_mc_tex_json,aby_mc_tex_png,aby_mc_ske_json,texture3_png,texture4_png,card_game_mc_tex_json,card_game_mc_tex_png,card_game_mc_ske_json,texture5_png,cat_drag_mc_tex_json,cat_drag_mc_tex_png,cat_drag_mc_ske_json,texture6_png,damage_mc_tex_json,damage_mc_tex_png,damage_mc_ske_json,texture7_png,down_panel_mc_tex_json,down_panel_mc_tex_png,down_panel_mc_ske_json,texture8_png,fireball_mc_tex_json,fireball_mc_tex_png,fireball_mc_ske_json,texture9_png,got_cup_mc_tex_json,got_cup_mc_tex_png,got_cup_mc_ske_json,texture10_png,grand_mc_tex_json,grand_mc_tex_png,grand_mc_ske_json,texture11_png,texture12_png,hit_mc_tex_json,hit_mc_tex_png,hit_mc_ske_json,texture13_png,icon_train_mc_tex_json,icon_train_mc_tex_png,icon_train_mc_ske_json,texture14_png,info_aby_mc_tex_json,info_aby_mc_tex_png,info_aby_mc_ske_json,texture15_png,location_mc_tex_json,location_mc_tex_png,location_mc_ske_json,texture16_png,menu_bt_mc_tex_json,menu_bt_mc_tex_png,menu_bt_mc_ske_json,texture17_png,panel_view_hit_mc_tex_json,panel_view_hit_mc_tex_png,panel_view_hit_mc_ske_json,texture18_png,panel_view_not_hit_mc_tex_json,panel_view_not_hit_mc_tex_png,panel_view_not_hit_mc_ske_json,texture19_png,paper_mc_tex_json,paper_mc_tex_png,paper_mc_ske_json,1701_mp3,1702_mp3,1706_mp3,1707_mp3,1708_mp3,1710_mp3,1714_mp3,1715_mp3,applo_so_mp3,armor_all_so_mp3,armor_so_mp3,aura_dead_so_mp3,aura_power_so_mp3,aura_speed_so_mp3,buy_so_mp3,cat_dead_so_mp3,click_so_mp3,comics_so_mp3,com_music_zvuk_mp3,dance_music_zvuk_mp3,dead_b_so_mp3,defeat_so_mp3,deqaf_zvuk_mp3,elf_music_zvuk_mp3,enemy_dead_so_mp3,fireball_hit_so_mp3,fireball_so_mp3,gong_so_mp3,go_so_mp3,grand_so_mp3,heal_so_mp3,injury_so_mp3,kick2_so_mp3,kick_so_mp3,league_so_mp3,light_so_mp3,next_day_so_mp3,paper_so_mp3,power_kick_so_mp3,reload_all_so_mp3,StartBattle_so_mp3,stun_so_mp3,take_ball_so_mp3,take_cat2_so_mp3,take_cat_so_mp3,to_bed_so_mp3,to_bubble_so_mp3,to_table_so_mp3,train1_so_mp3,train2_so_mp3,train3_so_mp3,water_music_zvuk_mp3,wear_so_mp3,won_so_mp3,x_ray_so_mp3,texture20_png,texture21_png,pause_mc_tex_json,pause_mc_tex_png,pause_mc_ske_json,texture22_png,paper_new_mc_tex_json,paper_new_mc_tex_png,paper_new_mc_ske_json,texture23_png,pre_battle_mc_tex_json,pre_battle_mc_tex_png,pre_battle_mc_ske_json,texture24_png,super_shot_ani_mc_tex_json,super_shot_ani_mc_tex_png,super_shot_ani_mc_ske_json,texture25_png,sure_mc_tex_json,sure_mc_tex_png,sure_mc_ske_json,texture26_png,surrender_battle_mc_tex_json,surrender_battle_mc_tex_png,surrender_battle_mc_ske_json,texture28_png,paper_new_mc_ske2_json,paper_new_mc_tex2_json,paper_new_mc_tex2_png,texture29_png,pause_mc_ske2_json,pause_mc_tex2_json,pause_mc_tex2_png,texture30_png,pre_battle_mc_ske2_json,pre_battle_mc_tex2_json,pre_battle_mc_tex2_png,texture31_png,super_shot_ani_mc_ske2_json,super_shot_ani_mc_tex2_json,super_shot_ani_mc_tex2_png,texture32_png,sure_mc_ske2_json,sure_mc_tex2_json,sure_mc_tex2_png,texture33_png,surrender_battle_mc_ske2_json,surrender_battle_mc_tex2_json,surrender_battle_mc_tex2_png,texture35_png,texture36_png,texture37_png,texture38_png,cat_mc_tex_json,cat_mc_tex_png,cat_mc_ske_json,texture39_png,texture40_png,texture41_png,texture27_png,tuto_mc_tex_json,tuto_mc_tex_png,tuto_mc_ske_json,texture34_png,Buttons_sounds_tex_json,Buttons_sounds_tex_png,Buttons_sounds_ske_json,texture42_png,Buttons_sounds2_tex_json,Buttons_sounds2_tex_png,Buttons_sounds2_ske_json,texture43_png,Comics_tex_json,Comics_tex_png,Comics_ske_json,texture44_png,texture45_png,Dress_tex_json,Dress_tex_png,Dress_ske_json,texture46_png,texture47_png,buttons_tex_json,buttons_tex_png,buttons_ske_json,texture48_png,Finish_tex_json,Finish_tex_png,Finish_ske_json,texture49_png,FPS_tex_json,FPS_tex_png,FPS_ske_json,texture50_png,texture51_png,Playoff_tex_json,Playoff_tex_png,Playoff_ske_json,texture52_png,texture53_png,Splash_tex_json,Splash_tex_png,Splash_ske_json,texture54_png,Team_register_tex_json,Team_register_tex_png,Team_register_ske_json,texture55_png,Upg_tex_json,Upg_tex_png,Upg_ske_json,Sponsor_button_tex_json,Sponsor_button_tex_png,Sponsor_button_ske_json,Deqaf_tex_json,Deqaf_tex_png,Deqaf_ske_json,texture56_png,up_wear_so_mp3,texture57_png",
+			"keys": "default.res_json,Preloader_tex_json,Preloader_tex_png,Preloader_ske_json,bg_jpg,egret_icon_png,description_json,texture_json,texture_png,test_tex_json,test_tex_png,test_ske_json,texture2_png,aby_mc_tex_json,aby_mc_tex_png,aby_mc_ske_json,texture3_png,texture4_png,card_game_mc_tex_json,card_game_mc_tex_png,card_game_mc_ske_json,texture5_png,cat_drag_mc_tex_json,cat_drag_mc_tex_png,cat_drag_mc_ske_json,texture6_png,damage_mc_tex_json,damage_mc_tex_png,damage_mc_ske_json,texture7_png,down_panel_mc_tex_json,down_panel_mc_tex_png,down_panel_mc_ske_json,texture8_png,fireball_mc_tex_json,fireball_mc_tex_png,fireball_mc_ske_json,texture9_png,got_cup_mc_tex_json,got_cup_mc_tex_png,got_cup_mc_ske_json,texture10_png,grand_mc_tex_json,grand_mc_tex_png,grand_mc_ske_json,texture11_png,texture12_png,hit_mc_tex_json,hit_mc_tex_png,hit_mc_ske_json,texture13_png,icon_train_mc_tex_json,icon_train_mc_tex_png,icon_train_mc_ske_json,texture14_png,info_aby_mc_tex_json,info_aby_mc_tex_png,info_aby_mc_ske_json,texture15_png,location_mc_tex_json,location_mc_tex_png,location_mc_ske_json,texture16_png,menu_bt_mc_tex_json,menu_bt_mc_tex_png,menu_bt_mc_ske_json,texture17_png,panel_view_hit_mc_tex_json,panel_view_hit_mc_tex_png,panel_view_hit_mc_ske_json,texture18_png,panel_view_not_hit_mc_tex_json,panel_view_not_hit_mc_tex_png,panel_view_not_hit_mc_ske_json,texture19_png,paper_mc_tex_json,paper_mc_tex_png,paper_mc_ske_json,1701_mp3,1702_mp3,1706_mp3,1707_mp3,1708_mp3,1710_mp3,1714_mp3,1715_mp3,applo_so_mp3,armor_all_so_mp3,armor_so_mp3,aura_dead_so_mp3,aura_power_so_mp3,aura_speed_so_mp3,buy_so_mp3,cat_dead_so_mp3,click_so_mp3,comics_so_mp3,com_music_zvuk_mp3,dance_music_zvuk_mp3,dead_b_so_mp3,defeat_so_mp3,deqaf_zvuk_mp3,elf_music_zvuk_mp3,enemy_dead_so_mp3,fireball_hit_so_mp3,fireball_so_mp3,gong_so_mp3,go_so_mp3,grand_so_mp3,heal_so_mp3,injury_so_mp3,kick2_so_mp3,kick_so_mp3,league_so_mp3,light_so_mp3,next_day_so_mp3,paper_so_mp3,power_kick_so_mp3,reload_all_so_mp3,StartBattle_so_mp3,stun_so_mp3,take_ball_so_mp3,take_cat2_so_mp3,take_cat_so_mp3,to_bed_so_mp3,to_bubble_so_mp3,to_table_so_mp3,train1_so_mp3,train2_so_mp3,train3_so_mp3,water_music_zvuk_mp3,wear_so_mp3,won_so_mp3,x_ray_so_mp3,texture20_png,texture21_png,pause_mc_tex_json,pause_mc_tex_png,pause_mc_ske_json,texture22_png,paper_new_mc_tex_json,paper_new_mc_tex_png,paper_new_mc_ske_json,texture23_png,pre_battle_mc_tex_json,pre_battle_mc_tex_png,pre_battle_mc_ske_json,texture24_png,super_shot_ani_mc_tex_json,super_shot_ani_mc_tex_png,super_shot_ani_mc_ske_json,texture25_png,sure_mc_tex_json,sure_mc_tex_png,sure_mc_ske_json,texture26_png,surrender_battle_mc_tex_json,surrender_battle_mc_tex_png,surrender_battle_mc_ske_json,texture28_png,paper_new_mc_ske2_json,paper_new_mc_tex2_json,paper_new_mc_tex2_png,texture29_png,pause_mc_ske2_json,pause_mc_tex2_json,pause_mc_tex2_png,texture30_png,pre_battle_mc_ske2_json,pre_battle_mc_tex2_json,pre_battle_mc_tex2_png,texture31_png,super_shot_ani_mc_ske2_json,super_shot_ani_mc_tex2_json,super_shot_ani_mc_tex2_png,texture32_png,sure_mc_ske2_json,sure_mc_tex2_json,sure_mc_tex2_png,texture33_png,surrender_battle_mc_ske2_json,surrender_battle_mc_tex2_json,surrender_battle_mc_tex2_png,texture35_png,texture36_png,texture37_png,texture38_png,cat_mc_tex_json,cat_mc_tex_png,cat_mc_ske_json,texture39_png,texture40_png,texture41_png,texture27_png,tuto_mc_tex_json,tuto_mc_tex_png,tuto_mc_ske_json,texture34_png,Buttons_sounds_tex_json,Buttons_sounds_tex_png,Buttons_sounds_ske_json,texture42_png,Buttons_sounds2_tex_json,Buttons_sounds2_tex_png,Buttons_sounds2_ske_json,texture43_png,Comics_tex_json,Comics_tex_png,Comics_ske_json,texture44_png,texture45_png,Dress_tex_json,Dress_tex_png,Dress_ske_json,texture46_png,texture47_png,buttons_tex_json,buttons_tex_png,buttons_ske_json,texture48_png,Finish_tex_json,Finish_tex_png,Finish_ske_json,texture49_png,FPS_tex_json,FPS_tex_png,FPS_ske_json,texture50_png,texture51_png,Playoff_tex_json,Playoff_tex_png,Playoff_ske_json,texture52_png,texture53_png,Splash_tex_json,Splash_tex_png,Splash_ske_json,texture54_png,Team_register_tex_json,Team_register_tex_png,Team_register_ske_json,texture55_png,Upg_tex_json,Upg_tex_png,Upg_ske_json,Sponsor_button_tex_json,Sponsor_button_tex_png,Sponsor_button_ske_json,Deqaf_tex_json,Deqaf_tex_png,Deqaf_ske_json,texture56_png,up_wear_so_mp3,texture57_png,Menu_tex_json,Menu_tex_png,Menu_ske_json,texture58_png,hand_r_cl_tex_json,hand_r_cl_tex_png,hand_r_cl_ske_json,texture59_png,body_cl_tex_json,body_cl_tex_png,body_cl_ske_json,texture60_png,cloak_cl_tex_json,cloak_cl_tex_png,cloak_cl_ske_json,texture61_png,foot_cl_tex_json,foot_cl_tex_png,foot_cl_ske_json,texture62_png,hand_l_cl_tex_json,hand_l_cl_tex_png,hand_l_cl_ske_json,texture63_png,head_cl_tex_json,head_cl_tex_png,head_cl_ske_json,texture64_png,skirt_cl_tex_json,skirt_cl_tex_png,skirt_cl_ske_json,texture65_png,tail_cl_tex_json,tail_cl_tex_png,tail_cl_ske_json,texture66_png,xray_mc_tex_json,xray_mc_tex_png,xray_mc_ske_json,texture67_png,texture68_png",
 			"name": "preload"
 		}
 	],
@@ -1274,6 +1274,211 @@
 			"name": "texture57_png",
 			"type": "image",
 			"url": "assets/Sponsor_button/library/texture.png"
+		},
+		{
+			"name": "Menu_tex_json",
+			"type": "json",
+			"url": "assets/Menu/Menu_tex.json"
+		},
+		{
+			"name": "Menu_tex_png",
+			"type": "image",
+			"url": "assets/Menu/Menu_tex.png"
+		},
+		{
+			"name": "Menu_ske_json",
+			"type": "json",
+			"url": "assets/Menu/Menu_ske.json"
+		},
+		{
+			"name": "texture58_png",
+			"type": "image",
+			"url": "assets/cat/hand_r_cl/library/texture.png"
+		},
+		{
+			"name": "hand_r_cl_tex_json",
+			"type": "json",
+			"url": "assets/cat/hand_r_cl/hand_r_cl_tex.json"
+		},
+		{
+			"name": "hand_r_cl_tex_png",
+			"type": "image",
+			"url": "assets/cat/hand_r_cl/hand_r_cl_tex.png"
+		},
+		{
+			"name": "hand_r_cl_ske_json",
+			"type": "json",
+			"url": "assets/cat/hand_r_cl/hand_r_cl_ske.json"
+		},
+		{
+			"name": "texture59_png",
+			"type": "image",
+			"url": "assets/cat/body_cl/library/texture.png"
+		},
+		{
+			"name": "body_cl_tex_json",
+			"type": "json",
+			"url": "assets/cat/body_cl/body_cl_tex.json"
+		},
+		{
+			"name": "body_cl_tex_png",
+			"type": "image",
+			"url": "assets/cat/body_cl/body_cl_tex.png"
+		},
+		{
+			"name": "body_cl_ske_json",
+			"type": "json",
+			"url": "assets/cat/body_cl/body_cl_ske.json"
+		},
+		{
+			"name": "texture60_png",
+			"type": "image",
+			"url": "assets/cat/cloak_cl/library/texture.png"
+		},
+		{
+			"name": "cloak_cl_tex_json",
+			"type": "json",
+			"url": "assets/cat/cloak_cl/cloak_cl_tex.json"
+		},
+		{
+			"name": "cloak_cl_tex_png",
+			"type": "image",
+			"url": "assets/cat/cloak_cl/cloak_cl_tex.png"
+		},
+		{
+			"name": "cloak_cl_ske_json",
+			"type": "json",
+			"url": "assets/cat/cloak_cl/cloak_cl_ske.json"
+		},
+		{
+			"name": "texture61_png",
+			"type": "image",
+			"url": "assets/cat/foot_cl/library/texture.png"
+		},
+		{
+			"name": "foot_cl_tex_json",
+			"type": "json",
+			"url": "assets/cat/foot_cl/foot_cl_tex.json"
+		},
+		{
+			"name": "foot_cl_tex_png",
+			"type": "image",
+			"url": "assets/cat/foot_cl/foot_cl_tex.png"
+		},
+		{
+			"name": "foot_cl_ske_json",
+			"type": "json",
+			"url": "assets/cat/foot_cl/foot_cl_ske.json"
+		},
+		{
+			"name": "texture62_png",
+			"type": "image",
+			"url": "assets/cat/hand_l_cl/library/texture.png"
+		},
+		{
+			"name": "hand_l_cl_tex_json",
+			"type": "json",
+			"url": "assets/cat/hand_l_cl/hand_l_cl_tex.json"
+		},
+		{
+			"name": "hand_l_cl_tex_png",
+			"type": "image",
+			"url": "assets/cat/hand_l_cl/hand_l_cl_tex.png"
+		},
+		{
+			"name": "hand_l_cl_ske_json",
+			"type": "json",
+			"url": "assets/cat/hand_l_cl/hand_l_cl_ske.json"
+		},
+		{
+			"name": "texture63_png",
+			"type": "image",
+			"url": "assets/cat/head_cl/library/texture.png"
+		},
+		{
+			"name": "head_cl_tex_json",
+			"type": "json",
+			"url": "assets/cat/head_cl/head_cl_tex.json"
+		},
+		{
+			"name": "head_cl_tex_png",
+			"type": "image",
+			"url": "assets/cat/head_cl/head_cl_tex.png"
+		},
+		{
+			"name": "head_cl_ske_json",
+			"type": "json",
+			"url": "assets/cat/head_cl/head_cl_ske.json"
+		},
+		{
+			"name": "texture64_png",
+			"type": "image",
+			"url": "assets/cat/skirt_cl/library/texture.png"
+		},
+		{
+			"name": "skirt_cl_tex_json",
+			"type": "json",
+			"url": "assets/cat/skirt_cl/skirt_cl_tex.json"
+		},
+		{
+			"name": "skirt_cl_tex_png",
+			"type": "image",
+			"url": "assets/cat/skirt_cl/skirt_cl_tex.png"
+		},
+		{
+			"name": "skirt_cl_ske_json",
+			"type": "json",
+			"url": "assets/cat/skirt_cl/skirt_cl_ske.json"
+		},
+		{
+			"name": "texture65_png",
+			"type": "image",
+			"url": "assets/cat/tail_cl/library/texture.png"
+		},
+		{
+			"name": "tail_cl_tex_json",
+			"type": "json",
+			"url": "assets/cat/tail_cl/tail_cl_tex.json"
+		},
+		{
+			"name": "tail_cl_tex_png",
+			"type": "image",
+			"url": "assets/cat/tail_cl/tail_cl_tex.png"
+		},
+		{
+			"name": "tail_cl_ske_json",
+			"type": "json",
+			"url": "assets/cat/tail_cl/tail_cl_ske.json"
+		},
+		{
+			"name": "texture66_png",
+			"type": "image",
+			"url": "assets/xray_mc/library/texture.png"
+		},
+		{
+			"name": "xray_mc_tex_json",
+			"type": "json",
+			"url": "assets/xray_mc/xray_mc_tex.json"
+		},
+		{
+			"name": "xray_mc_tex_png",
+			"type": "image",
+			"url": "assets/xray_mc/xray_mc_tex.png"
+		},
+		{
+			"name": "xray_mc_ske_json",
+			"type": "json",
+			"url": "assets/xray_mc/xray_mc_ske.json"
+		},
+		{
+			"name": "texture67_png",
+			"type": "image",
+			"url": "assets/Menu/library/texture.png"
+		},
+		{
+			"name": "texture68_png",
+			"type": "image",
+			"url": "assets/Menu/library/texture.png"
 		}
 	]
 }

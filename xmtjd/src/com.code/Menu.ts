@@ -33,7 +33,7 @@ module com.code {
             // this.credits_cl = this.createMovieClipSub("credits_cl");
             this.clear_cl = this.createMCButton("clear_cl");
             this.deqaf_bt = this.createMCButton("deqaf_bt");
-            this.face_bt = this.createMovieClipSub("face_bt");
+            this.face_bt = this.createMovieClipSub("face_bt").createMCButton("face_bt");
             this.go_sfk1 = this.createMovieClipSub("go_sfk1");
             this.go_sfk2 = this.createMovieClipSub("go_sfk2");
             this.go_sfk3 = this.createMovieClipSub("go_sfk3");

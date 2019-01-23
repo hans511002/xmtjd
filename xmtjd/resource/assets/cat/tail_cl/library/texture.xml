@@ -1,0 +1,15 @@
+<TextureAtlas name="tail_cl" imagePath="texture.png">
+ <SubTexture name="Graphic/shape 191" x="34" y="51" width="21" height="24"/>
+ <SubTexture name="Graphic/shape 192" x="34" y="26" width="21" height="24"/>
+ <SubTexture name="Graphic/shape 193" x="96" y="52" width="21" height="24"/>
+ <SubTexture name="Graphic/shape 194" x="102" y="25" width="24" height="26"/>
+ <SubTexture name="Graphic/shape 195" x="67" y="18" width="34" height="21"/>
+ <SubTexture name="Graphic/shape 196" x="0" y="24" width="33" height="22"/>
+ <SubTexture name="Graphic/shape 197" x="34" y="0" width="32" height="25"/>
+ <SubTexture name="Graphic/shape 198" x="0" y="0" width="33" height="23"/>
+ <SubTexture name="Graphic/shape 199" x="56" y="58" width="37" height="17"/>
+ <SubTexture name="Graphic/shape 200" x="0" y="48" width="33" height="18"/>
+ <SubTexture name="Graphic/shape 201" x="57" y="40" width="38" height="17"/>
+ <SubTexture name="Graphic/shape 202" x="67" y="0" width="38" height="17"/>
+ <SubTexture name="Graphic/shape 203" x="106" y="0" width="21" height="24"/>
+</TextureAtlas>

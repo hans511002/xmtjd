@@ -1,0 +1,26 @@
+<TextureAtlas name="xray_mc" imagePath="texture.png">
+ <SubTexture name="MovieClip/sprite 2576" x="0" y="0" width="658" height="508"/>
+ <SubTexture name="Graphic/shape 2574" x="836" y="0" width="174" height="155"/>
+ <SubTexture name="Graphic/shape 2599" x="659" y="0" width="176" height="157"/>
+ <SubTexture name="MovieClip/sprite 2578" x="1011" y="37" width="10" height="15"/>
+ <SubTexture name="MovieClip/sprite 2580" x="1011" y="69" width="8" height="13"/>
+ <SubTexture name="MovieClip/sprite 2582" x="1004" y="156" width="15" height="23"/>
+ <SubTexture name="MovieClip/sprite 2584" x="929" y="192" width="35" height="28"/>
+ <SubTexture name="MovieClip/sprite 2595" x="1011" y="19" width="10" height="17"/>
+ <SubTexture name="MovieClip/tail_cl" x="743" y="158" width="41" height="34"/>
+ <SubTexture name="MovieClip/cloak_cl" x="920" y="156" width="41" height="34"/>
+ <SubTexture name="MovieClip/hand_l_cl" x="659" y="158" width="41" height="34"/>
+ <SubTexture name="MovieClip/foot2_cl" x="836" y="156" width="41" height="34"/>
+ <SubTexture name="MovieClip/body_cl" x="701" y="158" width="41" height="34"/>
+ <SubTexture name="MovieClip/skirt_cl" x="1011" y="83" width="10" height="9"/>
+ <SubTexture name="MovieClip/head_cl" x="962" y="156" width="41" height="34"/>
+ <SubTexture name="MovieClip/hand_r_cl" x="878" y="156" width="41" height="34"/>
+ <SubTexture name="Graphic/shape 2583" x="965" y="192" width="35" height="28"/>
+ <SubTexture name="Graphic/shape 2585" x="785" y="158" width="35" height="28"/>
+ <SubTexture name="Graphic/shape 2586" x="857" y="192" width="35" height="28"/>
+ <SubTexture name="Graphic/shape 2587" x="785" y="187" width="35" height="28"/>
+ <SubTexture name="Graphic/shape 2588" x="893" y="192" width="35" height="28"/>
+ <SubTexture name="Graphic/shape 2589" x="821" y="192" width="35" height="28"/>
+ <SubTexture name="Graphic/shape 2591" x="1011" y="53" width="10" height="15"/>
+ <SubTexture name="Graphic/shape 2592" x="1011" y="0" width="10" height="18"/>
+</TextureAtlas>

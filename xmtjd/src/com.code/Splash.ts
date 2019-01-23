@@ -28,28 +28,28 @@ module com.code {
             } else if (this.splash_deqaf_cl.currentFrame == 3) {
                 let so1701 = new LoadSounds();
                 so1701.load_by_url(Config.SoundRoot + "1701.mp3");
-                this["so1701"] = so1701;
+                // this["so1701"] = so1701;
                 let so1702 = new LoadSounds();
                 so1702.load_by_url(Config.SoundRoot + "1702.mp3");
-                this["so1702"] = so1702;
+                // this["so1702"] = so1702;
             } else if (this.splash_deqaf_cl.currentFrame == 9) {
                 let so1706 = new LoadSounds();
                 so1706.load_by_url(Config.SoundRoot + "1706.mp3");
-                this["so1706"] = so1706;
+                // this["so1706"] = so1706;
             } else if (this.splash_deqaf_cl.currentFrame == 33) {
                 let so1707 = new LoadSounds();
                 so1707.load_by_url(Config.SoundRoot + "1707.mp3");
-                this["so1707"] = so1707;
+                // this["so1707"] = so1707;
                 let so1708 = new LoadSounds();
                 so1708.load_by_url(Config.SoundRoot + "1708.mp3");
-                this["so1708"] = so1708;
+                // this["so1708"] = so1708;
             } else if (this.splash_deqaf_cl.currentFrame == 78) {
                 let so1701 = new LoadSounds();
                 so1701.load_by_url(Config.SoundRoot + "1701.mp3");
-                this["so1701"] = so1701;
+                // this["so1701"] = so1701;
                 let so1710 = new LoadSounds();
                 so1710.load_by_url(Config.SoundRoot + "1710.mp3");
-                this["so1710"] = so1710;
+                // this["so1710"] = so1710;
             } else if (this.splash_deqaf_cl.currentFrame == 86) {
                 let so1714 = new LoadSounds();
                 so1714.load_by_url(Config.SoundRoot + "1714.mp3");

@@ -1568,9 +1568,10 @@ module std {
 					if (oldDis) {
 						this.display.$setX(oldDis.x);
 						this.display.$setX(oldDis.y);
-						oldDis.removeChild(this);
+						// oldDis.removeChild(this);
 					}
-					this.display.parent.addChild(this);
+					if (!this.parentNode)
+						this.display.parent.addChild(this);
 					this.parentNode = this.parent;
 					this.isReady = true;
 					this.defAniName = this.arm._armatureData.defaultAnimation.name;
@@ -1654,14 +1655,29 @@ module std {
 				this.container.addEventListener(egret.TouchEvent.TOUCH_END, buttonTouchHandler, this);
 				this.container.addEventListener(egret.TouchEvent.TOUCH_MOVE, buttonTouchHandler, this);
 				// std.drawRange(this.container);
+			} else {
+				if (this.slot && this.slot.display instanceof egret.Bitmap) {
+					egret.error("solt " + this.slotName + " not a dragonBones mc");
+					this.slot.display.$setTouchEnabled(true);
+					this.slot.display.addEventListener(egret.TouchEvent.TOUCH_BEGIN, buttonTouchHandler, this);
+					this.slot.display.addEventListener(egret.TouchEvent.TOUCH_END, buttonTouchHandler, this);
+					this.slot.display.addEventListener(egret.TouchEvent.TOUCH_MOVE, buttonTouchHandler, this);
+				}
 			}
 			return this.isReady;
 		}
 		removeListener() {
-			this.container.$setTouchEnabled(false);
-			this.container.removeEventListener(egret.TouchEvent.TOUCH_BEGIN, buttonTouchHandler, this);
-			this.container.removeEventListener(egret.TouchEvent.TOUCH_END, buttonTouchHandler, this);
-			this.container.removeEventListener(egret.TouchEvent.TOUCH_MOVE, buttonTouchHandler, this);
+			if (this.slot && this.slot.display instanceof egret.Bitmap) {
+				this.slot.display.$setTouchEnabled(false);
+				this.slot.display.removeEventListener(egret.TouchEvent.TOUCH_BEGIN, buttonTouchHandler, this);
+				this.slot.display.removeEventListener(egret.TouchEvent.TOUCH_END, buttonTouchHandler, this);
+				this.slot.display.removeEventListener(egret.TouchEvent.TOUCH_MOVE, buttonTouchHandler, this);
+			} else if (this.container) {
+				this.container.$setTouchEnabled(false);
+				this.container.removeEventListener(egret.TouchEvent.TOUCH_BEGIN, buttonTouchHandler, this);
+				this.container.removeEventListener(egret.TouchEvent.TOUCH_END, buttonTouchHandler, this);
+				this.container.removeEventListener(egret.TouchEvent.TOUCH_MOVE, buttonTouchHandler, this);
+			}
 		}
 	}
 	// class MCUI;

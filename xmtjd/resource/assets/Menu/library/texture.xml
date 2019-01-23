@@ -1,32 +1,42 @@
 <TextureAtlas name="Menu" imagePath="texture.png">
  <SubTexture name="bg" x="0" y="0" width="1119" height="624"/>
  <SubTexture name="Symbol 1940" x="1120" y="0" width="488" height="203"/>
- <SubTexture name="Buttons_sounds2" x="1335" y="205" width="39" height="39"/>
- <SubTexture name="Symbol 1903" x="1254" y="205" width="40" height="40"/>
- <SubTexture name="cat_mc" x="1295" y="205" width="39" height="39"/>
- <SubTexture name="Symbol 187" x="1671" y="152" width="35" height="62"/>
- <SubTexture name="Symbol 185" x="2005" y="153" width="42" height="58"/>
- <SubTexture name="Symbol 183" x="1816" y="196" width="44" height="55"/>
- <SubTexture name="Symbol 181" x="1881" y="179" width="54" height="56"/>
- <SubTexture name="Symbol 189" x="1769" y="196" width="46" height="59"/>
- <SubTexture name="Symbol 2687" x="1829" y="0" width="186" height="71"/>
- <SubTexture name="Symbol 206" x="1375" y="205" width="41" height="34"/>
- <SubTexture name="Symbol 169" x="1950" y="72" width="80" height="80"/>
- <SubTexture name="Symbol 176" x="1712" y="65" width="89" height="89"/>
- <SubTexture name="Symbol 177" x="1802" y="117" width="78" height="78"/>
- <SubTexture name="Symbol 171" x="2016" y="22" width="22" height="21"/>
- <SubTexture name="__dbTextures/play_cl/Layer 9_3" x="2016" y="44" width="22" height="21"/>
- <SubTexture name="__dbTextures/play_cl/Layer 8_3" x="1802" y="65" width="22" height="21"/>
- <SubTexture name="__dbTextures/play_cl/Layer 7_3" x="2016" y="0" width="22" height="21"/>
- <SubTexture name="__dbTextures/play_cl/Layer 6_3" x="1211" y="205" width="42" height="52"/>
- <SubTexture name="Symbol 174" x="1417" y="205" width="36" height="36"/>
- <SubTexture name="Symbol 173" x="1168" y="205" width="42" height="52"/>
- <SubTexture name="Symbol 175" x="1120" y="205" width="47" height="47"/>
- <SubTexture name="__dbTextures/Symbol 2692/Layer 2_0" x="1825" y="72" width="124" height="44"/>
- <SubTexture name="Symbol 2691" x="1609" y="0" width="219" height="63"/>
- <SubTexture name="__dbTextures/Symbol 2696/Layer 2_0" x="1609" y="152" width="60" height="60"/>
- <SubTexture name="Symbol 2695" x="1609" y="65" width="102" height="85"/>
- <SubTexture name="__dbTextures/Symbol 2700/bg_0" x="1707" y="155" width="60" height="60"/>
- <SubTexture name="Symbol 2697" x="1881" y="117" width="61" height="61"/>
- <SubTexture name="__dbTextures/Symbol 2703/bg_0" x="1943" y="153" width="60" height="60"/>
+ <SubTexture name="Buttons_sounds2" x="1610" y="249" width="39" height="39"/>
+ <SubTexture name="cat_mc" x="1570" y="249" width="39" height="39"/>
+ <SubTexture name="Symbol 187" x="1802" y="81" width="35" height="62"/>
+ <SubTexture name="Symbol 185" x="1792" y="172" width="42" height="58"/>
+ <SubTexture name="Symbol 183" x="1434" y="205" width="44" height="55"/>
+ <SubTexture name="Symbol 181" x="1993" y="72" width="54" height="56"/>
+ <SubTexture name="Symbol 189" x="1993" y="129" width="46" height="59"/>
+ <SubTexture name="Symbol 2687" x="1839" y="0" width="186" height="71"/>
+ <SubTexture name="Symbol 206" x="1650" y="250" width="41" height="34"/>
+ <SubTexture name="Symbol 2682" x="1853" y="248" width="42" height="37"/>
+ <SubTexture name="Symbol 2684" x="1963" y="133" width="22" height="27"/>
+ <SubTexture name="__dbTextures/Symbol 2685/Layer 1_3" x="1802" y="144" width="22" height="27"/>
+ <SubTexture name="Symbol 169" x="1609" y="168" width="80" height="80"/>
+ <SubTexture name="Symbol 176" x="1712" y="81" width="89" height="89"/>
+ <SubTexture name="Symbol 177" x="1690" y="171" width="78" height="78"/>
+ <SubTexture name="Symbol 171" x="1963" y="161" width="22" height="21"/>
+ <SubTexture name="__dbTextures/play_cl/Layer 9_3" x="1769" y="171" width="22" height="21"/>
+ <SubTexture name="__dbTextures/play_cl/Layer 8_3" x="1963" y="183" width="22" height="21"/>
+ <SubTexture name="__dbTextures/play_cl/Layer 7_3" x="1769" y="193" width="22" height="21"/>
+ <SubTexture name="__dbTextures/play_cl/Layer 6_3" x="1527" y="205" width="42" height="52"/>
+ <SubTexture name="Symbol 174" x="1570" y="205" width="36" height="36"/>
+ <SubTexture name="Symbol 173" x="1769" y="231" width="42" height="52"/>
+ <SubTexture name="Symbol 175" x="1479" y="205" width="47" height="47"/>
+ <SubTexture name="Symbol 1898" x="1812" y="248" width="40" height="40"/>
+ <SubTexture name="Symbol 1899" x="1905" y="236" width="42" height="43"/>
+ <SubTexture name="Symbol 1901" x="1905" y="178" width="57" height="57"/>
+ <SubTexture name="__dbTextures/Symbol 2692/Layer 2_0" x="1838" y="133" width="124" height="44"/>
+ <SubTexture name="__dbTextures/Symbol 2696/Layer 2_0" x="1372" y="205" width="60" height="60"/>
+ <SubTexture name="Symbol 2695" x="1609" y="81" width="102" height="85"/>
+ <SubTexture name="__dbTextures/Symbol 2700/bg_0" x="1310" y="205" width="60" height="60"/>
+ <SubTexture name="Symbol 2697" x="1986" y="189" width="61" height="61"/>
+ <SubTexture name="__dbTextures/Symbol 2703/bg_0" x="1248" y="205" width="60" height="60"/>
+ <SubTexture name="Symbol 1879" x="1120" y="205" width="63" height="63"/>
+ <SubTexture name="Symbol 1881" x="1835" y="178" width="68" height="68"/>
+ <SubTexture name="Symbol 1882" x="1185" y="205" width="62" height="62"/>
+ <SubTexture name="Symbol 1880" x="1948" y="236" width="36" height="36"/>
+ <SubTexture name="Symbol 2690" x="1609" y="0" width="229" height="80"/>
+ <SubTexture name="位图 1" x="1839" y="72" width="152" height="59"/>
 </TextureAtlas>

@@ -27,7 +27,7 @@ class Sound {
 			this.so = std.getRes(this.url);
 			if (!this.so) {
 				this.so = new egret.Sound();// RES.getRes(file);// new egret.Sound();
-				RES.getResByUrl(Config.resRoot + this.url, function (data, url) {
+				RES.getResByUrl(Config.resRoot + this.url, function (this: Sound, data, url) {
 					this.so = data;
 					this.so.play(startTime, loops);
 				}, this);
@@ -37,6 +37,7 @@ class Sound {
 		if (this.so) {
 			return this.so.play(startTime, loops);
 		}
+
 	}
 	close(): void {
 		this.so.close();

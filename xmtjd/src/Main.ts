@@ -71,19 +71,25 @@ class Main extends std.BaseNode {
     wool_cl: std.MovieClip;
     _App: com.code.App;
     _Preloader: com.code.Preloader;
+    loadingView: LoadingUI;
 
     public constructor() {
         super();
         this.addEventListener(egret.Event.ADDED_TO_STAGE, this.onAddToStage, this);
         this.addEventListener(egret.Event.ENTER_FRAME, this.go_to_game_f, this);
+        this.addEventListener(egret.TouchEvent.TOUCH_BEGIN, this.click_f, this);
         //addFrameScript(0,this.frame1);
     }
-
+    public click_f(param1: egret.TouchEvent): any {
+        Main.mouseX = param1.stageX;
+        Main.mouseY = param1.stageY;
+    }
     go_to_game_f(event: Event): void {
         var _loc_2: any = null;
         if (Main.go_to_game) {
             if (this._Preloader) {
-                this.removeChild(this._Preloader); this._Preloader = null;
+                this.removeChild(this._Preloader);
+                this._Preloader = null;
             }
             // this.root.gotoAndStop(1, "game");
             _loc_2 = new com.code.App();
@@ -91,7 +97,9 @@ class Main extends std.BaseNode {
             _loc_2.init();
             _loc_2.open_new_screen(Main.first_target);
             this.removeEventListener(egret.Event.ENTER_FRAME, this.go_to_game_f, this);
-
+        } else if (this.loadingView && this.loadingView.getProgress() >= 100) {
+            this.stage.removeChild(this.loadingView);
+            this.loadingView = null;
         }
     }// end function
 
@@ -143,21 +151,22 @@ class Main extends std.BaseNode {
             // console.log(egret.getTimer());
             // await std.sleep(2000);
             // console.log(egret.getTimer());
-            const loadingView = new LoadingUI(this);
-            this.stage.addChild(loadingView);
+            this.loadingView = new LoadingUI(this);
+            this.stage.addChild(this.loadingView);
             await RES.loadConfig("resource/default.res.json", "resource/");
-            await RES.loadGroup("loader", 0, loadingView);
+            await RES.loadGroup("loader", 0, this.loadingView);
             this.loadResMap().catch(e => {
                 console.log(e);
             });
             await RES.loadConfig("resource/default.res.json", "resource/");
-            await RES.loadGroup("preload", 0, loadingView);
+            await RES.loadGroup("preload", 0, this.loadingView);
             // await std.sleep(1000);
-            this.stage.removeChild(loadingView);
+
             // console.log("load com");
             // this.sponsor_button = new com.code.Sponsor_button();
             // this.addChild(this.sponsor_button);
             // this.sponsor_button.setPosition(200, 100);
+
         }
         catch (e) {
             console.error(e);

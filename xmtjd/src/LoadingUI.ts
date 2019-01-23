@@ -52,8 +52,8 @@ class LoadingUI extends egret.Sprite implements RES.PromiseTaskReporter {
                 if (com.code.Preloader.isReadyLoad()) {
                     this.main._Preloader = new com.code.Preloader();
                     this.main.addChild(this.main._Preloader);
-                    this.removeChild(this.textField);
-                    this.textField = null;
+                    // this.removeChild(this.textField);
+                    // this.textField = null;
                 }
             } else {
                 this.main._Preloader.progressHandler(current, total);
@@ -63,7 +63,7 @@ class LoadingUI extends egret.Sprite implements RES.PromiseTaskReporter {
             this.textField.text = `Loading...${current}/${total}`;
     }
     getProgress() {
-        if (this.main._Preloader.total == 0) return 0;
+        if (!this.main || !this.main._Preloader || this.main._Preloader.total == 0) return 0;
         return Math.floor(this.main._Preloader.loaded * 100 / this.main._Preloader.total);
         // Math.floor(this.loaded * 100 / this.total)
     }

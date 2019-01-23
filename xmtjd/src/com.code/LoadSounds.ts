@@ -29,7 +29,7 @@ module com.code {
 
         public load_by_url(url) {
             if (!Main.mute_sfx) {
-                this.zvuk_z = std.getRes(url);// new Sound(param1);
+                this.zvuk_z = new Sound(url);
                 this.zvuk_c = this.zvuk_z.play();
             }
             return;

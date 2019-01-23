@@ -1,0 +1,7 @@
+<TextureAtlas name="skirt_cl" imagePath="texture.png">
+ <SubTexture name="sprite 206" x="0" y="0" width="41" height="34"/>
+ <SubTexture name="Graphic/shape 1280" x="32" y="36" width="27" height="15"/>
+ <SubTexture name="Graphic/shape 1281" x="0" y="36" width="31" height="16"/>
+ <SubTexture name="Graphic/shape 1282" x="42" y="0" width="20" height="12"/>
+ <SubTexture name="Graphic/shape 1283" x="0" y="53" width="29" height="13"/>
+</TextureAtlas>
